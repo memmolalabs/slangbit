@@ -140,4 +140,4 @@ https://memmolalabs.com
 
 Project page:
 
-https://memmolalabs.com/slangbit
+https://slangbit.com
