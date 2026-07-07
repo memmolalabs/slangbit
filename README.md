@@ -562,9 +562,9 @@ Current validated capabilities include:
 
 # Project Status
 
-**Microsoft Store Certified**
+**Available on Microsoft Store**
 
-SlangBit has completed development of its core Windows desktop architecture and successfully passed Microsoft Store certification.
+SlangBit has completed development of its core Windows desktop architecture, successfully passed Microsoft Store certification and is now publicly available for Windows users.
 
 Core systems include:
 
@@ -579,7 +579,7 @@ Core systems include:
 * input normalization;
 * local AI language models.
 
-The application is awaiting final publication.
+SlangBit is available on Microsoft Store.
 
 ---
 
