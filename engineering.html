@@ -1,0 +1,774 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SlangBit Engineering — Tested, Validated, Offline</title>
+
+  <meta name="description" content="SlangBit engineering report: real-world workflow validation, offline AI translation architecture, Microsoft Store certification investigation and input hardening." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://slangbit.com/engineering.html" />
+
+  <meta property="og:title" content="SlangBit Engineering — Tested, Validated, Offline" />
+  <meta property="og:description" content="How SlangBit was tested across real Windows workflows, long documents, code, HTML, clipboard automation and offline environments." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://slangbit.com/engineering.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:#000508;
+      --surface:#040d14;
+      --surface2:#071520;
+      --border:#0d2a40;
+      --blue:#0077ff;
+      --cyan:#00c8ff;
+      --cyan2:#00eaff;
+      --green:#00ff99;
+      --red:#ff3b5c;
+      --text:#e8f4ff;
+      --muted:#7fa0b8;
+      --muted2:#4a7a99;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+
+    body {
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Exo 2', sans-serif;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    body::before {
+      content:'';
+      position:fixed;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(0,200,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,200,255,0.035) 1px, transparent 1px);
+      background-size:48px 48px;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    body::after {
+      content:'';
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(0,119,255,0.15), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(0,234,255,0.12), transparent 28%),
+        radial-gradient(circle at 50% 80%, rgba(0,200,255,0.08), transparent 32%);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    a { color:inherit; }
+
+    .page {
+      position:relative;
+      z-index:1;
+    }
+
+    nav {
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:100;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 40px;
+      background:rgba(0,5,8,0.86);
+      border-bottom:1px solid var(--border);
+      backdrop-filter:blur(14px);
+    }
+
+    .nav-logo {
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+    }
+
+    .logo-mark {
+      width:44px;
+      height:44px;
+      background:linear-gradient(135deg, var(--blue), var(--cyan2));
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      color:#001019;
+      font-family:'JetBrains Mono', monospace;
+      font-weight:900;
+      font-size:18px;
+      box-shadow:0 0 24px rgba(0,200,255,0.42);
+    }
+
+    .logo-text {
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+
+    .logo-text strong {
+      font-size:1.35rem;
+      font-weight:900;
+      letter-spacing:-0.03em;
+    }
+
+    .logo-text span {
+      color:var(--muted);
+      font-size:0.78rem;
+    }
+
+    .nav-links {
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
+
+    .nav-links a {
+      font-family:'JetBrains Mono', monospace;
+      font-size:11px;
+      letter-spacing:0.08em;
+      color:var(--muted);
+      text-decoration:none;
+      text-transform:uppercase;
+    }
+
+    .nav-links a:hover {
+      color:var(--cyan);
+    }
+
+    .nav-btn {
+      font-family:'JetBrains Mono', monospace;
+      font-size:11px;
+      letter-spacing:0.08em;
+      text-decoration:none;
+      text-transform:uppercase;
+      padding:11px 18px;
+      border-radius:7px;
+      border:1px solid rgba(0,200,255,0.22);
+      color:var(--text);
+    }
+
+    .nav-btn:hover {
+      border-color:var(--cyan);
+      color:var(--cyan);
+    }
+
+    .nav-btn.primary {
+      background:linear-gradient(135deg, var(--blue), var(--cyan));
+      color:#001019;
+      border-color:transparent;
+      font-weight:700;
+      box-shadow:0 0 20px rgba(0,200,255,0.28);
+    }
+
+    main {
+      max-width:1240px;
+      margin:0 auto;
+      padding:145px 40px 80px;
+    }
+
+    .hero {
+      border:1px solid rgba(0,234,255,0.26);
+      border-radius:28px;
+      padding:64px 54px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(0,119,255,0.18), transparent 32%),
+        radial-gradient(circle at 90% 80%, rgba(0,234,255,0.12), transparent 30%),
+        linear-gradient(135deg, rgba(7,21,32,0.94), rgba(0,5,8,0.94));
+      box-shadow:0 0 70px rgba(0,200,255,0.10);
+    }
+
+    .section-label {
+      color:var(--cyan2);
+      font-family:'JetBrains Mono', monospace;
+      font-size:11px;
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    h1 {
+      font-size:clamp(3rem, 7vw, 5.6rem);
+      line-height:0.98;
+      letter-spacing:-0.055em;
+      font-weight:900;
+      max-width:920px;
+    }
+
+    h1 span {
+      background:linear-gradient(90deg, #3aa8ff, var(--cyan2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    .hero p {
+      margin-top:26px;
+      color:var(--muted);
+      font-size:1.16rem;
+      line-height:1.75;
+      max-width:820px;
+      font-weight:300;
+    }
+
+    .hero-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-top:34px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:15px 28px;
+      border-radius:7px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.9rem;
+      letter-spacing:0.04em;
+    }
+
+    .btn-primary {
+      background:linear-gradient(135deg, var(--blue), var(--cyan));
+      color:#001019;
+      box-shadow:0 0 28px rgba(0,200,255,0.30);
+    }
+
+    .btn-secondary {
+      border:1px solid rgba(0,200,255,0.22);
+      color:var(--text);
+      background:rgba(4,13,20,0.5);
+    }
+
+    section.content-section {
+      padding:78px 0 0;
+    }
+
+    .section-head {
+      margin-bottom:30px;
+    }
+
+    h2 {
+      font-size:clamp(2rem, 4vw, 3.1rem);
+      line-height:1.08;
+      font-weight:900;
+      letter-spacing:-0.04em;
+    }
+
+    .section-sub {
+      color:var(--muted);
+      max-width:760px;
+      margin-top:16px;
+      line-height:1.7;
+      font-size:1.02rem;
+    }
+
+    .grid {
+      display:grid;
+      gap:20px;
+    }
+
+    .grid.two {
+      grid-template-columns:repeat(2, 1fr);
+    }
+
+    .grid.three {
+      grid-template-columns:repeat(3, 1fr);
+    }
+
+    .grid.four {
+      grid-template-columns:repeat(4, 1fr);
+    }
+
+    .card {
+      border:1px solid rgba(0,200,255,0.18);
+      border-radius:14px;
+      background:linear-gradient(180deg, rgba(7,21,32,0.84), rgba(4,13,20,0.84));
+      padding:26px;
+    }
+
+    .card strong {
+      display:block;
+      color:var(--cyan2);
+      font-family:'JetBrains Mono', monospace;
+      font-size:0.92rem;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .card p,
+    .card li {
+      color:var(--muted);
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .card ul {
+      padding-left:18px;
+      margin-top:10px;
+    }
+
+    .workflow {
+      display:grid;
+      grid-template-columns:1fr auto 1fr auto 1fr;
+      gap:14px;
+      align-items:center;
+      margin-top:28px;
+    }
+
+    .workflow-box {
+      border:1px solid rgba(0,234,255,0.22);
+      border-radius:14px;
+      padding:22px;
+      background:rgba(4,13,20,0.72);
+      text-align:center;
+      min-height:110px;
+      display:grid;
+      place-items:center;
+      font-family:'JetBrains Mono', monospace;
+      color:var(--cyan2);
+      font-weight:700;
+    }
+
+    .workflow-arrow {
+      color:var(--cyan);
+      font-size:2rem;
+    }
+
+    table {
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(0,200,255,0.18);
+      background:rgba(4,13,20,0.72);
+    }
+
+    th,
+    td {
+      padding:15px 18px;
+      border-bottom:1px solid rgba(0,200,255,0.12);
+      text-align:left;
+      font-size:0.92rem;
+    }
+
+    th {
+      color:var(--cyan2);
+      font-family:'JetBrains Mono', monospace;
+      font-size:0.76rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      background:rgba(0,200,255,0.04);
+    }
+
+    tr:last-child td {
+      border-bottom:none;
+    }
+
+    .ok {
+      color:var(--green);
+      font-weight:700;
+    }
+
+    .code-block {
+      border:1px solid rgba(0,200,255,0.18);
+      border-radius:14px;
+      background:rgba(0,5,8,0.82);
+      padding:22px;
+      overflow:auto;
+      font-family:'JetBrains Mono', monospace;
+      color:var(--cyan2);
+      font-size:0.9rem;
+      line-height:1.75;
+      margin-top:24px;
+    }
+
+    .timeline {
+      position:relative;
+      display:grid;
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .timeline-item {
+      border-left:3px solid var(--cyan);
+      padding:20px 24px;
+      background:rgba(4,13,20,0.72);
+      border-radius:0 14px 14px 0;
+      border-top:1px solid rgba(0,200,255,0.16);
+      border-right:1px solid rgba(0,200,255,0.16);
+      border-bottom:1px solid rgba(0,200,255,0.16);
+    }
+
+    .timeline-item strong {
+      color:var(--cyan2);
+      display:block;
+      margin-bottom:8px;
+      font-family:'JetBrains Mono', monospace;
+      text-transform:uppercase;
+      font-size:0.82rem;
+      letter-spacing:0.08em;
+    }
+
+    .timeline-item p {
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    .highlight {
+      border:1px solid rgba(0,255,153,0.26);
+      border-radius:22px;
+      padding:38px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0,255,153,0.08), transparent 30%),
+        rgba(4,13,20,0.72);
+      margin-top:32px;
+    }
+
+    .highlight h3 {
+      font-size:1.8rem;
+      margin-bottom:12px;
+    }
+
+    .highlight p {
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    footer {
+      border-top:1px solid var(--border);
+      padding:44px 40px;
+      color:var(--muted);
+      text-align:center;
+      position:relative;
+      z-index:1;
+    }
+
+    footer a {
+      color:var(--cyan2);
+      text-decoration:none;
+    }
+
+    @media (max-width:980px) {
+      .nav-links { display:none; }
+      .grid.two,
+      .grid.three,
+      .grid.four {
+        grid-template-columns:1fr 1fr;
+      }
+
+      .workflow {
+        grid-template-columns:1fr;
+      }
+
+      .workflow-arrow {
+        transform:rotate(90deg);
+        text-align:center;
+      }
+    }
+
+    @media (max-width:620px) {
+      nav { padding:14px 18px; }
+      main { padding:125px 20px 60px; }
+      .hero { padding:42px 24px; }
+      .grid.two,
+      .grid.three,
+      .grid.four {
+        grid-template-columns:1fr;
+      }
+
+      th,
+      td {
+        padding:12px 10px;
+        font-size:0.82rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="logo-mark">SB</div>
+      <div class="logo-text">
+        <strong>SlangBit</strong>
+        <span>Engineering</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#workflow">Workflow</a>
+      <a href="#validation">Validation</a>
+      <a href="#certification">Certification</a>
+      <a href="#matrix">Matrix</a>
+    </div>
+
+    <a class="nav-btn primary" href="/">Back to SlangBit</a>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div class="section-label">Engineering Report</div>
+
+      <h1>
+        Built for real work.
+        <span>Tested beyond normal use.</span>
+      </h1>
+
+      <p>
+        SlangBit is not only an offline translation tool. It is a Windows productivity utility designed to bring local AI translation directly into the applications people already use.
+      </p>
+
+      <p>
+        This page summarizes the engineering validation behind SlangBit: real-world workflows, offline architecture, stress testing, Microsoft Store certification investigation and input hardening.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="#validation">Explore Validation</a>
+        <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub Documentation</a>
+      </div>
+    </section>
+
+    <section id="workflow" class="content-section">
+      <div class="section-head">
+        <div class="section-label">Workflow</div>
+        <h2>Translation without leaving your work.</h2>
+        <p class="section-sub">
+          SlangBit was designed to reduce the number of interruptions normally required by translation workflows.
+        </p>
+      </div>
+
+      <div class="workflow">
+        <div class="workflow-box">SELECT & COPY</div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-box">ALT+Z</div>
+        <div class="workflow-arrow">→</div>
+        <div class="workflow-box">KEEP WORKING</div>
+      </div>
+
+      <div class="highlight">
+        <h3>Real-world workflow example</h3>
+        <p>
+          A text can be written in OpenOffice, copied to the clipboard, and translated directly into a browser description field by simply placing the cursor in the target field and pressing ALT+Z.
+        </p>
+        <p>
+          SlangBit reads the clipboard, translates locally, updates the clipboard and inserts the translated text into the active application.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-head">
+        <div class="section-label">Architecture</div>
+        <h2>Offline-first by design.</h2>
+        <p class="section-sub">
+          SlangBit processes translation locally using installed AI language models and an integrated local translation server.
+        </p>
+      </div>
+
+      <div class="grid three">
+        <div class="card">
+          <strong>Windows App</strong>
+          <p>Flutter desktop application with global hotkey, tray integration, clipboard workflow and Package Manager.</p>
+        </div>
+
+        <div class="card">
+          <strong>Local Server</strong>
+          <p>Integrated Python-based local server handling language model discovery, translation requests and input normalization.</p>
+        </div>
+
+        <div class="card">
+          <strong>Local AI Models</strong>
+          <p>CTranslate2 models and Marian tokenizers run directly on the user's computer after language packages are installed.</p>
+        </div>
+      </div>
+
+      <div class="code-block">
+Clipboard → SlangBit Desktop → Local Server → CTranslate2 → Local AI Model → Clipboard → Active Application
+      </div>
+    </section>
+
+    <section id="validation" class="content-section">
+      <div class="section-head">
+        <div class="section-label">Validation</div>
+        <h2>Tested across real Windows workflows.</h2>
+        <p class="section-sub">
+          SlangBit has been validated on practical desktop scenarios, not only on isolated short text samples.
+        </p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Application / Scenario</th>
+            <th>Validated</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Windows Notepad</td><td class="ok">Yes</td><td>Plain text translation workflow</td></tr>
+          <tr><td>Microsoft Edge</td><td class="ok">Yes</td><td>Browser text fields and rendered content</td></tr>
+          <tr><td>Google</td><td class="ok">Yes</td><td>Search fields and browser workflow</td></tr>
+          <tr><td>Gmail</td><td class="ok">Yes</td><td>Email composition workflow</td></tr>
+          <tr><td>Outlook</td><td class="ok">Yes</td><td>Email composition workflow</td></tr>
+          <tr><td>X</td><td class="ok">Yes</td><td>Social media post composition</td></tr>
+          <tr><td>Reddit</td><td class="ok">Yes</td><td>Post and comment workflows</td></tr>
+          <tr><td>Trustpilot</td><td class="ok">Yes</td><td>Review text workflow</td></tr>
+          <tr><td>OpenOffice</td><td class="ok">Yes</td><td>Document text and cross-app insertion</td></tr>
+          <tr><td>Visual Studio Code</td><td class="ok">Yes</td><td>Code and documentation text</td></tr>
+          <tr><td>VSDC Video Editor</td><td class="ok">Yes</td><td>Desktop application text fields</td></tr>
+          <tr><td>Windows Explorer</td><td class="ok">Yes</td><td>Windows interface text workflows</td></tr>
+          <tr><td>Windows folders</td><td class="ok">Yes</td><td>Rename fields and desktop text operations</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="content-section">
+      <div class="section-head">
+        <div class="section-label">Stress Testing</div>
+        <h2>Beyond short sentences.</h2>
+        <p class="section-sub">
+          The validation campaign included long documents, code, markup, formatted text and unusual clipboard content.
+        </p>
+      </div>
+
+      <div class="grid four">
+        <div class="card"><strong>25,000+ characters</strong><p>Long-form text was tested to validate stability beyond simple sentence translation.</p></div>
+        <div class="card"><strong>Source code</strong><p>Dart files, PowerShell commands and technical text were used as stress inputs.</p></div>
+        <div class="card"><strong>HTML & Markdown</strong><p>Simple HTML, complex HTML, rendered HTML, raw source and Markdown were tested.</p></div>
+        <div class="card"><strong>Clipboard automation</strong><p>PowerShell Set-Clipboard workflows were used to simulate automated clipboard input.</p></div>
+      </div>
+    </section>
+
+    <section id="certification" class="content-section">
+      <div class="section-head">
+        <div class="section-label">Certification Investigation</div>
+        <h2>A difficult certification issue became product hardening.</h2>
+        <p class="section-sub">
+          During Microsoft Store certification, an input-related translation failure was investigated through systematic testing.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Initial report</strong>
+          <p>A certification report showed a translation failure involving a long description containing literal HTML line break tags.</p>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Hypothesis testing</strong>
+          <p>Windows environment, startup timing, server warmup, Store description text, README content, HTML, Markdown, clipboard formats and virtual machines were tested.</p>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Reproduction</strong>
+          <p>The issue was reproduced only when long-form text contained repeated literal &lt;br&gt; elements instead of standard line breaks.</p>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Root cause</strong>
+          <p>The translation pipeline was receiving line breaks as literal HTML text, creating an unusual input representation not produced by normal copied text workflows.</p>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Fix</strong>
+          <p>The local server was updated to normalize literal HTML line breaks into standard line breaks before translation.</p>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Result</strong>
+          <p>The previously failing input was translated successfully and the updated build completed Microsoft Store certification.</p>
+        </div>
+      </div>
+
+      <div class="code-block">
+&lt;br&gt; / &lt;br/&gt; / &lt;br /&gt; → input normalization → standard line breaks → local translation
+      </div>
+    </section>
+
+    <section id="matrix" class="content-section">
+      <div class="section-head">
+        <div class="section-label">Reliability Matrix</div>
+        <h2>Validated capabilities.</h2>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>MSIX installation</td><td class="ok">Validated</td></tr>
+          <tr><td>Windows startup</td><td class="ok">Validated</td></tr>
+          <tr><td>System tray</td><td class="ok">Validated</td></tr>
+          <tr><td>Global ALT+Z hotkey</td><td class="ok">Validated</td></tr>
+          <tr><td>Clipboard processing</td><td class="ok">Validated</td></tr>
+          <tr><td>Automatic paste workflow</td><td class="ok">Validated</td></tr>
+          <tr><td>Local translation server</td><td class="ok">Validated</td></tr>
+          <tr><td>Server startup waiting</td><td class="ok">Validated</td></tr>
+          <tr><td>Offline translation</td><td class="ok">Validated</td></tr>
+          <tr><td>Dynamic model discovery</td><td class="ok">Validated</td></tr>
+          <tr><td>Package Manager</td><td class="ok">Validated</td></tr>
+          <tr><td>Language package verification</td><td class="ok">Validated</td></tr>
+          <tr><td>Long documents</td><td class="ok">Validated</td></tr>
+          <tr><td>Source code</td><td class="ok">Validated</td></tr>
+          <tr><td>Markdown</td><td class="ok">Validated</td></tr>
+          <tr><td>HTML content</td><td class="ok">Validated</td></tr>
+          <tr><td>Literal &lt;br&gt; normalization</td><td class="ok">Validated</td></tr>
+          <tr><td>URLs, emails, hashtags and mentions</td><td class="ok">Validated</td></tr>
+          <tr><td>Emoji-aware processing</td><td class="ok">Validated</td></tr>
+          <tr><td>Windows 11 25H2</td><td class="ok">Validated</td></tr>
+          <tr><td>Microsoft Store certification</td><td class="ok">Completed</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="content-section">
+      <div class="highlight">
+        <h3>Testing changed the product.</h3>
+        <p>
+          The result of testing SlangBit was not simply confirmation that it works. Testing exposed an unusual edge case, led to a focused root-cause analysis and produced a stronger input-processing pipeline.
+        </p>
+        <p>
+          SlangBit is now better prepared for real-world clipboard content, malformed input representations and long-form desktop workflows.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="/">Back to SlangBit</a>
+          <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">View GitHub README</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Memmola Labs® · SlangBit Engineering ·
+    <a href="/">slangbit.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
+```
