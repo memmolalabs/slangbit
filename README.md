@@ -520,7 +520,7 @@ During the certification process, additional investigation and validation result
 
 The certification investigation ultimately contributed to further hardening of SlangBit's input-processing pipeline.
 
-The application is currently awaiting final publication.
+The application is available on Microsoft Store.
 
 ---
 
