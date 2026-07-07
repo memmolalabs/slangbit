@@ -609,6 +609,10 @@ SlangBit:
 
 https://slangbit.com
 
+Microsoft Store
+
+https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT
+
 ---
 
 **Translate locally. Work globally. Keep moving.**
