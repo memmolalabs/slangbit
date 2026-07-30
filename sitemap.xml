@@ -17,9 +17,72 @@
 
   <url>
     <loc>https://slangbit.com/docs/privacy.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+
+    <url>
+    <loc>https://slangbit.com/insights/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://slangbit.com/insights/behind-the-scenes-of-local-models.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://slangbit.com/insights/why-an-offline-translation-really-counts.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://slangbit.com/insights/what-happens-to-pasted-text-in-cloud-services.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://slangbit.com/insights/the-hidden-cost-of-the-change-of-application.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://slangbit.com/insights/how-to-translate-directly-into-an-email.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://slangbit.com/insights/how-ALT+Z-works.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
