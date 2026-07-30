@@ -410,6 +410,157 @@
      gap: 16px;
      margin-top: 34px;
    }
+      
+   .insights-preview {
+     position: relative;
+     max-width: 1240px;
+     margin: 0 auto;
+     padding: 72px 40px 90px;
+   }
+
+   .insights-preview .section-head {
+     max-width: 760px;
+     margin: 0 auto 34px;
+     text-align: center;
+   }
+
+   .insights-preview .section-label {
+     margin-bottom: 12px;
+     color: var(--cyan2);
+     font-family: 'JetBrains Mono', monospace;
+     font-size: 0.72rem;
+     letter-spacing: 0.14em;
+     text-transform: uppercase;
+   }
+
+   .insights-preview .section-title {
+     margin-bottom: 16px;
+     font-size: clamp(2rem, 4vw, 3rem);
+     line-height: 1.1;
+     letter-spacing: -0.035em;
+   }
+
+   .insights-preview .section-sub {
+     max-width: 720px;
+     color: var(--muted);
+     font-size: 1rem;
+     line-height: 1.75;
+   }
+
+   .insights-preview-grid {
+     display: grid;
+     grid-template-columns: repeat(4, minmax(0, 1fr));
+     gap: 20px;
+   }
+
+   .insights-preview-card {
+     display: flex;
+     flex-direction: column;
+     min-height: 320px;
+     padding: 26px 24px;
+     border: 1px solid rgba(0, 200, 255, 0.18);
+     border-radius: 14px;
+     background:
+       radial-gradient(
+         circle at 15% 0%,
+         rgba(0, 200, 255, 0.08),
+         transparent 35%
+       ),
+       linear-gradient(
+         180deg,
+         rgba(7, 21, 32, 0.84),
+         rgba(4, 13, 20, 0.84)
+       );
+     box-shadow: 0 0 40px rgba(0, 200, 255, 0.04);
+     transition:
+       transform 0.2s ease,
+       border-color 0.2s ease,
+       box-shadow 0.2s ease;
+   }
+
+   .insights-preview-card:hover {
+     transform: translateY(-4px);
+     border-color: rgba(0, 234, 255, 0.38);
+     box-shadow: 0 0 46px rgba(0, 200, 255, 0.09);
+   }
+
+   .insights-preview-tag {
+     margin-bottom: 18px;
+     color: var(--cyan2);
+     font-family: 'JetBrains Mono', monospace;
+     font-size: 0.68rem;
+     letter-spacing: 0.12em;
+     text-transform: uppercase;
+   }
+
+   .insights-preview-card h3 {
+     margin-bottom: 14px;
+     font-size: 1.18rem;
+     line-height: 1.35;
+   }
+
+   .insights-preview-card h3 a {
+     color: var(--text);
+     text-decoration: none;
+     transition: color 0.2s ease;
+   }
+
+   .insights-preview-card h3 a:hover {
+     color: var(--cyan2);
+   }
+
+   .insights-preview-card p {
+     color: var(--muted);
+     font-size: 0.92rem;
+     line-height: 1.68;
+   }
+
+   .insights-preview-link {
+     display: inline-flex;
+     width: fit-content;
+     margin-top: auto;
+     padding-top: 22px;
+     color: var(--cyan2);
+     font-family: 'JetBrains Mono', monospace;
+     font-size: 0.76rem;
+     letter-spacing: 0.04em;
+     text-decoration: none;
+   }
+
+   .insights-preview-link:hover {
+     color: var(--text);
+   }
+
+   .insights-preview-all {
+     display: flex;
+     justify-content: center;
+     margin-top: 32px;
+   }
+
+   .insights-preview-button {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     padding: 14px 22px;
+     border: 1px solid rgba(0, 234, 255, 0.28);
+     border-radius: 8px;
+     background: rgba(0, 200, 255, 0.06);
+     color: var(--cyan2);
+     font-family: 'JetBrains Mono', monospace;
+     font-size: 0.78rem;
+     letter-spacing: 0.04em;
+     text-decoration: none;
+     transition:
+       transform 0.2s ease,
+       border-color 0.2s ease,
+       background 0.2s ease;
+   }
+
+   .insights-preview-button:hover {
+     transform: translateY(-2px);
+     border-color: var(--cyan2);
+     background: rgba(0, 200, 255, 0.11);
+   }   
 
 @media (max-width: 980px) {
   .validation-grid {
@@ -436,6 +587,7 @@
       .features, .languages-grid, .faq { grid-template-columns: repeat(2, 1fr); }
       .split, .privacy-band, .footer-inner { grid-template-columns: 1fr; }
       .copyright { text-align: left; }
+      .insights-preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }  
     }
     @media (max-width: 620px) {
       nav { padding: 14px 18px; }
@@ -449,6 +601,9 @@
       .workflow-arrow { display: none; }
       th, td { padding: 12px 10px; font-size: 0.82rem; }
       .privacy-band { padding: 30px 22px; }
+      .insights-preview { padding: 58px 20px 72px; }
+      .insights-preview-grid { grid-template-columns: 1fr; }   
+      .insights-preview-card { min-height: auto; }  
     }
   </style>
 </head>
