@@ -1,96 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SlangBit Insights | Offline Translation, Privacy and Windows Workflows</title>
-  <meta name="description" content="Explore SlangBit Insights: practical articles about offline translation, local AI models, privacy, context switching and multilingual Windows workflows.">
+
+  <title>SlangBit Insights | Traduzione offline, privacy e workflow Windows</title>
+  <meta name="description" content="Esplora SlangBit Insights: articoli pratici su traduzione offline, modelli AI locali, privacy, cambio di contesto e workflow Windows multilingua.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://slangbit.com/insights/">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SlangBit">
   <meta property="og:title" content="SlangBit Insights">
-  <meta property="og:description" content="Practical articles about offline translation, privacy, local AI models and better Windows workflows.">
+  <meta property="og:description" content="Articoli pratici su traduzione offline, privacy, AI locale e workflow Windows più efficienti.">
   <meta property="og:url" content="https://slangbit.com/insights/">
+
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="SlangBit Insights">
-  <meta name="twitter:description" content="Offline translation, privacy, local AI and better Windows workflows.">
+  <meta name="twitter:description" content="Traduzione offline, privacy, AI locale e workflow Windows migliori.">
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"CollectionPage",
     "name":"SlangBit Insights",
-    "description":"Practical articles about offline translation, local AI models, privacy, context switching and multilingual Windows workflows.",
+    "description":"Articoli pratici su traduzione offline, modelli AI locali, privacy, cambio di contesto e workflow Windows multilingua.",
     "url":"https://slangbit.com/insights/",
     "isPartOf":{"@type":"WebSite","name":"SlangBit","url":"https://slangbit.com/"},
     "publisher":{"@type":"Organization","name":"Memmola Labs","url":"https://memmolalabs.com/"}
   }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{--bg:#000508;--surface:#040d14;--border:#0d2a40;--border2:rgba(0,200,255,.22);--blue:#0077ff;--cyan:#00c8ff;--cyan2:#00eaff;--green:#00ff99;--text:#e8f4ff;--muted:#7fa0b8;--muted2:#4a7a99}
-    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;min-height:100vh;overflow-x:hidden}
-    body:before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,200,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,.035) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
-    body:after{content:'';position:fixed;inset:0;background:radial-gradient(circle at 20% 10%,rgba(0,119,255,.15),transparent 30%),radial-gradient(circle at 80% 20%,rgba(0,234,255,.12),transparent 28%);pointer-events:none}
-    a{color:inherit}.page{position:relative;z-index:1}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(0,5,8,.86);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
-    .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}.logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--blue),var(--cyan2));border-radius:10px;display:grid;place-items:center;color:#001019;font-family:'JetBrains Mono',monospace;font-weight:900;box-shadow:0 0 24px rgba(0,200,255,.42)}
-    .logo-text{display:flex;flex-direction:column;line-height:1.1}.logo-text strong{font-size:1.35rem}.logo-text span{color:var(--muted);font-size:.78rem}.logo-text b{color:var(--cyan)}
-    .nav-links{display:flex;gap:28px}.nav-links a{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--muted);text-decoration:none;text-transform:uppercase}.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
-    .nav-actions{display:flex;gap:12px}.nav-btn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;padding:11px 18px;border-radius:7px;border:1px solid var(--border2)}.nav-btn.primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#001019;border-color:transparent;font-weight:700}
-    .hero{max-width:1180px;margin:auto;padding:150px 40px 70px;text-align:center}.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,234,255,.28);background:rgba(0,200,255,.08);color:var(--cyan2);border-radius:100px;padding:7px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px}.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
-    .hero h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.98;letter-spacing:-.055em;font-weight:900}.hero h1 span{background:linear-gradient(90deg,#3aa8ff,var(--cyan2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero-sub{margin:26px auto 0;color:var(--muted);font-size:clamp(1rem,1.8vw,1.22rem);line-height:1.75;max-width:760px}
-    .topic-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:34px}.topic-chip{border:1px solid rgba(0,200,255,.18);background:rgba(4,13,20,.72);color:var(--muted);border-radius:100px;padding:9px 14px;font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em}
-    main section{max-width:1240px;margin:auto;padding:52px 40px 80px}.section-head{margin-bottom:34px}.section-label{color:var(--cyan2);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}.section-title{font-size:clamp(1.8rem,4vw,2.75rem);line-height:1.1;font-weight:900;letter-spacing:-.03em}.section-sub{color:var(--muted);max-width:690px;margin-top:14px;line-height:1.7}
-    .featured-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-bottom:28px}.featured-card,.article-card{border:1px solid rgba(0,200,255,.18);border-radius:16px;background:radial-gradient(circle at 15% 0%,rgba(0,200,255,.09),transparent 35%),linear-gradient(180deg,rgba(7,21,32,.86),rgba(4,13,20,.86));box-shadow:0 0 40px rgba(0,200,255,.04);transition:.2s}.featured-card:hover,.article-card:hover{transform:translateY(-4px);border-color:rgba(0,234,255,.36)}
-    .featured-card{min-height:390px;padding:38px;display:flex;flex-direction:column;justify-content:flex-end}.article-tag{width:fit-content;margin-bottom:16px;color:var(--cyan2);font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}.featured-card h2{font-size:clamp(1.85rem,4vw,3rem);line-height:1.08;margin-bottom:16px;letter-spacing:-.03em}.featured-card.secondary h2{font-size:clamp(1.6rem,3vw,2.35rem)}.featured-card h2 a,.article-card h2 a{text-decoration:none}.featured-card h2 a:hover,.article-card h2 a:hover{color:var(--cyan2)}.featured-card p,.article-card p{color:var(--muted);line-height:1.7}
-    .article-meta{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:20px;color:var(--muted2);font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase}.read-link{display:inline-flex;width:fit-content;margin-top:22px;color:var(--cyan2);font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.05em;text-decoration:none}.read-link:hover{color:var(--text)}
-    .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.article-card{min-height:330px;padding:27px 24px;display:flex;flex-direction:column}.article-card h2{font-size:1.28rem;line-height:1.35;margin-bottom:14px}.article-card p{font-size:.93rem}.article-card .read-link{margin-top:auto;padding-top:20px}
-    .about-band{max-width:1160px;margin:0 auto 90px;border:1px solid rgba(0,234,255,.26);border-radius:22px;padding:42px;background:radial-gradient(circle at 15% 20%,rgba(0,234,255,.11),transparent 30%),linear-gradient(135deg,rgba(0,119,255,.08),rgba(0,200,255,.04));display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px}.about-band h2{font-size:clamp(1.8rem,4vw,2.55rem);margin-bottom:12px}.about-band p{color:var(--muted);line-height:1.7;max-width:740px}.btn-primary{display:inline-flex;padding:15px 24px;border-radius:7px;text-decoration:none;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#001019;white-space:nowrap}
-    footer{border-top:1px solid var(--border);padding:44px 40px}.footer-inner{max-width:1240px;margin:auto;display:grid;grid-template-columns:1.3fr repeat(3,1fr) 1.2fr;gap:34px;color:var(--muted)}.footer-brand{display:flex;gap:14px}.footer-brand .logo-mark{width:42px;height:42px}.footer-brand strong{display:block;color:var(--text);font-size:1.2rem}.footer-copy{line-height:1.6;font-size:.9rem;margin-top:14px}.footer-col h2{color:var(--cyan2);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.1em;font-size:.76rem;margin-bottom:14px}.footer-col a{display:block;color:var(--muted);text-decoration:none;margin-bottom:8px;font-size:.9rem}.footer-col a:hover{color:var(--cyan)}.copyright{text-align:right;font-size:.88rem;line-height:1.7}.memmola-badge{display:inline-flex;border:1px solid var(--border2);padding:10px 14px;border-radius:8px;margin-top:16px;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:.78rem}
-    @media(max-width:980px){.nav-links{display:none}.featured-grid,.about-band{grid-template-columns:1fr}.articles-grid{grid-template-columns:repeat(2,1fr)}.footer-inner{grid-template-columns:1fr 1fr}.copyright{text-align:left}}
-    @media(max-width:620px){nav{padding:14px 18px}.nav-actions .nav-btn:not(.primary){display:none}.hero,main section,footer{padding-left:20px;padding-right:20px}.hero{padding-top:128px}.articles-grid,.footer-inner{grid-template-columns:1fr}.featured-card{min-height:340px;padding:28px 24px}.about-band{margin-left:20px;margin-right:20px;padding:30px 22px}}
+    :root{
+      --bg:#fff;--surface:#f7f9fc;--line:#dfe7f0;--text:#101828;
+      --muted:#667085;--blue:#2f73ff;--cyan:#19c8e8;--green:#18a66a
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:#fff;color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+      overflow-x:hidden
+    }
+    a{color:inherit}
+    nav{
+      position:sticky;top:0;z-index:100;height:64px;padding:0 2.5vw;
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(255,255,255,.94);border-bottom:1px solid rgba(16,24,40,.08);
+      backdrop-filter:blur(18px)
+    }
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-mark{
+      width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;font-weight:900;font-size:12px
+    }
+    .logo-text{display:flex;flex-direction:column;line-height:1.05}
+    .logo-text strong{font-size:14px;font-weight:850}
+    .logo-text span{font-size:9px;color:#7b8796}
+    .logo-text b{color:var(--blue)}
+    .nav-links{display:flex;gap:23px;align-items:center}
+    .nav-links a{text-decoration:none;text-transform:uppercase;font-size:10px;font-weight:750;letter-spacing:.07em;color:#334155}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue)}
+    .nav-actions{display:flex;gap:9px}
+    .nav-btn{
+      min-height:36px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;
+      text-decoration:none;border:1px solid #d5dee8;border-radius:8px;font-size:10px;font-weight:800;color:#334155;background:#fff
+    }
+    .nav-btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+
+    .hero{
+      min-height:calc(100vh - 64px);padding:7vh 3vw 5vh;
+      display:flex;flex-direction:column;justify-content:center;
+      background:
+        radial-gradient(circle at 78% 22%,rgba(47,115,255,.11),transparent 23%),
+        radial-gradient(circle at 68% 74%,rgba(25,200,232,.08),transparent 22%),
+        linear-gradient(180deg,#fff,#fbfdff)
+    }
+    .hero-inner{max-width:1600px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;
+      border:1px solid #dbe5f0;background:#f7fbff;color:#4b647a;
+      font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px
+    }
+    .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+    .hero h1{
+      font-size:clamp(4.7rem,9vw,10rem);line-height:.84;letter-spacing:-.065em;max-width:1550px
+    }
+    .hero h1 span{
+      display:block;background:linear-gradient(90deg,var(--blue),var(--cyan));
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .hero-sub{
+      margin-top:22px;color:#5f6b7b;font-size:clamp(1.05rem,1.35vw,1.35rem);
+      line-height:1.68;max-width:1050px
+    }
+    .topic-nav{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+    .topic-chip{
+      border:1px solid #dce4ed;background:#fff;color:#607085;border-radius:999px;
+      padding:8px 12px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase
+    }
+
+    main section{width:100%;padding:64px 2.8vw 72px}
+    .section-head{max-width:1100px;margin-bottom:30px}
+    .section-label{color:#7b8795;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}
+    .section-title{font-size:clamp(2.8rem,4.8vw,5.4rem);line-height:.97;letter-spacing:-.05em}
+    .section-sub{color:var(--muted);max-width:850px;margin-top:13px;line-height:1.7}
+
+    .featured-grid{
+      display:grid;grid-template-columns:1.35fr .65fr;gap:14px;margin-bottom:14px
+    }
+    .featured-card,.article-card{
+      border:1px solid var(--line);border-radius:20px;background:#fff;
+      box-shadow:0 12px 34px rgba(38,59,84,.045);transition:.18s ease
+    }
+    .featured-card:hover,.article-card:hover{transform:translateY(-2px);border-color:#cbd8e6}
+    .featured-card{
+      min-height:410px;padding:34px;display:flex;flex-direction:column;justify-content:flex-end;
+      background:
+        radial-gradient(circle at 90% 10%,rgba(47,115,255,.10),transparent 28%),
+        linear-gradient(180deg,#fff,#fbfdff)
+    }
+    .featured-card.secondary{
+      background:
+        radial-gradient(circle at 80% 12%,rgba(25,200,232,.10),transparent 28%),
+        linear-gradient(180deg,#fff,#fbfdff)
+    }
+    .article-tag{
+      width:fit-content;margin-bottom:14px;color:var(--blue);
+      font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase
+    }
+    .featured-card h2{font-size:clamp(2rem,3.7vw,4.3rem);line-height:1;letter-spacing:-.045em;margin-bottom:14px}
+    .featured-card.secondary h2{font-size:clamp(1.8rem,2.8vw,3.2rem)}
+    .featured-card h2 a,.article-card h2 a{text-decoration:none}
+    .featured-card h2 a:hover,.article-card h2 a:hover{color:var(--blue)}
+    .featured-card p,.article-card p{color:var(--muted);line-height:1.66}
+    .article-meta{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:17px;color:#8a98a9;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+    .read-link{display:inline-flex;width:fit-content;margin-top:20px;color:var(--blue);font-size:11px;font-weight:800;text-decoration:none}
+
+    .articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .article-card{min-height:300px;padding:24px;display:flex;flex-direction:column}
+    .article-card h2{font-size:1.3rem;line-height:1.32;margin-bottom:12px}
+    .article-card p{font-size:.92rem}
+    .article-card .read-link{margin-top:auto;padding-top:18px}
+
+    .about-band{
+      margin:0 2.8vw 76px;border:1px solid #dce5ef;border-radius:22px;padding:42px 3vw;
+      background:
+        radial-gradient(circle at 86% 20%,rgba(47,115,255,.10),transparent 22%),
+        linear-gradient(135deg,#f8fbff,#fff);
+      display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px
+    }
+    .about-band h2{font-size:clamp(2rem,4vw,4rem);letter-spacing:-.045em;margin-bottom:10px}
+    .about-band p{color:var(--muted);line-height:1.7;max-width:800px}
+    .btn-primary{
+      display:inline-flex;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:800;
+      background:var(--blue);color:#fff;white-space:nowrap;font-size:11px
+    }
+
+    footer{border-top:1px solid #e6ebf1;padding:42px 2.8vw;background:#fff}
+    .footer-inner{width:100%;display:grid;grid-template-columns:1.3fr repeat(3,1fr) 1.2fr;gap:30px;color:var(--muted)}
+    .footer-brand{display:flex;gap:12px}.footer-brand .logo-mark{width:34px;height:34px}
+    .footer-brand strong{display:block;color:var(--text);font-size:1.08rem}
+    .footer-copy{line-height:1.6;font-size:.88rem;margin-top:12px}
+    .footer-col h2{color:#475467;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;margin-bottom:12px}
+    .footer-col a{display:block;color:var(--muted);text-decoration:none;margin-bottom:7px;font-size:.88rem}
+    .footer-col a:hover{color:var(--blue)}
+    .copyright{text-align:right;font-size:.85rem;line-height:1.7}
+    .memmola-badge{display:inline-flex;border:1px solid #dce4ed;padding:8px 11px;border-radius:7px;margin-top:14px;color:#475467;font-size:.72rem;font-weight:800}
+
+    @media(min-width:1600px){
+      .featured-card{min-height:440px}
+      .article-card{min-height:280px}
+    }
+    @media(max-width:1050px){
+      .nav-links{display:none}
+      .hero{padding:60px 20px 50px}
+      .featured-grid,.about-band{grid-template-columns:1fr}
+      .articles-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-inner{grid-template-columns:1fr 1fr}
+      .copyright{text-align:left}
+    }
+    @media(max-width:650px){
+      nav{padding:0 16px}.nav-actions .nav-btn:not(.primary){display:none}
+      .hero{min-height:auto;padding:48px 18px 42px}
+      .hero h1{font-size:4rem}
+      main section{padding:52px 16px 58px}
+      .articles-grid,.footer-inner{grid-template-columns:1fr}
+      .featured-card{min-height:340px;padding:26px 22px}
+      .about-band{margin:0 16px 56px;padding:28px 22px}
+    }
   </style>
 </head>
 <body>
-<div class="page">
+
 <nav>
-  <a href="/" class="nav-logo" aria-label="SlangBit home"><div class="logo-mark">SB</div><div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div></a>
-  <div class="nav-links"><a href="/">Product</a><a href="/#how">How it works</a><a href="/#privacy">Privacy</a><a href="/insights/" class="active">Insights</a><a href="/#faq">FAQ</a></div>
-  <div class="nav-actions"><a class="nav-btn" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a><a class="nav-btn primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">Microsoft Store</a></div>
+  <a href="/" class="nav-logo" aria-label="SlangBit home">
+    <div class="logo-mark">SB</div>
+    <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
+  </a>
+  <div class="nav-links">
+    <a href="/">Prodotto</a>
+    <a href="/#how">Come funziona</a>
+    <a href="/#privacy">Privacy</a>
+    <a href="/insights/" class="active">Insights</a>
+    <a href="/#faq">FAQ</a>
+  </div>
+  <div class="nav-actions">
+    <a class="nav-btn" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a class="nav-btn primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+  </div>
 </nav>
+
 <main>
-<header class="hero">
-  <div class="badge"><span class="badge-dot"></span>SlangBit Insights</div>
-  <h1>Translation, privacy and <span>better Windows workflows.</span></h1>
-  <p class="hero-sub">Practical articles about offline translation, local AI models, private text, context switching and the product decisions behind SlangBit.</p>
-  <div class="topic-nav"><span class="topic-chip">Local AI</span><span class="topic-chip">Privacy</span><span class="topic-chip">Workflow</span><span class="topic-chip">Tutorials</span><span class="topic-chip">Product philosophy</span></div>
-</header>
-<section aria-labelledby="featured-title">
-  <div class="section-head"><div class="section-label">Start here</div><h2 class="section-title" id="featured-title">Featured insights</h2><p class="section-sub">The core ideas behind local translation: how the models work, what changes when text stays on the device, and why workflow design matters.</p></div>
-  <div class="featured-grid">
-    <article class="featured-card"><div class="article-tag">Local AI</div><h2><a href="behind-the-scenes-of-local-models.html">Behind the Scenes of Local Translation Models</a></h2><p>A practical look at model files, tokenization, CTranslate2, OPUS-MT and the steps required to generate a translation locally.</p><div class="article-meta"><span>Technical insight</span><span>9 min read</span></div><a class="read-link" href="behind-the-scenes-of-local-models.html">Read the insight →</a></article>
-    <article class="featured-card secondary"><div class="article-tag">Privacy</div><h2><a href="what-happens-to-pasted-text-in-cloud-services.html">What Happens to Text Pasted into Cloud Services?</a></h2><p>What external processing, retention and metadata can mean, and how local translation changes the path followed by the text.</p><div class="article-meta"><span>Data and privacy</span><span>8 min read</span></div><a class="read-link" href="what-happens-to-pasted-text-in-cloud-services.html">Read the insight →</a></article>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="badge"><span class="badge-dot"></span> SlangBit Insights</div>
+      <h1>Traduzione, privacy e<span>workflow Windows migliori.</span></h1>
+      <p class="hero-sub">Articoli pratici sulla traduzione offline, sui modelli AI locali, sulla privacy del testo, sul cambio di contesto e sulle scelte di prodotto dietro SlangBit.</p>
+      <div class="topic-nav">
+        <span class="topic-chip">AI locale</span>
+        <span class="topic-chip">Privacy</span>
+        <span class="topic-chip">Workflow</span>
+        <span class="topic-chip">Tutorial</span>
+        <span class="topic-chip">Filosofia del prodotto</span>
+      </div>
+    </div>
+  </header>
+
+  <section aria-labelledby="featured-title">
+    <div class="section-head">
+      <div class="section-label">Da dove iniziare</div>
+      <h2 class="section-title" id="featured-title">Insights in evidenza</h2>
+      <p class="section-sub">Le idee centrali dietro la traduzione locale: come funzionano i modelli, cosa cambia quando il testo resta sul dispositivo e perché il design del workflow conta.</p>
+    </div>
+
+    <div class="featured-grid">
+      <article class="featured-card">
+        <div class="article-tag">AI locale</div>
+        <h2><a href="behind-the-scenes-of-local-models.html">Dietro le quinte dei modelli di traduzione locali</a></h2>
+        <p>Uno sguardo pratico ai file dei modelli, alla tokenizzazione, a CTranslate2, OPUS-MT e ai passaggi necessari per generare una traduzione localmente.</p>
+        <div class="article-meta"><span>Approfondimento tecnico</span><span>9 min di lettura</span></div>
+        <a class="read-link" href="behind-the-scenes-of-local-models.html">Leggi l'insight →</a>
+      </article>
+
+      <article class="featured-card secondary">
+        <div class="article-tag">Privacy</div>
+        <h2><a href="what-happens-to-pasted-text-in-cloud-services.html">Cosa succede al testo incollato nei servizi cloud?</a></h2>
+        <p>Cosa possono significare elaborazione esterna, conservazione e metadati, e come la traduzione locale cambia il percorso seguito dal testo.</p>
+        <div class="article-meta"><span>Dati e privacy</span><span>8 min di lettura</span></div>
+        <a class="read-link" href="what-happens-to-pasted-text-in-cloud-services.html">Leggi l'insight →</a>
+      </article>
+    </div>
+
+    <div class="articles-grid">
+      <article class="article-card">
+        <div class="article-tag">Traduzione offline</div>
+        <h2><a href="why-an-offline-translation-really-counts.html">Perché la traduzione offline conta davvero</a></h2>
+        <p>La traduzione offline non significa soltanto lavorare senza Wi‑Fi. Cambia privacy, disponibilità e controllo sul workflow.</p>
+        <div class="article-meta"><span>8 min di lettura</span></div>
+        <a class="read-link" href="why-an-offline-translation-really-counts.html">Leggi l'insight →</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-tag">Workflow</div>
+        <h2><a href="the-hidden-cost-of-the-change-of-application.html">Il costo nascosto del cambio di applicazione</a></h2>
+        <p>Tradurre può richiedere pochi secondi. Lasciare il compito corrente e recuperare la concentrazione può costare molto di più.</p>
+        <div class="article-meta"><span>7 min di lettura</span></div>
+        <a class="read-link" href="the-hidden-cost-of-the-change-of-application.html">Leggi l'insight →</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-tag">Filosofia del prodotto</div>
+        <h2><a href="why-we-chose-a-one-time-purchase.html">Perché abbiamo scelto un acquisto una tantum</a></h2>
+        <p>Perché una utility Windows offline non deve necessariamente diventare un altro abbonamento ricorrente.</p>
+        <div class="article-meta"><span>7 min di lettura</span></div>
+        <a class="read-link" href="why-we-chose-a-one-time-purchase.html">Leggi l'insight →</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-tag">Tutorial email</div>
+        <h2><a href="how-to-translate-directly-into-an-email.html">Come tradurre direttamente dentro un'email</a></h2>
+        <p>Traduci passaggi selezionati mantenendo visibili il messaggio, la sua struttura e il contesto di scrittura.</p>
+        <div class="article-meta"><span>7 min di lettura</span></div>
+        <a class="read-link" href="how-to-translate-directly-into-an-email.html">Leggi la guida →</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-tag">Workflow social</div>
+        <h2><a href="how-to-translate-a-post-without-leaving-X.html">Come tradurre un post senza uscire da X</a></h2>
+        <p>Mantieni il ritmo di una bozza o di una risposta mentre controlli tono, lunghezza, hashtag, menzioni e contesto.</p>
+        <div class="article-meta"><span>7 min di lettura</span></div>
+        <a class="read-link" href="how-to-translate-a-post-without-leaving-X.html">Leggi la guida →</a>
+      </article>
+
+      <article class="article-card">
+        <div class="article-tag">ALT + Z</div>
+        <h2><a href="how-ALT+Z-works.html">Come funziona ALT + Z in SlangBit</a></h2>
+        <p>Come la scorciatoia globale collega gli appunti, il pacchetto lingua selezionato e il motore di traduzione locale.</p>
+        <div class="article-meta"><span>7 min di lettura</span></div>
+        <a class="read-link" href="how-ALT+Z-works.html">Leggi l'insight →</a>
+      </article>
+    </div>
+  </section>
+
+  <div class="about-band">
+    <div>
+      <h2>Cos'è SlangBit</h2>
+      <p>SlangBit è una utility di traduzione offline per Windows. Usa modelli linguistici installati localmente e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.</p>
+    </div>
+    <a class="btn-primary" href="/">Scopri SlangBit</a>
   </div>
-  <div class="articles-grid">
-    <article class="article-card"><div class="article-tag">Offline translation</div><h2><a href="why-an-offline-translation-really-counts.html">Why Offline Translation Really Matters</a></h2><p>Offline translation is not only about working without Wi-Fi. It changes privacy, availability and control over the workflow.</p><div class="article-meta"><span>8 min read</span></div><a class="read-link" href="why-an-offline-translation-really-counts.html">Read the insight →</a></article>
-    <article class="article-card"><div class="article-tag">Workflow</div><h2><a href="the-hidden-cost-of-the-change-of-application.html">The Hidden Cost of Switching Applications</a></h2><p>Translation may take seconds. Leaving the current task and recovering concentration can cost much more.</p><div class="article-meta"><span>7 min read</span></div><a class="read-link" href="the-hidden-cost-of-the-change-of-application.html">Read the insight →</a></article>
-    <article class="article-card"><div class="article-tag">Product philosophy</div><h2><a href="why-we-chose-a-one-time-purchase.html">Why We Chose a One-Time Purchase</a></h2><p>Why an offline Windows utility does not necessarily need to become another recurring subscription.</p><div class="article-meta"><span>7 min read</span></div><a class="read-link" href="why-we-chose-a-one-time-purchase.html">Read the insight →</a></article>
-    <article class="article-card"><div class="article-tag">Email tutorial</div><h2><a href="how-to-translate-directly-into-an-email.html">How to Translate Directly in an Email</a></h2><p>Translate selected passages while keeping the message, its structure and the writing context visible.</p><div class="article-meta"><span>7 min read</span></div><a class="read-link" href="how-to-translate-directly-into-an-email.html">Read the guide →</a></article>
-    <article class="article-card"><div class="article-tag">Social workflow</div><h2><a href="how-to-translate-a-post-without-leaving-X.html">How to Translate a Post Without Leaving X</a></h2><p>Keep the rhythm of a draft or reply while reviewing tone, length, hashtags, mentions and context.</p><div class="article-meta"><span>7 min read</span></div><a class="read-link" href="how-to-translate-a-post-without-leaving-X.html">Read the guide →</a></article>
-    <article class="article-card"><div class="article-tag">ALT + Z</div><h2><a href="how-ALT+Z-works.html">How ALT+Z Works in SlangBit</a></h2><p>How the global shortcut connects the clipboard, selected language package and local translation engine.</p><div class="article-meta"><span>7 min read</span></div><a class="read-link" href="how-ALT+Z-works.html">Read the insight →</a></article>
-  </div>
-</section>
-<div class="about-band"><div><h2>About SlangBit</h2><p>SlangBit is an offline translation utility for Windows. It uses locally installed language models and a global keyboard shortcut to translate copied text without opening a separate translation website.</p></div><a class="btn-primary" href="/">Explore SlangBit</a></div>
 </main>
-<footer><div class="footer-inner">
-  <div><div class="footer-brand"><div class="logo-mark">SB</div><div><strong>SlangBit</strong><span>by Memmola Labs®</span></div></div><p class="footer-copy">Desktop AI translation for Windows. Offline. Private. Practical.</p></div>
-  <div class="footer-col"><h2>Product</h2><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#languages">Languages</a><a href="/#download">Download</a></div>
-  <div class="footer-col"><h2>Insights</h2><a href="behind-the-scenes-of-local-models.html">Local models</a><a href="why-an-offline-translation-really-counts.html">Offline translation</a><a href="the-hidden-cost-of-the-change-of-application.html">Windows workflows</a></div>
-  <div class="footer-col"><h2>Resources</h2><a href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a><a href="/README.md">README</a><a href="/CHANGELOG.md">Changelog</a></div>
-  <div class="copyright">© 2026 Memmola Labs®<br>All rights reserved.<div class="memmola-badge">MEMMOLA LABS</div></div>
-</div></footer>
-</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><div class="logo-mark">SB</div><div><strong>SlangBit</strong><span>by Memmola Labs®</span></div></div>
+      <p class="footer-copy">Traduzione AI desktop per Windows. Offline. Privata. Pratica.</p>
+    </div>
+    <div class="footer-col"><h2>Prodotto</h2><a href="/#features">Funzioni</a><a href="/#how">Come funziona</a><a href="/#languages">Lingue</a><a href="/#download">Download</a></div>
+    <div class="footer-col"><h2>Insights</h2><a href="behind-the-scenes-of-local-models.html">Modelli locali</a><a href="why-an-offline-translation-really-counts.html">Traduzione offline</a><a href="the-hidden-cost-of-the-change-of-application.html">Workflow Windows</a></div>
+    <div class="footer-col"><h2>Risorse</h2><a href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a><a href="/README.md">README</a><a href="/CHANGELOG.md">Changelog</a></div>
+    <div class="copyright">© 2026 Memmola Labs®<br>Tutti i diritti riservati.<div class="memmola-badge">MEMMOLA LABS</div></div>
+  </div>
+</footer>
+
 </body>
 </html>
