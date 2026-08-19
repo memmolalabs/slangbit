@@ -405,6 +405,89 @@ section{
 }
 </style>
 
+
+<style>
+/* ===== SlangBit visual-only hero ===== */
+.hero-visual-only{
+  min-height:calc(100vh - 64px)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:18px 1.6vw 10px!important;
+  background:
+    linear-gradient(180deg,#ffffff 0%,#fbfdff 100%)!important;
+}
+.hero-panel-only{
+  width:100%!important;
+  min-height:calc(100vh - 92px)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  position:relative!important;
+}
+.hero-panel-only::before{
+  content:""!important;
+  position:absolute!important;
+  inset:7% 5%!important;
+  width:auto!important;
+  aspect-ratio:auto!important;
+  border-radius:50%!important;
+  background:
+    radial-gradient(circle at 50% 48%,rgba(47,115,255,.08),rgba(25,200,232,.025) 48%,transparent 72%)!important;
+  filter:blur(8px)!important;
+  z-index:-1!important;
+}
+.hero-image-only{
+  width:min(96vw,1900px)!important;
+  max-width:none!important;
+  height:auto!important;
+  transform:none!important;
+  filter:none!important;
+  object-fit:contain!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 3%,#000 97%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0,#000 3%,#000 97%,transparent 100%)!important;
+}
+
+/* Bring the first content section close enough to feel like a continuation */
+.hero-visual-only + #how{
+  padding-top:48px!important;
+}
+
+@media(min-width:1600px){
+  .hero-visual-only{
+    padding-left:1vw!important;
+    padding-right:1vw!important;
+  }
+  .hero-image-only{
+    width:min(97vw,2100px)!important;
+  }
+}
+@media(max-width:1050px){
+  .hero-visual-only{
+    min-height:auto!important;
+    padding:22px 10px 4px!important;
+  }
+  .hero-panel-only{
+    min-height:auto!important;
+  }
+  .hero-image-only{
+    width:112vw!important;
+    max-width:none!important;
+  }
+  .hero-visual-only + #how{
+    padding-top:34px!important;
+  }
+}
+@media(max-width:650px){
+  .hero-visual-only{
+    padding:18px 0 0!important;
+  }
+  .hero-image-only{
+    width:128vw!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="page">
@@ -425,19 +508,9 @@ section{
 </nav>
 
 <main>
-<section class="hero">
-  <div class="hero-left">
-    <div class="badge"><span class="badge-dot"></span> 100% offline · 100% privato</div>
-    <h1>Traduci ovunque.<br><span>Senza uscire da quello che stai facendo.</span></h1>
-    <p class="hero-sub">SlangBit è una utility leggera per Windows che traduce il testo selezionato direttamente nel tuo flusso di lavoro. Copia, premi <strong>ALT + Z</strong> e continua.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT">▣ Scarica per Windows</a>
-      <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">Progetto GitHub</a>
-    </div>
-    <div class="privacy-line">🛡️ <span>I tuoi dati non lasciano mai il tuo computer.</span></div>
-  </div>
-  <div class="hero-panel" aria-label="SlangBit">
-    <img class="hero-image" src="images/slangbit_immagine.png" alt="SlangBit per Windows">
+<section class="hero hero-visual-only">
+  <div class="hero-panel hero-panel-only" aria-label="SlangBit per Windows">
+    <img class="hero-image hero-image-only" src="images/slangbit_immagine.png" alt="SlangBit per Windows">
   </div>
 </section>
 
