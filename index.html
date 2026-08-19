@@ -204,7 +204,208 @@ footer{border-top:1px solid #e6ebf1;padding:42px 3.5vw;background:#fff}
   nav{padding:0 18px}.nav-actions .nav-btn:not(.primary){display:none}.hero{padding:38px 18px 18px;min-height:auto}.hero h1{font-size:4.1rem}.hero-panel{min-height:300px}.hero-image{width:118%;max-width:none}
   section{padding:64px 18px}.features,.languages-grid,.faq,.validation-grid,.insights-preview-grid{grid-template-columns:1fr}.step-card{grid-template-columns:1fr}.privacy-band{padding:28px 22px}.footer-inner{gap:22px}
 }
-</style></head>
+</style>
+<style>
+/* ===== SlangBit wide / full-screen refinement ===== */
+body{background:#fff}
+
+/* Remove the "central column" feeling */
+.hero,
+section,
+.insights-preview{
+  max-width:none!important;
+  width:100%!important;
+}
+
+/* Hero: use almost the full viewport, with a much larger product visual */
+.hero{
+  min-height:calc(100vh - 64px);
+  padding:42px 2.2vw 20px!important;
+  grid-template-columns:minmax(420px,.68fr) minmax(820px,1.32fr)!important;
+  gap:1.2vw!important;
+}
+.hero-left{
+  padding-left:2vw!important;
+  max-width:760px;
+}
+.hero h1{
+  font-size:clamp(4.8rem,7.4vw,9.2rem)!important;
+}
+.hero-sub{
+  max-width:720px!important;
+  font-size:clamp(1.05rem,1.35vw,1.35rem)!important;
+}
+.hero-panel{
+  min-height:calc(100vh - 105px)!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.hero-image{
+  width:112%!important;
+  max-width:none!important;
+  transform:translateX(-1.5%);
+}
+
+/* Every content section becomes a real wide composition */
+section{
+  padding:64px 2.8vw!important;
+}
+.section-head{
+  max-width:1120px;
+  margin:0 0 30px 0!important;
+}
+.section-title{
+  font-size:clamp(2.5rem,3.4vw,4.5rem)!important;
+}
+.section-sub{
+  max-width:900px!important;
+}
+
+/* Workflow spans almost the whole screen */
+.steps{
+  grid-template-columns:1fr 36px 1fr 36px 1fr!important;
+  gap:12px!important;
+}
+.step-card{
+  min-height:150px!important;
+  padding:24px 26px!important;
+}
+
+/* Four feature cards are broader and less "stacked" */
+.features{
+  gap:14px!important;
+}
+.feature-card{
+  min-height:185px!important;
+  padding:24px 24px!important;
+}
+
+/* Languages as a single wide ribbon */
+.languages-grid{
+  grid-template-columns:repeat(6,minmax(150px,1fr))!important;
+  gap:12px!important;
+}
+
+/* Comparison / architecture: stronger lateral layout */
+.split{
+  grid-template-columns:1.45fr .55fr!important;
+  gap:28px!important;
+}
+.arch-card{
+  min-height:72px;
+}
+
+/* Engineering block uses full browser width */
+.validation-banner{
+  width:100%!important;
+  border-radius:20px!important;
+  padding:42px 3vw!important;
+}
+.validation-header{
+  max-width:1050px;
+}
+.validation-description{
+  max-width:1050px!important;
+}
+.validation-grid{
+  gap:12px!important;
+}
+
+/* Privacy is a wide horizontal band */
+.privacy-band{
+  width:100%!important;
+  padding:38px 3vw!important;
+  border-radius:18px!important;
+  grid-template-columns:1.5fr auto!important;
+}
+
+/* FAQ: four columns on wide displays to shorten page length */
+.faq{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+}
+.faq-item{
+  min-height:190px;
+}
+
+/* Download section is broad and lower */
+.download-panel{
+  width:100%!important;
+  border-radius:20px!important;
+  padding:42px 3vw!important;
+}
+
+/* Insights on one single wide row */
+.insights-preview{
+  padding:64px 2.8vw 72px!important;
+}
+.insights-preview-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+}
+.insights-preview-card{
+  min-height:250px!important;
+}
+
+/* Footer uses the browser width */
+.footer-inner{
+  max-width:none!important;
+  width:100%!important;
+}
+
+/* Very large desktop tuning */
+@media(min-width:1600px){
+  nav{padding-left:2.5vw!important;padding-right:2.5vw!important}
+  .hero{
+    grid-template-columns:minmax(500px,.62fr) minmax(980px,1.38fr)!important;
+  }
+  .hero-left{padding-left:2.2vw!important}
+  .hero-image{width:118%!important}
+  section{padding-left:2.5vw!important;padding-right:2.5vw!important}
+  .feature-card{min-height:175px!important}
+}
+
+/* Keep tablet/mobile intentionally different: full width but stacked */
+@media(max-width:1050px){
+  .hero{
+    grid-template-columns:1fr!important;
+    padding:40px 18px 12px!important;
+  }
+  .hero-left{
+    padding-left:0!important;
+    max-width:none!important;
+    text-align:center!important;
+  }
+  .hero-panel{
+    min-height:430px!important;
+  }
+  .hero-image{
+    width:110%!important;
+    transform:none!important;
+  }
+  section{padding:58px 20px!important}
+  .steps{grid-template-columns:1fr!important}
+  .features{grid-template-columns:repeat(2,1fr)!important}
+  .languages-grid{grid-template-columns:repeat(3,1fr)!important}
+  .split{grid-template-columns:1fr!important}
+  .faq{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:650px){
+  .hero{padding:34px 14px 8px!important}
+  .hero h1{font-size:4.2rem!important}
+  .hero-panel{min-height:300px!important}
+  .hero-image{width:122%!important}
+  section{padding:50px 16px!important}
+  .features,
+  .languages-grid,
+  .faq,
+  .validation-grid,
+  .insights-preview-grid{grid-template-columns:1fr!important}
+  .privacy-band{grid-template-columns:1fr!important}
+}
+</style>
+
+</head>
 <body>
 <div class="page">
 
