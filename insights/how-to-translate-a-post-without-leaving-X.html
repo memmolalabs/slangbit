@@ -113,6 +113,99 @@ summary{cursor:pointer;font-weight:800}details p{margin:14px 0 0}
 footer{border-top:1px solid var(--line);padding:44px 4vw}.footer{max-width:1280px;margin:auto;display:flex;justify-content:space-between;gap:30px;color:var(--muted)}.footer a{color:var(--muted);text-decoration:none}.footer a:hover{color:var(--blue)}
 @media(max-width:980px){.nav-links{display:none}.layout{grid-template-columns:1fr}.workflow{grid-template-columns:repeat(2,1fr)}.principles{grid-template-columns:1fr}.comparison{grid-template-columns:1fr}aside{position:static;order:-1}.hero{min-height:auto}}
 @media(max-width:620px){nav{padding:13px 18px}.nav-btn{padding:9px 11px;font-size:9px}.hero,.layout,footer{padding-left:20px;padding-right:20px}.hero{padding-top:125px;padding-bottom:65px}h1{font-size:clamp(3rem,16vw,4.5rem);line-height:.91}.cards,.workflow{grid-template-columns:1fr}.footer{flex-direction:column}.logo-text span{display:none}}
+
+
+/* ===== FULL-WIDTH INSIGHTS LAYOUT ===== */
+.hero{
+  max-width:none !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:170px 4vw 95px !important;
+}
+
+.hero > *{
+  max-width:none;
+}
+
+h1{
+  max-width:none !important;
+  width:min(92vw, 1500px) !important;
+}
+
+.intro{
+  max-width:1050px !important;
+}
+
+.layout{
+  max-width:none !important;
+  width:100% !important;
+  margin:0 !important;
+  padding:20px 4vw 110px !important;
+  grid-template-columns:minmax(0,1fr) minmax(250px,320px) !important;
+  gap:4vw !important;
+}
+
+article{
+  min-width:0;
+  width:100%;
+}
+
+article section{
+  width:100%;
+}
+
+aside{
+  width:100%;
+}
+
+.footer{
+  max-width:none !important;
+  width:100% !important;
+}
+
+.workflow{
+  grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+}
+
+.cards,
+.comparison{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+}
+
+.principles{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+
+@media(min-width:1500px){
+  .hero{
+    padding-left:4vw !important;
+    padding-right:4vw !important;
+  }
+  .layout{
+    padding-left:4vw !important;
+    padding-right:4vw !important;
+    grid-template-columns:minmax(0,1fr) 300px !important;
+  }
+}
+
+@media(max-width:1100px){
+  .layout{
+    grid-template-columns:1fr !important;
+  }
+  aside{
+    position:static !important;
+  }
+}
+
+@media(max-width:620px){
+  .hero{
+    padding:125px 20px 65px !important;
+  }
+  .layout{
+    padding:15px 20px 80px !important;
+  }
+}
+
 </style>
 
 </head>
