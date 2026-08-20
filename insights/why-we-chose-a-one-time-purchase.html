@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Why We Chose a One-Time Purchase | SlangBit</title>
-  <meta name="description" content="Why SlangBit uses a one-time purchase instead of a recurring subscription, and how that choice fits an offline Windows utility.">
+  <title>Perché abbiamo scelto l’acquisto una tantum | SlangBit</title>
+  <meta name="description" content="Perché SlangBit utilizza un acquisto una tantum invece di un abbonamento ricorrente e perché questa scelta è coerente con una utility Windows offline.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="SlangBit">
-  <meta property="og:title" content="Why We Chose a One-Time Purchase">
-  <meta property="og:description" content="A practical explanation of why SlangBit is sold as a one-time purchase instead of a recurring subscription.">
+  <meta property="og:title" content="Perché abbiamo scelto l’acquisto una tantum">
+  <meta property="og:description" content="Una spiegazione pratica del perché SlangBit viene venduto con un acquisto una tantum invece di un abbonamento ricorrente.">
   <meta property="og:url" content="https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Why We Chose a One-Time Purchase">
-  <meta name="twitter:description" content="Why an offline Windows utility does not necessarily need a subscription.">
+  <meta name="twitter:title" content="Perché abbiamo scelto l’acquisto una tantum">
+  <meta name="twitter:description" content="Perché una utility Windows offline non ha necessariamente bisogno di un abbonamento.">
 
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Article",
-    "headline":"Why We Chose a One-Time Purchase",
-    "description":"Why SlangBit uses a one-time purchase instead of a recurring subscription, and how that choice fits an offline Windows utility.",
+    "headline":"Perché abbiamo scelto l’acquisto una tantum",
+    "description":"Perché SlangBit utilizza un acquisto una tantum invece di un abbonamento ricorrente e perché questa scelta è coerente con una utility Windows offline.",
     "datePublished":"2026-07-29",
     "dateModified":"2026-07-29",
     "author":{"@type":"Organization","name":"Memmola Labs","url":"https://memmolalabs.com/"},
@@ -40,18 +40,18 @@
     "mainEntity":[
       {
         "@type":"Question",
-        "name":"Why does SlangBit use a one-time purchase?",
-        "acceptedAnswer":{"@type":"Answer","text":"SlangBit is designed as a local Windows utility. Its core translation workflow runs on the user's computer rather than relying on a permanent cloud service, so a recurring subscription was not considered necessary for access to the core product."}
+        "name":"Perché SlangBit utilizza un acquisto una tantum?",
+        "acceptedAnswer":{"@type":"Answer","text":"SlangBit è progettato come una utility Windows locale. Il suo workflow di traduzione principale viene eseguito sul computer dell’utente invece di dipendere da un servizio cloud permanente, quindi un abbonamento ricorrente non è stato ritenuto necessario per accedere al prodotto principale."}
       },
       {
         "@type":"Question",
-        "name":"Does a one-time purchase include every future feature?",
-        "acceptedAnswer":{"@type":"Answer","text":"A one-time purchase provides access to the product sold at that time and its supported updates. It should not be interpreted as an unlimited promise covering every possible future product, service or major edition."}
+        "name":"Un acquisto una tantum include ogni funzionalità futura?",
+        "acceptedAnswer":{"@type":"Answer","text":"Un acquisto una tantum dà accesso al prodotto venduto in quel momento e ai relativi aggiornamenti supportati. Non deve essere interpretato come una promessa illimitata che copra ogni possibile prodotto, servizio o futura edizione principale."}
       },
       {
         "@type":"Question",
-        "name":"Can an offline app still have ongoing costs?",
-        "acceptedAnswer":{"@type":"Answer","text":"Yes. Development, testing, distribution, support, signing, hosting and maintenance continue to create costs even when the main processing happens locally."}
+        "name":"Un’app offline può comunque avere costi continuativi?",
+        "acceptedAnswer":{"@type":"Answer","text":"Sì. Sviluppo, test, distribuzione, assistenza, firma, hosting e manutenzione continuano a generare costi anche quando l’elaborazione principale avviene localmente."}
       }
     ]
   }
@@ -60,47 +60,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#000508;--surface:#040d14;--surface2:#071520;
-      --border:#0d2a40;--border2:rgba(0,200,255,.22);
-      --blue:#0077ff;--cyan:#00c8ff;--cyan2:#00eaff;
-      --green:#00ff99;--text:#e8f4ff;--muted:#7fa0b8;--muted2:#4a7a99
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;min-height:100vh}
-    body:before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,200,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,.035) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
-    body:after{content:'';position:fixed;inset:0;background:radial-gradient(circle at 20% 10%,rgba(0,119,255,.15),transparent 30%),radial-gradient(circle at 80% 20%,rgba(0,234,255,.12),transparent 28%);pointer-events:none}
-    a{color:inherit}.page{position:relative;z-index:1}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(0,5,8,.86);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
-    .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
-    .logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--blue),var(--cyan2));border-radius:10px;display:grid;place-items:center;color:#001019;font-family:'JetBrains Mono',monospace;font-weight:900;box-shadow:0 0 24px rgba(0,200,255,.42)}
-    .logo-text{display:flex;flex-direction:column;line-height:1.1}.logo-text strong{font-size:1.35rem;font-weight:900}.logo-text span{color:var(--muted);font-size:.78rem}.logo-text b{color:var(--cyan)}
-    .nav-links{display:flex;gap:25px}.nav-links a{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--muted);text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--cyan)}
-    .nav-btn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;padding:11px 18px;border-radius:7px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#001019;font-weight:700}
-    .hero{max-width:1040px;margin:auto;padding:150px 40px 58px}
-    .breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px;color:var(--muted2);font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:uppercase}.breadcrumb a{color:var(--cyan);text-decoration:none}
-    .badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,234,255,.28);background:rgba(0,200,255,.08);color:var(--cyan2);border-radius:100px;padding:7px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}
-    .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
-    h1{font-size:clamp(2.8rem,7vw,5.4rem);line-height:.98;letter-spacing:-.055em;font-weight:900}h1 span{background:linear-gradient(90deg,#3aa8ff,var(--cyan2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .intro{margin-top:28px;max-width:830px;color:var(--muted);font-size:clamp(1.08rem,2vw,1.28rem);line-height:1.75;font-weight:300}
-    .meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:28px;color:var(--muted2);font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:uppercase}
-    .layout{max-width:1180px;margin:auto;padding:10px 40px 90px;display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:56px;align-items:start}
-    article section{padding:38px 0;border-top:1px solid rgba(0,200,255,.13)}article section:first-child{border-top:0}
-    h2{font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.15;letter-spacing:-.025em;margin-bottom:18px}
-    p{color:var(--muted);font-size:1.03rem;line-height:1.82;margin-bottom:18px}strong{color:var(--text)}
-    ul{margin:8px 0 22px 24px;color:var(--muted)}li{margin:10px 0;line-height:1.68}
-    .callout{margin:28px 0;padding:25px 26px;border:1px solid rgba(0,234,255,.28);border-radius:14px;background:rgba(4,13,20,.82)}.callout strong{display:block;color:var(--cyan2);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;font-size:.82rem}.callout p{margin:0;color:var(--text)}
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}.card{padding:24px;border:1px solid rgba(0,200,255,.17);border-radius:12px;background:rgba(4,13,20,.74)}.card h3{color:var(--cyan2);margin-bottom:9px}.card p{margin:0;font-size:.94rem}
-    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}.comparison-box{padding:26px;border:1px solid rgba(0,200,255,.18);border-radius:14px;background:rgba(4,13,20,.74)}.comparison-box h3{margin-bottom:14px;color:var(--cyan2)}.comparison-box ul{margin-bottom:0}
-    .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.principle{padding:22px;border:1px solid rgba(0,234,255,.2);border-radius:12px;background:linear-gradient(180deg,rgba(7,21,32,.84),rgba(4,13,20,.84))}.principle b{display:block;color:var(--cyan2);font-family:'JetBrains Mono',monospace;margin-bottom:9px}.principle span{color:var(--muted);line-height:1.55;font-size:.92rem}
-    aside{position:sticky;top:104px;display:flex;flex-direction:column;gap:18px}.side-card{border:1px solid rgba(0,200,255,.18);border-radius:13px;background:rgba(4,13,20,.78);padding:22px}.side-card h2{color:var(--cyan2);font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}.side-card a{display:block;color:var(--muted);text-decoration:none;margin:10px 0;line-height:1.45;font-size:.91rem}.side-card a:hover{color:var(--cyan)}
-    details{border:1px solid rgba(0,200,255,.17);border-radius:12px;background:rgba(4,13,20,.72);padding:20px 22px;margin:14px 0}summary{cursor:pointer;font-weight:700}details p{margin:14px 0 0}
-    .cta{margin-top:24px;padding:38px;border:1px solid rgba(0,234,255,.28);border-radius:20px;text-align:center;background:rgba(4,13,20,.76)}.cta p{max-width:640px;margin:0 auto 24px}.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;padding:14px 24px;border-radius:7px;text-decoration:none;font-weight:700}.btn.primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#001019}.btn.secondary{border:1px solid var(--border2)}
-    footer{border-top:1px solid var(--border);padding:44px 40px}.footer{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:30px;color:var(--muted)}.footer a{color:var(--muted);text-decoration:none}.footer a:hover{color:var(--cyan)}
-    @media(max-width:980px){.nav-links{display:none}.layout{grid-template-columns:1fr}.principles{grid-template-columns:1fr}.comparison{grid-template-columns:1fr}aside{position:static;order:-1}}
-    @media(max-width:620px){nav{padding:14px 18px}.hero,.layout,footer{padding-left:20px;padding-right:20px}.hero{padding-top:128px}.cards{grid-template-columns:1fr}.footer{flex-direction:column}}
-  </style>
+:root{--bg:#fff;--surface:#f7f9fc;--surface2:#eef5ff;--line:#dce5f0;--blue:#1769ff;--cyan:#20bfe8;--green:#16a36a;--text:#07152b;--muted:#607086;--muted2:#8a99ab;--shadow:0 22px 70px rgba(21,64,120,.10)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 82% 16%,rgba(23,105,255,.09),transparent 31%),radial-gradient(circle at 62% 48%,rgba(32,191,232,.07),transparent 30%);pointer-events:none}a{color:inherit}.page{position:relative;z-index:1}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 4vw;background:rgba(255,255,255,.90);border-bottom:1px solid rgba(7,21,43,.08);backdrop-filter:blur(18px)}.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo-mark{width:38px;height:38px;background:linear-gradient(135deg,#07152b,#1769ff);border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 8px 25px rgba(23,105,255,.18)}.logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}.nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}.nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}.breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}.badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}h1{max-width:1200px;font-size:clamp(3.3rem,7.2vw,7.5rem);line-height:.91;letter-spacing:-.065em;font-weight:900}h1 span{background:linear-gradient(90deg,#246cff,#25bce7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.intro{margin-top:32px;max-width:900px;color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.28rem);line-height:1.7}.meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:28px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}
+.layout{max-width:1280px;margin:auto;padding:15px 4vw 100px;display:grid;grid-template-columns:minmax(0,1fr) 275px;gap:65px;align-items:start}article section{padding:48px 0;border-top:1px solid var(--line)}article section:first-child{border-top:0}h2{font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.08;letter-spacing:-.04em;margin-bottom:20px}p{color:var(--muted);font-size:1.04rem;line-height:1.82;margin-bottom:18px}strong{color:var(--text)}ul{margin:8px 0 22px 24px;color:var(--muted)}li{margin:10px 0;line-height:1.68}.callout{margin:30px 0;padding:27px 28px;border:1px solid #d6e4f7;border-radius:18px;background:linear-gradient(135deg,#f8fbff,#f2f8ff);box-shadow:0 12px 35px rgba(35,94,160,.06)}.callout strong{display:block;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;font-size:.78rem}.callout p{margin:0;color:var(--text)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:25px}.card{padding:25px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 32px rgba(31,70,120,.05)}.card h3{color:var(--text);margin-bottom:10px}.card p{margin:0;font-size:.95rem}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}.comparison-box{padding:27px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 32px rgba(31,70,120,.05)}.comparison-box h3{margin-bottom:14px;color:var(--text)}.comparison-box ul{margin-bottom:0}.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}.principle{padding:23px;border:1px solid #dbe7f6;border-radius:16px;background:linear-gradient(180deg,#fff,#f7fbff)}.principle b{display:block;color:var(--blue);margin-bottom:9px}.principle span{color:var(--muted);line-height:1.55;font-size:.92rem}
+aside{position:sticky;top:100px;display:flex;flex-direction:column;gap:18px}.side-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:23px;box-shadow:0 12px 36px rgba(31,70,120,.06)}.side-card h2{color:var(--text);font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:15px}.side-card a{display:block;color:var(--muted);text-decoration:none;margin:11px 0;line-height:1.45;font-size:.91rem}.side-card a:hover{color:var(--blue)}details{border:1px solid var(--line);border-radius:14px;background:#fff;padding:21px 23px;margin:14px 0}summary{cursor:pointer;font-weight:800}details p{margin:14px 0 0}.cta{margin-top:30px;padding:48px 38px;border:1px solid #d9e5f4;border-radius:24px;text-align:center;background:linear-gradient(135deg,#f8fbff,#eef6ff);box-shadow:var(--shadow)}.cta p{max-width:650px;margin:0 auto 25px}.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;padding:14px 24px;border-radius:9px;text-decoration:none;font-weight:800}.btn.primary{background:var(--blue);color:#fff}.btn.secondary{border:1px solid #cbd9ea;background:#fff}footer{border-top:1px solid var(--line);padding:44px 4vw}.footer{max-width:1280px;margin:auto;display:flex;justify-content:space-between;gap:30px;color:var(--muted)}.footer a{color:var(--muted);text-decoration:none}.footer a:hover{color:var(--blue)}
+@media(max-width:980px){.nav-links{display:none}.layout{grid-template-columns:1fr}.principles{grid-template-columns:1fr}.comparison{grid-template-columns:1fr}aside{position:static;order:-1}.hero{min-height:auto}}@media(max-width:620px){nav{padding:13px 18px}.nav-btn{padding:9px 11px;font-size:9px}.hero,.layout,footer{padding-left:20px;padding-right:20px}.hero{padding-top:125px;padding-bottom:65px}h1{font-size:clamp(3rem,16vw,4.5rem);line-height:.94}.cards{grid-template-columns:1fr}.footer{flex-direction:column}.logo-text span{display:none}}
+</style>
 </head>
 <body>
 <div class="page">
@@ -110,142 +78,142 @@
       <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
     </a>
     <div class="nav-links">
-      <a href="#subscription">Subscriptions</a>
-      <a href="#offline">Offline software</a>
-      <a href="#sustainability">Sustainability</a>
-      <a href="#limits">Limits</a>
+      <a href="#subscription">Abbonamenti</a>
+      <a href="#offline">Software offline</a>
+      <a href="#sustainability">Sostenibilità</a>
+      <a href="#limits">Limiti</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
   </nav>
 
   <main>
     <header class="hero">
-      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>One-time purchase</span></div>
-      <div class="badge"><span class="dot"></span>Product philosophy</div>
-      <h1>Why We Chose a <span>One-Time Purchase</span></h1>
-      <p class="intro">Subscriptions can be the right model for services with continuous infrastructure and operating costs. But not every piece of software needs to become a recurring bill.</p>
-      <div class="meta"><span>Memmola Labs</span><span>July 29, 2026</span><span>About 7 minutes</span></div>
+      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Acquisto una tantum</span></div>
+      <div class="badge"><span class="dot"></span>Filosofia del prodotto</div>
+      <h1>Perché abbiamo scelto <span>l’acquisto una tantum</span></h1>
+      <p class="intro">Gli abbonamenti possono essere il modello giusto per servizi con infrastrutture e costi operativi continui. Ma non ogni software deve trasformarsi in una spesa ricorrente.</p>
+      <div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 7 minuti</span></div>
     </header>
 
     <div class="layout">
       <article>
         <section id="subscription">
-          <h2>Subscriptions are not automatically wrong</h2>
-          <p>A recurring subscription can be reasonable when a product depends on ongoing cloud computing, hosted storage, large online databases, live collaboration, human services or frequently changing licensed content.</p>
-          <p>Those systems create continuing costs each time a customer uses them. A recurring payment can help keep the service available, secure and maintained.</p>
-          <p>The problem begins when subscription pricing becomes the default even for products whose essential function runs locally and does not create a meaningful per-use server cost.</p>
-          <div class="callout"><strong>The question we asked</strong><p>Does SlangBit need a permanent payment relationship in order to perform its core function?</p></div>
+          <h2>Gli abbonamenti non sono automaticamente sbagliati</h2>
+          <p>Un abbonamento ricorrente può essere ragionevole quando un prodotto dipende da elaborazione cloud continua, spazio di archiviazione ospitato, grandi database online, collaborazione in tempo reale, servizi umani o contenuti in licenza che cambiano frequentemente.</p>
+          <p>Questi sistemi generano costi continui ogni volta che un cliente li utilizza. Un pagamento ricorrente può contribuire a mantenere il servizio disponibile, sicuro e aggiornato.</p>
+          <p>Il problema nasce quando il prezzo in abbonamento diventa la scelta predefinita anche per prodotti la cui funzione essenziale viene eseguita localmente e non genera un costo server significativo per ogni utilizzo.</p>
+          <div class="callout"><strong>La domanda che ci siamo posti</strong><p>SlangBit ha bisogno di un rapporto di pagamento permanente per svolgere la sua funzione principale?</p></div>
         </section>
 
         <section id="offline">
-          <h2>SlangBit is primarily local software</h2>
-          <p>SlangBit runs as a Windows utility. After the application and selected language packages are installed, translation inference takes place on the user’s own computer.</p>
-          <p>The core workflow does not depend on sending every translation to infrastructure operated by Memmola Labs. There is no metered cloud translation request behind each press of <strong>ALT + Z</strong>.</p>
-          <p>That architecture influenced the commercial model. If the main processing is performed by the customer’s computer, requiring an indefinite subscription for access to the basic translation workflow would be difficult to justify.</p>
+          <h2>SlangBit è prima di tutto un software locale</h2>
+          <p>SlangBit funziona come utility Windows. Dopo aver installato l’applicazione e i pacchetti linguistici scelti, l’inferenza per la traduzione avviene sul computer dell’utente.</p>
+          <p>Il workflow principale non dipende dall’invio di ogni traduzione a infrastrutture gestite da Memmola Labs. Dietro ogni pressione di <strong>ALT + Z</strong> non c’è una richiesta di traduzione cloud a consumo.</p>
+          <p>Questa architettura ha influenzato il modello commerciale. Se l’elaborazione principale viene svolta dal computer del cliente, sarebbe difficile giustificare un abbonamento indefinito per accedere al workflow di traduzione di base.</p>
         </section>
 
         <section id="ownership">
-          <h2>A utility should feel like a tool you bought</h2>
-          <p>Traditional desktop utilities were often purchased because they solved a specific problem. You installed the tool, learned its workflow and continued using it.</p>
-          <p>A one-time purchase preserves more of that relationship. The customer makes a clear decision once instead of adding another small monthly charge to an expanding collection of subscriptions.</p>
-          <p>This is especially relevant for software intended to stay quietly in the Windows tray. SlangBit is designed to disappear when it is not needed, not to demand constant attention or repeatedly justify a monthly renewal.</p>
+          <h2>Una utility dovrebbe sembrare uno strumento che hai acquistato</h2>
+          <p>Le utility desktop tradizionali venivano spesso acquistate perché risolvevano un problema specifico. Installavi lo strumento, imparavi il suo workflow e continuavi a usarlo.</p>
+          <p>Un acquisto una tantum conserva maggiormente questo tipo di rapporto. Il cliente prende una decisione chiara una volta sola, invece di aggiungere un altro piccolo addebito mensile a una collezione crescente di abbonamenti.</p>
+          <p>Questo è particolarmente importante per un software pensato per restare discretamente nella tray di Windows. SlangBit è progettato per sparire quando non serve, non per chiedere attenzione costante o dover giustificare ogni mese un rinnovo.</p>
         </section>
 
         <section>
-          <h2>The hidden cost of recurring software</h2>
-          <p>A low monthly price may appear easier than a single purchase, but recurring software creates a different kind of cost: another renewal to remember, another charge to monitor and another product whose usefulness must be reassessed every month or year.</p>
-          <p>For a frequently used professional service, that trade-off may be acceptable. For a focused desktop utility, it can become unnecessary friction.</p>
+          <h2>Il costo nascosto del software ricorrente</h2>
+          <p>Un prezzo mensile basso può sembrare più semplice di un acquisto singolo, ma il software ricorrente crea un altro tipo di costo: un rinnovo in più da ricordare, un addebito in più da controllare e un altro prodotto la cui utilità va rivalutata ogni mese o ogni anno.</p>
+          <p>Per un servizio professionale utilizzato frequentemente, questo compromesso può essere accettabile. Per una utility desktop mirata, può diventare un attrito inutile.</p>
           <div class="comparison">
             <div class="comparison-box">
-              <h3>Recurring access</h3>
+              <h3>Accesso ricorrente</h3>
               <ul>
-                <li>Lower initial commitment</li>
-                <li>Continuous billing relationship</li>
-                <li>Access may stop when payments stop</li>
-                <li>Best suited to continuing services</li>
+                <li>Impegno iniziale più basso</li>
+                <li>Rapporto di fatturazione continuo</li>
+                <li>L’accesso può interrompersi quando terminano i pagamenti</li>
+                <li>Più adatto ai servizi continuativi</li>
               </ul>
             </div>
             <div class="comparison-box">
-              <h3>One-time purchase</h3>
+              <h3>Acquisto una tantum</h3>
               <ul>
-                <li>Clear upfront decision</li>
-                <li>No recurring charge for core access</li>
-                <li>Better fit for a local utility</li>
-                <li>Simple long-term ownership model</li>
+                <li>Decisione chiara fin dall’inizio</li>
+                <li>Nessun addebito ricorrente per l’accesso principale</li>
+                <li>Più adatto a una utility locale</li>
+                <li>Modello di possesso semplice nel lungo periodo</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section id="sustainability">
-          <h2>One-time purchase does not mean zero ongoing cost</h2>
-          <p>Offline software still needs maintenance. Development, testing, Windows compatibility, Store certification, support, documentation, package hosting, security work and future updates all require time and resources.</p>
-          <p>A one-time purchase therefore has to be priced carefully. It must remain accessible while still contributing to the long-term sustainability of the product.</p>
-          <p>The decision is not based on the idea that software should be free forever after release. It is based on matching the payment model to the technical and operational structure of the product.</p>
+          <h2>Acquisto una tantum non significa costi continuativi pari a zero</h2>
+          <p>Anche il software offline richiede manutenzione. Sviluppo, test, compatibilità con Windows, certificazione dello Store, assistenza, documentazione, hosting dei pacchetti, sicurezza e aggiornamenti futuri richiedono tempo e risorse.</p>
+          <p>Un acquisto una tantum deve quindi avere un prezzo studiato con attenzione. Deve rimanere accessibile e allo stesso tempo contribuire alla sostenibilità del prodotto nel lungo periodo.</p>
+          <p>La decisione non nasce dall’idea che il software debba essere gratuito per sempre dopo il rilascio. Nasce dalla volontà di adattare il modello di pagamento alla struttura tecnica e operativa del prodotto.</p>
           <div class="principles">
-            <div class="principle"><b>FIT</b><span>The business model should reflect how the software actually works.</span></div>
-            <div class="principle"><b>CLARITY</b><span>The customer should understand what is purchased without decoding a pricing ladder.</span></div>
-            <div class="principle"><b>SUSTAINABILITY</b><span>The product still needs enough revenue to remain maintained and supported.</span></div>
+            <div class="principle"><b>COERENZA</b><span>Il modello di business dovrebbe riflettere il modo in cui il software funziona realmente.</span></div>
+            <div class="principle"><b>CHIAREZZA</b><span>Il cliente dovrebbe capire cosa sta acquistando senza dover decifrare una scala di prezzi.</span></div>
+            <div class="principle"><b>SOSTENIBILITÀ</b><span>Il prodotto ha comunque bisogno di entrate sufficienti per essere mantenuto e supportato.</span></div>
           </div>
         </section>
 
         <section>
-          <h2>Why we did not hide the product behind usage limits</h2>
-          <p>Another possible model would have been to charge for translation volume: a certain number of characters, requests or language pairs each month.</p>
-          <p>That model makes sense when every request consumes paid server infrastructure. It makes less sense when the translation is generated locally using resources already available on the customer’s computer.</p>
-          <p>Artificial usage limits would add complexity to a product whose purpose is to reduce friction.</p>
+          <h2>Perché non abbiamo nascosto il prodotto dietro limiti di utilizzo</h2>
+          <p>Un altro possibile modello sarebbe stato far pagare in base al volume di traduzione: un certo numero di caratteri, richieste o coppie linguistiche ogni mese.</p>
+          <p>Quel modello ha senso quando ogni richiesta consuma infrastruttura server a pagamento. Ne ha molto meno quando la traduzione viene generata localmente utilizzando risorse già disponibili sul computer del cliente.</p>
+          <p>Limiti di utilizzo artificiali aggiungerebbero complessità a un prodotto il cui scopo è ridurre gli attriti.</p>
         </section>
 
         <section id="limits">
-          <h2>What a one-time purchase does and does not promise</h2>
-          <p>A one-time purchase should be clear, but it should not create unrealistic expectations.</p>
-          <p>It provides access to the product offered under that purchase and the supported maintenance associated with it. It does not necessarily guarantee every future major edition, every new service or every product Memmola Labs may create.</p>
-          <p>Major changes in technology, operating systems or product scope may eventually require a separate version or commercial decision. If that happens, it should be explained openly rather than hidden behind ambiguous wording.</p>
-          <div class="callout"><strong>Our principle</strong><p>No recurring subscription is required to keep using the core SlangBit product purchased through the Microsoft Store.</p></div>
+          <h2>Cosa promette, e cosa non promette, un acquisto una tantum</h2>
+          <p>Un acquisto una tantum dovrebbe essere chiaro, ma non dovrebbe creare aspettative irrealistiche.</p>
+          <p>Fornisce accesso al prodotto offerto con quell’acquisto e alla manutenzione supportata ad esso associata. Non garantisce necessariamente ogni futura edizione principale, ogni nuovo servizio o ogni prodotto che Memmola Labs potrà creare.</p>
+          <p>Cambiamenti importanti nella tecnologia, nei sistemi operativi o nell’ambito del prodotto potrebbero in futuro richiedere una versione separata o una nuova decisione commerciale. Se accadrà, dovrà essere spiegato apertamente invece di essere nascosto dietro formulazioni ambigue.</p>
+          <div class="callout"><strong>Il nostro principio</strong><p>Non è richiesto alcun abbonamento ricorrente per continuare a utilizzare il prodotto SlangBit principale acquistato tramite Microsoft Store.</p></div>
         </section>
 
         <section>
-          <h2>Why this choice matters for trust</h2>
-          <p>Pricing communicates how a company expects to relate to its users. A subscription says that access is an ongoing service. A one-time purchase says that the customer is buying a tool.</p>
-          <p>For SlangBit, the second description is more accurate. It is a focused Windows utility built around local models, a global shortcut and a private workflow.</p>
-          <p>The payment model is therefore not only a marketing decision. It is part of the product philosophy: local processing, direct control and fewer recurring dependencies.</p>
+          <h2>Perché questa scelta conta per la fiducia</h2>
+          <p>Il prezzo comunica il tipo di rapporto che un’azienda intende avere con i propri utenti. Un abbonamento dice che l’accesso è un servizio continuativo. Un acquisto una tantum dice che il cliente sta acquistando uno strumento.</p>
+          <p>Per SlangBit, la seconda descrizione è più accurata. È una utility Windows mirata, costruita attorno a modelli locali, una scorciatoia globale e un workflow privato.</p>
+          <p>Il modello di pagamento non è quindi soltanto una decisione di marketing. Fa parte della filosofia del prodotto: elaborazione locale, controllo diretto e meno dipendenze ricorrenti.</p>
         </section>
 
         <section id="faq">
-          <h2>Frequently asked questions</h2>
-          <details><summary>Why does SlangBit use a one-time purchase?</summary><p>Because its core translation workflow runs locally on the customer’s Windows computer rather than relying on a permanent cloud translation service.</p></details>
-          <details><summary>Does a one-time purchase mean there are no maintenance costs?</summary><p>No. Development, support, testing, distribution and package hosting continue to create costs. The one-time model reflects the absence of a recurring per-translation cloud service, not the absence of ongoing work.</p></details>
-          <details><summary>Will the purchased version stop working if I do not pay again?</summary><p>The core product purchased through the Microsoft Store does not require a recurring subscription to remain accessible.</p></details>
-          <details><summary>Does the purchase include every future Memmola Labs product?</summary><p>No. The purchase applies to SlangBit under the terms offered for that product. Separate products or major future editions may have their own terms.</p></details>
-          <details><summary>Why not offer a free product supported by advertising?</summary><p>Advertising would introduce another relationship involving attention, tracking or external services. That would not fit naturally with a focused, privacy-oriented desktop utility.</p></details>
+          <h2>Domande frequenti</h2>
+          <details><summary>Perché SlangBit utilizza un acquisto una tantum?</summary><p>Perché il suo workflow di traduzione principale viene eseguito localmente sul computer Windows del cliente invece di dipendere da un servizio di traduzione cloud permanente.</p></details>
+          <details><summary>Un acquisto una tantum significa che non esistono costi di manutenzione?</summary><p>No. Sviluppo, assistenza, test, distribuzione e hosting dei pacchetti continuano a generare costi. Il modello una tantum riflette l’assenza di un servizio cloud ricorrente per ogni traduzione, non l’assenza di lavoro continuativo.</p></details>
+          <details><summary>La versione acquistata smetterà di funzionare se non pago di nuovo?</summary><p>Il prodotto principale acquistato tramite Microsoft Store non richiede un abbonamento ricorrente per rimanere accessibile.</p></details>
+          <details><summary>L’acquisto include ogni futuro prodotto Memmola Labs?</summary><p>No. L’acquisto si applica a SlangBit secondo i termini offerti per quel prodotto. Prodotti separati o future edizioni principali possono avere condizioni proprie.</p></details>
+          <details><summary>Perché non offrire un prodotto gratuito sostenuto dalla pubblicità?</summary><p>La pubblicità introdurrebbe un altro rapporto basato su attenzione, tracciamento o servizi esterni. Non sarebbe coerente con una utility desktop mirata e orientata alla privacy.</p></details>
         </section>
 
         <div class="cta">
-          <h2>A Windows utility without another subscription</h2>
-          <p>SlangBit combines offline translation, local language models and a global keyboard shortcut in a one-time purchase for Windows.</p>
+          <h2>Una utility Windows senza un altro abbonamento</h2>
+          <p>SlangBit combina traduzione offline, modelli linguistici locali e una scorciatoia globale da tastiera in un acquisto una tantum per Windows.</p>
           <div class="actions">
-            <a class="btn primary" href="/">Explore SlangBit</a>
-            <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">View on Microsoft Store</a>
+            <a class="btn primary" href="/">Scopri SlangBit</a>
+            <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a>
           </div>
         </div>
       </article>
 
-      <aside aria-label="Article navigation">
+      <aside aria-label="Navigazione dell’articolo">
         <div class="side-card">
-          <h2>On this page</h2>
-          <a href="#subscription">When subscriptions make sense</a>
-          <a href="#offline">Local software</a>
-          <a href="#ownership">Buying a utility</a>
-          <a href="#sustainability">Sustainability</a>
-          <a href="#limits">What the purchase promises</a>
+          <h2>In questa pagina</h2>
+          <a href="#subscription">Quando gli abbonamenti hanno senso</a>
+          <a href="#offline">Software locale</a>
+          <a href="#ownership">Acquistare una utility</a>
+          <a href="#sustainability">Sostenibilità</a>
+          <a href="#limits">Cosa promette l’acquisto</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="side-card">
-          <h2>Related insights</h2>
-          <a href="/insights/behind-the-scenes-of-local-models.html">Behind the scenes of local models</a>
-          <a href="/insights/why-offline-translation-really-matters.html">Why offline translation really matters</a>
-          <a href="/insights/the-hidden-cost-of-switching-applications.html">The hidden cost of switching applications</a>
+          <h2>Insights correlati</h2>
+          <a href="/insights/behind-the-scenes-of-local-models.html">Dietro le quinte dei modelli locali</a>
+          <a href="/insights/why-offline-translation-really-matters.html">Perché la traduzione offline conta davvero</a>
+          <a href="/insights/the-hidden-cost-of-switching-applications.html">Il costo nascosto del cambio di applicazione</a>
         </div>
       </aside>
     </div>
@@ -254,7 +222,7 @@
   <footer>
     <div class="footer">
       <span>© 2026 Memmola Labs® · SlangBit</span>
-      <span><a href="/">Product</a> · <a href="/insights/">Insights</a> · <a href="/docs/privacy.html">Privacy</a></span>
+      <span><a href="/">Prodotto</a> · <a href="/insights/">Insights</a> · <a href="/docs/privacy.html">Privacy</a></span>
     </div>
   </footer>
 </div>
