@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>How to Translate a Post Without Leaving X | SlangBit</title>
-<meta name="description" content="How to translate text while writing a post or reply on X without opening a separate translator, and how a shortcut-based Windows workflow can reduce interruptions.">
+<title>Come tradurre un post senza uscire da X | SlangBit</title>
+<meta name="description" content="Come tradurre un post o una risposta su X senza aprire un traduttore separato, usando un flusso di lavoro Windows rapido con scorciatoia globale.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SlangBit">
-<meta property="og:title" content="How to Translate a Post Without Leaving X">
-<meta property="og:description" content="A practical Windows workflow for translating a post or reply while staying inside X.">
+<meta property="og:title" content="Come tradurre un post senza uscire da X">
+<meta property="og:description" content="Un flusso di lavoro pratico su Windows per tradurre un post o una risposta restando dentro X.">
 <meta property="og:url" content="https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to Translate a Post Without Leaving X">
-<meta name="twitter:description" content="Translate a draft or reply on X without opening a separate translation website.">
+<meta name="twitter:title" content="Come tradurre un post senza uscire da X">
+<meta name="twitter:description" content="Traduci una bozza o una risposta su X senza aprire un sito di traduzione separato.">
 
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Article",
-  "headline":"How to Translate a Post Without Leaving X",
-  "description":"How to translate text while writing a post or reply on X without opening a separate translator, and how a shortcut-based Windows workflow can reduce interruptions.",
+  "headline":"Come tradurre un post senza uscire da X",
+  "description":"Come tradurre un post o una risposta su X senza aprire un traduttore separato, usando un flusso di lavoro Windows rapido con scorciatoia globale.",
   "datePublished":"2026-07-29",
   "dateModified":"2026-07-29",
   "author":{"@type":"Organization","name":"Memmola Labs","url":"https://memmolalabs.com/"},
@@ -40,18 +40,18 @@
   "mainEntity":[
     {
       "@type":"Question",
-      "name":"Can I translate a post while staying on X?",
-      "acceptedAnswer":{"@type":"Answer","text":"Yes. On Windows, a clipboard-based translation utility can let you copy draft text, translate it with a global shortcut and continue editing the post without opening a separate translation website."}
+      "name":"Posso tradurre un post restando su X?",
+      "acceptedAnswer":{"@type":"Answer","text":"Sì. Su Windows, un’utilità di traduzione basata sugli appunti permette di copiare il testo della bozza, tradurlo con una scorciatoia globale e continuare a modificare il post senza aprire un sito di traduzione separato."}
     },
     {
       "@type":"Question",
-      "name":"Does SlangBit connect to my X account?",
-      "acceptedAnswer":{"@type":"Answer","text":"No. SlangBit works through the Windows clipboard and does not require access to your X credentials, account or post history."}
+      "name":"SlangBit si collega al mio account X?",
+      "acceptedAnswer":{"@type":"Answer","text":"No. SlangBit lavora attraverso gli appunti di Windows e non richiede accesso alle credenziali, all’account o alla cronologia dei post su X."}
     },
     {
       "@type":"Question",
-      "name":"Can the text be translated offline?",
-      "acceptedAnswer":{"@type":"Answer","text":"Yes. After the required language package is installed, SlangBit can process the copied text locally on the Windows computer."}
+      "name":"Il testo può essere tradotto offline?",
+      "acceptedAnswer":{"@type":"Answer","text":"Sì. Dopo aver installato il pacchetto linguistico necessario, SlangBit può elaborare localmente sul computer Windows il testo copiato."}
     }
   ]
 }
@@ -59,64 +59,62 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
+
 <style>
-:root{--bg:#000508;--surface:#040d14;--border:#0d2a40;--border2:rgba(0,200,255,.22);--blue:#0077ff;--cyan:#00c8ff;--cyan2:#00eaff;--green:#00ff99;--text:#e8f4ff;--muted:#7fa0b8;--muted2:#4a7a99}
+:root{
+  --bg:#ffffff;--surface:#f7f9fc;--surface2:#eef5ff;--line:#dce5f0;
+  --blue:#1769ff;--cyan:#20bfe8;--green:#16a36a;
+  --text:#07152b;--muted:#607086;--muted2:#8a99ab;
+  --shadow:0 22px 70px rgba(21,64,120,.10)
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;min-height:100vh}
-body:before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,200,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,.035) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
-body:after{content:'';position:fixed;inset:0;background:radial-gradient(circle at 20% 10%,rgba(0,119,255,.15),transparent 30%),radial-gradient(circle at 80% 20%,rgba(0,234,255,.12),transparent 28%);pointer-events:none}
+body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 82% 16%,rgba(23,105,255,.09),transparent 31%),radial-gradient(circle at 62% 48%,rgba(32,191,232,.07),transparent 30%);pointer-events:none}
 a{color:inherit}.page{position:relative;z-index:1}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(0,5,8,.86);border-bottom:1px solid var(--border);backdrop-filter:blur(14px)}
-.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
-.logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--blue),var(--cyan2));border-radius:10px;display:grid;place-items:center;color:#001019;font-family:'JetBrains Mono',monospace;font-weight:900;box-shadow:0 0 24px rgba(0,200,255,.42)}
-.logo-text{display:flex;flex-direction:column;line-height:1.1}.logo-text strong{font-size:1.35rem}.logo-text span{color:var(--muted);font-size:.78rem}.logo-text b{color:var(--cyan)}
-.nav-links{display:flex;gap:25px}.nav-links a{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--muted);text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--cyan)}
-.nav-btn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;padding:11px 18px;border-radius:7px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#001019;font-weight:700}
-.hero{max-width:1040px;margin:auto;padding:150px 40px 58px}
-.breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px;color:var(--muted2);font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:uppercase}.breadcrumb a{color:var(--cyan);text-decoration:none}
-.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,234,255,.28);background:rgba(0,200,255,.08);color:var(--cyan2);border-radius:100px;padding:7px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
-h1{font-size:clamp(2.8rem,7vw,5.4rem);line-height:.98;letter-spacing:-.055em;font-weight:900}h1 span{background:linear-gradient(90deg,#3aa8ff,var(--cyan2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.intro{margin-top:28px;max-width:830px;color:var(--muted);font-size:clamp(1.08rem,2vw,1.28rem);line-height:1.75}
-.meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:28px;color:var(--muted2);font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:uppercase}
-.layout{max-width:1180px;margin:auto;padding:10px 40px 90px;display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:56px;align-items:start}
-article section{padding:38px 0;border-top:1px solid rgba(0,200,255,.13)}article section:first-child{border-top:0}
-h2{font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.15;letter-spacing:-.025em;margin-bottom:18px}
-p{color:var(--muted);font-size:1.03rem;line-height:1.82;margin-bottom:18px}
-strong{color:var(--text)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 4vw;background:rgba(255,255,255,.90);border-bottom:1px solid rgba(7,21,43,.08);backdrop-filter:blur(18px)}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:38px;height:38px;background:linear-gradient(135deg,#07152b,#1769ff);border-radius:10px;display:grid;place-items:center;color:white;font-weight:900;box-shadow:0 8px 25px rgba(23,105,255,.18)}
+.logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}
+.nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}
+.nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
+.breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}
+.badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+h1{max-width:1120px;font-size:clamp(3.3rem,7.2vw,7.5rem);line-height:.88;letter-spacing:-.065em;font-weight:900}
+h1 span{background:linear-gradient(90deg,#246cff,#25bce7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.intro{margin-top:32px;max-width:860px;color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.28rem);line-height:1.7}
+.meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:28px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}
+.layout{max-width:1280px;margin:auto;padding:15px 4vw 100px;display:grid;grid-template-columns:minmax(0,1fr) 275px;gap:65px;align-items:start}
+article section{padding:48px 0;border-top:1px solid var(--line)}article section:first-child{border-top:0}
+h2{font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.08;letter-spacing:-.04em;margin-bottom:20px}
+p{color:var(--muted);font-size:1.04rem;line-height:1.82;margin-bottom:18px}strong{color:var(--text)}
 ul,ol{margin:8px 0 22px 24px;color:var(--muted)}li{margin:10px 0;line-height:1.68}
-.callout{margin:28px 0;padding:25px 26px;border:1px solid rgba(0,234,255,.28);border-radius:14px;background:rgba(4,13,20,.82)}
-.callout strong{display:block;color:var(--cyan2);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;font-size:.82rem}
-.callout p{margin:0;color:var(--text)}
-.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:28px 0}
-.workflow-step{padding:18px 14px;border:1px solid rgba(0,200,255,.18);border-radius:12px;background:linear-gradient(180deg,rgba(7,21,32,.84),rgba(4,13,20,.84));min-height:140px}
-.workflow-step b{display:block;color:var(--cyan2);font-family:'JetBrains Mono',monospace;margin-bottom:10px}
-.workflow-step span{color:var(--muted);font-size:.88rem;line-height:1.45}
-.cards,.comparison{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
-.card,.comparison-box{padding:24px;border:1px solid rgba(0,200,255,.17);border-radius:12px;background:rgba(4,13,20,.74)}
-.card h3,.comparison-box h3{color:var(--cyan2);margin-bottom:9px}
-.card p{margin:0;font-size:.94rem}
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
-.principle{padding:22px;border:1px solid rgba(0,234,255,.2);border-radius:12px;background:linear-gradient(180deg,rgba(7,21,32,.84),rgba(4,13,20,.84))}
-.principle b{display:block;color:var(--cyan2);font-family:'JetBrains Mono',monospace;margin-bottom:9px}
-.principle span{color:var(--muted);line-height:1.55;font-size:.92rem}
-aside{position:sticky;top:104px;display:flex;flex-direction:column;gap:18px}
-.side-card{border:1px solid rgba(0,200,255,.18);border-radius:13px;background:rgba(4,13,20,.78);padding:22px}
-.side-card h2{color:var(--cyan2);font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
-.side-card a{display:block;color:var(--muted);text-decoration:none;margin:10px 0;line-height:1.45;font-size:.91rem}.side-card a:hover{color:var(--cyan)}
-details{border:1px solid rgba(0,200,255,.17);border-radius:12px;background:rgba(4,13,20,.72);padding:20px 22px;margin:14px 0}
-summary{cursor:pointer;font-weight:700}details p{margin:14px 0 0}
-.cta{margin-top:24px;padding:38px;border:1px solid rgba(0,234,255,.28);border-radius:20px;text-align:center;background:rgba(4,13,20,.76)}
-.cta p{max-width:640px;margin:0 auto 24px}
-.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;padding:14px 24px;border-radius:7px;text-decoration:none;font-weight:700}
-.btn.primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#001019}.btn.secondary{border:1px solid var(--border2)}
-footer{border-top:1px solid var(--border);padding:44px 40px}
-.footer{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:30px;color:var(--muted)}
-.footer a{color:var(--muted);text-decoration:none}.footer a:hover{color:var(--cyan)}
-@media(max-width:980px){.nav-links{display:none}.layout{grid-template-columns:1fr}.workflow{grid-template-columns:repeat(2,1fr)}.principles{grid-template-columns:1fr}.comparison{grid-template-columns:1fr}aside{position:static;order:-1}}
-@media(max-width:620px){nav{padding:14px 18px}.hero,.layout,footer{padding-left:20px;padding-right:20px}.hero{padding-top:128px}.cards,.workflow{grid-template-columns:1fr}.footer{flex-direction:column}}
+.callout{margin:30px 0;padding:27px 28px;border:1px solid #d6e4f7;border-radius:18px;background:linear-gradient(135deg,#f8fbff,#f2f8ff);box-shadow:0 12px 35px rgba(35,94,160,.06)}
+.callout strong{display:block;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;font-size:.78rem}.callout p{margin:0;color:var(--text)}
+.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:30px 0}
+.workflow-step{padding:20px 15px;border:1px solid var(--line);border-radius:16px;background:#fff;min-height:150px;box-shadow:0 10px 30px rgba(31,70,120,.05)}
+.workflow-step b{display:block;color:var(--blue);margin-bottom:12px;font-size:1.1rem}.workflow-step span{color:var(--muted);font-size:.89rem;line-height:1.5}
+.cards,.comparison{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:25px}
+.card,.comparison-box{padding:25px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 32px rgba(31,70,120,.05)}
+.card h3,.comparison-box h3{color:var(--text);margin-bottom:10px}.card p{margin:0;font-size:.95rem}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
+.principle{padding:23px;border:1px solid #dbe7f6;border-radius:16px;background:linear-gradient(180deg,#fff,#f7fbff)}
+.principle b{display:block;color:var(--blue);margin-bottom:9px}.principle span{color:var(--muted);line-height:1.55;font-size:.92rem}
+aside{position:sticky;top:100px;display:flex;flex-direction:column;gap:18px}
+.side-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:23px;box-shadow:0 12px 36px rgba(31,70,120,.06)}
+.side-card h2{color:var(--text);font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:15px}
+.side-card a{display:block;color:var(--muted);text-decoration:none;margin:11px 0;line-height:1.45;font-size:.91rem}.side-card a:hover{color:var(--blue)}
+details{border:1px solid var(--line);border-radius:14px;background:#fff;padding:21px 23px;margin:14px 0}
+summary{cursor:pointer;font-weight:800}details p{margin:14px 0 0}
+.cta{margin-top:30px;padding:48px 38px;border:1px solid #d9e5f4;border-radius:24px;text-align:center;background:linear-gradient(135deg,#f8fbff,#eef6ff);box-shadow:var(--shadow)}
+.cta p{max-width:650px;margin:0 auto 25px}.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;padding:14px 24px;border-radius:9px;text-decoration:none;font-weight:800}.btn.primary{background:var(--blue);color:#fff}.btn.secondary{border:1px solid #cbd9ea;background:#fff}
+footer{border-top:1px solid var(--line);padding:44px 4vw}.footer{max-width:1280px;margin:auto;display:flex;justify-content:space-between;gap:30px;color:var(--muted)}.footer a{color:var(--muted);text-decoration:none}.footer a:hover{color:var(--blue)}
+@media(max-width:980px){.nav-links{display:none}.layout{grid-template-columns:1fr}.workflow{grid-template-columns:repeat(2,1fr)}.principles{grid-template-columns:1fr}.comparison{grid-template-columns:1fr}aside{position:static;order:-1}.hero{min-height:auto}}
+@media(max-width:620px){nav{padding:13px 18px}.nav-btn{padding:9px 11px;font-size:9px}.hero,.layout,footer{padding-left:20px;padding-right:20px}.hero{padding-top:125px;padding-bottom:65px}h1{font-size:clamp(3rem,16vw,4.5rem);line-height:.91}.cards,.workflow{grid-template-columns:1fr}.footer{flex-direction:column}.logo-text span{display:none}}
 </style>
+
 </head>
 
 <body>
@@ -127,9 +125,9 @@ footer{border-top:1px solid var(--border);padding:44px 40px}
 <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
 </a>
 <div class="nav-links">
-<a href="#problem">The problem</a>
+<a href="#problem">Il problema</a>
 <a href="#workflow">Workflow</a>
-<a href="#tone">Tone</a>
+<a href="#tone">Tono</a>
 <a href="#privacy">Privacy</a>
 <a href="#faq">FAQ</a>
 </div>
@@ -138,130 +136,130 @@ footer{border-top:1px solid var(--border);padding:44px 40px}
 
 <main>
 <header class="hero">
-<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Translate on X</span></div>
-<div class="badge"><span class="dot"></span>Social writing workflow</div>
-<h1>How to Translate a Post <span>Without Leaving X</span></h1>
-<p class="intro">Writing on X often happens quickly. Leaving a draft to open a translator can break the rhythm of the message, change the tone and turn one sentence into a longer detour.</p>
-<div class="meta"><span>Memmola Labs</span><span>July 29, 2026</span><span>About 7 minutes</span></div>
+<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Tradurre su X</span></div>
+<div class="badge"><span class="dot"></span>Workflow per i social</div>
+<h1>Come tradurre un post <span>senza uscire da X</span></h1>
+<p class="intro">Su X si scrive spesso in modo rapido. Lasciare una bozza per aprire un traduttore può spezzare il ritmo del messaggio, alterarne il tono e trasformare una semplice frase in una deviazione più lunga.</p>
+<div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 7 minuti</span></div>
 </header>
 
 <div class="layout">
 <article>
 <section id="problem">
-<h2>The translation can interrupt the post before it improves it</h2>
-<p>You are writing a post or reply and need one sentence in another language. The usual workflow is to stop, open a new tab, paste the draft, copy the translated version and return to X.</p>
-<p>That sequence seems minor, but social writing depends heavily on rhythm. By the time you return, the original thought may feel less immediate or the tone may have changed.</p>
-<div class="callout"><strong>The practical problem</strong><p>The translation is only one step inside the act of writing. It should not become a separate task that takes over the entire workflow.</p></div>
+<h2>La traduzione può interrompere il post prima ancora di migliorarlo</h2>
+<p>Stai scrivendo un post o una risposta e ti serve una frase in un’altra lingua. Il flusso abituale è fermarsi, aprire una nuova scheda, incollare la bozza, copiare la traduzione e tornare su X.</p>
+<p>Sembra una sequenza banale, ma la scrittura sui social dipende molto dal ritmo. Quando torni al post, il pensiero originale può sembrare meno immediato o il tono può essere cambiato.</p>
+<div class="callout"><strong>Il problema concreto</strong><p>La traduzione è soltanto un passaggio all’interno della scrittura. Non dovrebbe diventare un’attività separata che interrompe l’intero flusso di lavoro.</p></div>
 </section>
 
 <section id="workflow">
-<h2>A shorter workflow on Windows</h2>
-<p>A clipboard-based translation utility can keep the process close to the draft:</p>
+<h2>Un flusso più breve su Windows</h2>
+<p>Un’utilità di traduzione basata sugli appunti può mantenere il processo vicino alla bozza:</p>
 <div class="workflow" aria-label="X translation workflow">
-<div class="workflow-step"><b>01</b><span>Write or select the text inside the post or reply.</span></div>
-<div class="workflow-step"><b>02</b><span>Copy the selected passage.</span></div>
-<div class="workflow-step"><b>03</b><span>Press the global translation shortcut.</span></div>
-<div class="workflow-step"><b>04</b><span>Receive the translated text through the clipboard workflow.</span></div>
-<div class="workflow-step"><b>05</b><span>Review the result and continue editing on X.</span></div>
+<div class="workflow-step"><b>01</b><span>Scrivi o seleziona il testo nel post o nella risposta.</span></div>
+<div class="workflow-step"><b>02</b><span>Copia il passaggio selezionato.</span></div>
+<div class="workflow-step"><b>03</b><span>Premi la scorciatoia globale di traduzione.</span></div>
+<div class="workflow-step"><b>04</b><span>Ricevi il testo tradotto attraverso il flusso degli appunti.</span></div>
+<div class="workflow-step"><b>05</b><span>Controlla il risultato e continua a scrivere su X.</span></div>
 </div>
-<p>The goal is not to remove review. It is to avoid opening a separate translation destination for every short passage.</p>
+<p>L’obiettivo non è eliminare il controllo finale, ma evitare di aprire un servizio di traduzione separato per ogni breve passaggio.</p>
 </section>
 
 <section>
-<h2>What “without leaving X” really means</h2>
-<p>SlangBit does not connect to the user’s X account or post on the user’s behalf. It works through the Windows clipboard.</p>
-<p>The draft remains inside X. The user deliberately copies only the passage that needs translation, processes it locally and then continues editing in the same browser window.</p>
-<p>This keeps account access, publishing and final review under the user’s direct control.</p>
+<h2>Cosa significa davvero “senza uscire da X”</h2>
+<p>SlangBit non si collega all’account X dell’utente e non pubblica al suo posto. Lavora attraverso gli appunti di Windows.</p>
+<p>La bozza rimane dentro X. L’utente copia volontariamente soltanto il passaggio da tradurre, lo elabora localmente e continua poi a modificarlo nella stessa finestra del browser.</p>
+<p>In questo modo accesso all’account, pubblicazione e controllo finale restano direttamente nelle mani dell’utente.</p>
 </section>
 
 <section id="tone">
-<h2>A social post needs more than literal accuracy</h2>
-<p>Posts and replies are short, but they carry tone. A translation can be grammatically correct and still sound too formal, too aggressive, too vague or unlike the person who wrote the original.</p>
-<p>Before publishing, check whether the translated text still sounds natural for the audience and situation.</p>
+<h2>Un post social richiede più della semplice correttezza letterale</h2>
+<p>Post e risposte sono brevi, ma trasmettono un tono. Una traduzione può essere grammaticalmente corretta e risultare comunque troppo formale, aggressiva, vaga o distante dallo stile di chi ha scritto l’originale.</p>
+<p>Prima di pubblicare, verifica che il testo tradotto suoni ancora naturale per il pubblico e per la situazione.</p>
 <div class="cards">
-<div class="card"><h3>Tone</h3><p>Decide whether the post should sound conversational, professional, playful or direct.</p></div>
-<div class="card"><h3>Length</h3><p>Translation can make a sentence longer, so review whether the final post still fits comfortably.</p></div>
-<div class="card"><h3>Names and handles</h3><p>Check usernames, hashtags, product names, URLs and technical terms before posting.</p></div>
-<div class="card"><h3>Context</h3><p>A reply may depend on the wording of the original conversation, not only on the selected sentence.</p></div>
+<div class="card"><h3>Tono</h3><p>Decidi se il post deve suonare colloquiale, professionale, leggero o diretto.</p></div>
+<div class="card"><h3>Lunghezza</h3><p>La traduzione può allungare una frase: controlla che il post finale mantenga una lunghezza adeguata.</p></div>
+<div class="card"><h3>Nomi e handle</h3><p>Controlla username, hashtag, nomi di prodotto, URL e termini tecnici prima di pubblicare.</p></div>
+<div class="card"><h3>Contesto</h3><p>Una risposta può dipendere dal testo della conversazione originale, non soltanto dalla frase selezionata.</p></div>
 </div>
 </section>
 
 <section>
-<h2>Translate enough context to preserve the meaning</h2>
-<p>Short fragments can be ambiguous. A single word or compressed sentence may have several possible interpretations.</p>
-<p>When possible, translate a complete thought rather than an isolated fragment. For a reply, consider the surrounding conversation before deciding whether the result communicates the intended meaning.</p>
-<p>After translation, simplify the text if needed. Social writing often benefits from shorter, clearer phrasing rather than a word-for-word reconstruction.</p>
+<h2>Traduci abbastanza contesto da preservare il significato</h2>
+<p>I frammenti brevi possono essere ambigui. Una singola parola o una frase molto compressa può avere diverse interpretazioni.</p>
+<p>Quando possibile, traduci un pensiero completo invece di un frammento isolato. In una risposta, considera la conversazione circostante prima di decidere se il risultato comunica davvero il significato desiderato.</p>
+<p>Dopo la traduzione, semplifica il testo se necessario. Sui social funzionano spesso meglio formulazioni più brevi e chiare rispetto a una ricostruzione parola per parola.</p>
 </section>
 
 <section>
-<h2>Hashtags, mentions and links need special care</h2>
-<p>A post may contain elements that should not be translated, such as usernames, hashtags, web addresses, email addresses, product codes or quoted text.</p>
-<p>Selective translation is usually safer than translating the entire draft blindly. Copy only the sentence or paragraph that needs language conversion, then restore it inside the original structure.</p>
+<h2>Hashtag, menzioni e link richiedono particolare attenzione</h2>
+<p>Un post può contenere elementi che non dovrebbero essere tradotti, come username, hashtag, indirizzi web, email, codici prodotto o testo citato.</p>
+<p>La traduzione selettiva è generalmente più sicura che tradurre alla cieca l’intera bozza. Copia soltanto la frase o il paragrafo da convertire e reinseriscilo poi nella struttura originale.</p>
 <div class="comparison">
-<div class="comparison-box"><h3>Translate the whole draft</h3><ul><li>More context for the model</li><li>Greater chance of changing handles, links or hashtags</li><li>More review required</li></ul></div>
-<div class="comparison-box"><h3>Translate selected text</h3><ul><li>More control over what changes</li><li>Original formatting stays visible</li><li>Easier to verify the final result</li></ul></div>
+<div class="comparison-box"><h3>Tradurre l’intera bozza</h3><ul><li>Più contesto per il modello</li><li>Maggiore rischio di modificare handle, link o hashtag</li><li>Richiede più controllo</li></ul></div>
+<div class="comparison-box"><h3>Tradurre il testo selezionato</h3><ul><li>Maggiore controllo su ciò che cambia</li><li>La formattazione originale resta visibile</li><li>Più semplice verificare il risultato finale</li></ul></div>
 </div>
 </section>
 
 <section id="privacy">
-<h2>Drafts may contain information you have not published yet</h2>
-<p>A social post can include an unreleased announcement, a private reply, a customer detail, an internal link or text that is still being edited.</p>
-<p>Using a cloud translator means submitting the selected draft to an external service. The exact handling depends on that service’s product, account type, configuration and current policy.</p>
-<p>With local translation, the text can be processed on the Windows computer without sending the draft to a remote translation endpoint.</p>
+<h2>Le bozze possono contenere informazioni che non hai ancora pubblicato</h2>
+<p>Un post può contenere un annuncio non ancora pubblico, una risposta privata, un dato di un cliente, un link interno o testo ancora in fase di modifica.</p>
+<p>Usare un traduttore cloud significa inviare la parte selezionata della bozza a un servizio esterno. Il trattamento effettivo dipende dal prodotto, dal tipo di account, dalla configurazione e dalle policy correnti del servizio.</p>
+<p>Con la traduzione locale, il testo può essere elaborato sul computer Windows senza inviare la bozza a un endpoint di traduzione remoto.</p>
 <div class="principles">
-<div class="principle"><b>SELECTIVE</b><span>Translate only the passage that needs conversion.</span></div>
-<div class="principle"><b>LOCAL</b><span>Keep unpublished draft text on the device when that matters.</span></div>
-<div class="principle"><b>REVIEWED</b><span>Check tone, length and context before publishing.</span></div>
+<div class="principle"><b>SELETTIVO</b><span>Traduci soltanto il passaggio che deve essere convertito.</span></div>
+<div class="principle"><b>LOCALE</b><span>Mantieni sul dispositivo il testo non ancora pubblicato quando è importante.</span></div>
+<div class="principle"><b>CONTROLLATO</b><span>Controlla tono, lunghezza e contesto prima di pubblicare.</span></div>
 </div>
 </section>
 
 <section>
-<h2>When a dedicated translation interface is still useful</h2>
-<p>A shortcut workflow is well suited to short posts, replies and small edits. It is less suitable for long threads, campaign localization or content that requires terminology management and formal review.</p>
-<p>For those tasks, a dedicated writing or translation workspace may offer better comparison and control.</p>
-<p>The right tool depends on whether translation is the main task or only one small step inside writing on X.</p>
+<h2>Quando un’interfaccia di traduzione dedicata è ancora utile</h2>
+<p>Un flusso basato su scorciatoia è ideale per post brevi, risposte e piccole modifiche. È meno adatto a thread lunghi, localizzazioni di campagne o contenuti che richiedono gestione terminologica e revisione formale.</p>
+<p>Per queste attività, uno spazio di scrittura o traduzione dedicato può offrire strumenti migliori di confronto e controllo.</p>
+<p>Lo strumento giusto dipende dal fatto che la traduzione sia l’attività principale oppure soltanto un piccolo passaggio mentre si scrive su X.</p>
 </section>
 
 <section>
-<h2>How SlangBit handles posts and replies</h2>
-<p>SlangBit runs as a Windows tray utility. After the required local language package is installed, the user copies text from the draft and presses <strong>ALT + Z</strong>.</p>
-<p>The text is processed by the local translation engine and returned through the clipboard workflow so editing can continue in the browser.</p>
-<p>SlangBit does not require access to the X account, login credentials, private messages or post history.</p>
+<h2>Come SlangBit gestisce post e risposte</h2>
+<p>SlangBit funziona come utility nella tray di Windows. Dopo aver installato il pacchetto linguistico locale necessario, l’utente copia il testo dalla bozza e preme <strong>ALT + Z</strong>.</p>
+<p>Il testo viene elaborato dal motore di traduzione locale e restituito attraverso gli appunti, così la modifica può continuare direttamente nel browser.</p>
+<p>SlangBit non richiede accesso all’account X, alle credenziali di login, ai messaggi privati o alla cronologia dei post.</p>
 </section>
 
 <section id="faq">
-<h2>Frequently asked questions</h2>
-<details><summary>Can I translate a post while staying on X?</summary><p>Yes. A clipboard-based Windows utility can translate selected draft text without requiring you to open a separate translation website.</p></details>
-<details><summary>Does SlangBit connect to my X account?</summary><p>No. SlangBit works through the Windows clipboard and does not require access to account credentials, private messages or post history.</p></details>
-<details><summary>Can the draft be translated offline?</summary><p>Yes. Once the required language package is installed, the translation itself can be generated locally on the Windows computer.</p></details>
-<details><summary>Should hashtags and usernames be translated?</summary><p>Usually no. Review handles, hashtags, URLs, product names and quoted text carefully, and translate only the passage that needs language conversion.</p></details>
-<details><summary>Should I publish a machine-translated post without reviewing it?</summary><p>No. Always check tone, meaning, length, context and any protected elements before publishing.</p></details>
+<h2>Domande frequenti</h2>
+<details><summary>Posso tradurre un post restando su X?</summary><p>Sì. Un’utilità Windows basata sugli appunti può tradurre il testo selezionato della bozza senza richiedere l’apertura di un sito di traduzione separato.</p></details>
+<details><summary>SlangBit si collega al mio account X?</summary><p>No. SlangBit lavora attraverso gli appunti di Windows e non richiede accesso alle credenziali dell’account, ai messaggi privati o alla cronologia dei post.</p></details>
+<details><summary>La bozza può essere tradotta offline?</summary><p>Sì. Una volta installato il pacchetto linguistico necessario, la traduzione può essere generata localmente sul computer Windows.</p></details>
+<details><summary>Hashtag e username vanno tradotti?</summary><p>In genere no. Controlla attentamente handle, hashtag, URL, nomi di prodotto e testo citato, traducendo soltanto il passaggio che richiede la conversione linguistica.</p></details>
+<details><summary>Dovrei pubblicare un post tradotto automaticamente senza controllarlo?</summary><p>No. Controlla sempre tono, significato, lunghezza, contesto ed eventuali elementi da preservare prima di pubblicare.</p></details>
 </section>
 
 <div class="cta">
-<h2>Translate a post without turning it into a separate task</h2>
-<p>SlangBit uses local language models and a global Windows shortcut to keep short translations close to the draft you are already writing.</p>
+<h2>Traduci un post senza trasformare la traduzione in un’attività separata</h2>
+<p>SlangBit usa modelli linguistici locali e una scorciatoia globale di Windows per mantenere le traduzioni brevi dentro il flusso di lavoro che stai già usando.</p>
 <div class="actions">
-<a class="btn primary" href="/">Explore SlangBit</a>
-<a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">View on Microsoft Store</a>
+<a class="btn primary" href="/">Scopri SlangBit</a>
+<a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a>
 </div>
 </div>
 </article>
 
 <aside aria-label="Article navigation">
 <div class="side-card">
-<h2>On this page</h2>
-<a href="#problem">The usual interruption</a>
-<a href="#workflow">A shorter workflow</a>
-<a href="#tone">Tone and context</a>
-<a href="#privacy">Draft privacy</a>
+<h2>In questa pagina</h2>
+<a href="#problem">L’interruzione abituale</a>
+<a href="#workflow">Un flusso più breve</a>
+<a href="#tone">Tono and context</a>
+<a href="#privacy">Privacy della bozza</a>
 <a href="#faq">FAQ</a>
 </div>
 <div class="side-card">
-<h2>Related insights</h2>
-<a href="/insights/the-hidden-cost-of-the-change-of-application.html">The hidden cost of switching applications</a>
-<a href="/insights/how-alt-z-works.html">How ALT+Z works</a>
-<a href="/insights/what-happens-to-pasted-text-in-cloud-services.html">What happens to pasted text in cloud services</a>
+<h2>Insights correlati</h2>
+<a href="/insights/the-hidden-cost-of-the-change-of-application.html">Il costo nascosto del cambio di applicazione</a>
+<a href="/insights/how-alt-z-works.html">Come funziona ALT+Z</a>
+<a href="/insights/what-happens-to-pasted-text-in-cloud-services.html">Cosa succede al testo incollato nei servizi cloud</a>
 </div>
 </aside>
 </div>
@@ -270,7 +268,7 @@ footer{border-top:1px solid var(--border);padding:44px 40px}
 <footer>
 <div class="footer">
 <span>© 2026 Memmola Labs® · SlangBit</span>
-<span><a href="/">Product</a> · <a href="/insights/">Insights</a> · <a href="/docs/privacy.html">Privacy</a></span>
+<span><a href="/">Prodotto</a> · <a href="/insights/">Insights</a> · <a href="/docs/privacy.html">Privacy</a></span>
 </div>
 </footer>
 </div>
