@@ -7,14 +7,25 @@
 <meta name="description" content="Perché cambiare applicazione solo per tradurre una frase crea attrito, interrompe la concentrazione e rallenta i workflow Windows ripetitivi.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://slangbit.com/insights/the-hidden-cost-of-the-change-of-application.html">
+<link rel="alternate" hreflang="it" href="https://slangbit.com/insights/the-hidden-cost-of-the-change-of-application.html">
+<link rel="alternate" hreflang="en" href="https://slangbit.com/insights/the-hidden-cost-of-the-change-of-application.html">
+<link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/the-hidden-cost-of-the-change-of-application.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SlangBit">
 <meta property="og:title" content="Il costo nascosto del cambio di applicazione">
 <meta property="og:description" content="Tradurre può richiedere pochi secondi. Lasciare il lavoro corrente, aprire un altro strumento e recuperare la concentrazione spesso costa molto di più.">
 <meta property="og:url" content="https://slangbit.com/insights/the-hidden-cost-of-the-change-of-application.html">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Il costo nascosto del cambio di applicazione">
 <meta name="twitter:description" content="Perché il cambio di contesto conta quando la traduzione entra nel workflow quotidiano.">
+<meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -59,6 +70,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}
 .nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}
 .nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}
+.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.share-section{padding:46px 4vw 34px;text-align:center;border-top:1px solid var(--line);background:#fbfdff}
+.share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+.share-section p{color:var(--muted);margin-bottom:20px}
+.share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share-button{min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 .hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
 .breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}
 .badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
@@ -206,119 +229,203 @@ aside{
 <div class="page">
 <nav>
 <a href="/" class="nav-logo" aria-label="SlangBit home"><div class="logo-mark">SB</div><div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div></a>
-<div class="nav-links"><a href="#switching">Cambio di contesto</a><a href="#workflow">Workflow</a><a href="#repetition">Ripetizione</a><a href="#better-design">Design migliore</a><a href="#faq">FAQ</a></div>
-<a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+<div class="nav-links"><a href="#switching" data-i18n="navSwitch">Cambio di contesto</a><a href="#workflow">Workflow</a><a href="#repetition" data-i18n="navRepeat">Ripetizione</a><a href="#better-design" data-i18n="navDesign">Design migliore</a><a href="#faq">FAQ</a></div>
+<div class="nav-actions">
+<div class="lang-switch" aria-label="Language">
+<button type="button" id="langIt">IT</button>
+<button type="button" id="langEn">EN</button>
+</div>
+<a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+</div>
 </nav>
 <main>
 <header class="hero">
-<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Cambio di contesto</span></div>
-<div class="badge"><span class="dot"></span>Produttività e workflow</div>
-<h1>Il costo nascosto del <span>cambio di applicazione</span></h1>
-<p class="intro">Tradurre una frase può richiedere solo pochi secondi. Lasciare il lavoro corrente, aprire un altro strumento, copiare il risultato e recuperare la concentrazione spesso costa molto di più.</p>
-<div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 7 minuti</span></div>
+<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span data-i18n="crumb">Cambio di contesto</span></div>
+<div class="badge"><span class="dot"></span><span data-i18n="badge">Produttività e workflow</span></div>
+<h1 data-i18n-html="heroTitle">Il costo nascosto del <span>cambio di applicazione</span></h1>
+<p class="intro" data-i18n="intro">Tradurre una frase può richiedere solo pochi secondi. Lasciare il lavoro corrente, aprire un altro strumento, copiare il risultato e recuperare la concentrazione spesso costa molto di più.</p>
+<div class="meta"><span>Memmola Labs</span><span data-i18n="date">29 luglio 2026</span><span data-i18n="readingTime">Circa 7 minuti</span></div>
 </header>
 
 <div class="layout">
 <article>
 <section id="switching">
-<h2>La traduzione non è l’intera attività</h2>
-<p>Quando si parla di velocità di traduzione, spesso si misura soltanto il tempo tra l’invio del testo e la ricezione del risultato. Tutto ciò che circonda la traduzione viene ignorato.</p>
-<p>L’attività completa può includere selezionare il testo, copiarlo, cambiare applicazione, trovare il campo corretto, incollare, controllare la lingua rilevata, copiare il risultato, tornare all’applicazione originale e ritrovare il punto esatto in cui il lavoro si era interrotto.</p>
-<div class="callout"><strong>Il costo nascosto</strong><p>La traduzione può essere veloce. È l’interruzione che la circonda a spezzare ripetutamente il workflow.</p></div>
+<h2 data-i18n="s1Title">La traduzione non è l’intera attività</h2>
+<p data-i18n="s1p1">Quando si parla di velocità di traduzione, spesso si misura soltanto il tempo tra l’invio del testo e la ricezione del risultato. Tutto ciò che circonda la traduzione viene ignorato.</p>
+<p data-i18n="s1p2">L’attività completa può includere selezionare il testo, copiarlo, cambiare applicazione, trovare il campo corretto, incollare, controllare la lingua rilevata, copiare il risultato, tornare all’applicazione originale e ritrovare il punto esatto in cui il lavoro si era interrotto.</p>
+<div class="callout"><strong data-i18n="calloutTitle">Il costo nascosto</strong><p data-i18n="calloutText">La traduzione può essere veloce. È l’interruzione che la circonda a spezzare ripetutamente il workflow.</p></div>
 </section>
 
 <section id="workflow">
-<h2>Una traduzione breve può creare una sequenza lunga</h2>
-<p>Un tipico workflow basato sul browser può essere questo:</p>
+<h2 data-i18n="s2Title">Una traduzione breve può creare una sequenza lunga</h2>
+<p data-i18n="s2p1">Un tipico workflow basato sul browser può essere questo:</p>
 <div class="workflow">
-<div class="workflow-step"><b>01</b><span>Seleziona il testo originale.</span></div>
-<div class="workflow-step"><b>02</b><span>Copialo negli appunti.</span></div>
-<div class="workflow-step"><b>03</b><span>Apri o trova il traduttore.</span></div>
-<div class="workflow-step"><b>04</b><span>Incolla e controlla la lingua.</span></div>
-<div class="workflow-step"><b>05</b><span>Copia il risultato tradotto.</span></div>
-<div class="workflow-step"><b>06</b><span>Torna all’applicazione originale.</span></div>
-<div class="workflow-step"><b>07</b><span>Ritrova il punto esatto e continua.</span></div>
+<div class="workflow-step"><b>01</b><span data-i18n="step1">Seleziona il testo originale.</span></div>
+<div class="workflow-step"><b>02</b><span data-i18n="step2">Copialo negli appunti.</span></div>
+<div class="workflow-step"><b>03</b><span data-i18n="step3">Apri o trova il traduttore.</span></div>
+<div class="workflow-step"><b>04</b><span data-i18n="step4">Incolla e controlla la lingua.</span></div>
+<div class="workflow-step"><b>05</b><span data-i18n="step5">Copia il risultato tradotto.</span></div>
+<div class="workflow-step"><b>06</b><span data-i18n="step6">Torna all’applicazione originale.</span></div>
+<div class="workflow-step"><b>07</b><span data-i18n="step7">Ritrova il punto esatto e continua.</span></div>
 </div>
-<p>Nessuno di questi passaggi è particolarmente difficile. Il problema è che si inseriscono tra l’utente e il lavoro che stava già svolgendo.</p>
+<p data-i18n="s2p2">Nessuno di questi passaggi è particolarmente difficile. Il problema è che si inseriscono tra l’utente e il lavoro che stava già svolgendo.</p>
 </section>
 
 <section>
-<h2>Perché il cambio di contesto costa più di quanto sembri</h2>
-<p>Cambiare applicazione non è soltanto un’azione fisica. Cambiano anche l’ambiente visivo, i controlli disponibili e l’obiettivo immediato.</p>
-<p>L’utente deve smettere temporaneamente di pensare all’email, al documento, alla risposta di supporto o al post social e iniziare a pensare allo strumento di traduzione. Poi deve ricostruire mentalmente l’attività originale.</p>
-<p>L’interruzione può essere piccola, ma compete comunque con la memoria di lavoro. È per questo che un workflow può risultare stancante anche quando ogni singolo passaggio è rapido.</p>
+<h2 data-i18n="s3Title">Perché il cambio di contesto costa più di quanto sembri</h2>
+<p data-i18n="s3p1">Cambiare applicazione non è soltanto un’azione fisica. Cambiano anche l’ambiente visivo, i controlli disponibili e l’obiettivo immediato.</p>
+<p data-i18n="s3p2">L’utente deve smettere temporaneamente di pensare all’email, al documento, alla risposta di supporto o al post social e iniziare a pensare allo strumento di traduzione. Poi deve ricostruire mentalmente l’attività originale.</p>
+<p data-i18n="s3p3">L’interruzione può essere piccola, ma compete comunque con la memoria di lavoro. È per questo che un workflow può risultare stancante anche quando ogni singolo passaggio è rapido.</p>
 </section>
 
 <section id="repetition">
-<h2>Ripetizione turns friction into a real workflow problem</h2>
-<p>Per una traduzione a settimana, cambiare applicazione è quasi irrilevante. Per chi traduce brevi passaggi durante tutta la giornata, la stessa sequenza viene ripetuta continuamente.</p>
-<ul><li>più cambi di finestra;</li><li>più possibilità di incollare nel campo sbagliato;</li><li>più operazioni duplicate sugli appunti;</li><li>più possibilità di perdere la posizione originale;</li><li>più interruzioni della concentrazione.</li></ul>
+<h2 data-i18n="s4Title">La ripetizione trasforma l’attrito in un vero problema di workflow</h2>
+<p data-i18n="s4p1">Per una traduzione a settimana, cambiare applicazione è quasi irrilevante. Per chi traduce brevi passaggi durante tutta la giornata, la stessa sequenza viene ripetuta continuamente.</p>
+<ul><li data-i18n="li0">più cambi di finestra;</li><li data-i18n="li1">più possibilità di incollare nel campo sbagliato;</li><li data-i18n="li2">più operazioni duplicate sugli appunti;</li><li data-i18n="li3">più possibilità di perdere la posizione originale;</li><li data-i18n="li4">più interruzioni della concentrazione.</li></ul>
 <div class="cards">
-<div class="card"><h3>Assistenza clienti</h3><p>Ogni risposta può richiedere una breve traduzione mentre l’operatore sta già gestendo più conversazioni.</p></div>
-<div class="card"><h3>Lavoro con le email</h3><p>Una frase tradotta fuori dal messaggio può interrompere struttura e tono della bozza.</p></div>
-<div class="card"><h3>E-commerce</h3><p>Descrizioni prodotto, messaggi degli acquirenti e risposte sui marketplace generano molte piccole attività di traduzione.</p></div>
-<div class="card"><h3>Social media</h3><p>Lasciare una bozza per tradurre una frase può spezzare il ritmo della scrittura e della revisione.</p></div>
+<div class="card"><h3 data-i18n="card1Title">Assistenza clienti</h3><p data-i18n="card1Text">Ogni risposta può richiedere una breve traduzione mentre l’operatore sta già gestendo più conversazioni.</p></div>
+<div class="card"><h3 data-i18n="card2Title">Lavoro con le email</h3><p data-i18n="card2Text">Una frase tradotta fuori dal messaggio può interrompere struttura e tono della bozza.</p></div>
+<div class="card"><h3>E-commerce</h3><p data-i18n="card3Text">Descrizioni prodotto, messaggi degli acquirenti e risposte sui marketplace generano molte piccole attività di traduzione.</p></div>
+<div class="card"><h3>Social media</h3><p data-i18n="card4Text">Lasciare una bozza per tradurre una frase può spezzare il ritmo della scrittura e della revisione.</p></div>
 </div>
 </section>
 
 <section>
-<h2>Gli appunti sono utili, ma possono anche creare errori</h2>
-<p>Copia e incolla rendono possibili workflow tra applicazioni diverse, ma molte operazioni sugli appunti introducono rischi propri.</p>
-<p>L’utente può sovrascrivere testo ancora necessario, incollare l’originale invece della traduzione, copiare solo parte di una frase o inserire il risultato nel campo attivo sbagliato.</p>
-<p>Un workflow di traduzione migliore dovrebbe ridurre la complessità degli appunti, non limitarsi a spostare gli stessi passaggi in un’altra interfaccia.</p>
+<h2 data-i18n="s5Title">Gli appunti sono utili, ma possono anche creare errori</h2>
+<p data-i18n="s5p1">Copia e incolla rendono possibili workflow tra applicazioni diverse, ma molte operazioni sugli appunti introducono rischi propri.</p>
+<p data-i18n="s5p2">L’utente può sovrascrivere testo ancora necessario, incollare l’originale invece della traduzione, copiare solo parte di una frase o inserire il risultato nel campo attivo sbagliato.</p>
+<p data-i18n="s5p3">Un workflow di traduzione migliore dovrebbe ridurre la complessità degli appunti, non limitarsi a spostare gli stessi passaggi in un’altra interfaccia.</p>
 </section>
 
 <section id="better-design">
-<h2>Un workflow migliore riduce i passaggi</h2>
-<p>L’obiettivo non è semplicemente far generare testo più velocemente al modello. È ridurre il numero di decisioni e cambi di applicazione che circondano la traduzione.</p>
+<h2 data-i18n="s6Title">Un workflow migliore riduce i passaggi</h2>
+<p data-i18n="s6p1">L’obiettivo non è semplicemente far generare testo più velocemente al modello. È ridurre il numero di decisioni e cambi di applicazione che circondano la traduzione.</p>
 <div class="comparison">
-<div class="comparison-box"><h3>Workflow con cambio di applicazione</h3><ul><li>Lascia il lavoro corrente</li><li>Trova un’altra applicazione o scheda</li><li>Incolla e recupera il risultato</li><li>Torna indietro e ricostruisci il contesto</li></ul></div>
-<div class="comparison-box"><h3>Workflow con scorciatoia integrata</h3><ul><li>Copia il testo selezionato</li><li>Usa una scorciatoia globale</li><li>Ricevi il risultato tradotto</li><li>Continua nella stessa applicazione</li></ul></div>
+<div class="comparison-box"><h3 data-i18n="cmp1Title">Workflow con cambio di applicazione</h3><ul><li data-i18n="li5">Lascia il lavoro corrente</li><li data-i18n="li6">Trova un’altra applicazione o scheda</li><li data-i18n="li7">Incolla e recupera il risultato</li><li data-i18n="li8">Torna indietro e ricostruisci il contesto</li></ul></div>
+<div class="comparison-box"><h3 data-i18n="cmp2Title">Workflow con scorciatoia integrata</h3><ul><li data-i18n="li9">Copia il testo selezionato</li><li data-i18n="li10">Usa una scorciatoia globale</li><li data-i18n="li11">Ricevi il risultato tradotto</li><li data-i18n="li12">Continua nella stessa applicazione</li></ul></div>
 </div>
 <div class="principles">
-<div class="principle"><b>MENO PASSAGGI</b><span>Elimina le azioni che non contribuiscono direttamente al risultato.</span></div>
-<div class="principle"><b>MENO CAMBI VISIVI</b><span>Mantieni l’utente vicino al documento, all’email o al messaggio già in corso.</span></div>
-<div class="principle"><b>MINORE CARICO MENTALE</b><span>Riduci la necessità di ricordare dove il lavoro si è interrotto e cosa deve succedere dopo.</span></div>
+<div class="principle"><b data-i18n="p1Title">MENO PASSAGGI</b><span data-i18n="p1Text">Elimina le azioni che non contribuiscono direttamente al risultato.</span></div>
+<div class="principle"><b data-i18n="p2Title">MENO CAMBI VISIVI</b><span data-i18n="p2Text">Mantieni l’utente vicino al documento, all’email o al messaggio già in corso.</span></div>
+<div class="principle"><b data-i18n="p3Title">MINORE CARICO MENTALE</b><span data-i18n="p3Text">Riduci la necessità di ricordare dove il lavoro si è interrotto e cosa deve succedere dopo.</span></div>
 </div>
 </section>
 
 <section>
-<h2>Come SlangBit affronta il problema</h2>
-<p>SlangBit è stato progettato come utility nella tray di Windows, non come destinazione separata per la traduzione. L’applicazione gestisce impostazioni e pacchetti linguistici locali, mentre il workflow quotidiano passa attraverso gli appunti e una scorciatoia globale.</p>
-<p>La sequenza è volutamente ridotta: copia il testo, premi <strong>ALT + Z</strong> e continua a lavorare nella stessa applicazione.</p>
-<p>L’obiettivo non è eliminare ogni azione. È rimuovere il continuo passaggio dentro e fuori da un’interfaccia di traduzione separata.</p>
+<h2 data-i18n="s7Title">Come SlangBit affronta il problema</h2>
+<p data-i18n="s7p1">SlangBit è stato progettato come utility nella tray di Windows, non come destinazione separata per la traduzione. L’applicazione gestisce impostazioni e pacchetti linguistici locali, mentre il workflow quotidiano passa attraverso gli appunti e una scorciatoia globale.</p>
+<p data-i18n-html="s7p2">La sequenza è volutamente ridotta: copia il testo, premi <strong>ALT + Z</strong> e continua a lavorare nella stessa applicazione.</p>
+<p data-i18n="s7p3">L’obiettivo non è eliminare ogni azione. È rimuovere il continuo passaggio dentro e fuori da un’interfaccia di traduzione separata.</p>
 </section>
 
 <section>
-<h2>Non tutte le attività di traduzione richiedono lo stesso strumento</h2>
-<p>Un’interfaccia di traduzione dedicata può essere utile per rivedere testi lunghi, confrontare alternative o lavorare con documenti complessi.</p>
-<p>Un’utilità basata su scorciatoia è più adatta quando la traduzione è soltanto un piccolo passaggio all’interno di un’attività più ampia.</p>
-<p>Il costo nascosto of application switching matters most when translation is frequent, brief and secondary to the work already in progress.</p>
+<h2 data-i18n="s8Title">Non tutte le attività di traduzione richiedono lo stesso strumento</h2>
+<p data-i18n="s8p1">Un’interfaccia di traduzione dedicata può essere utile per rivedere testi lunghi, confrontare alternative o lavorare con documenti complessi.</p>
+<p data-i18n="s8p2">Un’utilità basata su scorciatoia è più adatta quando la traduzione è soltanto un piccolo passaggio all’interno di un’attività più ampia.</p>
+<p data-i18n="s8p3">Il costo nascosto del cambio di applicazione conta soprattutto quando la traduzione è frequente, breve e secondaria rispetto al lavoro già in corso.</p>
 </section>
 
 <section id="faq">
-<h2>Domande frequenti</h2>
-<details><summary>Che cos’è il context switching?</summary><p>Cambio di contesto is the transition from one task or application to another. It includes both the visible change of interface and the mental effort required to change goals and later recover the original task.</p></details>
-<details><summary>Perché cambiare applicazione rallenta il lavoro di traduzione?</summary><p>Perché il workflow completo comprende copiare, aprire un altro strumento, incollare, controllare, copiare di nuovo, tornare indietro e ritrovare la posizione originale.</p></details>
-<details><summary>Il context switching conta anche per traduzioni occasionali?</summary><p>Di solito non molto. Diventa più rilevante quando lo stesso breve workflow viene ripetuto molte volte durante la giornata.</p></details>
-<details><summary>Una scorciatoia da tastiera può eliminare ogni interruzione?</summary><p>No. L’utente deve comunque selezionare e controllare il testo. Una scorciatoia può però ridurre i cambi di finestra inutili e la navigazione ripetuta tra interfacce.</p></details>
-<details><summary>SlangBit traduce dentro qualsiasi applicazione?</summary><p>SlangBit lavora attraverso gli appunti di Windows ed è progettato per applicazioni in cui il testo può essere copiato e incollato.</p></details>
+<h2 data-i18n="faqTitle">Domande frequenti</h2>
+<details><summary data-i18n="faq1q">Che cos’è il context switching?</summary><p data-i18n="faq1a">Il cambio di contesto è il passaggio da un’attività o applicazione a un’altra. Include sia il cambiamento visibile di interfaccia sia lo sforzo mentale necessario per cambiare obiettivo e poi recuperare l’attività originale.</p></details>
+<details><summary data-i18n="faq2q">Perché cambiare applicazione rallenta il lavoro di traduzione?</summary><p data-i18n="faq2a">Perché il workflow completo comprende copiare, aprire un altro strumento, incollare, controllare, copiare di nuovo, tornare indietro e ritrovare la posizione originale.</p></details>
+<details><summary data-i18n="faq3q">Il context switching conta anche per traduzioni occasionali?</summary><p data-i18n="faq3a">Di solito non molto. Diventa più rilevante quando lo stesso breve workflow viene ripetuto molte volte durante la giornata.</p></details>
+<details><summary data-i18n="faq4q">Una scorciatoia da tastiera può eliminare ogni interruzione?</summary><p data-i18n="faq4a">No. L’utente deve comunque selezionare e controllare il testo. Una scorciatoia può però ridurre i cambi di finestra inutili e la navigazione ripetuta tra interfacce.</p></details>
+<details><summary data-i18n="faq5q">SlangBit traduce dentro qualsiasi applicazione?</summary><p data-i18n="faq5a">SlangBit lavora attraverso gli appunti di Windows ed è progettato per applicazioni in cui il testo può essere copiato e incollato.</p></details>
 </section>
 
 <div class="cta">
-<h2>Traduci senza uscire dall’applicazione che stai usando</h2>
-<p>SlangBit usa una scorciatoia globale di Windows e modelli linguistici locali per ridurre le interruzioni nelle traduzioni brevi e ripetitive.</p>
-<div class="actions"><a class="btn primary" href="/">Scopri SlangBit</a><a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a></div>
+<h2 data-i18n="ctaTitle">Traduci senza uscire dall’applicazione che stai usando</h2>
+<p data-i18n="ctaText">SlangBit usa una scorciatoia globale di Windows e modelli linguistici locali per ridurre le interruzioni nelle traduzioni brevi e ripetitive.</p>
+<div class="actions"><a class="btn primary" href="/" data-i18n="discover">Scopri SlangBit</a><a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer" data-i18n="store">Vai al Microsoft Store</a></div>
 </div>
 </article>
 
 <aside>
-<div class="side-card"><h2>In questa pagina</h2><a href="#switching">Il costo nascosto</a><a href="#workflow">La sequenza completa</a><a href="#repetition">Attrito ripetuto</a><a href="#better-design">Un workflow migliore</a><a href="#faq">FAQ</a></div>
-<div class="side-card"><h2>Insights correlati</h2><a href="/insights/how-alt-z-works.html">Come funziona ALT+Z</a><a href="/insights/how-to-translate-directly-into-an-email.html">Come tradurre direttamente in un’email</a><a href="/insights/why-an-offline-translation-really-counts.html">Perché la traduzione offline conta davvero</a></div>
+<div class="side-card"><h2 data-i18n="sideTitle">In questa pagina</h2><a href="#switching" data-i18n="side1">Il costo nascosto</a><a href="#workflow" data-i18n="side2">La sequenza completa</a><a href="#repetition" data-i18n="side3">Attrito ripetuto</a><a href="#better-design" data-i18n="side4">Un workflow migliore</a><a href="#faq">FAQ</a></div>
+<div class="side-card"><h2 data-i18n="relatedTitle">Insights correlati</h2><a href="/insights/how-ALT+Z-works.html" data-i18n="related1">Come funziona ALT+Z</a><a href="/insights/how-to-translate-directly-into-an-email.html" data-i18n="related2">Come tradurre direttamente in un’email</a><a href="/insights/why-an-offline-translation-really-counts.html" data-i18n="related3">Perché la traduzione offline conta davvero</a></div>
 </aside>
 </div>
 </main>
+<section class="share-section" aria-labelledby="shareArticleTitle">
+<h3 id="shareArticleTitle" data-i18n="shareTitle">Condividi questo Insight</h3>
+<p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
+<div class="share-buttons">
+<a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fthe-hidden-cost-of-the-change-of-application.html&text=SlangBit%20Insights%20%E2%80%94%20il%20costo%20nascosto%20del%20cambio%20di%20applicazione." target="_blank" rel="noopener noreferrer"><img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span></a>
+<a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2Fthe-hidden-cost-of-the-change-of-application.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span></a>
+<a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fthe-hidden-cost-of-the-change-of-application.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span></a>
+<button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+</div>
+</section>
+
 <footer><div class="footer"><span>© 2026 Memmola Labs® · SlangBit</span><span><a href="/">Prodotto</a> · <a href="/insights/">Insights</a> · <a href="/docs/privacy.html">Privacy</a></span></div></footer>
 </div>
+
+<script>
+const I18N={
+it:{
+pageTitle:'Il costo nascosto del cambio di applicazione | SlangBit',
+metaDescription:'Perché cambiare applicazione solo per tradurre una frase crea attrito, interrompe la concentrazione e rallenta i workflow Windows ripetitivi.',
+navSwitch:'Cambio di contesto',navRepeat:'Ripetizione',navDesign:'Design migliore',crumb:'Cambio di contesto',badge:'Produttività e workflow',
+heroTitle:'Il costo nascosto del <span>cambio di applicazione</span>',intro:'Tradurre una frase può richiedere solo pochi secondi. Lasciare il lavoro corrente, aprire un altro strumento, copiare il risultato e recuperare la concentrazione spesso costa molto di più.',date:'29 luglio 2026',readingTime:'Circa 7 minuti',
+s1Title:'La traduzione non è l’intera attività',s1p1:'Quando si parla di velocità di traduzione, spesso si misura soltanto il tempo tra l’invio del testo e la ricezione del risultato. Tutto ciò che circonda la traduzione viene ignorato.',s1p2:'L’attività completa può includere selezionare il testo, copiarlo, cambiare applicazione, trovare il campo corretto, incollare, controllare la lingua rilevata, copiare il risultato, tornare all’applicazione originale e ritrovare il punto esatto in cui il lavoro si era interrotto.',calloutTitle:'Il costo nascosto',calloutText:'La traduzione può essere veloce. È l’interruzione che la circonda a spezzare ripetutamente il workflow.',
+s2Title:'Una traduzione breve può creare una sequenza lunga',s2p1:'Un tipico workflow basato sul browser può essere questo:',step1:'Seleziona il testo originale.',step2:'Copialo negli appunti.',step3:'Apri o trova il traduttore.',step4:'Incolla e controlla la lingua.',step5:'Copia il risultato tradotto.',step6:'Torna all’applicazione originale.',step7:'Ritrova il punto esatto e continua.',s2p2:'Nessuno di questi passaggi è particolarmente difficile. Il problema è che si inseriscono tra l’utente e il lavoro che stava già svolgendo.',
+s3Title:'Perché il cambio di contesto costa più di quanto sembri',s3p1:'Cambiare applicazione non è soltanto un’azione fisica. Cambiano anche l’ambiente visivo, i controlli disponibili e l’obiettivo immediato.',s3p2:'L’utente deve smettere temporaneamente di pensare all’email, al documento, alla risposta di supporto o al post social e iniziare a pensare allo strumento di traduzione. Poi deve ricostruire mentalmente l’attività originale.',s3p3:'L’interruzione può essere piccola, ma compete comunque con la memoria di lavoro. È per questo che un workflow può risultare stancante anche quando ogni singolo passaggio è rapido.',
+s4Title:'La ripetizione trasforma l’attrito in un vero problema di workflow',s4p1:'Per una traduzione a settimana, cambiare applicazione è quasi irrilevante. Per chi traduce brevi passaggi durante tutta la giornata, la stessa sequenza viene ripetuta continuamente.',card1Title:'Assistenza clienti',card1Text:'Ogni risposta può richiedere una breve traduzione mentre l’operatore sta già gestendo più conversazioni.',card2Title:'Lavoro con le email',card2Text:'Una frase tradotta fuori dal messaggio può interrompere struttura e tono della bozza.',card3Text:'Descrizioni prodotto, messaggi degli acquirenti e risposte sui marketplace generano molte piccole attività di traduzione.',card4Text:'Lasciare una bozza per tradurre una frase può spezzare il ritmo della scrittura e della revisione.',
+s5Title:'Gli appunti sono utili, ma possono anche creare errori',s5p1:'Copia e incolla rendono possibili workflow tra applicazioni diverse, ma molte operazioni sugli appunti introducono rischi propri.',s5p2:'L’utente può sovrascrivere testo ancora necessario, incollare l’originale invece della traduzione, copiare solo parte di una frase o inserire il risultato nel campo attivo sbagliato.',s5p3:'Un workflow di traduzione migliore dovrebbe ridurre la complessità degli appunti, non limitarsi a spostare gli stessi passaggi in un’altra interfaccia.',
+s6Title:'Un workflow migliore riduce i passaggi',s6p1:'L’obiettivo non è semplicemente far generare testo più velocemente al modello. È ridurre il numero di decisioni e cambi di applicazione che circondano la traduzione.',cmp1Title:'Workflow con cambio di applicazione',cmp2Title:'Workflow con scorciatoia integrata',p1Title:'MENO PASSAGGI',p1Text:'Elimina le azioni che non contribuiscono direttamente al risultato.',p2Title:'MENO CAMBI VISIVI',p2Text:'Mantieni l’utente vicino al documento, all’email o al messaggio già in corso.',p3Title:'MINORE CARICO MENTALE',p3Text:'Riduci la necessità di ricordare dove il lavoro si è interrotto e cosa deve succedere dopo.',
+s7Title:'Come SlangBit affronta il problema',s7p1:'SlangBit è stato progettato come utility nella tray di Windows, non come destinazione separata per la traduzione. L’applicazione gestisce impostazioni e pacchetti linguistici locali, mentre il workflow quotidiano passa attraverso gli appunti e una scorciatoia globale.',s7p2:'La sequenza è volutamente ridotta: copia il testo, premi <strong>ALT + Z</strong> e continua a lavorare nella stessa applicazione.',s7p3:'L’obiettivo non è eliminare ogni azione. È rimuovere il continuo passaggio dentro e fuori da un’interfaccia di traduzione separata.',
+s8Title:'Non tutte le attività di traduzione richiedono lo stesso strumento',s8p1:'Un’interfaccia di traduzione dedicata può essere utile per rivedere testi lunghi, confrontare alternative o lavorare con documenti complessi.',s8p2:'Un’utilità basata su scorciatoia è più adatta quando la traduzione è soltanto un piccolo passaggio all’interno di un’attività più ampia.',s8p3:'Il costo nascosto del cambio di applicazione conta soprattutto quando la traduzione è frequente, breve e secondaria rispetto al lavoro già in corso.',
+faqTitle:'Domande frequenti',faq1q:'Che cos’è il context switching?',faq1a:'Il cambio di contesto è il passaggio da un’attività o applicazione a un’altra. Include sia il cambiamento visibile di interfaccia sia lo sforzo mentale necessario per cambiare obiettivo e poi recuperare l’attività originale.',faq2q:'Perché cambiare applicazione rallenta il lavoro di traduzione?',faq2a:'Perché il workflow completo comprende copiare, aprire un altro strumento, incollare, controllare, copiare di nuovo, tornare indietro e ritrovare la posizione originale.',faq3q:'Il context switching conta anche per traduzioni occasionali?',faq3a:'Di solito non molto. Diventa più rilevante quando lo stesso breve workflow viene ripetuto molte volte durante la giornata.',faq4q:'Una scorciatoia da tastiera può eliminare ogni interruzione?',faq4a:'No. L’utente deve comunque selezionare e controllare il testo. Una scorciatoia può però ridurre i cambi di finestra inutili e la navigazione ripetuta tra interfacce.',faq5q:'SlangBit traduce dentro qualsiasi applicazione?',faq5a:'SlangBit lavora attraverso gli appunti di Windows ed è progettato per applicazioni in cui il testo può essere copiato e incollato.',
+ctaTitle:'Traduci senza uscire dall’applicazione che stai usando',ctaText:'SlangBit usa una scorciatoia globale di Windows e modelli linguistici locali per ridurre le interruzioni nelle traduzioni brevi e ripetitive.',discover:'Scopri SlangBit',store:'Vai al Microsoft Store',
+sideTitle:'In questa pagina',side1:'Il costo nascosto',side2:'La sequenza completa',side3:'Attrito ripetuto',side4:'Un workflow migliore',relatedTitle:'Insights correlati',related1:'Come funziona ALT+Z',related2:'Come tradurre direttamente in un’email',related3:'Perché la traduzione offline conta davvero',
+shareTitle:'Condividi questo Insight',shareText:'Se pensi possa essere utile anche a qualcun altro.',copyLink:'Copia link',copied:'Link copiato',li0:'più cambi di finestra;',li1:'più possibilità di incollare nel campo sbagliato;',li2:'più operazioni duplicate sugli appunti;',li3:'più possibilità di perdere la posizione originale;',li4:'più interruzioni della concentrazione.',li5:'Lascia il lavoro corrente',li6:'Trova un’altra applicazione o scheda',li7:'Incolla e recupera il risultato',li8:'Torna indietro e ricostruisci il contesto',li9:'Copia il testo selezionato',li10:'Usa una scorciatoia globale',li11:'Ricevi il risultato tradotto',li12:'Continua nella stessa applicazione'
+},
+en:{
+pageTitle:'The hidden cost of switching applications | SlangBit',
+metaDescription:'Why switching applications just to translate a sentence creates friction, interrupts concentration and slows repetitive Windows workflows.',
+navSwitch:'Context switching',navRepeat:'Repetition',navDesign:'Better design',crumb:'Context switching',badge:'Productivity and workflow',
+heroTitle:'The hidden cost of <span>switching applications</span>',intro:'Translating a sentence may take only a few seconds. Leaving the current task, opening another tool, copying the result and regaining focus often costs much more.',date:'July 29, 2026',readingTime:'About 7 minutes',
+s1Title:'Translation is not the whole task',s1p1:'When translation speed is discussed, people often measure only the time between sending the text and receiving the result. Everything around the translation is ignored.',s1p2:'The full task can include selecting text, copying it, switching applications, finding the right field, pasting, checking the detected language, copying the result, returning to the original application and finding the exact point where the work was interrupted.',calloutTitle:'The hidden cost',calloutText:'Translation can be fast. It is the interruption around it that repeatedly breaks the workflow.',
+s2Title:'A short translation can create a long sequence',s2p1:'A typical browser-based workflow may look like this:',step1:'Select the original text.',step2:'Copy it to the clipboard.',step3:'Open or find the translator.',step4:'Paste and check the language.',step5:'Copy the translated result.',step6:'Return to the original application.',step7:'Find the exact point again and continue.',s2p2:'None of these steps is particularly difficult. The problem is that they sit between the user and the work they were already doing.',
+s3Title:'Why context switching costs more than it seems',s3p1:'Switching applications is not only a physical action. The visual environment, available controls and immediate goal also change.',s3p2:'The user has to temporarily stop thinking about the email, document, support reply or social post and start thinking about the translation tool. Then the original task must be mentally reconstructed.',s3p3:'The interruption may be small, but it still competes with working memory. That is why a workflow can feel tiring even when each individual step is fast.',
+s4Title:'Repetition turns friction into a real workflow problem',s4p1:'For one translation a week, switching applications is almost irrelevant. For someone translating short passages throughout the day, the same sequence is repeated continuously.',card1Title:'Customer support',card1Text:'Each reply may require a short translation while the operator is already handling multiple conversations.',card2Title:'Email work',card2Text:'A sentence translated outside the message can interrupt the structure and tone of the draft.',card3Text:'Product descriptions, buyer messages and marketplace replies generate many small translation tasks.',card4Text:'Leaving a draft to translate a sentence can break the rhythm of writing and review.',
+s5Title:'The clipboard is useful, but it can also create errors',s5p1:'Copy and paste make workflows across applications possible, but repeated clipboard operations introduce risks of their own.',s5p2:'The user can overwrite text that is still needed, paste the original instead of the translation, copy only part of a sentence or insert the result into the wrong active field.',s5p3:'A better translation workflow should reduce clipboard complexity, not simply move the same steps into another interface.',
+s6Title:'A better workflow reduces steps',s6p1:'The goal is not simply to make the model generate text faster. It is to reduce the number of decisions and application switches surrounding translation.',cmp1Title:'Workflow with application switching',cmp2Title:'Workflow with an integrated shortcut',p1Title:'FEWER STEPS',p1Text:'Remove actions that do not directly contribute to the result.',p2Title:'FEWER VISUAL SWITCHES',p2Text:'Keep the user close to the document, email or message already in progress.',p3Title:'LOWER MENTAL LOAD',p3Text:'Reduce the need to remember where the work stopped and what needs to happen next.',
+s7Title:'How SlangBit approaches the problem',s7p1:'SlangBit was designed as a Windows tray utility, not as a separate translation destination. The application manages settings and local language packages, while the daily workflow runs through the clipboard and a global shortcut.',s7p2:'The sequence is intentionally short: copy the text, press <strong>ALT + Z</strong> and keep working in the same application.',s7p3:'The goal is not to eliminate every action. It is to remove the constant movement in and out of a separate translation interface.',
+s8Title:'Not every translation task needs the same tool',s8p1:'A dedicated translation interface can be useful for reviewing long texts, comparing alternatives or working with complex documents.',s8p2:'A shortcut-based utility is more suitable when translation is only a small step inside a larger task.',s8p3:'The hidden cost of application switching matters most when translation is frequent, brief and secondary to the work already in progress.',
+faqTitle:'Frequently asked questions',faq1q:'What is context switching?',faq1a:'Context switching is the transition from one task or application to another. It includes both the visible change of interface and the mental effort required to change goals and later recover the original task.',faq2q:'Why does switching applications slow translation work?',faq2a:'Because the full workflow includes copying, opening another tool, pasting, checking, copying again, going back and finding the original position.',faq3q:'Does context switching matter for occasional translations?',faq3a:'Usually not very much. It becomes more relevant when the same short workflow is repeated many times throughout the day.',faq4q:'Can a keyboard shortcut eliminate every interruption?',faq4a:'No. The user still has to select and review the text. A shortcut can, however, reduce unnecessary window switching and repeated navigation between interfaces.',faq5q:'Does SlangBit translate inside any application?',faq5a:'SlangBit works through the Windows clipboard and is designed for applications where text can be copied and pasted.',
+ctaTitle:'Translate without leaving the application you are using',ctaText:'SlangBit uses a global Windows shortcut and local language models to reduce interruptions in short, repetitive translations.',discover:'Discover SlangBit',store:'Go to Microsoft Store',
+sideTitle:'On this page',side1:'The hidden cost',side2:'The complete sequence',side3:'Repeated friction',side4:'A better workflow',relatedTitle:'Related Insights',related1:'How ALT+Z works',related2:'How to translate directly inside an email',related3:'Why offline translation really matters',
+shareTitle:'Share this Insight',shareText:'If you think it could be useful to someone else.',copyLink:'Copy link',copied:'Link copied',li0:'more window switches;',li1:'more chances of pasting into the wrong field;',li2:'more duplicated clipboard operations;',li3:'more chances of losing your original position;',li4:'more interruptions to concentration.',li5:'Leave the current task',li6:'Find another application or tab',li7:'Paste and retrieve the result',li8:'Go back and rebuild the context',li9:'Copy the selected text',li10:'Use a global shortcut',li11:'Receive the translated result',li12:'Continue in the same application'
+}
+};
+let currentLang='it';
+function applyLanguage(lang,persist=true){
+if(!I18N[lang])lang='it';currentLang=lang;document.documentElement.lang=lang;
+document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(I18N[lang][k]!==undefined)el.textContent=I18N[lang][k]});
+document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(I18N[lang][k]!==undefined)el.innerHTML=I18N[lang][k]});
+document.title=I18N[lang].pageTitle;
+const m=document.querySelector('meta[name="description"]');if(m)m.setAttribute('content',I18N[lang].metaDescription);
+document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+if(persist)localStorage.setItem('slangbit-language',lang);
+}
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage||(browserLanguage.startsWith('it')?'it':'en'),false);
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+const button=document.getElementById('copyShareLink');
+try{
+await navigator.clipboard.writeText('https://slangbit.com/insights/the-hidden-cost-of-the-change-of-application.html');
+const span=button?.querySelector('span');const original=span?.textContent||'';
+if(span)span.textContent=I18N[currentLang].copied;
+setTimeout(()=>{if(span)span.textContent=original},1600);
+}catch(error){window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/the-hidden-cost-of-the-change-of-application.html');}
+});
+</script>
+
 </body>
 </html>
