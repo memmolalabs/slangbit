@@ -8,16 +8,27 @@
   <meta name="description" content="Perché SlangBit utilizza un acquisto una tantum invece di un abbonamento ricorrente e perché questa scelta è coerente con una utility Windows offline.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html">
+  <link rel="alternate" hreflang="it" href="https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html">
+  <link rel="alternate" hreflang="en" href="https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html">
+  <link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="SlangBit">
   <meta property="og:title" content="Perché abbiamo scelto l’acquisto una tantum">
   <meta property="og:description" content="Una spiegazione pratica del perché SlangBit viene venduto con un acquisto una tantum invece di un abbonamento ricorrente.">
   <meta property="og:url" content="https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html">
+  <meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Perché abbiamo scelto l’acquisto una tantum">
   <meta name="twitter:description" content="Perché una utility Windows offline non ha necessariamente bisogno di un abbonamento.">
+  <meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 
   <script type="application/ld+json">
   {
@@ -63,6 +74,18 @@
 :root{--bg:#fff;--surface:#f7f9fc;--surface2:#eef5ff;--line:#dce5f0;--blue:#1769ff;--cyan:#20bfe8;--green:#16a36a;--text:#07152b;--muted:#607086;--muted2:#8a99ab;--shadow:0 22px 70px rgba(21,64,120,.10)}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 82% 16%,rgba(23,105,255,.09),transparent 31%),radial-gradient(circle at 62% 48%,rgba(32,191,232,.07),transparent 30%);pointer-events:none}a{color:inherit}.page{position:relative;z-index:1}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 4vw;background:rgba(255,255,255,.90);border-bottom:1px solid rgba(7,21,43,.08);backdrop-filter:blur(18px)}.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo-mark{width:38px;height:38px;background:linear-gradient(135deg,#07152b,#1769ff);border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 8px 25px rgba(23,105,255,.18)}.logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}.nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}.nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}
+.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.share-section{padding:46px 4vw 34px;text-align:center;border-top:1px solid var(--line);background:#fbfdff}
+.share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+.share-section p{color:var(--muted);margin-bottom:20px}
+.share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share-button{min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 .hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}.breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}.badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}h1{max-width:1200px;font-size:clamp(3.3rem,7.2vw,7.5rem);line-height:.91;letter-spacing:-.065em;font-weight:900}h1 span{background:linear-gradient(90deg,#246cff,#25bce7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.intro{margin-top:32px;max-width:900px;color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.28rem);line-height:1.7}.meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:28px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}
 .layout{max-width:1280px;margin:auto;padding:15px 4vw 100px;display:grid;grid-template-columns:minmax(0,1fr) 275px;gap:65px;align-items:start}article section{padding:48px 0;border-top:1px solid var(--line)}article section:first-child{border-top:0}h2{font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.08;letter-spacing:-.04em;margin-bottom:20px}p{color:var(--muted);font-size:1.04rem;line-height:1.82;margin-bottom:18px}strong{color:var(--text)}ul{margin:8px 0 22px 24px;color:var(--muted)}li{margin:10px 0;line-height:1.68}.callout{margin:30px 0;padding:27px 28px;border:1px solid #d6e4f7;border-radius:18px;background:linear-gradient(135deg,#f8fbff,#f2f8ff);box-shadow:0 12px 35px rgba(35,94,160,.06)}.callout strong{display:block;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;font-size:.78rem}.callout p{margin:0;color:var(--text)}
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:25px}.card{padding:25px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 32px rgba(31,70,120,.05)}.card h3{color:var(--text);margin-bottom:10px}.card p{margin:0;font-size:.95rem}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0}.comparison-box{padding:27px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 32px rgba(31,70,120,.05)}.comparison-box h3{margin-bottom:14px;color:var(--text)}.comparison-box ul{margin-bottom:0}.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}.principle{padding:23px;border:1px solid #dbe7f6;border-radius:16px;background:linear-gradient(180deg,#fff,#f7fbff)}.principle b{display:block;color:var(--blue);margin-bottom:9px}.principle span{color:var(--muted);line-height:1.55;font-size:.92rem}
@@ -174,146 +197,163 @@ aside{
       <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
     </a>
     <div class="nav-links">
-      <a href="#subscription">Abbonamenti</a>
-      <a href="#offline">Software offline</a>
-      <a href="#sustainability">Sostenibilità</a>
-      <a href="#limits">Limiti</a>
+      <a href="#subscription" data-i18n="navSubscriptions">Abbonamenti</a>
+      <a href="#offline" data-i18n="navOffline">Software offline</a>
+      <a href="#sustainability" data-i18n="side4">Sostenibilità</a>
+      <a href="#limits" data-i18n="navLimits">Limiti</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    <div class="nav-actions">
+      <div class="lang-switch" aria-label="Language">
+        <button type="button" id="langIt">IT</button>
+        <button type="button" id="langEn">EN</button>
+      </div>
+      <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
   </nav>
 
   <main>
     <header class="hero">
-      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Acquisto una tantum</span></div>
-      <div class="badge"><span class="dot"></span>Filosofia del prodotto</div>
-      <h1>Perché abbiamo scelto <span>l’acquisto una tantum</span></h1>
-      <p class="intro">Gli abbonamenti possono essere il modello giusto per servizi con infrastrutture e costi operativi continui. Ma non ogni software deve trasformarsi in una spesa ricorrente.</p>
-      <div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 7 minuti</span></div>
+      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span data-i18n="crumb">Acquisto una tantum</span></div>
+      <div class="badge"><span class="dot"></span><span data-i18n="badge">Filosofia del prodotto</span></div>
+      <h1 data-i18n-html="heroTitle">Perché abbiamo scelto <span>l’acquisto una tantum</span></h1>
+      <p class="intro" data-i18n="intro">Gli abbonamenti possono essere il modello giusto per servizi con infrastrutture e costi operativi continui. Ma non ogni software deve trasformarsi in una spesa ricorrente.</p>
+      <div class="meta"><span>Memmola Labs</span><span data-i18n="date">29 luglio 2026</span><span data-i18n="readingTime">Circa 7 minuti</span></div>
     </header>
 
     <div class="layout">
       <article>
         <section id="subscription">
-          <h2>Gli abbonamenti non sono automaticamente sbagliati</h2>
-          <p>Un abbonamento ricorrente può essere ragionevole quando un prodotto dipende da elaborazione cloud continua, spazio di archiviazione ospitato, grandi database online, collaborazione in tempo reale, servizi umani o contenuti in licenza che cambiano frequentemente.</p>
-          <p>Questi sistemi generano costi continui ogni volta che un cliente li utilizza. Un pagamento ricorrente può contribuire a mantenere il servizio disponibile, sicuro e aggiornato.</p>
-          <p>Il problema nasce quando il prezzo in abbonamento diventa la scelta predefinita anche per prodotti la cui funzione essenziale viene eseguita localmente e non genera un costo server significativo per ogni utilizzo.</p>
-          <div class="callout"><strong>La domanda che ci siamo posti</strong><p>SlangBit ha bisogno di un rapporto di pagamento permanente per svolgere la sua funzione principale?</p></div>
+          <h2 data-i18n="s1Title">Gli abbonamenti non sono automaticamente sbagliati</h2>
+          <p data-i18n="s1p1">Un abbonamento ricorrente può essere ragionevole quando un prodotto dipende da elaborazione cloud continua, spazio di archiviazione ospitato, grandi database online, collaborazione in tempo reale, servizi umani o contenuti in licenza che cambiano frequentemente.</p>
+          <p data-i18n="s1p2">Questi sistemi generano costi continui ogni volta che un cliente li utilizza. Un pagamento ricorrente può contribuire a mantenere il servizio disponibile, sicuro e aggiornato.</p>
+          <p data-i18n="s1p3">Il problema nasce quando il prezzo in abbonamento diventa la scelta predefinita anche per prodotti la cui funzione essenziale viene eseguita localmente e non genera un costo server significativo per ogni utilizzo.</p>
+          <div class="callout"><strong data-i18n="callout1Title">La domanda che ci siamo posti</strong><p data-i18n="callout1Text">SlangBit ha bisogno di un rapporto di pagamento permanente per svolgere la sua funzione principale?</p></div>
         </section>
 
         <section id="offline">
-          <h2>SlangBit è prima di tutto un software locale</h2>
-          <p>SlangBit funziona come utility Windows. Dopo aver installato l’applicazione e i pacchetti linguistici scelti, l’inferenza per la traduzione avviene sul computer dell’utente.</p>
-          <p>Il workflow principale non dipende dall’invio di ogni traduzione a infrastrutture gestite da Memmola Labs. Dietro ogni pressione di <strong>ALT + Z</strong> non c’è una richiesta di traduzione cloud a consumo.</p>
-          <p>Questa architettura ha influenzato il modello commerciale. Se l’elaborazione principale viene svolta dal computer del cliente, sarebbe difficile giustificare un abbonamento indefinito per accedere al workflow di traduzione di base.</p>
+          <h2 data-i18n="s2Title">SlangBit è prima di tutto un software locale</h2>
+          <p data-i18n="s2p1">SlangBit funziona come utility Windows. Dopo aver installato l’applicazione e i pacchetti linguistici scelti, l’inferenza per la traduzione avviene sul computer dell’utente.</p>
+          <p data-i18n-html="s2p2">Il workflow principale non dipende dall’invio di ogni traduzione a infrastrutture gestite da Memmola Labs. Dietro ogni pressione di <strong>ALT + Z</strong> non c’è una richiesta di traduzione cloud a consumo.</p>
+          <p data-i18n="s2p3">Questa architettura ha influenzato il modello commerciale. Se l’elaborazione principale viene svolta dal computer del cliente, sarebbe difficile giustificare un abbonamento indefinito per accedere al workflow di traduzione di base.</p>
         </section>
 
         <section id="ownership">
-          <h2>Una utility dovrebbe sembrare uno strumento che hai acquistato</h2>
-          <p>Le utility desktop tradizionali venivano spesso acquistate perché risolvevano un problema specifico. Installavi lo strumento, imparavi il suo workflow e continuavi a usarlo.</p>
-          <p>Un acquisto una tantum conserva maggiormente questo tipo di rapporto. Il cliente prende una decisione chiara una volta sola, invece di aggiungere un altro piccolo addebito mensile a una collezione crescente di abbonamenti.</p>
-          <p>Questo è particolarmente importante per un software pensato per restare discretamente nella tray di Windows. SlangBit è progettato per sparire quando non serve, non per chiedere attenzione costante o dover giustificare ogni mese un rinnovo.</p>
+          <h2 data-i18n="s3Title">Una utility dovrebbe sembrare uno strumento che hai acquistato</h2>
+          <p data-i18n="s3p1">Le utility desktop tradizionali venivano spesso acquistate perché risolvevano un problema specifico. Installavi lo strumento, imparavi il suo workflow e continuavi a usarlo.</p>
+          <p data-i18n="s3p2">Un acquisto una tantum conserva maggiormente questo tipo di rapporto. Il cliente prende una decisione chiara una volta sola, invece di aggiungere un altro piccolo addebito mensile a una collezione crescente di abbonamenti.</p>
+          <p data-i18n="s3p3">Questo è particolarmente importante per un software pensato per restare discretamente nella tray di Windows. SlangBit è progettato per sparire quando non serve, non per chiedere attenzione costante o dover giustificare ogni mese un rinnovo.</p>
         </section>
 
         <section>
-          <h2>Il costo nascosto del software ricorrente</h2>
-          <p>Un prezzo mensile basso può sembrare più semplice di un acquisto singolo, ma il software ricorrente crea un altro tipo di costo: un rinnovo in più da ricordare, un addebito in più da controllare e un altro prodotto la cui utilità va rivalutata ogni mese o ogni anno.</p>
-          <p>Per un servizio professionale utilizzato frequentemente, questo compromesso può essere accettabile. Per una utility desktop mirata, può diventare un attrito inutile.</p>
+          <h2 data-i18n="s4Title">Il costo nascosto del software ricorrente</h2>
+          <p data-i18n="s4p1">Un prezzo mensile basso può sembrare più semplice di un acquisto singolo, ma il software ricorrente crea un altro tipo di costo: un rinnovo in più da ricordare, un addebito in più da controllare e un altro prodotto la cui utilità va rivalutata ogni mese o ogni anno.</p>
+          <p data-i18n="s4p2">Per un servizio professionale utilizzato frequentemente, questo compromesso può essere accettabile. Per una utility desktop mirata, può diventare un attrito inutile.</p>
           <div class="comparison">
             <div class="comparison-box">
-              <h3>Accesso ricorrente</h3>
+              <h3 data-i18n="cmp1Title">Accesso ricorrente</h3>
               <ul>
-                <li>Impegno iniziale più basso</li>
-                <li>Rapporto di fatturazione continuo</li>
-                <li>L’accesso può interrompersi quando terminano i pagamenti</li>
-                <li>Più adatto ai servizi continuativi</li>
+                <li data-i18n="li0">Impegno iniziale più basso</li>
+                <li data-i18n="li1">Rapporto di fatturazione continuo</li>
+                <li data-i18n="li2">L’accesso può interrompersi quando terminano i pagamenti</li>
+                <li data-i18n="li3">Più adatto ai servizi continuativi</li>
               </ul>
             </div>
             <div class="comparison-box">
-              <h3>Acquisto una tantum</h3>
+              <h3 data-i18n="cmp2Title">Acquisto una tantum</h3>
               <ul>
-                <li>Decisione chiara fin dall’inizio</li>
-                <li>Nessun addebito ricorrente per l’accesso principale</li>
-                <li>Più adatto a una utility locale</li>
-                <li>Modello di possesso semplice nel lungo periodo</li>
+                <li data-i18n="li4">Decisione chiara fin dall’inizio</li>
+                <li data-i18n="li5">Nessun addebito ricorrente per l’accesso principale</li>
+                <li data-i18n="li6">Più adatto a una utility locale</li>
+                <li data-i18n="li7">Modello di possesso semplice nel lungo periodo</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section id="sustainability">
-          <h2>Acquisto una tantum non significa costi continuativi pari a zero</h2>
-          <p>Anche il software offline richiede manutenzione. Sviluppo, test, compatibilità con Windows, certificazione dello Store, assistenza, documentazione, hosting dei pacchetti, sicurezza e aggiornamenti futuri richiedono tempo e risorse.</p>
-          <p>Un acquisto una tantum deve quindi avere un prezzo studiato con attenzione. Deve rimanere accessibile e allo stesso tempo contribuire alla sostenibilità del prodotto nel lungo periodo.</p>
-          <p>La decisione non nasce dall’idea che il software debba essere gratuito per sempre dopo il rilascio. Nasce dalla volontà di adattare il modello di pagamento alla struttura tecnica e operativa del prodotto.</p>
+          <h2 data-i18n="s5Title">Acquisto una tantum non significa costi continuativi pari a zero</h2>
+          <p data-i18n="s5p1">Anche il software offline richiede manutenzione. Sviluppo, test, compatibilità con Windows, certificazione dello Store, assistenza, documentazione, hosting dei pacchetti, sicurezza e aggiornamenti futuri richiedono tempo e risorse.</p>
+          <p data-i18n="s5p2">Un acquisto una tantum deve quindi avere un prezzo studiato con attenzione. Deve rimanere accessibile e allo stesso tempo contribuire alla sostenibilità del prodotto nel lungo periodo.</p>
+          <p data-i18n="s5p3">La decisione non nasce dall’idea che il software debba essere gratuito per sempre dopo il rilascio. Nasce dalla volontà di adattare il modello di pagamento alla struttura tecnica e operativa del prodotto.</p>
           <div class="principles">
-            <div class="principle"><b>COERENZA</b><span>Il modello di business dovrebbe riflettere il modo in cui il software funziona realmente.</span></div>
-            <div class="principle"><b>CHIAREZZA</b><span>Il cliente dovrebbe capire cosa sta acquistando senza dover decifrare una scala di prezzi.</span></div>
-            <div class="principle"><b>SOSTENIBILITÀ</b><span>Il prodotto ha comunque bisogno di entrate sufficienti per essere mantenuto e supportato.</span></div>
+            <div class="principle"><b data-i18n="p1Title">COERENZA</b><span data-i18n="p1Text">Il modello di business dovrebbe riflettere il modo in cui il software funziona realmente.</span></div>
+            <div class="principle"><b data-i18n="p2Title">CHIAREZZA</b><span data-i18n="p2Text">Il cliente dovrebbe capire cosa sta acquistando senza dover decifrare una scala di prezzi.</span></div>
+            <div class="principle"><b data-i18n="p3Title">SOSTENIBILITÀ</b><span data-i18n="p3Text">Il prodotto ha comunque bisogno di entrate sufficienti per essere mantenuto e supportato.</span></div>
           </div>
         </section>
 
         <section>
-          <h2>Perché non abbiamo nascosto il prodotto dietro limiti di utilizzo</h2>
-          <p>Un altro possibile modello sarebbe stato far pagare in base al volume di traduzione: un certo numero di caratteri, richieste o coppie linguistiche ogni mese.</p>
-          <p>Quel modello ha senso quando ogni richiesta consuma infrastruttura server a pagamento. Ne ha molto meno quando la traduzione viene generata localmente utilizzando risorse già disponibili sul computer del cliente.</p>
-          <p>Limiti di utilizzo artificiali aggiungerebbero complessità a un prodotto il cui scopo è ridurre gli attriti.</p>
+          <h2 data-i18n="s6Title">Perché non abbiamo nascosto il prodotto dietro limiti di utilizzo</h2>
+          <p data-i18n="s6p1">Un altro possibile modello sarebbe stato far pagare in base al volume di traduzione: un certo numero di caratteri, richieste o coppie linguistiche ogni mese.</p>
+          <p data-i18n="s6p2">Quel modello ha senso quando ogni richiesta consuma infrastruttura server a pagamento. Ne ha molto meno quando la traduzione viene generata localmente utilizzando risorse già disponibili sul computer del cliente.</p>
+          <p data-i18n="s6p3">Limiti di utilizzo artificiali aggiungerebbero complessità a un prodotto il cui scopo è ridurre gli attriti.</p>
         </section>
 
         <section id="limits">
-          <h2>Cosa promette, e cosa non promette, un acquisto una tantum</h2>
-          <p>Un acquisto una tantum dovrebbe essere chiaro, ma non dovrebbe creare aspettative irrealistiche.</p>
-          <p>Fornisce accesso al prodotto offerto con quell’acquisto e alla manutenzione supportata ad esso associata. Non garantisce necessariamente ogni futura edizione principale, ogni nuovo servizio o ogni prodotto che Memmola Labs potrà creare.</p>
-          <p>Cambiamenti importanti nella tecnologia, nei sistemi operativi o nell’ambito del prodotto potrebbero in futuro richiedere una versione separata o una nuova decisione commerciale. Se accadrà, dovrà essere spiegato apertamente invece di essere nascosto dietro formulazioni ambigue.</p>
-          <div class="callout"><strong>Il nostro principio</strong><p>Non è richiesto alcun abbonamento ricorrente per continuare a utilizzare il prodotto SlangBit principale acquistato tramite Microsoft Store.</p></div>
+          <h2 data-i18n="s7Title">Cosa promette, e cosa non promette, un acquisto una tantum</h2>
+          <p data-i18n="s7p1">Un acquisto una tantum dovrebbe essere chiaro, ma non dovrebbe creare aspettative irrealistiche.</p>
+          <p data-i18n="s7p2">Fornisce accesso al prodotto offerto con quell’acquisto e alla manutenzione supportata ad esso associata. Non garantisce necessariamente ogni futura edizione principale, ogni nuovo servizio o ogni prodotto che Memmola Labs potrà creare.</p>
+          <p data-i18n="s7p3">Cambiamenti importanti nella tecnologia, nei sistemi operativi o nell’ambito del prodotto potrebbero in futuro richiedere una versione separata o una nuova decisione commerciale. Se accadrà, dovrà essere spiegato apertamente invece di essere nascosto dietro formulazioni ambigue.</p>
+          <div class="callout"><strong data-i18n="callout2Title">Il nostro principio</strong><p data-i18n="callout2Text">Non è richiesto alcun abbonamento ricorrente per continuare a utilizzare il prodotto SlangBit principale acquistato tramite Microsoft Store.</p></div>
         </section>
 
         <section>
-          <h2>Perché questa scelta conta per la fiducia</h2>
-          <p>Il prezzo comunica il tipo di rapporto che un’azienda intende avere con i propri utenti. Un abbonamento dice che l’accesso è un servizio continuativo. Un acquisto una tantum dice che il cliente sta acquistando uno strumento.</p>
-          <p>Per SlangBit, la seconda descrizione è più accurata. È una utility Windows mirata, costruita attorno a modelli locali, una scorciatoia globale e un workflow privato.</p>
-          <p>Il modello di pagamento non è quindi soltanto una decisione di marketing. Fa parte della filosofia del prodotto: elaborazione locale, controllo diretto e meno dipendenze ricorrenti.</p>
+          <h2 data-i18n="s8Title">Perché questa scelta conta per la fiducia</h2>
+          <p data-i18n="s8p1">Il prezzo comunica il tipo di rapporto che un’azienda intende avere con i propri utenti. Un abbonamento dice che l’accesso è un servizio continuativo. Un acquisto una tantum dice che il cliente sta acquistando uno strumento.</p>
+          <p data-i18n="s8p2">Per SlangBit, la seconda descrizione è più accurata. È una utility Windows mirata, costruita attorno a modelli locali, una scorciatoia globale e un workflow privato.</p>
+          <p data-i18n="s8p3">Il modello di pagamento non è quindi soltanto una decisione di marketing. Fa parte della filosofia del prodotto: elaborazione locale, controllo diretto e meno dipendenze ricorrenti.</p>
         </section>
 
         <section id="faq">
-          <h2>Domande frequenti</h2>
-          <details><summary>Perché SlangBit utilizza un acquisto una tantum?</summary><p>Perché il suo workflow di traduzione principale viene eseguito localmente sul computer Windows del cliente invece di dipendere da un servizio di traduzione cloud permanente.</p></details>
-          <details><summary>Un acquisto una tantum significa che non esistono costi di manutenzione?</summary><p>No. Sviluppo, assistenza, test, distribuzione e hosting dei pacchetti continuano a generare costi. Il modello una tantum riflette l’assenza di un servizio cloud ricorrente per ogni traduzione, non l’assenza di lavoro continuativo.</p></details>
-          <details><summary>La versione acquistata smetterà di funzionare se non pago di nuovo?</summary><p>Il prodotto principale acquistato tramite Microsoft Store non richiede un abbonamento ricorrente per rimanere accessibile.</p></details>
-          <details><summary>L’acquisto include ogni futuro prodotto Memmola Labs?</summary><p>No. L’acquisto si applica a SlangBit secondo i termini offerti per quel prodotto. Prodotti separati o future edizioni principali possono avere condizioni proprie.</p></details>
-          <details><summary>Perché non offrire un prodotto gratuito sostenuto dalla pubblicità?</summary><p>La pubblicità introdurrebbe un altro rapporto basato su attenzione, tracciamento o servizi esterni. Non sarebbe coerente con una utility desktop mirata e orientata alla privacy.</p></details>
+          <h2 data-i18n="faqTitle">Domande frequenti</h2>
+          <details><summary data-i18n="faq1q">Perché SlangBit utilizza un acquisto una tantum?</summary><p data-i18n="faq1a">Perché il suo workflow di traduzione principale viene eseguito localmente sul computer Windows del cliente invece di dipendere da un servizio di traduzione cloud permanente.</p></details>
+          <details><summary data-i18n="faq2q">Un acquisto una tantum significa che non esistono costi di manutenzione?</summary><p data-i18n="faq2a">No. Sviluppo, assistenza, test, distribuzione e hosting dei pacchetti continuano a generare costi. Il modello una tantum riflette l’assenza di un servizio cloud ricorrente per ogni traduzione, non l’assenza di lavoro continuativo.</p></details>
+          <details><summary data-i18n="faq3q">La versione acquistata smetterà di funzionare se non pago di nuovo?</summary><p data-i18n="faq3a">Il prodotto principale acquistato tramite Microsoft Store non richiede un abbonamento ricorrente per rimanere accessibile.</p></details>
+          <details><summary data-i18n="faq4q">L’acquisto include ogni futuro prodotto Memmola Labs?</summary><p data-i18n="faq4a">No. L’acquisto si applica a SlangBit secondo i termini offerti per quel prodotto. Prodotti separati o future edizioni principali possono avere condizioni proprie.</p></details>
+          <details><summary data-i18n="faq5q">Perché non offrire un prodotto gratuito sostenuto dalla pubblicità?</summary><p data-i18n="faq5a">La pubblicità introdurrebbe un altro rapporto basato su attenzione, tracciamento o servizi esterni. Non sarebbe coerente con una utility desktop mirata e orientata alla privacy.</p></details>
         </section>
 
         <div class="cta">
-          <h2>Una utility Windows senza un altro abbonamento</h2>
-          <p>SlangBit combina traduzione offline, modelli linguistici locali e una scorciatoia globale da tastiera in un acquisto una tantum per Windows.</p>
+          <h2 data-i18n="ctaTitle">Una utility Windows senza un altro abbonamento</h2>
+          <p data-i18n="ctaText">SlangBit combina traduzione offline, modelli linguistici locali e una scorciatoia globale da tastiera in un acquisto una tantum per Windows.</p>
           <div class="actions">
-            <a class="btn primary" href="/">Scopri SlangBit</a>
-            <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a>
+            <a class="btn primary" href="/" data-i18n="discover">Scopri SlangBit</a>
+            <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer" data-i18n="store">Vai al Microsoft Store</a>
           </div>
         </div>
       </article>
 
       <aside aria-label="Navigazione dell’articolo">
         <div class="side-card">
-          <h2>In questa pagina</h2>
-          <a href="#subscription">Quando gli abbonamenti hanno senso</a>
-          <a href="#offline">Software locale</a>
-          <a href="#ownership">Acquistare una utility</a>
+          <h2 data-i18n="sideTitle">In questa pagina</h2>
+          <a href="#subscription" data-i18n="side1">Quando gli abbonamenti hanno senso</a>
+          <a href="#offline" data-i18n="side2">Software locale</a>
+          <a href="#ownership" data-i18n="side3">Acquistare una utility</a>
           <a href="#sustainability">Sostenibilità</a>
-          <a href="#limits">Cosa promette l’acquisto</a>
+          <a href="#limits" data-i18n="side5">Cosa promette l’acquisto</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="side-card">
-          <h2>Insights correlati</h2>
-          <a href="/insights/behind-the-scenes-of-local-models.html">Dietro le quinte dei modelli locali</a>
-          <a href="/insights/why-offline-translation-really-matters.html">Perché la traduzione offline conta davvero</a>
-          <a href="/insights/the-hidden-cost-of-switching-applications.html">Il costo nascosto del cambio di applicazione</a>
+          <h2 data-i18n="relatedTitle">Insights correlati</h2>
+          <a href="/insights/behind-the-scenes-of-local-models.html" data-i18n="related1">Dietro le quinte dei modelli locali</a>
+          <a href="/insights/why-an-offline-translation-really-counts.html" data-i18n="related2">Perché la traduzione offline conta davvero</a>
+          <a href="/insights/the-hidden-cost-of-the-change-of-application.html" data-i18n="related3">Il costo nascosto del cambio di applicazione</a>
         </div>
       </aside>
     </div>
   </main>
+
+  <section class="share-section" aria-labelledby="shareArticleTitle">
+    <h3 id="shareArticleTitle" data-i18n="shareTitle">Condividi questo Insight</h3>
+    <p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
+    <div class="share-buttons">
+      <a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhy-we-chose-a-one-time-purchase.html&text=SlangBit%20Insights%20%E2%80%94%20perch%C3%A9%20abbiamo%20scelto%20l%27acquisto%20una%20tantum." target="_blank" rel="noopener noreferrer"><img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span></a>
+      <a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhy-we-chose-a-one-time-purchase.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span></a>
+      <a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhy-we-chose-a-one-time-purchase.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span></a>
+      <button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+    </div>
+  </section>
 
   <footer>
     <div class="footer">
@@ -322,5 +362,88 @@ aside{
     </div>
   </footer>
 </div>
+
+<script>
+const I18N={
+it:{
+pageTitle:'Perché abbiamo scelto l’acquisto una tantum | SlangBit',
+metaDescription:'Perché SlangBit utilizza un acquisto una tantum invece di un abbonamento ricorrente e perché questa scelta è coerente con una utility Windows offline.',
+navSubscriptions:'Abbonamenti',navOffline:'Software offline',navSustainability:'Sostenibilità',navLimits:'Limiti',
+crumb:'Acquisto una tantum',badge:'Filosofia del prodotto',
+heroTitle:'Perché abbiamo scelto <span>l’acquisto una tantum</span>',intro:'Gli abbonamenti possono essere il modello giusto per servizi con infrastrutture e costi operativi continui. Ma non ogni software deve trasformarsi in una spesa ricorrente.',date:'29 luglio 2026',readingTime:'Circa 7 minuti',
+s1Title:'Gli abbonamenti non sono automaticamente sbagliati',s1p1:'Un abbonamento ricorrente può essere ragionevole quando un prodotto dipende da elaborazione cloud continua, spazio di archiviazione ospitato, grandi database online, collaborazione in tempo reale, servizi umani o contenuti in licenza che cambiano frequentemente.',s1p2:'Questi sistemi generano costi continui ogni volta che un cliente li utilizza. Un pagamento ricorrente può contribuire a mantenere il servizio disponibile, sicuro e aggiornato.',s1p3:'Il problema nasce quando il prezzo in abbonamento diventa la scelta predefinita anche per prodotti la cui funzione essenziale viene eseguita localmente e non genera un costo server significativo per ogni utilizzo.',callout1Title:'La domanda che ci siamo posti',callout1Text:'SlangBit ha bisogno di un rapporto di pagamento permanente per svolgere la sua funzione principale?',
+s2Title:'SlangBit è prima di tutto un software locale',s2p1:'SlangBit funziona come utility Windows. Dopo aver installato l’applicazione e i pacchetti linguistici scelti, l’inferenza per la traduzione avviene sul computer dell’utente.',s2p2:'Il workflow principale non dipende dall’invio di ogni traduzione a infrastrutture gestite da Memmola Labs. Dietro ogni pressione di <strong>ALT + Z</strong> non c’è una richiesta di traduzione cloud a consumo.',s2p3:'Questa architettura ha influenzato il modello commerciale. Se l’elaborazione principale viene svolta dal computer del cliente, sarebbe difficile giustificare un abbonamento indefinito per accedere al workflow di traduzione di base.',
+s3Title:'Una utility dovrebbe sembrare uno strumento che hai acquistato',s3p1:'Le utility desktop tradizionali venivano spesso acquistate perché risolvevano un problema specifico. Installavi lo strumento, imparavi il suo workflow e continuavi a usarlo.',s3p2:'Un acquisto una tantum conserva maggiormente questo tipo di rapporto. Il cliente prende una decisione chiara una volta sola, invece di aggiungere un altro piccolo addebito mensile a una collezione crescente di abbonamenti.',s3p3:'Questo è particolarmente importante per un software pensato per restare discretamente nella tray di Windows. SlangBit è progettato per sparire quando non serve, non per chiedere attenzione costante o dover giustificare ogni mese un rinnovo.',
+s4Title:'Il costo nascosto del software ricorrente',s4p1:'Un prezzo mensile basso può sembrare più semplice di un acquisto singolo, ma il software ricorrente crea un altro tipo di costo: un rinnovo in più da ricordare, un addebito in più da controllare e un altro prodotto la cui utilità va rivalutata ogni mese o ogni anno.',s4p2:'Per un servizio professionale utilizzato frequentemente, questo compromesso può essere accettabile. Per una utility desktop mirata, può diventare un attrito inutile.',cmp1Title:'Accesso ricorrente',cmp2Title:'Acquisto una tantum',
+s5Title:'Acquisto una tantum non significa costi continuativi pari a zero',s5p1:'Anche il software offline richiede manutenzione. Sviluppo, test, compatibilità con Windows, certificazione dello Store, assistenza, documentazione, hosting dei pacchetti, sicurezza e aggiornamenti futuri richiedono tempo e risorse.',s5p2:'Un acquisto una tantum deve quindi avere un prezzo studiato con attenzione. Deve rimanere accessibile e allo stesso tempo contribuire alla sostenibilità del prodotto nel lungo periodo.',s5p3:'La decisione non nasce dall’idea che il software debba essere gratuito per sempre dopo il rilascio. Nasce dalla volontà di adattare il modello di pagamento alla struttura tecnica e operativa del prodotto.',p1Title:'COERENZA',p1Text:'Il modello di business dovrebbe riflettere il modo in cui il software funziona realmente.',p2Title:'CHIAREZZA',p2Text:'Il cliente dovrebbe capire cosa sta acquistando senza dover decifrare una scala di prezzi.',p3Title:'SOSTENIBILITÀ',p3Text:'Il prodotto ha comunque bisogno di entrate sufficienti per essere mantenuto e supportato.',
+s6Title:'Perché non abbiamo nascosto il prodotto dietro limiti di utilizzo',s6p1:'Un altro possibile modello sarebbe stato far pagare in base al volume di traduzione: un certo numero di caratteri, richieste o coppie linguistiche ogni mese.',s6p2:'Quel modello ha senso quando ogni richiesta consuma infrastruttura server a pagamento. Ne ha molto meno quando la traduzione viene generata localmente utilizzando risorse già disponibili sul computer del cliente.',s6p3:'Limiti di utilizzo artificiali aggiungerebbero complessità a un prodotto il cui scopo è ridurre gli attriti.',
+s7Title:'Cosa promette, e cosa non promette, un acquisto una tantum',s7p1:'Un acquisto una tantum dovrebbe essere chiaro, ma non dovrebbe creare aspettative irrealistiche.',s7p2:'Fornisce accesso al prodotto offerto con quell’acquisto e alla manutenzione supportata ad esso associata. Non garantisce necessariamente ogni futura edizione principale, ogni nuovo servizio o ogni prodotto che Memmola Labs potrà creare.',s7p3:'Cambiamenti importanti nella tecnologia, nei sistemi operativi o nell’ambito del prodotto potrebbero in futuro richiedere una versione separata o una nuova decisione commerciale. Se accadrà, dovrà essere spiegato apertamente invece di essere nascosto dietro formulazioni ambigue.',callout2Title:'Il nostro principio',callout2Text:'Non è richiesto alcun abbonamento ricorrente per continuare a utilizzare il prodotto SlangBit principale acquistato tramite Microsoft Store.',
+s8Title:'Perché questa scelta conta per la fiducia',s8p1:'Il prezzo comunica il tipo di rapporto che un’azienda intende avere con i propri utenti. Un abbonamento dice che l’accesso è un servizio continuativo. Un acquisto una tantum dice che il cliente sta acquistando uno strumento.',s8p2:'Per SlangBit, la seconda descrizione è più accurata. È una utility Windows mirata, costruita attorno a modelli locali, una scorciatoia globale e un workflow privato.',s8p3:'Il modello di pagamento non è quindi soltanto una decisione di marketing. Fa parte della filosofia del prodotto: elaborazione locale, controllo diretto e meno dipendenze ricorrenti.',
+faqTitle:'Domande frequenti',faq1q:'Perché SlangBit utilizza un acquisto una tantum?',faq1a:'Perché il suo workflow di traduzione principale viene eseguito localmente sul computer Windows del cliente invece di dipendere da un servizio di traduzione cloud permanente.',faq2q:'Un acquisto una tantum significa che non esistono costi di manutenzione?',faq2a:'No. Sviluppo, assistenza, test, distribuzione e hosting dei pacchetti continuano a generare costi. Il modello una tantum riflette l’assenza di un servizio cloud ricorrente per ogni traduzione, non l’assenza di lavoro continuativo.',faq3q:'La versione acquistata smetterà di funzionare se non pago di nuovo?',faq3a:'Il prodotto principale acquistato tramite Microsoft Store non richiede un abbonamento ricorrente per rimanere accessibile.',faq4q:'L’acquisto include ogni futuro prodotto Memmola Labs?',faq4a:'No. L’acquisto si applica a SlangBit secondo i termini offerti per quel prodotto. Prodotti separati o future edizioni principali possono avere condizioni proprie.',faq5q:'Perché non offrire un prodotto gratuito sostenuto dalla pubblicità?',faq5a:'La pubblicità introdurrebbe un altro rapporto basato su attenzione, tracciamento o servizi esterni. Non sarebbe coerente con una utility desktop mirata e orientata alla privacy.',
+ctaTitle:'Una utility Windows senza un altro abbonamento',ctaText:'SlangBit combina traduzione offline, modelli linguistici locali e una scorciatoia globale da tastiera in un acquisto una tantum per Windows.',discover:'Scopri SlangBit',store:'Vai al Microsoft Store',
+sideTitle:'In questa pagina',side1:'Quando gli abbonamenti hanno senso',side2:'Software locale',side3:'Acquistare una utility',side4:'Sostenibilità',side5:'Cosa promette l’acquisto',relatedTitle:'Insights correlati',related1:'Dietro le quinte dei modelli locali',related2:'Perché la traduzione offline conta davvero',related3:'Il costo nascosto del cambio di applicazione',
+shareTitle:'Condividi questo Insight',shareText:'Se pensi possa essere utile anche a qualcun altro.',copyLink:'Copia link',copied:'Link copiato',li0:'Impegno iniziale più basso',li1:'Rapporto di fatturazione continuo',li2:'L’accesso può interrompersi quando terminano i pagamenti',li3:'Più adatto ai servizi continuativi',li4:'Decisione chiara fin dall’inizio',li5:'Nessun addebito ricorrente per l’accesso principale',li6:'Più adatto a una utility locale',li7:'Modello di possesso semplice nel lungo periodo'
+},
+en:{
+pageTitle:'Why we chose a one-time purchase | SlangBit',
+metaDescription:'Why SlangBit uses a one-time purchase instead of a recurring subscription and why that choice fits an offline Windows utility.',
+navSubscriptions:'Subscriptions',navOffline:'Offline software',navSustainability:'Sustainability',navLimits:'Limits',
+crumb:'One-time purchase',badge:'Product philosophy',
+heroTitle:'Why we chose <span>a one-time purchase</span>',intro:'Subscriptions can be the right model for services with ongoing infrastructure and operating costs. But not every piece of software needs to become a recurring expense.',date:'July 29, 2026',readingTime:'About 7 minutes',
+s1Title:'Subscriptions are not automatically wrong',s1p1:'A recurring subscription can make sense when a product depends on continuous cloud processing, hosted storage, large online databases, real-time collaboration, human services or licensed content that changes frequently.',s1p2:'These systems generate ongoing costs every time a customer uses them. Recurring payment can help keep the service available, secure and up to date.',s1p3:'The problem appears when subscription pricing becomes the default even for products whose essential function runs locally and does not create a significant server cost for every use.',callout1Title:'The question we asked ourselves',callout1Text:'Does SlangBit need a permanent payment relationship to perform its core function?',
+s2Title:'SlangBit is first and foremost local software',s2p1:'SlangBit runs as a Windows utility. After the application and selected language packages are installed, translation inference runs on the user’s computer.',s2p2:'The main workflow does not depend on sending every translation to infrastructure managed by Memmola Labs. Behind each press of <strong>ALT + Z</strong>, there is no metered cloud translation request.',s2p3:'This architecture influenced the commercial model. If the customer’s computer performs the core processing, it would be difficult to justify an indefinite subscription just to access the basic translation workflow.',
+s3Title:'A utility should feel like a tool you bought',s3p1:'Traditional desktop utilities were often purchased because they solved a specific problem. You installed the tool, learned its workflow and kept using it.',s3p2:'A one-time purchase preserves more of that relationship. The customer makes one clear decision instead of adding another small monthly charge to a growing collection of subscriptions.',s3p3:'This matters especially for software designed to sit quietly in the Windows tray. SlangBit is meant to disappear when it is not needed, not constantly ask for attention or justify a renewal every month.',
+s4Title:'The hidden cost of recurring software',s4p1:'A low monthly price may look easier than a single purchase, but recurring software creates another kind of cost: one more renewal to remember, one more charge to monitor and another product whose usefulness has to be reconsidered every month or year.',s4p2:'For a professional service used frequently, that trade-off may be acceptable. For a focused desktop utility, it can become unnecessary friction.',cmp1Title:'Recurring access',cmp2Title:'One-time purchase',
+s5Title:'A one-time purchase does not mean zero ongoing costs',s5p1:'Offline software still requires maintenance. Development, testing, Windows compatibility, Store certification, support, documentation, package hosting, security and future updates all require time and resources.',s5p2:'A one-time purchase therefore has to be priced carefully. It should remain accessible while also contributing to the product’s long-term sustainability.',s5p3:'The decision does not come from the idea that software should be free forever after release. It comes from matching the payment model to the product’s technical and operational structure.',p1Title:'CONSISTENCY',p1Text:'The business model should reflect how the software actually works.',p2Title:'CLARITY',p2Text:'The customer should understand what they are buying without having to decode a pricing ladder.',p3Title:'SUSTAINABILITY',p3Text:'The product still needs enough revenue to be maintained and supported.',
+s6Title:'Why we did not hide the product behind usage limits',s6p1:'Another possible model would have been charging by translation volume: a certain number of characters, requests or language pairs each month.',s6p2:'That model makes sense when every request consumes paid server infrastructure. It makes much less sense when translation is generated locally using resources already available on the customer’s computer.',s6p3:'Artificial usage limits would add complexity to a product whose purpose is to reduce friction.',
+s7Title:'What a one-time purchase promises — and what it does not',s7p1:'A one-time purchase should be clear, but it should not create unrealistic expectations.',s7p2:'It provides access to the product offered with that purchase and the supported maintenance associated with it. It does not necessarily guarantee every future major edition, every new service or every product Memmola Labs may create.',s7p3:'Major changes in technology, operating systems or product scope may eventually require a separate version or a new commercial decision. If that happens, it should be explained openly rather than hidden behind ambiguous wording.',callout2Title:'Our principle',callout2Text:'No recurring subscription is required to continue using the core SlangBit product purchased through Microsoft Store.',
+s8Title:'Why this choice matters for trust',s8p1:'Pricing communicates the kind of relationship a company intends to have with its users. A subscription says access is an ongoing service. A one-time purchase says the customer is buying a tool.',s8p2:'For SlangBit, the second description is more accurate. It is a focused Windows utility built around local models, a global shortcut and a private workflow.',s8p3:'The payment model is therefore not only a marketing decision. It is part of the product philosophy: local processing, direct control and fewer recurring dependencies.',
+faqTitle:'Frequently asked questions',faq1q:'Why does SlangBit use a one-time purchase?',faq1a:'Because its main translation workflow runs locally on the customer’s Windows computer instead of depending on a permanent cloud translation service.',faq2q:'Does a one-time purchase mean there are no maintenance costs?',faq2a:'No. Development, support, testing, distribution and package hosting continue to generate costs. The one-time model reflects the absence of a recurring cloud service for each translation, not the absence of ongoing work.',faq3q:'Will the version I bought stop working if I do not pay again?',faq3a:'The core product purchased through Microsoft Store does not require a recurring subscription to remain accessible.',faq4q:'Does the purchase include every future Memmola Labs product?',faq4a:'No. The purchase applies to SlangBit under the terms offered for that product. Separate products or future major editions may have their own terms.',faq5q:'Why not offer a free product supported by advertising?',faq5a:'Advertising would introduce another relationship based on attention, tracking or external services. That would not fit a focused, privacy-oriented desktop utility.',
+ctaTitle:'A Windows utility without another subscription',ctaText:'SlangBit combines offline translation, local language models and a global keyboard shortcut in a one-time purchase for Windows.',discover:'Discover SlangBit',store:'Go to Microsoft Store',
+sideTitle:'On this page',side1:'When subscriptions make sense',side2:'Local software',side3:'Buying a utility',side4:'Sustainability',side5:'What the purchase promises',relatedTitle:'Related Insights',related1:'Behind the scenes of local models',related2:'Why offline translation really matters',related3:'The hidden cost of switching applications',
+shareTitle:'Share this Insight',shareText:'If you think it could be useful to someone else.',copyLink:'Copy link',copied:'Link copied',li0:'Lower upfront commitment',li1:'Ongoing billing relationship',li2:'Access may stop when payments stop',li3:'Better suited to ongoing services',li4:'Clear decision from the start',li5:'No recurring charge for core access',li6:'Better suited to a local utility',li7:'Simple long-term ownership model'
+}
+};
+
+let currentLang='it';
+function applyLanguage(lang,persist=true){
+  if(!I18N[lang]) lang='it';
+  currentLang=lang;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n;
+    if(I18N[lang][k]!==undefined) el.textContent=I18N[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k=el.dataset.i18nHtml;
+    if(I18N[lang][k]!==undefined) el.innerHTML=I18N[lang][k];
+  });
+  document.title=I18N[lang].pageTitle;
+  const m=document.querySelector('meta[name="description"]');
+  if(m) m.setAttribute('content',I18N[lang].metaDescription);
+  document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+  document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+  if(persist) localStorage.setItem('slangbit-language',lang);
+}
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage||(browserLanguage.startsWith('it')?'it':'en'),false);
+
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+  const button=document.getElementById('copyShareLink');
+  try{
+    await navigator.clipboard.writeText('https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html');
+    const span=button?.querySelector('span');
+    const original=span?.textContent||'';
+    if(span) span.textContent=I18N[currentLang].copied;
+    setTimeout(()=>{if(span) span.textContent=original},1600);
+  }catch(error){
+    window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/why-we-chose-a-one-time-purchase.html');
+  }
+});
+</script>
+
 </body>
 </html>
