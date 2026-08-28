@@ -9,10 +9,23 @@
 
   <title>SlangBit — Traduzione offline per Windows</title>
 
-  <meta property="og:title" content="SlangBit — Traduzione offline per Windows" />
-  <meta property="og:description" content="Traduci il testo selezionato ovunque su Windows. Completamente offline, con modelli AI locali." />
+  <meta property="og:title" content="SlangBit — Traduci ovunque. Senza uscire da quello che stai facendo." />
+  <meta property="og:description" content="Traduzione offline per Windows. Copia, traduci e incolla con una scorciatoia. Nessun cloud, nessun account, nessun abbonamento." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://slangbit.com" />
+  <meta property="og:site_name" content="SlangBit" />
+  <meta property="og:url" content="https://slangbit.com/" />
+  <meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png" />
+  <meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SlangBit — Traduci ovunque. Senza uscire da quello che stai facendo." />
+  <meta name="twitter:description" content="Traduzione offline per Windows. Copia, traduci e incolla con una scorciatoia. Nessun cloud, nessun account, nessun abbonamento." />
+  <meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png" />
+  <meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows" />
 
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
@@ -187,6 +200,46 @@ td:nth-child(2),td:nth-child(3),th:nth-child(2),th:nth-child(3){text-align:cente
 .insights-preview-link{margin-top:auto;padding-top:20px;color:var(--blue);text-decoration:none;font-size:.78rem;font-weight:800}
 .insights-preview-all{display:flex;justify-content:center;margin-top:28px}
 .insights-preview-button{display:inline-flex;padding:11px 17px;border:1px solid #d5dee8;border-radius:8px;text-decoration:none;font-size:.78rem;font-weight:800;color:var(--blue);background:#fff}
+
+
+.share-section{
+  padding:46px 3.5vw 34px!important;
+  text-align:center;
+  border-top:1px solid #e6ebf1;
+  background:#fbfdff;
+}
+.share-section h3{
+  font-size:clamp(1.7rem,3vw,2.5rem);
+  letter-spacing:-.035em;
+  margin-bottom:9px;
+}
+.share-section p{
+  color:var(--muted);
+  margin-bottom:20px;
+}
+.share-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+.share-button{
+  min-height:40px;
+  padding:9px 15px;
+  border:1px solid #d5dee8;
+  border-radius:999px;
+  background:#fff;
+  color:#334155;
+  text-decoration:none;
+  font:800 11px/1 inherit;
+  cursor:pointer;
+  transition:.18s ease;
+}
+.share-button:hover{
+  color:var(--blue);
+  border-color:#9fc0ff;
+  transform:translateY(-1px);
+}
 
 footer{border-top:1px solid #e6ebf1;padding:42px 3.5vw;background:#fff}
 .footer-inner{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1.3fr repeat(3,1fr) 1.2fr;gap:30px;color:var(--muted)}
@@ -640,6 +693,44 @@ section{
 </section>
 </main>
 
+<section class="share-section" aria-labelledby="shareSlangBitTitle">
+  <h3 id="shareSlangBitTitle">Condividi SlangBit</h3>
+  <p>Se pensi possa essere utile anche a qualcun altro.</p>
+
+  <div class="share-buttons">
+    <a
+      class="share-button"
+      href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2F&text=SlangBit%20%E2%80%94%20Traduci%20ovunque.%20Senza%20uscire%20da%20quello%20che%20stai%20facendo."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Condividi SlangBit su X"
+    >X</a>
+
+    <a
+      class="share-button"
+      href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2F"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Condividi SlangBit su Facebook"
+    >Facebook</a>
+
+    <a
+      class="share-button"
+      href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2F"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Condividi SlangBit su LinkedIn"
+    >LinkedIn</a>
+
+    <button
+      type="button"
+      class="share-button"
+      id="copyShareLink"
+      aria-label="Copia link SlangBit"
+    >Copia link</button>
+  </div>
+</section>
+
 <footer>
   <div class="footer-inner">
     <div><div class="footer-brand"><div class="logo-mark">SB</div><div><strong>SlangBit</strong><span>by Memmola Labs®</span></div></div><p>Traduzione AI desktop per Windows. Offline. Privata. Immediata.</p></div>
@@ -651,5 +742,22 @@ section{
 </footer>
 
 </div>
+
+<script>
+document.getElementById('copyShareLink')?.addEventListener('click', async () => {
+  const button = document.getElementById('copyShareLink');
+
+  try {
+    await navigator.clipboard.writeText('https://slangbit.com/');
+    if (button) {
+      const original = button.textContent;
+      button.textContent = 'Link copiato';
+      setTimeout(() => button.textContent = original, 1600);
+    }
+  } catch (error) {
+    window.prompt('Copia questo link:', 'https://slangbit.com/');
+  }
+});
+</script>
 </body>
 </html>
