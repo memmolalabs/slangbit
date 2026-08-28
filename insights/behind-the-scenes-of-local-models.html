@@ -9,16 +9,27 @@
   <meta name="description" content="Come funzionano i modelli di traduzione locali, perché i pacchetti lingua devono essere scaricati e come SlangBit esegue la traduzione offline direttamente su Windows.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://slangbit.com/insights/behind-the-scenes-of-local-models.html">
+  <link rel="alternate" hreflang="it" href="https://slangbit.com/insights/behind-the-scenes-of-local-models.html">
+  <link rel="alternate" hreflang="en" href="https://slangbit.com/insights/behind-the-scenes-of-local-models.html">
+  <link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/behind-the-scenes-of-local-models.html">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="SlangBit">
   <meta property="og:title" content="Dietro le quinte dei modelli di traduzione locali">
   <meta property="og:description" content="Uno sguardo pratico a come i modelli di traduzione offline funzionano direttamente su un computer Windows.">
   <meta property="og:url" content="https://slangbit.com/insights/behind-the-scenes-of-local-models.html">
+  <meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dietro le quinte dei modelli di traduzione locali">
   <meta name="twitter:description" content="Come funzionano i modelli di traduzione offline direttamente su Windows.">
+  <meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 
   <script type="application/ld+json">
   {
@@ -60,7 +71,19 @@
 
   <style>
 :root{--bg:#fff;--surface:#f7f9fc;--line:#dfe7f0;--text:#101828;--muted:#667085;--muted2:#8a98a9;--blue:#2f73ff;--cyan:#19c8e8;--green:#18a66a}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:#fff;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;overflow-x:hidden}a{color:inherit}.page{position:relative}nav{position:sticky;top:0;z-index:100;height:64px;padding:0 2.5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.94);border-bottom:1px solid rgba(16,24,40,.08);backdrop-filter:blur(18px)}.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}.logo-mark{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;font-weight:900;font-size:12px}.logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:14px;font-weight:850}.logo-text span{font-size:9px;color:#7b8796}.logo-text b{color:var(--blue)}.nav-links{display:flex;gap:22px;align-items:center}.nav-links a{text-decoration:none;text-transform:uppercase;font-size:10px;font-weight:750;letter-spacing:.07em;color:#334155}.nav-links a:hover{color:var(--blue)}.nav-btn{min-height:36px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;text-decoration:none;border:1px solid var(--blue);border-radius:8px;font-size:10px;font-weight:800;color:#fff;background:var(--blue)}.hero{min-height:calc(100vh - 64px);max-width:none;margin:0;padding:7vh 3vw 6vh;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 80% 18%,rgba(47,115,255,.11),transparent 24%),radial-gradient(circle at 66% 74%,rgba(25,200,232,.08),transparent 23%),linear-gradient(180deg,#fff,#fbfdff)}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:23px;color:var(--muted2);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.breadcrumb a{color:var(--blue);text-decoration:none}.badge{display:inline-flex;width:fit-content;align-items:center;gap:8px;border:1px solid #dbe5f0;background:#f7fbff;color:#4b647a;border-radius:999px;padding:7px 11px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}h1{font-size:clamp(4.3rem,8vw,9rem);line-height:.91;letter-spacing:-.06em;max-width:1500px;font-weight:850}h1 span{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}.intro{margin-top:24px;max-width:1050px;color:#5f6b7b;font-size:clamp(1.05rem,1.35vw,1.35rem);line-height:1.7}.meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:26px;color:var(--muted2);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.layout{max-width:none;margin:0;padding:56px 2.8vw 86px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.35fr);gap:34px;align-items:start}article{min-width:0}article section{max-width:1050px;padding:40px 0;border-top:1px solid #edf1f5}article section:first-child{border-top:0;padding-top:0}h2{font-size:clamp(2rem,3.2vw,3.5rem);line-height:1.05;letter-spacing:-.04em;margin-bottom:18px}p{color:var(--muted);font-size:1rem;line-height:1.82;margin-bottom:18px}strong{color:var(--text)}ul,ol{margin:8px 0 22px 22px;color:var(--muted)}li{margin:10px 0;line-height:1.7}.callout{margin:28px 0;padding:24px 25px;border:1px solid #dbe6f0;border-radius:16px;background:linear-gradient(135deg,#f7fbff,#fff)}.callout strong{display:block;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px;font-size:.78rem}.callout p{margin:0;color:#46566a}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:26px 0}.step{min-height:150px;padding:18px 16px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 10px 28px rgba(38,59,84,.04)}.step b{display:block;color:var(--blue);margin-bottom:10px;font-size:.9rem}.step span{color:var(--muted);font-size:.88rem;line-height:1.5}.stack{display:flex;flex-direction:column;gap:10px;margin:26px 0}.stack-item{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;padding:17px;border:1px solid var(--line);border-radius:13px;background:#fff;box-shadow:0 8px 24px rgba(38,59,84,.035)}.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:10px;color:var(--blue);border:1px solid #dbe6f5;background:#f3f8ff;font-weight:800}.stack-item span{color:var(--muted);font-size:.86rem}.arrow{text-align:center;color:#9fb0c0}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}.card{padding:24px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 10px 28px rgba(38,59,84,.04)}.card h3{color:var(--blue);margin-bottom:9px;font-size:1.05rem}.card p{margin:0;font-size:.94rem}aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:14px}.side-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:20px;box-shadow:0 10px 28px rgba(38,59,84,.035)}.side-card h2{color:#617083;font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;margin-bottom:12px}.side-card a{display:block;color:var(--muted);text-decoration:none;margin:9px 0;line-height:1.45;font-size:.9rem}.side-card a:hover{color:var(--blue)}details{border:1px solid var(--line);border-radius:13px;background:#fff;padding:19px 21px;margin:13px 0;box-shadow:0 8px 22px rgba(38,59,84,.025)}summary{cursor:pointer;font-weight:750}details p{margin:14px 0 0}.sources a{color:var(--blue)}.cta{max-width:1050px;margin-top:24px;padding:38px;border:1px solid #dce5ef;border-radius:20px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(47,115,255,.09),transparent 35%),#fbfdff}.cta h2{margin-bottom:12px}.cta p{max-width:700px;margin:0 auto 24px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;padding:12px 20px;border-radius:9px;text-decoration:none;font-weight:800;font-size:11px}.btn.primary{background:var(--blue);color:#fff}.btn.secondary{border:1px solid #d4dde8;background:#fff;color:#344054}footer{border-top:1px solid #e6ebf1;padding:38px 2.8vw;color:#7b8796;font-size:10px}.footer{max-width:none;margin:0;display:flex;justify-content:space-between;gap:30px}.footer a{color:var(--muted);text-decoration:none}.footer a:hover{color:var(--blue)}@media(max-width:1050px){.nav-links{display:none}.hero{padding:58px 20px 50px}.layout{grid-template-columns:1fr;padding:46px 20px 70px}.process{grid-template-columns:repeat(2,1fr)}aside{position:static;order:-1;display:grid;grid-template-columns:1fr 1fr}}@media(max-width:650px){nav{padding:0 16px}.nav-btn{font-size:9px;padding:7px 10px}.hero{min-height:auto;padding:46px 18px 42px}h1{font-size:3.8rem;line-height:.96}.layout{padding:40px 16px 56px}article section{padding:34px 0}.process,.cards,aside{grid-template-columns:1fr}.cta{padding:28px 22px}.footer{flex-direction:column}}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:#fff;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;overflow-x:hidden}a{color:inherit}.page{position:relative}nav{position:sticky;top:0;z-index:100;height:64px;padding:0 2.5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.94);border-bottom:1px solid rgba(16,24,40,.08);backdrop-filter:blur(18px)}.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}.logo-mark{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;font-weight:900;font-size:12px}.logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:14px;font-weight:850}.logo-text span{font-size:9px;color:#7b8796}.logo-text b{color:var(--blue)}.nav-links{display:flex;gap:22px;align-items:center}.nav-links a{text-decoration:none;text-transform:uppercase;font-size:10px;font-weight:750;letter-spacing:.07em;color:#334155}.nav-links a:hover{color:var(--blue)}.nav-btn{min-height:36px;display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;text-decoration:none;border:1px solid var(--blue);border-radius:8px;font-size:10px;font-weight:800;color:#fff;background:var(--blue)}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}
+.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.share-section{padding:46px 2.8vw 34px;text-align:center;border-top:1px solid #e6ebf1;background:#fbfdff}
+.share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+.share-section p{color:var(--muted);margin-bottom:20px}
+.share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share-button{min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+.hero{min-height:calc(100vh - 64px);max-width:none;margin:0;padding:7vh 3vw 6vh;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 80% 18%,rgba(47,115,255,.11),transparent 24%),radial-gradient(circle at 66% 74%,rgba(25,200,232,.08),transparent 23%),linear-gradient(180deg,#fff,#fbfdff)}.breadcrumb{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:23px;color:var(--muted2);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.breadcrumb a{color:var(--blue);text-decoration:none}.badge{display:inline-flex;width:fit-content;align-items:center;gap:8px;border:1px solid #dbe5f0;background:#f7fbff;color:#4b647a;border-radius:999px;padding:7px 11px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}h1{font-size:clamp(4.3rem,8vw,9rem);line-height:.91;letter-spacing:-.06em;max-width:1500px;font-weight:850}h1 span{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}.intro{margin-top:24px;max-width:1050px;color:#5f6b7b;font-size:clamp(1.05rem,1.35vw,1.35rem);line-height:1.7}.meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:26px;color:var(--muted2);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.layout{max-width:none;margin:0;padding:56px 2.8vw 86px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.35fr);gap:34px;align-items:start}article{min-width:0}article section{max-width:1050px;padding:40px 0;border-top:1px solid #edf1f5}article section:first-child{border-top:0;padding-top:0}h2{font-size:clamp(2rem,3.2vw,3.5rem);line-height:1.05;letter-spacing:-.04em;margin-bottom:18px}p{color:var(--muted);font-size:1rem;line-height:1.82;margin-bottom:18px}strong{color:var(--text)}ul,ol{margin:8px 0 22px 22px;color:var(--muted)}li{margin:10px 0;line-height:1.7}.callout{margin:28px 0;padding:24px 25px;border:1px solid #dbe6f0;border-radius:16px;background:linear-gradient(135deg,#f7fbff,#fff)}.callout strong{display:block;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px;font-size:.78rem}.callout p{margin:0;color:#46566a}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:26px 0}.step{min-height:150px;padding:18px 16px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 10px 28px rgba(38,59,84,.04)}.step b{display:block;color:var(--blue);margin-bottom:10px;font-size:.9rem}.step span{color:var(--muted);font-size:.88rem;line-height:1.5}.stack{display:flex;flex-direction:column;gap:10px;margin:26px 0}.stack-item{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;padding:17px;border:1px solid var(--line);border-radius:13px;background:#fff;box-shadow:0 8px 24px rgba(38,59,84,.035)}.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:10px;color:var(--blue);border:1px solid #dbe6f5;background:#f3f8ff;font-weight:800}.stack-item span{color:var(--muted);font-size:.86rem}.arrow{text-align:center;color:#9fb0c0}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}.card{padding:24px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 10px 28px rgba(38,59,84,.04)}.card h3{color:var(--blue);margin-bottom:9px;font-size:1.05rem}.card p{margin:0;font-size:.94rem}aside{position:sticky;top:88px;display:flex;flex-direction:column;gap:14px}.side-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:20px;box-shadow:0 10px 28px rgba(38,59,84,.035)}.side-card h2{color:#617083;font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;margin-bottom:12px}.side-card a{display:block;color:var(--muted);text-decoration:none;margin:9px 0;line-height:1.45;font-size:.9rem}.side-card a:hover{color:var(--blue)}details{border:1px solid var(--line);border-radius:13px;background:#fff;padding:19px 21px;margin:13px 0;box-shadow:0 8px 22px rgba(38,59,84,.025)}summary{cursor:pointer;font-weight:750}details p{margin:14px 0 0}.sources a{color:var(--blue)}.cta{max-width:1050px;margin-top:24px;padding:38px;border:1px solid #dce5ef;border-radius:20px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(47,115,255,.09),transparent 35%),#fbfdff}.cta h2{margin-bottom:12px}.cta p{max-width:700px;margin:0 auto 24px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;padding:12px 20px;border-radius:9px;text-decoration:none;font-weight:800;font-size:11px}.btn.primary{background:var(--blue);color:#fff}.btn.secondary{border:1px solid #d4dde8;background:#fff;color:#344054}footer{border-top:1px solid #e6ebf1;padding:38px 2.8vw;color:#7b8796;font-size:10px}.footer{max-width:none;margin:0;display:flex;justify-content:space-between;gap:30px}.footer a{color:var(--muted);text-decoration:none}.footer a:hover{color:var(--blue)}@media(max-width:1050px){.nav-links{display:none}.hero{padding:58px 20px 50px}.layout{grid-template-columns:1fr;padding:46px 20px 70px}.process{grid-template-columns:repeat(2,1fr)}aside{position:static;order:-1;display:grid;grid-template-columns:1fr 1fr}}@media(max-width:650px){nav{padding:0 16px}.nav-btn{font-size:9px;padding:7px 10px}.hero{min-height:auto;padding:46px 18px 42px}h1{font-size:3.8rem;line-height:.96}.layout{padding:40px 16px 56px}article section{padding:34px 0}.process,.cards,aside{grid-template-columns:1fr}.cta{padding:28px 22px}.footer{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -71,134 +94,140 @@
       <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
     </a>
     <div class="nav-links">
-      <a href="#local-model">Modelli locali</a>
+      <a href="#local-model" data-i18n="navModels">Modelli locali</a>
       <a href="#workflow">Workflow</a>
       <a href="#ctranslate2">CTranslate2</a>
-      <a href="#tradeoffs">Compromessi</a>
+      <a href="#tradeoffs" data-i18n="side4">Compromessi</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    <div class="nav-actions">
+      <div class="lang-switch" aria-label="Language">
+        <button type="button" id="langIt">IT</button>
+        <button type="button" id="langEn">EN</button>
+      </div>
+      <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
   </nav>
 
   <main>
     <header class="hero">
-      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Modelli locali</span></div>
-      <div class="badge"><span class="dot"></span>Traduzione offline</div>
-      <h1>Dietro le quinte dei <span>modelli di traduzione locali</span></h1>
-      <p class="intro">Traduzione offline può sembrare semplice dall'esterno: copiare un po 'di testo, premere una scorciatoia e ricevere una traduzione. Dietro quella azione, un modello di traduzione automatica completa è in esecuzione direttamente sul computer.</p>
-      <div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 9 minuti</span></div>
+      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span data-i18n="crumbModels">Modelli locali</span></div>
+      <div class="badge"><span class="dot"></span><span data-i18n="badge">Traduzione offline</span></div>
+      <h1 data-i18n-html="heroTitle">Dietro le quinte dei <span>modelli di traduzione locali</span></h1>
+      <p class="intro" data-i18n="intro">Traduzione offline può sembrare semplice dall'esterno: copiare un po 'di testo, premere una scorciatoia e ricevere una traduzione. Dietro quella azione, un modello di traduzione automatica completa è in esecuzione direttamente sul computer.</p>
+      <div class="meta"><span>Memmola Labs</span><span data-i18n="date">29 luglio 2026</span><span data-i18n="readingTime">Circa 9 minuti</span></div>
     </header>
 
     <div class="layout">
       <article>
         <section id="local-model">
-          <h2>Cos’è un modello di traduzione locale?</h2>
-          <p>Un modello di traduzione automatica contiene parametri numerici appresi durante l’addestramento. Questi parametri permettono al software di elaborare un testo in una lingua e generare una sequenza corrispondente in un’altra.</p>
-          <p>Con un servizio di traduzione cloud, il modello viene eseguito su infrastrutture gestite altrove. Il testo viene inviato a un endpoint remoto, elaborato e poi restituito come traduzione. Con un modello locale, invece, i file necessari all’inferenza sono memorizzati sul tuo computer e la traduzione viene generata lì.</p>
-          <div class="callout"><strong>La distinzione importante</strong><p>“Locale” descrive il luogo in cui viene elaborata la traduzione. Non significa che l’applicazione non abbia mai bisogno di internet per installazione, aggiornamenti o download dei pacchetti lingua.</p></div>
+          <h2 data-i18n="s1Title">Cos’è un modello di traduzione locale?</h2>
+          <p data-i18n="s1p1">Un modello di traduzione automatica contiene parametri numerici appresi durante l’addestramento. Questi parametri permettono al software di elaborare un testo in una lingua e generare una sequenza corrispondente in un’altra.</p>
+          <p data-i18n="s1p2">Con un servizio di traduzione cloud, il modello viene eseguito su infrastrutture gestite altrove. Il testo viene inviato a un endpoint remoto, elaborato e poi restituito come traduzione. Con un modello locale, invece, i file necessari all’inferenza sono memorizzati sul tuo computer e la traduzione viene generata lì.</p>
+          <div class="callout"><strong data-i18n="callout1Title">La distinzione importante</strong><p data-i18n="callout1Text">“Locale” descrive il luogo in cui viene elaborata la traduzione. Non significa che l’applicazione non abbia mai bisogno di internet per installazione, aggiornamenti o download dei pacchetti lingua.</p></div>
         </section>
 
         <section id="packages">
-          <h2>Perché i modelli linguistici devono essere scaricati</h2>
-          <p>Un traduttore offline non può dipendere da un server remoto per conservare il modello. I file del modello, i dati del tokenizer e il vocabolario necessari a elaborare la coppia linguistica selezionata devono essere presenti sul dispositivo.</p>
-          <p>Per questo SlangBit usa pacchetti lingua separati. Chi lavora soltanto tra italiano e inglese non dovrebbe essere costretto a installare modelli per tutte le altre lingue supportate.</p>
-          <p>I pacchetti separati rendono inoltre il sistema modulare: il supporto linguistico può essere installato e gestito indipendentemente dall’applicazione Windows principale.</p>
+          <h2 data-i18n="s2Title">Perché i modelli linguistici devono essere scaricati</h2>
+          <p data-i18n="s2p1">Un traduttore offline non può dipendere da un server remoto per conservare il modello. I file del modello, i dati del tokenizer e il vocabolario necessari a elaborare la coppia linguistica selezionata devono essere presenti sul dispositivo.</p>
+          <p data-i18n="s2p2">Per questo SlangBit usa pacchetti lingua separati. Chi lavora soltanto tra italiano e inglese non dovrebbe essere costretto a installare modelli per tutte le altre lingue supportate.</p>
+          <p data-i18n="s2p3">I pacchetti separati rendono inoltre il sistema modulare: il supporto linguistico può essere installato e gestito indipendentemente dall’applicazione Windows principale.</p>
         </section>
 
         <section id="workflow">
-          <h2>Cosa succede durante una traduzione offline?</h2>
-          <p>L’implementazione reale è più articolata, ma il processo può essere compreso attraverso cinque passaggi:</p>
+          <h2 data-i18n="s3Title">Cosa succede durante una traduzione offline?</h2>
+          <p data-i18n="s3p1">L’implementazione reale è più articolata, ma il processo può essere compreso attraverso cinque passaggi:</p>
           <div class="process" aria-label="Traduzione offline process">
-            <div class="step"><b>01</b><span>L’applicazione riceve il testo copiato.</span></div>
-            <div class="step"><b>02</b><span>Il tokenizer converte il testo in unità comprensibili dal modello.</span></div>
-            <div class="step"><b>03</b><span>Il motore di inferenza carica il modello linguistico selezionato.</span></div>
-            <div class="step"><b>04</b><span>Il modello genera una sequenza di token tradotti.</span></div>
-            <div class="step"><b>05</b><span>L’output viene ricostruito e restituito a Windows.</span></div>
+            <div class="step"><b>01</b><span data-i18n="step1">L’applicazione riceve il testo copiato.</span></div>
+            <div class="step"><b>02</b><span data-i18n="step2">Il tokenizer converte il testo in unità comprensibili dal modello.</span></div>
+            <div class="step"><b>03</b><span data-i18n="step3">Il motore di inferenza carica il modello linguistico selezionato.</span></div>
+            <div class="step"><b>04</b><span data-i18n="step4">Il modello genera una sequenza di token tradotti.</span></div>
+            <div class="step"><b>05</b><span data-i18n="step5">L’output viene ricostruito e restituito a Windows.</span></div>
           </div>
-          <p>La velocità di traduzione dipende dal modello, dalla lunghezza del testo, dalla memoria disponibile, dalle capacità del processore e dalla configurazione del motore di inferenza.</p>
+          <p data-i18n="s3p2">La velocità di traduzione dipende dal modello, dalla lunghezza del testo, dalla memoria disponibile, dalle capacità del processore e dalla configurazione del motore di inferenza.</p>
         </section>
 
         <section>
-          <h2>Addestramento e inferenza sono due lavori diversi</h2>
-          <p>Addestrare un modello neurale di traduzione può richiedere grandi dataset, hardware potente e molto tempo di calcolo. Eseguire un modello già addestrato è invece un’attività diversa, chiamata <strong>inferenza</strong>.</p>
-          <p>Durante l’inferenza il modello non sta imparando una nuova lingua: applica i parametri che possiede già a un nuovo input. Questo permette di ottimizzare modelli addestrati per l’uso desktop senza ripetere sul computer dell’utente l’intero processo di addestramento originale.</p>
+          <h2 data-i18n="s4Title">Addestramento e inferenza sono due lavori diversi</h2>
+          <p data-i18n-html="s4p1">Addestrare un modello neurale di traduzione può richiedere grandi dataset, hardware potente e molto tempo di calcolo. Eseguire un modello già addestrato è invece un’attività diversa, chiamata <strong>inferenza</strong>.</p>
+          <p data-i18n="s4p2">Durante l’inferenza il modello non sta imparando una nuova lingua: applica i parametri che possiede già a un nuovo input. Questo permette di ottimizzare modelli addestrati per l’uso desktop senza ripetere sul computer dell’utente l’intero processo di addestramento originale.</p>
         </section>
 
         <section id="ctranslate2">
-          <h2>Il ruolo di CTranslate2</h2>
-          <p>SlangBit utilizza CTranslate2 come motore di inferenza locale. CTranslate2 è progettato per eseguire modelli Transformer in modo efficiente e supporta l’esecuzione su CPU e GPU compatibili.</p>
-          <p>I modelli vengono convertiti in un formato pensato per questo runtime. La quantizzazione può ridurre spazio di archiviazione e memoria usando rappresentazioni numeriche a precisione inferiore. In SlangBit questo aiuta a rendere pratica la traduzione offline su normali computer Windows.</p>
+          <h2 data-i18n="s5Title">Il ruolo di CTranslate2</h2>
+          <p data-i18n="s5p1">SlangBit utilizza CTranslate2 come motore di inferenza locale. CTranslate2 è progettato per eseguire modelli Transformer in modo efficiente e supporta l’esecuzione su CPU e GPU compatibili.</p>
+          <p data-i18n="s5p2">I modelli vengono convertiti in un formato pensato per questo runtime. La quantizzazione può ridurre spazio di archiviazione e memoria usando rappresentazioni numeriche a precisione inferiore. In SlangBit questo aiuta a rendere pratica la traduzione offline su normali computer Windows.</p>
 
           <div class="stack" aria-label="SlangBit architecture">
-            <div class="stack-item"><div class="icon">SB</div><div><strong>SlangBit</strong><br><span>Workflow tramite appunti e tray di Windows</span></div></div>
+            <div class="stack-item"><div class="icon">SB</div><div><strong>SlangBit</strong><br><span data-i18n="stack1">Workflow tramite appunti e tray di Windows</span></div></div>
             <div class="arrow">↓</div>
-            <div class="stack-item"><div class="icon">CT2</div><div><strong>CTranslate2</strong><br><span>Inferenza locale ottimizzata</span></div></div>
+            <div class="stack-item"><div class="icon">CT2</div><div><strong>CTranslate2</strong><br><span data-i18n="stack2">Inferenza locale ottimizzata</span></div></div>
             <div class="arrow">↓</div>
-            <div class="stack-item"><div class="icon">MT</div><div><strong>Modello linguistico OPUS-MT</strong><br><span>Traduzione per una coppia linguistica selezionata</span></div></div>
+            <div class="stack-item"><div class="icon">MT</div><div><strong data-i18n="stack3Title">Modello linguistico OPUS-MT</strong><br><span data-i18n="stack3Text">Traduzione per una coppia linguistica selezionata</span></div></div>
             <div class="arrow">↓</div>
-            <div class="stack-item"><div class="icon">PC</div><div><strong>Computer locale</strong><br><span>File del modello ed elaborazione restano sul dispositivo</span></div></div>
+            <div class="stack-item"><div class="icon">PC</div><div><strong data-i18n="stack4Title">Computer locale</strong><br><span data-i18n="stack4Text">File del modello ed elaborazione restano sul dispositivo</span></div></div>
           </div>
         </section>
 
         <section>
-          <h2>Da dove proviene la conoscenza linguistica</h2>
-          <p>I pacchetti lingua di SlangBit si basano sui modelli OPUS-MT di Helsinki-NLP. OPUS-MT è un progetto open source di traduzione automatica che mette a disposizione modelli addestrati per numerose coppie linguistiche.</p>
-          <p>Il modello contiene i parametri di traduzione appresi. CTranslate2 fornisce invece il runtime ottimizzato che esegue quei parametri. Sono componenti diversi della stessa pipeline di traduzione locale.</p>
+          <h2 data-i18n="s6Title">Da dove proviene la conoscenza linguistica</h2>
+          <p data-i18n="s6p1">I pacchetti lingua di SlangBit si basano sui modelli OPUS-MT di Helsinki-NLP. OPUS-MT è un progetto open source di traduzione automatica che mette a disposizione modelli addestrati per numerose coppie linguistiche.</p>
+          <p data-i18n="s6p2">Il modello contiene i parametri di traduzione appresi. CTranslate2 fornisce invece il runtime ottimizzato che esegue quei parametri. Sono componenti diversi della stessa pipeline di traduzione locale.</p>
         </section>
 
         <section>
-          <h2>Perché la prima traduzione può richiedere più tempo</h2>
-          <p>Un modello locale non rimane necessariamente caricato in memoria in modo permanente. Dopo l’avvio di SlangBit o del relativo processo di traduzione, il motore può dover inizializzare alcuni componenti, caricare i file del modello e prepararli per l’inferenza.</p>
-          <p>Questo introduce un costo di warm-up. Una volta che i componenti necessari sono pronti, le richieste di traduzione successive possono normalmente essere gestite più velocemente.</p>
+          <h2 data-i18n="s7Title">Perché la prima traduzione può richiedere più tempo</h2>
+          <p data-i18n="s7p1">Un modello locale non rimane necessariamente caricato in memoria in modo permanente. Dopo l’avvio di SlangBit o del relativo processo di traduzione, il motore può dover inizializzare alcuni componenti, caricare i file del modello e prepararli per l’inferenza.</p>
+          <p data-i18n="s7p2">Questo introduce un costo di warm-up. Una volta che i componenti necessari sono pronti, le richieste di traduzione successive possono normalmente essere gestite più velocemente.</p>
         </section>
 
         <section id="tradeoffs">
-          <h2>La traduzione locale è un equilibrio, non un aggiornamento magico</h2>
-          <p>Modelli locali provide control and remove the remote translation request from the workflow, but they also operate within the limits of the user’s computer.</p>
+          <h2 data-i18n="s8Title">La traduzione locale è un equilibrio, non un aggiornamento magico</h2>
+          <p data-i18n="s8p1">I modelli locali offrono controllo ed eliminano dal workflow la richiesta di traduzione remota, ma operano anche entro i limiti del computer dell’utente.</p>
           <div class="cards">
-            <div class="card"><h3>Cosa offrono i modelli locali</h3><p>Traduzione senza inviare ogni testo a un endpoint cloud, utilizzo continuativo senza connessione permanente e controllo diretto sui pacchetti lingua installati.</p></div>
-            <div class="card"><h3>Cosa richiedono i modelli locali</h3><p>Spazio di archiviazione, un download iniziale del modello, tempi di avvio e un compromesso tra dimensione del modello, velocità e qualità della traduzione.</p></div>
-            <div class="card"><h3>Dove i sistemi cloud possono essere superiori</h3><p>I sistemi online molto grandi possono utilizzare più risorse di calcolo, modelli più grandi e ulteriore contesto per traduzioni difficili.</p></div>
-            <div class="card"><h3>Dove i sistemi locali fanno la differenza</h3><p>Bozze private, messaggi dei clienti, note interne e workflow in cui inviare il testo a un altro servizio non è desiderabile.</p></div>
+            <div class="card"><h3 data-i18n="card1Title">Cosa offrono i modelli locali</h3><p data-i18n="card1Text">Traduzione senza inviare ogni testo a un endpoint cloud, utilizzo continuativo senza connessione permanente e controllo diretto sui pacchetti lingua installati.</p></div>
+            <div class="card"><h3 data-i18n="card2Title">Cosa richiedono i modelli locali</h3><p data-i18n="card2Text">Spazio di archiviazione, un download iniziale del modello, tempi di avvio e un compromesso tra dimensione del modello, velocità e qualità della traduzione.</p></div>
+            <div class="card"><h3 data-i18n="card3Title">Dove i sistemi cloud possono essere superiori</h3><p data-i18n="card3Text">I sistemi online molto grandi possono utilizzare più risorse di calcolo, modelli più grandi e ulteriore contesto per traduzioni difficili.</p></div>
+            <div class="card"><h3 data-i18n="card4Title">Dove i sistemi locali fanno la differenza</h3><p data-i18n="card4Text">Bozze private, messaggi dei clienti, note interne e workflow in cui inviare il testo a un altro servizio non è desiderabile.</p></div>
           </div>
         </section>
 
         <section>
-          <h2>Cosa cambia per i testi privati quando l’elaborazione è locale</h2>
-          <p>Gli strumenti di traduzione vengono usati spesso per molto più che frasi pubbliche. Le persone traducono conversazioni con clienti, bozze di contratti, note interne, richieste di supporto e materiale non pubblicato.</p>
-          <p>La traduzione locale elimina la necessità di inviare quel testo a un endpoint di traduzione esterno. Non elimina ogni possibile problema di sicurezza: cronologia degli appunti, sicurezza del dispositivo, backup e altri software installati continuano ad avere importanza. Elimina però uno specifico trasferimento dal workflow.</p>
+          <h2 data-i18n="s9Title">Cosa cambia per i testi privati quando l’elaborazione è locale</h2>
+          <p data-i18n="s9p1">Gli strumenti di traduzione vengono usati spesso per molto più che frasi pubbliche. Le persone traducono conversazioni con clienti, bozze di contratti, note interne, richieste di supporto e materiale non pubblicato.</p>
+          <p data-i18n="s9p2">La traduzione locale elimina la necessità di inviare quel testo a un endpoint di traduzione esterno. Non elimina ogni possibile problema di sicurezza: cronologia degli appunti, sicurezza del dispositivo, backup e altri software installati continuano ad avere importanza. Elimina però uno specifico trasferimento dal workflow.</p>
         </section>
 
         <section>
-          <h2>Come SlangBit mette insieme tutti i componenti</h2>
-          <p>SlangBit è stato progettato come utility Windows, non come l’ennesima scheda di traduzione. Gli utenti installano soltanto i pacchetti lingua di cui hanno bisogno. Quando il testo copiato viene tradotto, SlangBit lo passa al processo di inferenza locale e restituisce il risultato al workflow degli appunti.</p>
-          <p>L’interazione visibile è volutamente minima: copia, premi <strong>ALT + Z</strong>, continua a lavorare. Tokenizer, modello linguistico e motore di inferenza operano dietro quella scorciatoia.</p>
-          <div class="callout"><strong>Offline, in termini pratici</strong><p>SlangBit ha bisogno di internet per scaricare l’applicazione e i pacchetti lingua selezionati. Dopo l’installazione di un pacchetto, l’elaborazione del testo tradotto può avvenire localmente.</p></div>
+          <h2 data-i18n="s10Title">Come SlangBit mette insieme tutti i componenti</h2>
+          <p data-i18n="s10p1">SlangBit è stato progettato come utility Windows, non come l’ennesima scheda di traduzione. Gli utenti installano soltanto i pacchetti lingua di cui hanno bisogno. Quando il testo copiato viene tradotto, SlangBit lo passa al processo di inferenza locale e restituisce il risultato al workflow degli appunti.</p>
+          <p data-i18n-html="s10p2">L’interazione visibile è volutamente minima: copia, premi <strong>ALT + Z</strong>, continua a lavorare. Tokenizer, modello linguistico e motore di inferenza operano dietro quella scorciatoia.</p>
+          <div class="callout"><strong data-i18n="callout2Title">Offline, in termini pratici</strong><p data-i18n="callout2Text">SlangBit ha bisogno di internet per scaricare l’applicazione e i pacchetti lingua selezionati. Dopo l’installazione di un pacchetto, l’elaborazione del testo tradotto può avvenire localmente.</p></div>
         </section>
 
         <section id="faq">
-          <h2>Domande frequenti</h2>
-          <details><summary>La traduzione AI può funzionare offline?</summary><p>Yes. After a compatible model and inference engine are installed locally, translations can be generated on the computer without sending the text to a remote translation service.</p></details>
-          <details><summary>Perché i modelli di traduzione offline sono relativamente grandi?</summary><p>Il pacchetto conserva i parametri del modello addestrato, il vocabolario e le informazioni del tokenizer. Questi file contengono i dati necessari a elaborare la lingua senza contattare un modello remoto.</p></details>
-          <details><summary>La traduzione offline richiede accesso a internet?</summary><p>Normalmente internet serve per scaricare l’applicazione, gli aggiornamenti e i pacchetti lingua. Una volta installati, l’inferenza di traduzione può avvenire localmente.</p></details>
-          <details><summary>La traduzione locale è automaticamente più accurata?</summary><p>No. Sistemi locali e cloud fanno compromessi diversi. L’accuratezza dipende dal modello, dalla coppia linguistica, dal dominio e dall’input.</p></details>
-          <details><summary>Cos’è CTranslate2?</summary><p>CTranslate2 è un motore di inferenza ottimizzato per eseguire modelli Transformer su CPU e GPU compatibili.</p></details>
+          <h2 data-i18n="faqTitle">Domande frequenti</h2>
+          <details><summary data-i18n="faq1q">La traduzione AI può funzionare offline?</summary><p data-i18n="faq1a">Sì. Dopo aver installato localmente un modello compatibile e il relativo motore di inferenza, la traduzione può essere generata sul computer senza inviare il testo a un servizio remoto.</p></details>
+          <details><summary data-i18n="faq2q">Perché i modelli di traduzione offline sono relativamente grandi?</summary><p data-i18n="faq2a">Il pacchetto conserva i parametri del modello addestrato, il vocabolario e le informazioni del tokenizer. Questi file contengono i dati necessari a elaborare la lingua senza contattare un modello remoto.</p></details>
+          <details><summary data-i18n="faq3q">La traduzione offline richiede accesso a internet?</summary><p data-i18n="faq3a">Normalmente internet serve per scaricare l’applicazione, gli aggiornamenti e i pacchetti lingua. Una volta installati, l’inferenza di traduzione può avvenire localmente.</p></details>
+          <details><summary data-i18n="faq4q">La traduzione locale è automaticamente più accurata?</summary><p data-i18n="faq4a">No. Sistemi locali e cloud fanno compromessi diversi. L’accuratezza dipende dal modello, dalla coppia linguistica, dal dominio e dall’input.</p></details>
+          <details><summary data-i18n="faq5q">Cos’è CTranslate2?</summary><p data-i18n="faq5a">CTranslate2 è un motore di inferenza ottimizzato per eseguire modelli Transformer su CPU e GPU compatibili.</p></details>
         </section>
 
         <section class="sources">
-          <h2>Riferimenti tecnici</h2>
+          <h2 data-i18n="refsTitle">Riferimenti tecnici</h2>
           <ul>
-            <li><a href="https://opennmt.net/CTranslate2/" target="_blank" rel="noopener noreferrer">Documentazione CTranslate2</a></li>
-            <li><a href="https://opennmt.net/CTranslate2/quantization.html" target="_blank" rel="noopener noreferrer">Documentazione sulla quantizzazione di CTranslate2</a></li>
-            <li><a href="https://github.com/Helsinki-NLP/Opus-MT" target="_blank" rel="noopener noreferrer">Progetto Helsinki-NLP OPUS-MT</a></li>
+            <li><a href="https://opennmt.net/CTranslate2/" target="_blank" rel="noopener noreferrer" data-i18n="ref1">Documentazione CTranslate2</a></li>
+            <li><a href="https://opennmt.net/CTranslate2/quantization.html" target="_blank" rel="noopener noreferrer" data-i18n="ref2">Documentazione sulla quantizzazione di CTranslate2</a></li>
+            <li><a href="https://github.com/Helsinki-NLP/Opus-MT" target="_blank" rel="noopener noreferrer" data-i18n="ref3">Progetto Helsinki-NLP OPUS-MT</a></li>
           </ul>
         </section>
 
         <div class="cta">
-          <h2>Traduzione che resta nel tuo workflow Windows</h2>
-          <p>SlangBit usa pacchetti lingua installati localmente e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.</p>
+          <h2 data-i18n="ctaTitle">Traduzione che resta nel tuo workflow Windows</h2>
+          <p data-i18n="ctaText">SlangBit usa pacchetti lingua installati localmente e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.</p>
           <div class="actions">
-            <a class="btn primary" href="/">Scopri SlangBit</a>
+            <a class="btn primary" href="/" data-i18n="ctaDiscover">Scopri SlangBit</a>
             <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
           </div>
         </div>
@@ -206,23 +235,40 @@
 
       <aside aria-label="Article navigation">
         <div class="side-card">
-          <h2>In questa pagina</h2>
-          <a href="#local-model">Cos’è un modello locale?</a>
-          <a href="#packages">Pacchetti lingua</a>
-          <a href="#workflow">Workflow di traduzione</a>
+          <h2 data-i18n="sideTitle">In questa pagina</h2>
+          <a href="#local-model" data-i18n="side1">Cos’è un modello locale?</a>
+          <a href="#packages" data-i18n="side2">Pacchetti lingua</a>
+          <a href="#workflow" data-i18n="side3">Workflow di traduzione</a>
           <a href="#ctranslate2">CTranslate2</a>
           <a href="#tradeoffs">Compromessi</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="side-card">
-          <h2>Insights correlati</h2>
-          <a href="/insights/why-an-offline-translation-really-counts.html">Perché la traduzione offline conta davvero</a>
-          <a href="/insights/what-happens-to-pasted-text-in-cloud-services.html">Cosa succede al testo incollato nei servizi cloud</a>
-          <a href="/insights/how-ALT+Z-works.html">Come funziona ALT + Z</a>
+          <h2 data-i18n="relatedTitle">Insights correlati</h2>
+          <a href="/insights/why-an-offline-translation-really-counts.html" data-i18n="related1">Perché la traduzione offline conta davvero</a>
+          <a href="/insights/what-happens-to-pasted-text-in-cloud-services.html" data-i18n="related2">Cosa succede al testo incollato nei servizi cloud</a>
+          <a href="/insights/how-ALT+Z-works.html" data-i18n="related3">Come funziona ALT + Z</a>
         </div>
       </aside>
     </div>
   </main>
+
+  <section class="share-section" aria-labelledby="shareArticleTitle">
+    <h3 id="shareArticleTitle" data-i18n="shareTitle">Condividi questo Insight</h3>
+    <p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
+    <div class="share-buttons">
+      <a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fbehind-the-scenes-of-local-models.html&text=SlangBit%20Insights%20%E2%80%94%20dietro%20le%20quinte%20dei%20modelli%20di%20traduzione%20locali." target="_blank" rel="noopener noreferrer">
+        <img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span>
+      </a>
+      <a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2Fbehind-the-scenes-of-local-models.html" target="_blank" rel="noopener noreferrer">
+        <img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span>
+      </a>
+      <a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fbehind-the-scenes-of-local-models.html" target="_blank" rel="noopener noreferrer">
+        <img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span>
+      </a>
+      <button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+    </div>
+  </section>
 
   <footer>
     <div class="footer">
@@ -231,5 +277,101 @@
     </div>
   </footer>
 </div>
+
+<script>
+const I18N = {
+  it: {
+    pageTitle:'Dietro le quinte dei modelli di traduzione locali | SlangBit',
+    metaDescription:'Come funzionano i modelli di traduzione locali, perché i pacchetti lingua devono essere scaricati e come SlangBit esegue la traduzione offline direttamente su Windows.',
+    navModels:'Modelli locali', navTradeoffs:'Compromessi', crumbModels:'Modelli locali', badge:'Traduzione offline',
+    heroTitle:'Dietro le quinte dei <span>modelli di traduzione locali</span>',
+    intro:"La traduzione offline può sembrare semplice dall'esterno: copiare un po' di testo, premere una scorciatoia e ricevere una traduzione. Dietro quell'azione, un modello completo di traduzione automatica è in esecuzione direttamente sul computer.",
+    date:'29 luglio 2026', readingTime:'Circa 9 minuti',
+    s1Title:'Cos’è un modello di traduzione locale?', s1p1:'Un modello di traduzione automatica contiene parametri numerici appresi durante l’addestramento. Questi parametri permettono al software di elaborare un testo in una lingua e generare una sequenza corrispondente in un’altra.', s1p2:'Con un servizio di traduzione cloud, il modello viene eseguito su infrastrutture gestite altrove. Il testo viene inviato a un endpoint remoto, elaborato e poi restituito come traduzione. Con un modello locale, invece, i file necessari all’inferenza sono memorizzati sul tuo computer e la traduzione viene generata lì.',
+    callout1Title:'La distinzione importante', callout1Text:'“Locale” descrive il luogo in cui viene elaborata la traduzione. Non significa che l’applicazione non abbia mai bisogno di internet per installazione, aggiornamenti o download dei pacchetti lingua.',
+    s2Title:'Perché i modelli linguistici devono essere scaricati', s2p1:'Un traduttore offline non può dipendere da un server remoto per conservare il modello. I file del modello, i dati del tokenizer e il vocabolario necessari a elaborare la coppia linguistica selezionata devono essere presenti sul dispositivo.', s2p2:'Per questo SlangBit usa pacchetti lingua separati. Chi lavora soltanto tra italiano e inglese non dovrebbe essere costretto a installare modelli per tutte le altre lingue supportate.', s2p3:'I pacchetti separati rendono inoltre il sistema modulare: il supporto linguistico può essere installato e gestito indipendentemente dall’applicazione Windows principale.',
+    s3Title:'Cosa succede durante una traduzione offline?', s3p1:'L’implementazione reale è più articolata, ma il processo può essere compreso attraverso cinque passaggi:', step1:'L’applicazione riceve il testo copiato.', step2:'Il tokenizer converte il testo in unità comprensibili dal modello.', step3:'Il motore di inferenza carica il modello linguistico selezionato.', step4:'Il modello genera una sequenza di token tradotti.', step5:'L’output viene ricostruito e restituito a Windows.', s3p2:'La velocità di traduzione dipende dal modello, dalla lunghezza del testo, dalla memoria disponibile, dalle capacità del processore e dalla configurazione del motore di inferenza.',
+    s4Title:'Addestramento e inferenza sono due lavori diversi', s4p1:'Addestrare un modello neurale di traduzione può richiedere grandi dataset, hardware potente e molto tempo di calcolo. Eseguire un modello già addestrato è invece un’attività diversa, chiamata <strong>inferenza</strong>.', s4p2:'Durante l’inferenza il modello non sta imparando una nuova lingua: applica i parametri che possiede già a un nuovo input. Questo permette di ottimizzare modelli addestrati per l’uso desktop senza ripetere sul computer dell’utente l’intero processo di addestramento originale.',
+    s5Title:'Il ruolo di CTranslate2', s5p1:'SlangBit utilizza CTranslate2 come motore di inferenza locale. CTranslate2 è progettato per eseguire modelli Transformer in modo efficiente e supporta l’esecuzione su CPU e GPU compatibili.', s5p2:'I modelli vengono convertiti in un formato pensato per questo runtime. La quantizzazione può ridurre spazio di archiviazione e memoria usando rappresentazioni numeriche a precisione inferiore. In SlangBit questo aiuta a rendere pratica la traduzione offline su normali computer Windows.', stack1:'Workflow tramite appunti e tray di Windows', stack2:'Inferenza locale ottimizzata', stack3Title:'Modello linguistico OPUS-MT', stack3Text:'Traduzione per una coppia linguistica selezionata', stack4Title:'Computer locale', stack4Text:'File del modello ed elaborazione restano sul dispositivo',
+    s6Title:'Da dove proviene la conoscenza linguistica', s6p1:'I pacchetti lingua di SlangBit si basano sui modelli OPUS-MT di Helsinki-NLP. OPUS-MT è un progetto open source di traduzione automatica che mette a disposizione modelli addestrati per numerose coppie linguistiche.', s6p2:'Il modello contiene i parametri di traduzione appresi. CTranslate2 fornisce invece il runtime ottimizzato che esegue quei parametri. Sono componenti diversi della stessa pipeline di traduzione locale.',
+    s7Title:'Perché la prima traduzione può richiedere più tempo', s7p1:'Un modello locale non rimane necessariamente caricato in memoria in modo permanente. Dopo l’avvio di SlangBit o del relativo processo di traduzione, il motore può dover inizializzare alcuni componenti, caricare i file del modello e prepararli per l’inferenza.', s7p2:'Questo introduce un costo di warm-up. Una volta che i componenti necessari sono pronti, le richieste di traduzione successive possono normalmente essere gestite più velocemente.',
+    s8Title:'La traduzione locale è un equilibrio, non un aggiornamento magico', s8p1:'I modelli locali offrono controllo ed eliminano dal workflow la richiesta di traduzione remota, ma operano anche entro i limiti del computer dell’utente.', card1Title:'Cosa offrono i modelli locali', card1Text:'Traduzione senza inviare ogni testo a un endpoint cloud, utilizzo continuativo senza connessione permanente e controllo diretto sui pacchetti lingua installati.', card2Title:'Cosa richiedono i modelli locali', card2Text:'Spazio di archiviazione, un download iniziale del modello, tempi di avvio e un compromesso tra dimensione del modello, velocità e qualità della traduzione.', card3Title:'Dove i sistemi cloud possono essere superiori', card3Text:'I sistemi online molto grandi possono utilizzare più risorse di calcolo, modelli più grandi e ulteriore contesto per traduzioni difficili.', card4Title:'Dove i sistemi locali fanno la differenza', card4Text:'Bozze private, messaggi dei clienti, note interne e workflow in cui inviare il testo a un altro servizio non è desiderabile.',
+    s9Title:'Cosa cambia per i testi privati quando l’elaborazione è locale', s9p1:'Gli strumenti di traduzione vengono usati spesso per molto più che frasi pubbliche. Le persone traducono conversazioni con clienti, bozze di contratti, note interne, richieste di supporto e materiale non pubblicato.', s9p2:'La traduzione locale elimina la necessità di inviare quel testo a un endpoint di traduzione esterno. Non elimina ogni possibile problema di sicurezza: cronologia degli appunti, sicurezza del dispositivo, backup e altri software installati continuano ad avere importanza. Elimina però uno specifico trasferimento dal workflow.',
+    s10Title:'Come SlangBit mette insieme tutti i componenti', s10p1:'SlangBit è stato progettato come utility Windows, non come l’ennesima scheda di traduzione. Gli utenti installano soltanto i pacchetti lingua di cui hanno bisogno. Quando il testo copiato viene tradotto, SlangBit lo passa al processo di inferenza locale e restituisce il risultato al workflow degli appunti.', s10p2:'L’interazione visibile è volutamente minima: copia, premi <strong>ALT + Z</strong>, continua a lavorare. Tokenizer, modello linguistico e motore di inferenza operano dietro quella scorciatoia.', callout2Title:'Offline, in termini pratici', callout2Text:'SlangBit ha bisogno di internet per scaricare l’applicazione e i pacchetti lingua selezionati. Dopo l’installazione di un pacchetto, l’elaborazione del testo tradotto può avvenire localmente.',
+    faqTitle:'Domande frequenti', faq1q:'La traduzione AI può funzionare offline?', faq1a:'Sì. Dopo aver installato localmente un modello compatibile e il relativo motore di inferenza, la traduzione può essere generata sul computer senza inviare il testo a un servizio remoto.', faq2q:'Perché i modelli di traduzione offline sono relativamente grandi?', faq2a:'Il pacchetto conserva i parametri del modello addestrato, il vocabolario e le informazioni del tokenizer. Questi file contengono i dati necessari a elaborare la lingua senza contattare un modello remoto.', faq3q:'La traduzione offline richiede accesso a internet?', faq3a:'Normalmente internet serve per scaricare l’applicazione, gli aggiornamenti e i pacchetti lingua. Una volta installati, l’inferenza di traduzione può avvenire localmente.', faq4q:'La traduzione locale è automaticamente più accurata?', faq4a:'No. Sistemi locali e cloud fanno compromessi diversi. L’accuratezza dipende dal modello, dalla coppia linguistica, dal dominio e dall’input.', faq5q:'Cos’è CTranslate2?', faq5a:'CTranslate2 è un motore di inferenza ottimizzato per eseguire modelli Transformer su CPU e GPU compatibili.',
+    refsTitle:'Riferimenti tecnici', ref1:'Documentazione CTranslate2', ref2:'Documentazione sulla quantizzazione di CTranslate2', ref3:'Progetto Helsinki-NLP OPUS-MT',
+    ctaTitle:'Traduzione che resta nel tuo workflow Windows', ctaText:'SlangBit usa pacchetti lingua installati localmente e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.', ctaDiscover:'Scopri SlangBit',
+    sideTitle:'In questa pagina', side1:'Cos’è un modello locale?', side2:'Pacchetti lingua', side3:'Workflow di traduzione', side4:'Compromessi', relatedTitle:'Insights correlati', related1:'Perché la traduzione offline conta davvero', related2:'Cosa succede al testo incollato nei servizi cloud', related3:'Come funziona ALT + Z',
+    shareTitle:'Condividi questo Insight', shareText:'Se pensi possa essere utile anche a qualcun altro.', copyLink:'Copia link', copied:'Link copiato'
+  },
+  en: {
+    pageTitle:'Behind the scenes of local translation models | SlangBit',
+    metaDescription:'How local translation models work, why language packages must be downloaded, and how SlangBit performs offline translation directly on Windows.',
+    navModels:'Local models', navTradeoffs:'Trade-offs', crumbModels:'Local models', badge:'Offline translation',
+    heroTitle:'Behind the scenes of <span>local translation models</span>',
+    intro:'Offline translation can look simple from the outside: copy some text, press a shortcut and receive a translation. Behind that action, a full machine-translation model is running directly on the computer.',
+    date:'July 29, 2026', readingTime:'About 9 minutes',
+    s1Title:'What is a local translation model?', s1p1:'A machine-translation model contains numerical parameters learned during training. These parameters allow software to process text in one language and generate a corresponding sequence in another.', s1p2:'With a cloud translation service, the model runs on infrastructure managed elsewhere. The text is sent to a remote endpoint, processed and returned as a translation. With a local model, the files required for inference are stored on your computer and the translation is generated there.',
+    callout1Title:'The important distinction', callout1Text:'“Local” describes where translation is processed. It does not mean the application never needs internet access for installation, updates or language-package downloads.',
+    s2Title:'Why language models have to be downloaded', s2p1:'An offline translator cannot depend on a remote server to store the model. Model files, tokenizer data and vocabulary required for the selected language pair must be present on the device.', s2p2:'That is why SlangBit uses separate language packages. Someone working only between Italian and English should not have to install models for every other supported language.', s2p3:'Separate packages also keep the system modular: language support can be installed and managed independently from the main Windows application.',
+    s3Title:'What happens during an offline translation?', s3p1:'The real implementation is more detailed, but the process can be understood in five steps:', step1:'The application receives the copied text.', step2:'The tokenizer converts the text into units the model can understand.', step3:'The inference engine loads the selected language model.', step4:'The model generates a sequence of translated tokens.', step5:'The output is reconstructed and returned to Windows.', s3p2:'Translation speed depends on the model, text length, available memory, processor capabilities and inference-engine configuration.',
+    s4Title:'Training and inference are two different jobs', s4p1:'Training a neural translation model can require large datasets, powerful hardware and substantial compute time. Running an already trained model is a different task called <strong>inference</strong>.', s4p2:'During inference the model is not learning a new language: it applies the parameters it already has to new input. This makes it possible to optimize trained models for desktop use without repeating the original training process on the user’s computer.',
+    s5Title:'The role of CTranslate2', s5p1:'SlangBit uses CTranslate2 as its local inference engine. CTranslate2 is designed to run Transformer models efficiently and supports compatible CPUs and GPUs.', s5p2:'Models are converted into a format designed for this runtime. Quantization can reduce storage and memory usage by using lower-precision numeric representations. In SlangBit, this helps make offline translation practical on ordinary Windows computers.', stack1:'Windows clipboard and tray workflow', stack2:'Optimized local inference', stack3Title:'OPUS-MT language model', stack3Text:'Translation for a selected language pair', stack4Title:'Local computer', stack4Text:'Model files and processing stay on the device',
+    s6Title:'Where the language knowledge comes from', s6p1:'SlangBit language packages are based on Helsinki-NLP OPUS-MT models. OPUS-MT is an open-source machine-translation project that provides trained models for many language pairs.', s6p2:'The model contains learned translation parameters. CTranslate2 provides the optimized runtime that executes those parameters. They are different components of the same local translation pipeline.',
+    s7Title:'Why the first translation can take longer', s7p1:'A local model does not necessarily remain loaded in memory permanently. After SlangBit or its translation process starts, the engine may need to initialize components, load model files and prepare them for inference.', s7p2:'This introduces a warm-up cost. Once the necessary components are ready, subsequent translation requests can normally be handled more quickly.',
+    s8Title:'Local translation is a trade-off, not a magical upgrade', s8p1:'Local models provide control and remove the remote translation request from the workflow, but they also operate within the limits of the user’s computer.', card1Title:'What local models offer', card1Text:'Translation without sending every text to a cloud endpoint, continued use without a permanent connection and direct control over installed language packages.', card2Title:'What local models require', card2Text:'Storage space, an initial model download, startup time and a trade-off between model size, speed and translation quality.', card3Title:'Where cloud systems may be stronger', card3Text:'Very large online systems can use more compute resources, larger models and additional context for difficult translations.', card4Title:'Where local systems make a difference', card4Text:'Private drafts, customer messages, internal notes and workflows where sending text to another service is undesirable.',
+    s9Title:'What changes for private text when processing is local', s9p1:'Translation tools are often used for much more than public sentences. People translate customer conversations, contract drafts, internal notes, support requests and unpublished material.', s9p2:'Local translation removes the need to send that text to an external translation endpoint. It does not eliminate every possible security concern: clipboard history, device security, backups and other installed software still matter. It does remove one specific transfer from the workflow.',
+    s10Title:'How SlangBit connects all the components', s10p1:'SlangBit was designed as a Windows utility, not another translation tab. Users install only the language packages they need. When copied text is translated, SlangBit passes it to the local inference process and returns the result to the clipboard workflow.', s10p2:'The visible interaction is intentionally minimal: copy, press <strong>ALT + Z</strong>, keep working. The tokenizer, language model and inference engine operate behind that shortcut.', callout2Title:'Offline, in practical terms', callout2Text:'SlangBit needs internet access to download the application and selected language packages. After a package is installed, translated text can be processed locally.',
+    faqTitle:'Frequently asked questions', faq1q:'Can AI translation work offline?', faq1a:'Yes. After a compatible model and inference engine are installed locally, translations can be generated on the computer without sending the text to a remote translation service.', faq2q:'Why are offline translation models relatively large?', faq2a:'The package stores the trained model parameters, vocabulary and tokenizer information. These files contain the data required to process language without contacting a remote model.', faq3q:'Does offline translation require internet access?', faq3a:'Internet access is normally required to download the application, updates and language packages. Once installed, translation inference can run locally.', faq4q:'Is local translation automatically more accurate?', faq4a:'No. Local and cloud systems make different trade-offs. Accuracy depends on the model, language pair, domain and input.', faq5q:'What is CTranslate2?', faq5a:'CTranslate2 is an optimized inference engine for running Transformer models on compatible CPUs and GPUs.',
+    refsTitle:'Technical references', ref1:'CTranslate2 documentation', ref2:'CTranslate2 quantization documentation', ref3:'Helsinki-NLP OPUS-MT project',
+    ctaTitle:'Translation that stays in your Windows workflow', ctaText:'SlangBit uses locally installed language packages and a global shortcut to translate copied text without opening a separate translation website.', ctaDiscover:'Discover SlangBit',
+    sideTitle:'On this page', side1:'What is a local model?', side2:'Language packages', side3:'Translation workflow', side4:'Trade-offs', relatedTitle:'Related Insights', related1:'Why offline translation really matters', related2:'What happens to text pasted into cloud services', related3:'How ALT + Z works',
+    shareTitle:'Share this Insight', shareText:'If you think it could be useful to someone else.', copyLink:'Copy link', copied:'Link copied'
+  }
+};
+
+let currentLang='it';
+
+function applyLanguage(lang,persist=true){
+  if(!I18N[lang]) lang='it';
+  currentLang=lang;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.dataset.i18n;
+    if(I18N[lang][key]!==undefined) el.textContent=I18N[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const key=el.dataset.i18nHtml;
+    if(I18N[lang][key]!==undefined) el.innerHTML=I18N[lang][key];
+  });
+  document.title=I18N[lang].pageTitle;
+  const meta=document.querySelector('meta[name="description"]');
+  if(meta) meta.setAttribute('content',I18N[lang].metaDescription);
+  document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+  document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+  if(persist) localStorage.setItem('slangbit-language',lang);
+}
+
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage || (browserLanguage.startsWith('it')?'it':'en'), false);
+
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+  const button=document.getElementById('copyShareLink');
+  try{
+    await navigator.clipboard.writeText('https://slangbit.com/insights/behind-the-scenes-of-local-models.html');
+    const span=button?.querySelector('span');
+    const original=span?.textContent||'';
+    if(span) span.textContent=I18N[currentLang].copied;
+    setTimeout(()=>{if(span) span.textContent=original},1600);
+  }catch(error){
+    window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/behind-the-scenes-of-local-models.html');
+  }
+});
+</script>
+
 </body>
 </html>
