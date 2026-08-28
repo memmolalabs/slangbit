@@ -8,16 +8,27 @@
 <meta name="description" content="Come SlangBit usa ALT+Z, gli appunti di Windows e modelli linguistici locali per tradurre il testo copiato senza aprire un’applicazione di traduzione separata.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://slangbit.com/insights/how-ALT+Z-works.html">
+<link rel="alternate" hreflang="it" href="https://slangbit.com/insights/how-ALT+Z-works.html">
+<link rel="alternate" hreflang="en" href="https://slangbit.com/insights/how-ALT+Z-works.html">
+<link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/how-ALT+Z-works.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SlangBit">
 <meta property="og:title" content="Come funziona ALT+Z in SlangBit">
 <meta property="og:description" content="Una spiegazione pratica della scorciatoia di SlangBit, del workflow tramite appunti e del processo di traduzione locale.">
 <meta property="og:url" content="https://slangbit.com/insights/how-ALT+Z-works.html">
+<meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Come funziona ALT+Z in SlangBit">
 <meta name="twitter:description" content="Copia il testo, premi ALT+Z e continua a lavorare nella stessa applicazione Windows.">
+<meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 
 <script type="application/ld+json">
 {
@@ -78,6 +89,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}
 .nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}
 .nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}
+.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.share-section{padding:46px 4vw 34px;text-align:center;border-top:1px solid var(--line);background:#fbfdff}
+.share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+.share-section p{color:var(--muted);margin-bottom:20px}
+.share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share-button{min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 .hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
 .breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}
 .badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
@@ -227,173 +250,190 @@ aside{
 <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
 </a>
 <div class="nav-links">
-<a href="#shortcut">La scorciatoia</a>
+<a href="#shortcut" data-i18n="navShortcut">La scorciatoia</a>
 <a href="#workflow">Workflow</a>
-<a href="#clipboard">Appunti</a>
-<a href="#local">Motore locale</a>
+<a href="#clipboard" data-i18n="navClipboard">Appunti</a>
+<a href="#local" data-i18n="navLocal">Motore locale</a>
 <a href="#faq">FAQ</a>
 </div>
-<a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+<div class="nav-actions">
+<div class="lang-switch" aria-label="Language">
+<button type="button" id="langIt">IT</button>
+<button type="button" id="langEn">EN</button>
+</div>
+<a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+</div>
 </nav>
 
 <main>
 <header class="hero">
-<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Workflow ALT+Z</span></div>
-<div class="badge"><span class="dot"></span>Scorciatoia globale Windows</div>
-<h1>Come funziona <span>ALT+Z</span></h1>
-<p class="intro">ALT+Z è la scorciatoia centrale di SlangBit. Collega gli appunti di Windows, la coppia linguistica selezionata e il motore di traduzione locale, così una breve traduzione può avvenire senza aprire un’altra applicazione.</p>
-<div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 7 minuti</span></div>
+<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span data-i18n="crumb">Workflow ALT+Z</span></div>
+<div class="badge"><span class="dot"></span><span data-i18n="badge">Scorciatoia globale Windows</span></div>
+<h1 data-i18n-html="heroTitle">Come funziona <span>ALT+Z</span></h1>
+<p class="intro" data-i18n="intro">ALT+Z è la scorciatoia centrale di SlangBit. Collega gli appunti di Windows, la coppia linguistica selezionata e il motore di traduzione locale, così una breve traduzione può avvenire senza aprire un’altra applicazione.</p>
+<div class="meta"><span>Memmola Labs</span><span data-i18n="date">29 luglio 2026</span><span data-i18n="readingTime">Circa 7 minuti</span></div>
 </header>
 
 <div class="layout">
 <article>
 <section id="shortcut">
-<h2>ALT+Z è una scorciatoia globale di Windows</h2>
-<p>Una scorciatoia globale può essere riconosciuta mentre un’altra applicazione è attiva. Non è necessario portare in primo piano la finestra di SlangBit prima di avviare una traduzione.</p>
-<p>In pratica, significa che puoi copiare il testo da un client email, browser, editor o altra applicazione Windows compatibile e poi premere <span class="kbd">ALT</span> + <span class="kbd">Z</span>.</p>
-<div class="callout"><strong>L’obiettivo di design</strong><p>La scorciatoia is not intended to make SlangBit the center of attention. It is intended to make translation available while another application remains the center of the task.</p></div>
+<h2 data-i18n="s1Title">ALT+Z è una scorciatoia globale di Windows</h2>
+<p data-i18n="s1p1">Una scorciatoia globale può essere riconosciuta mentre un’altra applicazione è attiva. Non è necessario portare in primo piano la finestra di SlangBit prima di avviare una traduzione.</p>
+<p data-i18n-html="s1p2">In pratica, significa che puoi copiare il testo da un client email, browser, editor o altra applicazione Windows compatibile e poi premere <span class="kbd">ALT</span> + <span class="kbd">Z</span>.</p>
+<div class="callout"><strong data-i18n="calloutTitle">L’obiettivo di design</strong><p data-i18n="calloutText">La scorciatoia non è pensata per rendere SlangBit il centro dell’attenzione. È pensata per rendere disponibile la traduzione mentre un’altra applicazione resta al centro del lavoro.</p></div>
 </section>
 
 <section id="workflow">
-<h2>The complete Workflow ALT+Z</h2>
-<p>L’interazione visibile è breve, ma dietro avvengono diverse operazioni:</p>
+<h2 data-i18n="s2Title">Il workflow completo di ALT+Z</h2>
+<p data-i18n="s2p1">L’interazione visibile è breve, ma dietro avvengono diverse operazioni:</p>
 <div class="workflow" aria-label="SlangBit ALT+Z translation workflow">
-<div class="workflow-step"><b>01</b><span>L’utente seleziona il testo nell’applicazione Windows attiva.</span></div>
-<div class="workflow-step"><b>02</b><span>Il testo selezionato viene copiato negli appunti di Windows.</span></div>
-<div class="workflow-step"><b>03</b><span>ALT+Z attiva SlangBit in background.</span></div>
-<div class="workflow-step"><b>04</b><span>SlangBit legge il testo copiato e la coppia linguistica selezionata.</span></div>
-<div class="workflow-step"><b>05</b><span>Il modello locale genera il risultato tradotto.</span></div>
-<div class="workflow-step"><b>06</b><span>Il risultato ritorna attraverso il workflow degli appunti per essere usato nell’applicazione attiva.</span></div>
+<div class="workflow-step"><b>01</b><span data-i18n="step1">L’utente seleziona il testo nell’applicazione Windows attiva.</span></div>
+<div class="workflow-step"><b>02</b><span data-i18n="step2">Il testo selezionato viene copiato negli appunti di Windows.</span></div>
+<div class="workflow-step"><b>03</b><span data-i18n="step3">ALT+Z attiva SlangBit in background.</span></div>
+<div class="workflow-step"><b>04</b><span data-i18n="step4">SlangBit legge il testo copiato e la coppia linguistica selezionata.</span></div>
+<div class="workflow-step"><b>05</b><span data-i18n="step5">Il modello locale genera il risultato tradotto.</span></div>
+<div class="workflow-step"><b>06</b><span data-i18n="step6">Il risultato ritorna attraverso il workflow degli appunti per essere usato nell’applicazione attiva.</span></div>
 </div>
-<p>L’utente rimane vicino al documento, messaggio o post originale invece di spostarsi in un’interfaccia di traduzione separata.</p>
+<p data-i18n="s2p2">L’utente rimane vicino al documento, messaggio o post originale invece di spostarsi in un’interfaccia di traduzione separata.</p>
 </section>
 
 <section id="clipboard">
-<h2>Perché SlangBit usa gli appunti di Windows</h2>
-<p>Gli appunti sono uno dei pochi meccanismi condivisi da un’ampia varietà di applicazioni Windows. Browser, editor di testo, software Office, client email e molti altri programmi supportano già copia e incolla.</p>
-<p>Usare gli appunti permette a SlangBit di funzionare senza richiedere un’integrazione specifica per ogni applicazione.</p>
-<p>Questo approccio lascia inoltre il controllo all’utente: SlangBit elabora il testo che viene copiato intenzionalmente, invece di leggere interi documenti o account.</p>
+<h2 data-i18n="s3Title">Perché SlangBit usa gli appunti di Windows</h2>
+<p data-i18n="s3p1">Gli appunti sono uno dei pochi meccanismi condivisi da un’ampia varietà di applicazioni Windows. Browser, editor di testo, software Office, client email e molti altri programmi supportano già copia e incolla.</p>
+<p data-i18n="s3p2">Usare gli appunti permette a SlangBit di funzionare senza richiedere un’integrazione specifica per ogni applicazione.</p>
+<p data-i18n="s3p3">Questo approccio lascia inoltre il controllo all’utente: SlangBit elabora il testo che viene copiato intenzionalmente, invece di leggere interi documenti o account.</p>
 </section>
 
 <section>
-<h2>Perché bisogna copiare prima di premere ALT+Z</h2>
-<p>La scorciatoia needs a clear input. Copying the selected text places that input in a standard Windows location that SlangBit can access.</p>
-<p>Premere ALT+Z senza prima copiare il testo desiderato può portare SlangBit a elaborare ciò che è già presente negli appunti. Per questo la sequenza affidabile è:</p>
+<h2 data-i18n="s4Title">Perché bisogna copiare prima di premere ALT+Z</h2>
+<p data-i18n="s4p1">La scorciatoia ha bisogno di un input chiaro. Copiare il testo selezionato inserisce quell’input in una posizione standard di Windows che SlangBit può leggere.</p>
+<p data-i18n="s4p2">Premere ALT+Z senza prima copiare il testo desiderato può portare SlangBit a elaborare ciò che è già presente negli appunti. Per questo la sequenza affidabile è:</p>
 <div class="comparison">
 <div class="comparison-box">
-<h3>Sequenza corretta</h3>
-<ul><li>Seleziona il testo desiderato</li><li>Copialo</li><li>Premi ALT+Z</li><li>Controlla il risultato tradotto</li></ul>
+<h3 data-i18n="correctTitle">Sequenza corretta</h3>
+<ul><li data-i18n="correct1">Seleziona il testo desiderato</li><li data-i18n="correct2">Copialo</li><li data-i18n="correct3">Premi ALT+Z</li><li data-i18n="correct4">Controlla il risultato tradotto</li></ul>
 </div>
 <div class="comparison-box">
-<h3>Errore comune</h3>
-<ul><li>Selezionare il testo senza copiarlo</li><li>Premi ALT+Z</li><li>Tradurre un contenuto precedente degli appunti</li><li>Ricevere un risultato inatteso</li></ul>
+<h3 data-i18n="wrongTitle">Errore comune</h3>
+<ul><li data-i18n="wrong1">Selezionare il testo senza copiarlo</li><li data-i18n="correct3">Premi ALT+Z</li><li data-i18n="wrong3">Tradurre un contenuto precedente degli appunti</li><li data-i18n="wrong4">Ricevere un risultato inatteso</li></ul>
 </div>
 </div>
 </section>
 
 <section id="local">
-<h2>Cosa succede dentro il motore di traduzione locale</h2>
-<p>Quando ALT+Z viene rilevato, SlangBit invia il testo copiato al proprio processo di traduzione locale. Il pacchetto linguistico selezionato fornisce il modello e il tokenizer necessari per quella direzione di traduzione.</p>
+<h2 data-i18n="s5Title">Cosa succede dentro il motore di traduzione locale</h2>
+<p data-i18n="s5p1">Quando ALT+Z viene rilevato, SlangBit invia il testo copiato al proprio processo di traduzione locale. Il pacchetto linguistico selezionato fornisce il modello e il tokenizer necessari per quella direzione di traduzione.</p>
 <div class="stack" aria-label="SlangBit ALT+Z architecture">
 <div class="stack-item"><div class="stack-icon">KEY</div><div><strong>ALT+Z</strong><br><span>La scorciatoia globale avvia il workflow</span></div></div>
 <div class="arrow">↓</div>
-<div class="stack-item"><div class="stack-icon">CLP</div><div><strong>Appunti di Windows</strong><br><span>Forniscono il testo sorgente copiato</span></div></div>
+<div class="stack-item"><div class="stack-icon">CLP</div><div><strong data-i18n="stack2Title">Appunti di Windows</strong><br><span data-i18n="stack2Text">Forniscono il testo sorgente copiato</span></div></div>
 <div class="arrow">↓</div>
-<div class="stack-item"><div class="stack-icon">CT2</div><div><strong>CTranslate2</strong><br><span>Esegue localmente il modello selezionato</span></div></div>
+<div class="stack-item"><div class="stack-icon">CT2</div><div><strong>CTranslate2</strong><br><span data-i18n="stack3Text">Esegue localmente il modello selezionato</span></div></div>
 <div class="arrow">↓</div>
-<div class="stack-item"><div class="stack-icon">TXT</div><div><strong>Testo tradotto</strong><br><span>Ritorna nel workflow di Windows</span></div></div>
+<div class="stack-item"><div class="stack-icon">TXT</div><div><strong data-i18n="stack4Title">Testo tradotto</strong><br><span data-i18n="stack4Text">Ritorna nel workflow di Windows</span></div></div>
 </div>
-<p>Dopo aver installato il pacchetto necessario, il testo non deve essere inviato a un servizio di traduzione remoto.</p>
+<p data-i18n="s5p2">Dopo aver installato il pacchetto necessario, il testo non deve essere inviato a un servizio di traduzione remoto.</p>
 </section>
 
 <section>
-<h2>Perché la prima traduzione può richiedere più tempo</h2>
-<p>Il processo di traduzione locale può richiedere tempo per inizializzarsi, caricare i file del modello e prepararli all’inferenza dopo l’avvio.</p>
-<p>Questo costo di warm-up può rendere la prima traduzione più lenta delle richieste successive. Una volta pronti motore e modello, le traduzioni seguenti vengono normalmente gestite più rapidamente.</p>
-<p>La scorciatoia has still been recognized; the delay comes from preparing the local model rather than from opening a cloud connection.</p>
+<h2 data-i18n="s6Title">Perché la prima traduzione può richiedere più tempo</h2>
+<p data-i18n="s6p1">Il processo di traduzione locale può richiedere tempo per inizializzarsi, caricare i file del modello e prepararli all’inferenza dopo l’avvio.</p>
+<p data-i18n="s6p2">Questo costo di warm-up può rendere la prima traduzione più lenta delle richieste successive. Una volta pronti motore e modello, le traduzioni seguenti vengono normalmente gestite più rapidamente.</p>
+<p data-i18n="s6p3">La scorciatoia è già stata riconosciuta; il ritardo deriva dalla preparazione del modello locale, non dall’apertura di una connessione cloud.</p>
 </section>
 
 <section>
-<h2>Perché la finestra di SlangBit non deve rimanere aperta</h2>
-<p>SlangBit è progettato come utility nella system tray. Chiudere la finestra principale non significa necessariamente chiudere l’applicazione.</p>
-<p>Finché SlangBit rimane attivo nella system tray di Windows, la scorciatoia globale continua a intercettare ALT+Z e il processo di traduzione locale rimane disponibile.</p>
-<p>Per chiudere completamente SlangBit bisogna uscire dal menu della tray, non limitarsi a chiudere la finestra visibile.</p>
+<h2 data-i18n="s7Title">Perché la finestra di SlangBit non deve rimanere aperta</h2>
+<p data-i18n="s7p1">SlangBit è progettato come utility nella system tray. Chiudere la finestra principale non significa necessariamente chiudere l’applicazione.</p>
+<p data-i18n="s7p2">Finché SlangBit rimane attivo nella system tray di Windows, la scorciatoia globale continua a intercettare ALT+Z e il processo di traduzione locale rimane disponibile.</p>
+<p data-i18n="s7p3">Per chiudere completamente SlangBit bisogna uscire dal menu della tray, non limitarsi a chiudere la finestra visibile.</p>
 </section>
 
 <section>
-<h2>Dove può essere usato ALT+Z</h2>
-<p>Il workflow è progettato per applicazioni Windows che supportano il normale comportamento di copia e incolla.</p>
+<h2 data-i18n="s8Title">Dove può essere usato ALT+Z</h2>
+<p data-i18n="s8p1">Il workflow è progettato per applicazioni Windows che supportano il normale comportamento di copia e incolla.</p>
 <div class="cards">
-<div class="card"><h3>Client email</h3><p>Traduci una frase mentre componi o rispondi a un’email.</p></div>
-<div class="card"><h3>Browser</h3><p>Traduci il testo selezionato in moduli web, piattaforme social e strumenti online.</p></div>
-<div class="card"><h3>Editor di testo</h3><p>Lavora con note, bozze, documentazione e contenuti in testo semplice.</p></div>
-<div class="card"><h3>Software Office</h3><p>Traduci passaggi selezionati in documenti e altri contenuti modificabili.</p></div>
+<div class="card"><h3 data-i18n="card1Title">Client email</h3><p data-i18n="card1Text">Traduci una frase mentre componi o rispondi a un’email.</p></div>
+<div class="card"><h3>Browser</h3><p data-i18n="card2Text">Traduci il testo selezionato in moduli web, piattaforme social e strumenti online.</p></div>
+<div class="card"><h3 data-i18n="card3Title">Editor di testo</h3><p data-i18n="card3Text">Lavora con note, bozze, documentazione e contenuti in testo semplice.</p></div>
+<div class="card"><h3 data-i18n="card4Title">Software Office</h3><p data-i18n="card4Text">Traduci passaggi selezionati in documenti e altri contenuti modificabili.</p></div>
 </div>
 </section>
 
 <section>
-<h2>Casi in cui il workflow potrebbe non comportarsi come previsto</h2>
-<p>Alcune applicazioni usano controlli di testo non standard, limitano l’accesso agli appunti o gestiscono diversamente le scorciatoie globali. Anche software di sicurezza o altre applicazioni possono riservare la stessa combinazione di tasti.</p>
-<p>Possono verificarsi risultati inattesi anche quando:</p>
+<h2 data-i18n="s9Title">Casi in cui il workflow potrebbe non comportarsi come previsto</h2>
+<p data-i18n="s9p1">Alcune applicazioni usano controlli di testo non standard, limitano l’accesso agli appunti o gestiscono diversamente le scorciatoie globali. Anche software di sicurezza o altre applicazioni possono riservare la stessa combinazione di tasti.</p>
+<p data-i18n="s9p2">Possono verificarsi risultati inattesi anche quando:</p>
 <ul>
-<li>il testo è stato selezionato ma non copiato;</li>
-<li>è attiva la direzione linguistica sbagliata;</li>
-<li>il pacchetto linguistico richiesto non è installato;</li>
-<li>SlangBit non è in esecuzione nella tray;</li>
-<li>un altro programma intercetta ALT+Z;</li>
-<li>l’applicazione sorgente non supporta il normale comportamento degli appunti.</li>
+<li data-i18n="edge1">il testo è stato selezionato ma non copiato;</li>
+<li data-i18n="edge2">è attiva la direzione linguistica sbagliata;</li>
+<li data-i18n="edge3">il pacchetto linguistico richiesto non è installato;</li>
+<li data-i18n="edge4">SlangBit non è in esecuzione nella tray;</li>
+<li data-i18n="edge5">un altro programma intercetta ALT+Z;</li>
+<li data-i18n="edge6">l’applicazione sorgente non supporta il normale comportamento degli appunti.</li>
 </ul>
 </section>
 
 <section>
-<h2>Perché è stato scelto ALT+Z</h2>
-<p>Una buona scorciatoia globale deve essere facile da ricordare, rapida da premere e poco incline a interferire con i comandi di scrittura più comuni.</p>
-<p>ALT+Z offre una combinazione compatta di due tasti che può diventare parte di una routine di traduzione ricorrente.</p>
-<p>Il feedback dei primi utenti ha mostrato anche che le preferenze sulle scorciatoie cambiano a seconda del workflow. Hotkey personalizzabili e scorciatoie specifiche per coppia linguistica sono quindi direzioni importanti per lo sviluppo futuro.</p>
+<h2 data-i18n="s10Title">Perché è stato scelto ALT+Z</h2>
+<p data-i18n="s10p1">Una buona scorciatoia globale deve essere facile da ricordare, rapida da premere e poco incline a interferire con i comandi di scrittura più comuni.</p>
+<p data-i18n="s10p2">ALT+Z offre una combinazione compatta di due tasti che può diventare parte di una routine di traduzione ricorrente.</p>
+<p data-i18n="s10p3">Il feedback dei primi utenti ha mostrato anche che le preferenze sulle scorciatoie cambiano a seconda del workflow. Hotkey personalizzabili e scorciatoie specifiche per coppia linguistica sono quindi direzioni importanti per lo sviluppo futuro.</p>
 <div class="principles">
-<div class="principle"><b>MEMORABILE</b><span>Una combinazione breve che può diventare parte della routine quotidiana.</span></div>
-<div class="principle"><b>GLOBALE</b><span>Disponibile mentre un’altra applicazione Windows rimane attiva.</span></div>
-<div class="principle"><b>MINIMA</b><span>Progettata per ridurre i cambi di finestra invece di introdurre un’altra interfaccia.</span></div>
+<div class="principle"><b data-i18n="p1Title">MEMORABILE</b><span data-i18n="p1Text">Una combinazione breve che può diventare parte della routine quotidiana.</span></div>
+<div class="principle"><b data-i18n="p2Title">GLOBALE</b><span data-i18n="p2Text">Disponibile mentre un’altra applicazione Windows rimane attiva.</span></div>
+<div class="principle"><b data-i18n="p3Title">MINIMA</b><span data-i18n="p3Text">Progettata per ridurre i cambi di finestra invece di introdurre un’altra interfaccia.</span></div>
 </div>
 </section>
 
 <section id="faq">
-<h2>Domande frequenti</h2>
-<details><summary>Cosa fa ALT+Z in SlangBit?</summary><p>Avvia il workflow globale di traduzione: SlangBit legge il testo copiato, lo traduce localmente usando la coppia linguistica selezionata e restituisce il risultato attraverso gli appunti.</p></details>
-<details><summary>Devo tenere aperta la finestra di SlangBit?</summary><p>No. SlangBit è progettato per rimanere disponibile dalla system tray di Windows anche quando la finestra principale è chiusa.</p></details>
-<details><summary>Perché devo copiare il testo prima di premere ALT+Z?</summary><p>SlangBit usa gli appunti come input. Senza una nuova azione di copia, potrebbe elaborare un contenuto precedente.</p></details>
-<details><summary>ALT+Z invia il mio testo al cloud?</summary><p>No. Dopo aver installato il pacchetto linguistico necessario, la traduzione viene elaborata localmente sul computer Windows.</p></details>
-<details><summary>E se ALT+Z è già usato da un’altra applicazione?</summary><p>Un altro programma può intercettare la scorciatoia o creare un conflitto. Quando possibile, chiudi o riconfigura l’applicazione in conflitto.</p></details>
+<h2 data-i18n="faqTitle">Domande frequenti</h2>
+<details><summary data-i18n="faq1q">Cosa fa ALT+Z in SlangBit?</summary><p data-i18n="faq1a">Avvia il workflow globale di traduzione: SlangBit legge il testo copiato, lo traduce localmente usando la coppia linguistica selezionata e restituisce il risultato attraverso gli appunti.</p></details>
+<details><summary data-i18n="faq2q">Devo tenere aperta la finestra di SlangBit?</summary><p data-i18n="faq2a">No. SlangBit è progettato per rimanere disponibile dalla system tray di Windows anche quando la finestra principale è chiusa.</p></details>
+<details><summary data-i18n="faq3q">Perché devo copiare il testo prima di premere ALT+Z?</summary><p data-i18n="faq3a">SlangBit usa gli appunti come input. Senza una nuova azione di copia, potrebbe elaborare un contenuto precedente.</p></details>
+<details><summary data-i18n="faq4q">ALT+Z invia il mio testo al cloud?</summary><p data-i18n="faq4a">No. Dopo aver installato il pacchetto linguistico necessario, la traduzione viene elaborata localmente sul computer Windows.</p></details>
+<details><summary data-i18n="faq5q">E se ALT+Z è già usato da un’altra applicazione?</summary><p data-i18n="faq5a">Un altro programma può intercettare la scorciatoia o creare un conflitto. Quando possibile, chiudi o riconfigura l’applicazione in conflitto.</p></details>
 </section>
 
 <div class="cta">
-<h2>Copia, premi ALT+Z, continua a lavorare</h2>
-<p>SlangBit combina una scorciatoia globale di Windows, gli appunti e modelli linguistici locali per mantenere le traduzioni brevi dentro il lavoro che stai già svolgendo.</p>
+<h2 data-i18n="ctaTitle">Copia, premi ALT+Z, continua a lavorare</h2>
+<p data-i18n="ctaText">SlangBit combina una scorciatoia globale di Windows, gli appunti e modelli linguistici locali per mantenere le traduzioni brevi dentro il lavoro che stai già svolgendo.</p>
 <div class="actions">
-<a class="btn primary" href="/">Scopri SlangBit</a>
-<a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a>
+<a class="btn primary" href="/" data-i18n="discover">Scopri SlangBit</a>
+<a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer" data-i18n="store">Vai al Microsoft Store</a>
 </div>
 </div>
 </article>
 
 <aside aria-label="Navigazione dell’articolo">
 <div class="side-card">
-<h2>In questa pagina</h2>
-<a href="#shortcut">La scorciatoia globale</a>
-<a href="#workflow">Workflow completo</a>
-<a href="#clipboard">Perché gli appunti</a>
-<a href="#local">Motore di traduzione locale</a>
+<h2 data-i18n="sideTitle">In questa pagina</h2>
+<a href="#shortcut" data-i18n="side1">La scorciatoia globale</a>
+<a href="#workflow" data-i18n="side2">Workflow completo</a>
+<a href="#clipboard" data-i18n="side3">Perché gli appunti</a>
+<a href="#local" data-i18n="side4">Motore di traduzione locale</a>
 <a href="#faq">FAQ</a>
 </div>
 <div class="side-card">
-<h2>Insights correlati</h2>
-<a href="/insights/the-hidden-cost-of-the-change-of-application.html">Il costo nascosto del cambio di applicazione</a>
-<a href="/insights/how-to-translate-directly-into-an-email.html">Come tradurre direttamente in un’email</a>
-<a href="/insights/behind-the-scenes-of-local-models.html">Dietro le quinte dei modelli locali</a>
+<h2 data-i18n="relatedTitle">Insights correlati</h2>
+<a href="/insights/the-hidden-cost-of-the-change-of-application.html" data-i18n="related1">Il costo nascosto del cambio di applicazione</a>
+<a href="/insights/how-to-translate-directly-into-an-email.html" data-i18n="related2">Come tradurre direttamente in un’email</a>
+<a href="/insights/behind-the-scenes-of-local-models.html" data-i18n="related3">Dietro le quinte dei modelli locali</a>
 </div>
 </aside>
 </div>
 </main>
+
+<section class="share-section" aria-labelledby="shareArticleTitle">
+<h3 id="shareArticleTitle" data-i18n="shareTitle">Condividi questo Insight</h3>
+<p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
+<div class="share-buttons">
+<a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-ALT%2BZ-works.html&text=SlangBit%20Insights%20%E2%80%94%20come%20funziona%20ALT%2BZ." target="_blank" rel="noopener noreferrer"><img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span></a>
+<a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-ALT%2BZ-works.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span></a>
+<a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-ALT%2BZ-works.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span></a>
+<button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+</div>
+</section>
 
 <footer>
 <div class="footer">
@@ -402,5 +442,74 @@ aside{
 </div>
 </footer>
 </div>
+
+<script>
+const I18N={
+it:{
+pageTitle:'Come funziona ALT+Z in SlangBit | Traduzione offline su Windows',
+metaDescription:'Come SlangBit usa ALT+Z, gli appunti di Windows e modelli linguistici locali per tradurre il testo copiato senza aprire un’applicazione di traduzione separata.',
+navShortcut:'La scorciatoia',navClipboard:'Appunti',navLocal:'Motore locale',crumb:'Workflow ALT+Z',badge:'Scorciatoia globale Windows',
+heroTitle:'Come funziona <span>ALT+Z</span>',intro:'ALT+Z è la scorciatoia centrale di SlangBit. Collega gli appunti di Windows, la coppia linguistica selezionata e il motore di traduzione locale, così una breve traduzione può avvenire senza aprire un’altra applicazione.',date:'29 luglio 2026',readingTime:'Circa 7 minuti',
+s1Title:'ALT+Z è una scorciatoia globale di Windows',s1p1:'Una scorciatoia globale può essere riconosciuta mentre un’altra applicazione è attiva. Non è necessario portare in primo piano la finestra di SlangBit prima di avviare una traduzione.',s1p2:'In pratica, significa che puoi copiare il testo da un client email, browser, editor o altra applicazione Windows compatibile e poi premere <span class="kbd">ALT</span> + <span class="kbd">Z</span>.',calloutTitle:'L’obiettivo di design',calloutText:'La scorciatoia non è pensata per rendere SlangBit il centro dell’attenzione. È pensata per rendere disponibile la traduzione mentre un’altra applicazione resta al centro del lavoro.',
+s2Title:'Il workflow completo di ALT+Z',s2p1:'L’interazione visibile è breve, ma dietro avvengono diverse operazioni:',step1:'L’utente seleziona il testo nell’applicazione Windows attiva.',step2:'Il testo selezionato viene copiato negli appunti di Windows.',step3:'ALT+Z attiva SlangBit in background.',step4:'SlangBit legge il testo copiato e la coppia linguistica selezionata.',step5:'Il modello locale genera il risultato tradotto.',step6:'Il risultato ritorna attraverso il workflow degli appunti per essere usato nell’applicazione attiva.',s2p2:'L’utente rimane vicino al documento, messaggio o post originale invece di spostarsi in un’interfaccia di traduzione separata.',
+s3Title:'Perché SlangBit usa gli appunti di Windows',s3p1:'Gli appunti sono uno dei pochi meccanismi condivisi da un’ampia varietà di applicazioni Windows. Browser, editor di testo, software Office, client email e molti altri programmi supportano già copia e incolla.',s3p2:'Usare gli appunti permette a SlangBit di funzionare senza richiedere un’integrazione specifica per ogni applicazione.',s3p3:'Questo approccio lascia inoltre il controllo all’utente: SlangBit elabora il testo che viene copiato intenzionalmente, invece di leggere interi documenti o account.',
+s4Title:'Perché bisogna copiare prima di premere ALT+Z',s4p1:'La scorciatoia ha bisogno di un input chiaro. Copiare il testo selezionato inserisce quell’input in una posizione standard di Windows che SlangBit può leggere.',s4p2:'Premere ALT+Z senza prima copiare il testo desiderato può portare SlangBit a elaborare ciò che è già presente negli appunti. Per questo la sequenza affidabile è:',correctTitle:'Sequenza corretta',wrongTitle:'Errore comune',correct1:'Seleziona il testo desiderato',correct2:'Copialo',correct3:'Premi ALT+Z',correct4:'Controlla il risultato tradotto',wrong1:'Selezionare il testo senza copiarlo',wrong3:'Tradurre un contenuto precedente degli appunti',wrong4:'Ricevere un risultato inatteso',
+s5Title:'Cosa succede dentro il motore di traduzione locale',s5p1:'Quando ALT+Z viene rilevato, SlangBit invia il testo copiato al proprio processo di traduzione locale. Il pacchetto linguistico selezionato fornisce il modello e il tokenizer necessari per quella direzione di traduzione.',stack2Title:'Appunti di Windows',stack2Text:'Forniscono il testo sorgente copiato',stack3Text:'Esegue localmente il modello selezionato',stack4Title:'Testo tradotto',stack4Text:'Ritorna nel workflow di Windows',s5p2:'Dopo aver installato il pacchetto necessario, il testo non deve essere inviato a un servizio di traduzione remoto.',
+s6Title:'Perché la prima traduzione può richiedere più tempo',s6p1:'Il processo di traduzione locale può richiedere tempo per inizializzarsi, caricare i file del modello e prepararli all’inferenza dopo l’avvio.',s6p2:'Questo costo di warm-up può rendere la prima traduzione più lenta delle richieste successive. Una volta pronti motore e modello, le traduzioni seguenti vengono normalmente gestite più rapidamente.',s6p3:'La scorciatoia è già stata riconosciuta; il ritardo deriva dalla preparazione del modello locale, non dall’apertura di una connessione cloud.',
+s7Title:'Perché la finestra di SlangBit non deve rimanere aperta',s7p1:'SlangBit è progettato come utility nella system tray. Chiudere la finestra principale non significa necessariamente chiudere l’applicazione.',s7p2:'Finché SlangBit rimane attivo nella system tray di Windows, la scorciatoia globale continua a intercettare ALT+Z e il processo di traduzione locale rimane disponibile.',s7p3:'Per chiudere completamente SlangBit bisogna uscire dal menu della tray, non limitarsi a chiudere la finestra visibile.',
+s8Title:'Dove può essere usato ALT+Z',s8p1:'Il workflow è progettato per applicazioni Windows che supportano il normale comportamento di copia e incolla.',card1Title:'Client email',card1Text:'Traduci una frase mentre componi o rispondi a un’email.',card2Text:'Traduci il testo selezionato in moduli web, piattaforme social e strumenti online.',card3Title:'Editor di testo',card3Text:'Lavora con note, bozze, documentazione e contenuti in testo semplice.',card4Title:'Software Office',card4Text:'Traduci passaggi selezionati in documenti e altri contenuti modificabili.',
+s9Title:'Casi in cui il workflow potrebbe non comportarsi come previsto',s9p1:'Alcune applicazioni usano controlli di testo non standard, limitano l’accesso agli appunti o gestiscono diversamente le scorciatoie globali. Anche software di sicurezza o altre applicazioni possono riservare la stessa combinazione di tasti.',s9p2:'Possono verificarsi risultati inattesi anche quando:',edge1:'il testo è stato selezionato ma non copiato;',edge2:'è attiva la direzione linguistica sbagliata;',edge3:'il pacchetto linguistico richiesto non è installato;',edge4:'SlangBit non è in esecuzione nella tray;',edge5:'un altro programma intercetta ALT+Z;',edge6:'l’applicazione sorgente non supporta il normale comportamento degli appunti.',
+s10Title:'Perché è stato scelto ALT+Z',s10p1:'Una buona scorciatoia globale deve essere facile da ricordare, rapida da premere e poco incline a interferire con i comandi di scrittura più comuni.',s10p2:'ALT+Z offre una combinazione compatta di due tasti che può diventare parte di una routine di traduzione ricorrente.',s10p3:'Il feedback dei primi utenti ha mostrato anche che le preferenze sulle scorciatoie cambiano a seconda del workflow. Hotkey personalizzabili e scorciatoie specifiche per coppia linguistica sono quindi direzioni importanti per lo sviluppo futuro.',p1Title:'MEMORABILE',p1Text:'Una combinazione breve che può diventare parte della routine quotidiana.',p2Title:'GLOBALE',p2Text:'Disponibile mentre un’altra applicazione Windows rimane attiva.',p3Title:'MINIMA',p3Text:'Progettata per ridurre i cambi di finestra invece di introdurre un’altra interfaccia.',
+faqTitle:'Domande frequenti',faq1q:'Cosa fa ALT+Z in SlangBit?',faq1a:'Avvia il workflow globale di traduzione: SlangBit legge il testo copiato, lo traduce localmente usando la coppia linguistica selezionata e restituisce il risultato attraverso gli appunti.',faq2q:'Devo tenere aperta la finestra di SlangBit?',faq2a:'No. SlangBit è progettato per rimanere disponibile dalla system tray di Windows anche quando la finestra principale è chiusa.',faq3q:'Perché devo copiare il testo prima di premere ALT+Z?',faq3a:'SlangBit usa gli appunti come input. Senza una nuova azione di copia, potrebbe elaborare un contenuto precedente.',faq4q:'ALT+Z invia il mio testo al cloud?',faq4a:'No. Dopo aver installato il pacchetto linguistico necessario, la traduzione viene elaborata localmente sul computer Windows.',faq5q:'E se ALT+Z è già usato da un’altra applicazione?',faq5a:'Un altro programma può intercettare la scorciatoia o creare un conflitto. Quando possibile, chiudi o riconfigura l’applicazione in conflitto.',
+ctaTitle:'Copia, premi ALT+Z, continua a lavorare',ctaText:'SlangBit combina una scorciatoia globale di Windows, gli appunti e modelli linguistici locali per mantenere le traduzioni brevi dentro il lavoro che stai già svolgendo.',discover:'Scopri SlangBit',store:'Vai al Microsoft Store',sideTitle:'In questa pagina',side1:'La scorciatoia globale',side2:'Workflow completo',side3:'Perché gli appunti',side4:'Motore di traduzione locale',relatedTitle:'Insights correlati',related1:'Il costo nascosto del cambio di applicazione',related2:'Come tradurre direttamente in un’email',related3:'Dietro le quinte dei modelli locali',
+shareTitle:'Condividi questo Insight',shareText:'Se pensi possa essere utile anche a qualcun altro.',copyLink:'Copia link',copied:'Link copiato'
+},
+en:{
+pageTitle:'How ALT+Z works in SlangBit | Offline translation on Windows',
+metaDescription:'How SlangBit uses ALT+Z, the Windows clipboard and local language models to translate copied text without opening a separate translation application.',
+navShortcut:'The shortcut',navClipboard:'Clipboard',navLocal:'Local engine',crumb:'ALT+Z workflow',badge:'Windows global shortcut',
+heroTitle:'How <span>ALT+Z</span> works',intro:'ALT+Z is SlangBit’s central shortcut. It connects the Windows clipboard, the selected language pair and the local translation engine so a short translation can happen without opening another application.',date:'July 29, 2026',readingTime:'About 7 minutes',
+s1Title:'ALT+Z is a global Windows shortcut',s1p1:'A global shortcut can be recognized while another application is active. You do not need to bring the SlangBit window to the foreground before starting a translation.',s1p2:'In practice, this means you can copy text from an email client, browser, editor or another compatible Windows application and then press <span class="kbd">ALT</span> + <span class="kbd">Z</span>.',calloutTitle:'The design goal',calloutText:'The shortcut is not intended to make SlangBit the center of attention. It is intended to make translation available while another application remains the center of the task.',
+s2Title:'The complete ALT+Z workflow',s2p1:'The visible interaction is brief, but several operations happen behind it:',step1:'The user selects text in the active Windows application.',step2:'The selected text is copied to the Windows clipboard.',step3:'ALT+Z activates SlangBit in the background.',step4:'SlangBit reads the copied text and the selected language pair.',step5:'The local model generates the translated result.',step6:'The result returns through the clipboard workflow for use in the active application.',s2p2:'The user stays close to the original document, message or post instead of moving to a separate translation interface.',
+s3Title:'Why SlangBit uses the Windows clipboard',s3p1:'The clipboard is one of the few mechanisms shared across a wide range of Windows applications. Browsers, text editors, Office software, email clients and many other programs already support copy and paste.',s3p2:'Using the clipboard allows SlangBit to work without requiring a specific integration for every application.',s3p3:'This approach also keeps the user in control: SlangBit processes text that is intentionally copied instead of reading entire documents or accounts.',
+s4Title:'Why you need to copy before pressing ALT+Z',s4p1:'The shortcut needs a clear input. Copying the selected text places that input in a standard Windows location that SlangBit can access.',s4p2:'Pressing ALT+Z without first copying the intended text may cause SlangBit to process whatever is already in the clipboard. The reliable sequence is:',correctTitle:'Correct sequence',wrongTitle:'Common mistake',correct1:'Select the text you want',correct2:'Copy it',correct3:'Press ALT+Z',correct4:'Check the translated result',wrong1:'Select the text without copying it',wrong3:'Translate older clipboard content',wrong4:'Receive an unexpected result',
+s5Title:'What happens inside the local translation engine',s5p1:'When ALT+Z is detected, SlangBit sends the copied text to its local translation process. The selected language package provides the model and tokenizer required for that translation direction.',stack2Title:'Windows clipboard',stack2Text:'Provides the copied source text',stack3Text:'Runs the selected model locally',stack4Title:'Translated text',stack4Text:'Returns to the Windows workflow',s5p2:'After the required package is installed, the text does not need to be sent to a remote translation service.',
+s6Title:'Why the first translation can take longer',s6p1:'The local translation process may need time to initialize, load model files and prepare them for inference after startup.',s6p2:'This warm-up cost can make the first translation slower than subsequent requests. Once the engine and model are ready, later translations are normally handled more quickly.',s6p3:'The shortcut has already been recognized; the delay comes from preparing the local model rather than opening a cloud connection.',
+s7Title:'Why the SlangBit window does not need to stay open',s7p1:'SlangBit is designed as a system-tray utility. Closing the main window does not necessarily close the application.',s7p2:'As long as SlangBit remains active in the Windows system tray, the global shortcut continues to intercept ALT+Z and the local translation process remains available.',s7p3:'To close SlangBit completely, use the tray menu rather than only closing the visible window.',
+s8Title:'Where ALT+Z can be used',s8p1:'The workflow is designed for Windows applications that support normal copy-and-paste behavior.',card1Title:'Email clients',card1Text:'Translate a sentence while composing or replying to an email.',card2Text:'Translate selected text in web forms, social platforms and online tools.',card3Title:'Text editors',card3Text:'Work with notes, drafts, documentation and plain-text content.',card4Title:'Office software',card4Text:'Translate selected passages in documents and other editable content.',
+s9Title:'Cases where the workflow may not behave as expected',s9p1:'Some applications use non-standard text controls, restrict clipboard access or handle global shortcuts differently. Security software or other applications can also reserve the same key combination.',s9p2:'Unexpected results may also occur when:',edge1:'the text was selected but not copied;',edge2:'the wrong language direction is active;',edge3:'the required language package is not installed;',edge4:'SlangBit is not running in the tray;',edge5:'another program intercepts ALT+Z;',edge6:'the source application does not support normal clipboard behavior.',
+s10Title:'Why ALT+Z was chosen',s10p1:'A good global shortcut should be easy to remember, quick to press and unlikely to interfere with common writing commands.',s10p2:'ALT+Z provides a compact two-key combination that can become part of a recurring translation routine.',s10p3:'Early-user feedback also showed that shortcut preferences vary by workflow. Customizable hotkeys and language-pair-specific shortcuts are therefore important directions for future development.',p1Title:'MEMORABLE',p1Text:'A short combination that can become part of a daily routine.',p2Title:'GLOBAL',p2Text:'Available while another Windows application remains active.',p3Title:'MINIMAL',p3Text:'Designed to reduce window switching instead of introducing another interface.',
+faqTitle:'Frequently asked questions',faq1q:'What does ALT+Z do in SlangBit?',faq1a:'It starts the global translation workflow: SlangBit reads the copied text, translates it locally using the selected language pair and returns the result through the clipboard.',faq2q:'Do I need to keep the SlangBit window open?',faq2a:'No. SlangBit is designed to remain available from the Windows system tray even when the main window is closed.',faq3q:'Why do I need to copy the text before pressing ALT+Z?',faq3a:'SlangBit uses the clipboard as input. Without a new copy action, it may process older clipboard content.',faq4q:'Does ALT+Z send my text to the cloud?',faq4a:'No. After the required language package is installed, translation is processed locally on the Windows computer.',faq5q:'What if ALT+Z is already used by another application?',faq5a:'Another program can intercept the shortcut or create a conflict. When possible, close or reconfigure the conflicting application.',
+ctaTitle:'Copy, press ALT+Z, keep working',ctaText:'SlangBit combines a global Windows shortcut, the clipboard and local language models to keep short translations inside the work you are already doing.',discover:'Discover SlangBit',store:'Go to Microsoft Store',sideTitle:'On this page',side1:'The global shortcut',side2:'Complete workflow',side3:'Why the clipboard',side4:'Local translation engine',relatedTitle:'Related Insights',related1:'The hidden cost of switching applications',related2:'How to translate directly inside an email',related3:'Behind the scenes of local models',
+shareTitle:'Share this Insight',shareText:'If you think it could be useful to someone else.',copyLink:'Copy link',copied:'Link copied'
+}
+};
+let currentLang='it';
+function applyLanguage(lang,persist=true){
+if(!I18N[lang])lang='it';currentLang=lang;document.documentElement.lang=lang;
+document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(I18N[lang][k]!==undefined)el.textContent=I18N[lang][k]});
+document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(I18N[lang][k]!==undefined)el.innerHTML=I18N[lang][k]});
+document.title=I18N[lang].pageTitle;
+const m=document.querySelector('meta[name="description"]');if(m)m.setAttribute('content',I18N[lang].metaDescription);
+document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+if(persist)localStorage.setItem('slangbit-language',lang);
+}
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage||(browserLanguage.startsWith('it')?'it':'en'),false);
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+const button=document.getElementById('copyShareLink');
+try{
+await navigator.clipboard.writeText('https://slangbit.com/insights/how-ALT+Z-works.html');
+const span=button?.querySelector('span');const original=span?.textContent||'';
+if(span)span.textContent=I18N[currentLang].copied;
+setTimeout(()=>{if(span)span.textContent=original},1600);
+}catch(error){window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/how-ALT+Z-works.html');}
+});
+</script>
+
 </body>
 </html>
