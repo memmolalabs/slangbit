@@ -8,11 +8,27 @@
   <meta name="description" content="Report di engineering di SlangBit: validazione su workflow reali, architettura AI offline, indagine sulla certificazione Microsoft Store e hardening dell'input." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://slangbit.com/engineering.html" />
+  <link rel="alternate" hreflang="it" href="https://slangbit.com/engineering.html" />
+  <link rel="alternate" hreflang="en" href="https://slangbit.com/engineering.html" />
+  <link rel="alternate" hreflang="x-default" href="https://slangbit.com/engineering.html" />
 
   <meta property="og:title" content="SlangBit Engineering — Testato, validato, offline" />
   <meta property="og:description" content="Come SlangBit è stato testato su workflow Windows reali, documenti lunghi, codice, HTML, automazione degli appunti e ambienti offline." />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SlangBit" />
   <meta property="og:url" content="https://slangbit.com/engineering.html" />
+  <meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png" />
+  <meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SlangBit Engineering — Testato, validato, offline" />
+  <meta name="twitter:description" content="Come SlangBit è stato testato su workflow Windows reali, documenti lunghi, codice, HTML, automazione degli appunti e ambienti offline." />
+  <meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png" />
+  <meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows" />
 
   <style>
     :root{
@@ -50,6 +66,32 @@
       text-decoration:none;border:1px solid #d5dee8;border-radius:8px;font-size:10px;font-weight:800;color:#334155;background:#fff
     }
     .nav-btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+
+    .nav-actions{display:flex;align-items:center;gap:9px}
+    .lang-switch{
+      display:inline-flex;align-items:center;gap:4px;padding:3px;
+      border:1px solid #d5dee8;border-radius:999px;background:#fff
+    }
+    .lang-switch button{
+      min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;
+      background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer
+    }
+    .lang-switch button.active{background:var(--blue);color:#fff}
+
+    .share-section{
+      padding:46px 3vw 34px;text-align:center;border-top:1px solid #e6ebf1;background:#fbfdff
+    }
+    .share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+    .share-section p{color:var(--muted);margin-bottom:20px}
+    .share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+    .share-button{
+      min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;
+      background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;
+      transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px
+    }
+    .share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+    .share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 
     main{width:100%;margin:0;padding:0}
     .hero{
@@ -178,23 +220,29 @@
   </a>
   <div class="nav-links">
     <a href="#workflow">Workflow</a>
-    <a href="#validation">Validazione</a>
-    <a href="#certification">Certificazione</a>
-    <a href="#matrix">Matrice</a>
+    <a href="#validation" data-i18n="navValidation">Validazione</a>
+    <a href="#certification" data-i18n="navCertification">Certificazione</a>
+    <a href="#matrix" data-i18n="navMatrix">Matrice</a>
   </div>
-  <a class="nav-btn primary" href="/">Torna a SlangBit</a>
+  <div class="nav-actions">
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" id="langIt">IT</button>
+      <button type="button" id="langEn">EN</button>
+    </div>
+    <a class="nav-btn primary" href="/" data-i18n="backToSlangBit">Torna a SlangBit</a>
+  </div>
 </nav>
 
 <main>
   <section class="hero">
     <div class="hero-inner">
       <div class="section-label">Engineering Report</div>
-      <h1>Costruito per il lavoro reale.<span>Testato oltre l'uso normale.</span></h1>
-      <p>SlangBit non è soltanto uno strumento di traduzione offline. È una utility di produttività per Windows progettata per portare la traduzione AI locale direttamente nelle applicazioni che le persone usano già.</p>
-      <p>Questa pagina riassume la validazione tecnica alla base di SlangBit: workflow reali, architettura offline, stress test, indagine sulla certificazione Microsoft Store e hardening dell'input.</p>
+      <h1 data-i18n-html="heroTitle">Costruito per il lavoro reale.<span>Testato oltre l'uso normale.</span></h1>
+      <p data-i18n="heroText1">SlangBit non è soltanto uno strumento di traduzione offline. È una utility di produttività per Windows progettata per portare la traduzione AI locale direttamente nelle applicazioni che le persone usano già.</p>
+      <p data-i18n="heroText2">Questa pagina riassume la validazione tecnica alla base di SlangBit: workflow reali, architettura offline, stress test, indagine sulla certificazione Microsoft Store e hardening dell'input.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#validation">Esplora la validazione</a>
-        <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">Documentazione GitHub</a>
+        <a class="btn-primary" href="#validation" data-i18n="exploreValidation">Esplora la validazione</a>
+        <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer" data-i18n="githubDocs">Documentazione GitHub</a>
       </div>
     </div>
   </section>
@@ -202,60 +250,60 @@
   <section id="workflow" class="content-section">
     <div class="section-head">
       <div class="section-label">Workflow</div>
-      <h2>Tradurre senza uscire dal proprio lavoro.</h2>
-      <p class="section-sub">SlangBit è stato progettato per ridurre il numero di interruzioni normalmente richieste dai workflow di traduzione.</p>
+      <h2 data-i18n="workflowTitle">Tradurre senza uscire dal proprio lavoro.</h2>
+      <p class="section-sub" data-i18n="workflowText">SlangBit è stato progettato per ridurre il numero di interruzioni normalmente richieste dai workflow di traduzione.</p>
     </div>
     <div class="workflow">
-      <div class="workflow-box">SELEZIONA E COPIA</div>
+      <div class="workflow-box" data-i18n="workflowStep1">SELEZIONA E COPIA</div>
       <div class="workflow-arrow">→</div>
       <div class="workflow-box">ALT + Z</div>
       <div class="workflow-arrow">→</div>
-      <div class="workflow-box">CONTINUA A LAVORARE</div>
+      <div class="workflow-box" data-i18n="workflowStep3">CONTINUA A LAVORARE</div>
     </div>
     <div class="highlight">
-      <h3>Esempio di workflow reale</h3>
-      <p>Un testo può essere scritto in OpenOffice, copiato negli appunti e tradotto direttamente nel campo descrizione di un browser semplicemente posizionando il cursore nel campo di destinazione e premendo ALT + Z.</p>
-      <p>SlangBit legge gli appunti, traduce localmente, aggiorna gli appunti e inserisce il testo tradotto nell'applicazione attiva.</p>
+      <h3 data-i18n="workflowExampleTitle">Esempio di workflow reale</h3>
+      <p data-i18n="workflowExample1">Un testo può essere scritto in OpenOffice, copiato negli appunti e tradotto direttamente nel campo descrizione di un browser semplicemente posizionando il cursore nel campo di destinazione e premendo ALT + Z.</p>
+      <p data-i18n="workflowExample2">SlangBit legge gli appunti, traduce localmente, aggiorna gli appunti e inserisce il testo tradotto nell'applicazione attiva.</p>
     </div>
   </section>
 
   <section class="content-section">
     <div class="section-head">
       <div class="section-label">Architettura</div>
-      <h2>Offline-first per progettazione.</h2>
-      <p class="section-sub">SlangBit esegue la traduzione localmente usando modelli linguistici AI installati e un server di traduzione locale integrato.</p>
+      <h2 data-i18n="archTitle">Offline-first per progettazione.</h2>
+      <p class="section-sub" data-i18n="archText">SlangBit esegue la traduzione localmente usando modelli linguistici AI installati e un server di traduzione locale integrato.</p>
     </div>
     <div class="grid three">
-      <div class="card"><strong>Applicazione Windows</strong><p>Applicazione desktop Flutter con hotkey globale, integrazione nella tray, workflow tramite appunti e Package Manager.</p></div>
-      <div class="card"><strong>Server locale</strong><p>Server locale integrato basato su Python che gestisce rilevamento dei modelli linguistici, richieste di traduzione e normalizzazione dell'input.</p></div>
-      <div class="card"><strong>Modelli AI locali</strong><p>I modelli CTranslate2 e i tokenizer Marian vengono eseguiti direttamente sul computer dell'utente dopo l'installazione dei pacchetti lingua.</p></div>
+      <div class="card"><strong data-i18n="archCard1Title">Applicazione Windows</strong><p data-i18n="archCard1Text">Applicazione desktop Flutter con hotkey globale, integrazione nella tray, workflow tramite appunti e Package Manager.</p></div>
+      <div class="card"><strong data-i18n="archCard2Title">Server locale</strong><p data-i18n="archCard2Text">Server locale integrato basato su Python che gestisce rilevamento dei modelli linguistici, richieste di traduzione e normalizzazione dell'input.</p></div>
+      <div class="card"><strong data-i18n="archCard3Title">Modelli AI locali</strong><p data-i18n="archCard3Text">I modelli CTranslate2 e i tokenizer Marian vengono eseguiti direttamente sul computer dell'utente dopo l'installazione dei pacchetti lingua.</p></div>
     </div>
-    <div class="code-block">Appunti → SlangBit Desktop → Server locale → CTranslate2 → Modello AI locale → Appunti → Applicazione attiva</div>
+    <div class="code-block" data-i18n="archFlow">Appunti → SlangBit Desktop → Server locale → CTranslate2 → Modello AI locale → Appunti → Applicazione attiva</div>
   </section>
 
   <section id="validation" class="content-section">
     <div class="section-head">
-      <div class="section-label">Validazione</div>
-      <h2>Testato su workflow Windows reali.</h2>
-      <p class="section-sub">SlangBit è stato validato su scenari desktop pratici, non soltanto su brevi campioni di testo isolati.</p>
+      <div class="section-label" data-i18n="validationLabel">Validazione</div>
+      <h2 data-i18n="validationTitle">Testato su workflow Windows reali.</h2>
+      <p class="section-sub" data-i18n="validationText">SlangBit è stato validato su scenari desktop pratici, non soltanto su brevi campioni di testo isolati.</p>
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Applicazione / Scenario</th><th>Validato</th><th>Note</th></tr></thead>
+        <thead><tr><th data-i18n="tableApp">Applicazione / Scenario</th><th data-i18n="tableValidated">Validato</th><th data-i18n="tableNotes">Note</th></tr></thead>
         <tbody>
-          <tr><td>Blocco note di Windows</td><td class="ok">Sì</td><td>Workflow di traduzione di testo semplice</td></tr>
-          <tr><td>Microsoft Edge</td><td class="ok">Sì</td><td>Campi di testo del browser e contenuto renderizzato</td></tr>
-          <tr><td>Google</td><td class="ok">Sì</td><td>Campi di ricerca e workflow nel browser</td></tr>
-          <tr><td>Gmail</td><td class="ok">Sì</td><td>Workflow di composizione email</td></tr>
-          <tr><td>Outlook</td><td class="ok">Sì</td><td>Workflow di composizione email</td></tr>
-          <tr><td>X</td><td class="ok">Sì</td><td>Composizione di post sui social media</td></tr>
-          <tr><td>Reddit</td><td class="ok">Sì</td><td>Workflow di post e commenti</td></tr>
-          <tr><td>Trustpilot</td><td class="ok">Sì</td><td>Workflow di testo per recensioni</td></tr>
-          <tr><td>OpenOffice</td><td class="ok">Sì</td><td>Testo nei documenti e inserimento tra applicazioni</td></tr>
-          <tr><td>Visual Studio Code</td><td class="ok">Sì</td><td>Codice e testo di documentazione</td></tr>
-          <tr><td>VSDC Video Editor</td><td class="ok">Sì</td><td>Campi di testo dell'applicazione desktop</td></tr>
-          <tr><td>Esplora file di Windows</td><td class="ok">Sì</td><td>Workflow testuali nell'interfaccia Windows</td></tr>
-          <tr><td>Cartelle Windows</td><td class="ok">Sì</td><td>Campi di rinomina e operazioni testuali desktop</td></tr>
+          <tr><td>Blocco note di Windows</td><td class="ok" data-i18n="yes">Sì</td><td>Workflow di traduzione di testo semplice</td></tr>
+          <tr><td>Microsoft Edge</td><td class="ok" data-i18n="yes">Sì</td><td>Campi di testo del browser e contenuto renderizzato</td></tr>
+          <tr><td>Google</td><td class="ok" data-i18n="yes">Sì</td><td>Campi di ricerca e workflow nel browser</td></tr>
+          <tr><td>Gmail</td><td class="ok" data-i18n="yes">Sì</td><td>Workflow di composizione email</td></tr>
+          <tr><td>Outlook</td><td class="ok" data-i18n="yes">Sì</td><td>Workflow di composizione email</td></tr>
+          <tr><td>X</td><td class="ok" data-i18n="yes">Sì</td><td>Composizione di post sui social media</td></tr>
+          <tr><td>Reddit</td><td class="ok" data-i18n="yes">Sì</td><td>Workflow di post e commenti</td></tr>
+          <tr><td>Trustpilot</td><td class="ok" data-i18n="yes">Sì</td><td>Workflow di testo per recensioni</td></tr>
+          <tr><td>OpenOffice</td><td class="ok" data-i18n="yes">Sì</td><td>Testo nei documenti e inserimento tra applicazioni</td></tr>
+          <tr><td>Visual Studio Code</td><td class="ok" data-i18n="yes">Sì</td><td>Codice e testo di documentazione</td></tr>
+          <tr><td>VSDC Video Editor</td><td class="ok" data-i18n="yes">Sì</td><td>Campi di testo dell'applicazione desktop</td></tr>
+          <tr><td>Esplora file di Windows</td><td class="ok" data-i18n="yes">Sì</td><td>Workflow testuali nell'interfaccia Windows</td></tr>
+          <tr><td>Cartelle Windows</td><td class="ok" data-i18n="yes">Sì</td><td>Campi di rinomina e operazioni testuali desktop</td></tr>
         </tbody>
       </table>
     </div>
@@ -264,42 +312,42 @@
   <section class="content-section">
     <div class="section-head">
       <div class="section-label">Stress Testing</div>
-      <h2>Oltre le frasi brevi.</h2>
-      <p class="section-sub">La campagna di validazione ha incluso documenti lunghi, codice, markup, testo formattato e contenuti insoliti negli appunti.</p>
+      <h2 data-i18n="stressTitle">Oltre le frasi brevi.</h2>
+      <p class="section-sub" data-i18n="stressText">La campagna di validazione ha incluso documenti lunghi, codice, markup, testo formattato e contenuti insoliti negli appunti.</p>
     </div>
     <div class="grid four">
-      <div class="card"><strong>25.000+ caratteri</strong><p>Sono stati testati testi lunghi per validare la stabilità oltre la semplice traduzione di singole frasi.</p></div>
-      <div class="card"><strong>Codice sorgente</strong><p>File Dart, comandi PowerShell e testo tecnico sono stati utilizzati come input di stress test.</p></div>
-      <div class="card"><strong>HTML & Markdown</strong><p>Sono stati testati HTML semplice e complesso, HTML renderizzato, sorgente grezzo e Markdown.</p></div>
-      <div class="card"><strong>Automazione appunti</strong><p>I workflow PowerShell con Set-Clipboard sono stati utilizzati per simulare input automatizzati negli appunti.</p></div>
+      <div class="card"><strong data-i18n="stress1Title">25.000+ caratteri</strong><p data-i18n="stress1Text">Sono stati testati testi lunghi per validare la stabilità oltre la semplice traduzione di singole frasi.</p></div>
+      <div class="card"><strong data-i18n="stress2Title">Codice sorgente</strong><p data-i18n="stress2Text">File Dart, comandi PowerShell e testo tecnico sono stati utilizzati come input di stress test.</p></div>
+      <div class="card"><strong>HTML & Markdown</strong><p data-i18n="stress3Text">Sono stati testati HTML semplice e complesso, HTML renderizzato, sorgente grezzo e Markdown.</p></div>
+      <div class="card"><strong data-i18n="stress4Title">Automazione appunti</strong><p data-i18n="stress4Text">I workflow PowerShell con Set-Clipboard sono stati utilizzati per simulare input automatizzati negli appunti.</p></div>
     </div>
   </section>
 
   <section id="certification" class="content-section">
     <div class="section-head">
-      <div class="section-label">Indagine sulla certificazione</div>
-      <h2>Un problema difficile di certificazione è diventato hardening del prodotto.</h2>
-      <p class="section-sub">Durante la certificazione Microsoft Store è stato investigato sistematicamente un errore di traduzione collegato all'input.</p>
+      <div class="section-label" data-i18n="certLabel">Indagine sulla certificazione</div>
+      <h2 data-i18n="certTitle">Un problema difficile di certificazione è diventato hardening del prodotto.</h2>
+      <p class="section-sub" data-i18n="certText">Durante la certificazione Microsoft Store è stato investigato sistematicamente un errore di traduzione collegato all'input.</p>
     </div>
     <div class="timeline">
-      <div class="timeline-item"><strong>Segnalazione iniziale</strong><p>Un report di certificazione mostrava un errore di traduzione su una descrizione lunga contenente tag HTML letterali di interruzione di riga.</p></div>
-      <div class="timeline-item"><strong>Test delle ipotesi</strong><p>Sono stati testati ambiente Windows, tempi di avvio, warmup del server, testo della descrizione Store, README, HTML, Markdown, formati degli appunti e macchine virtuali.</p></div>
-      <div class="timeline-item"><strong>Riproduzione</strong><p>Il problema è stato riprodotto soltanto quando testi lunghi contenevano elementi letterali &lt;br&gt; ripetuti invece di normali interruzioni di riga.</p></div>
-      <div class="timeline-item"><strong>Causa principale</strong><p>La pipeline di traduzione riceveva le interruzioni di riga come testo HTML letterale, creando una rappresentazione di input insolita e non prodotta dai normali workflow di copia.</p></div>
-      <div class="timeline-item"><strong>Correzione</strong><p>Il server locale è stato aggiornato per normalizzare le interruzioni di riga HTML letterali in normali interruzioni di riga prima della traduzione.</p></div>
-      <div class="timeline-item"><strong>Risultato</strong><p>L'input che in precedenza falliva è stato tradotto correttamente e la build aggiornata ha completato la certificazione Microsoft Store.</p></div>
+      <div class="timeline-item"><strong data-i18n="tl1Title">Segnalazione iniziale</strong><p data-i18n="tl1Text">Un report di certificazione mostrava un errore di traduzione su una descrizione lunga contenente tag HTML letterali di interruzione di riga.</p></div>
+      <div class="timeline-item"><strong data-i18n="tl2Title">Test delle ipotesi</strong><p data-i18n="tl2Text">Sono stati testati ambiente Windows, tempi di avvio, warmup del server, testo della descrizione Store, README, HTML, Markdown, formati degli appunti e macchine virtuali.</p></div>
+      <div class="timeline-item"><strong data-i18n="tl3Title">Riproduzione</strong><p data-i18n="tl3Text">Il problema è stato riprodotto soltanto quando testi lunghi contenevano elementi letterali &lt;br&gt; ripetuti invece di normali interruzioni di riga.</p></div>
+      <div class="timeline-item"><strong data-i18n="tl4Title">Causa principale</strong><p data-i18n="tl4Text">La pipeline di traduzione riceveva le interruzioni di riga come testo HTML letterale, creando una rappresentazione di input insolita e non prodotta dai normali workflow di copia.</p></div>
+      <div class="timeline-item"><strong data-i18n="tl5Title">Correzione</strong><p data-i18n="tl5Text">Il server locale è stato aggiornato per normalizzare le interruzioni di riga HTML letterali in normali interruzioni di riga prima della traduzione.</p></div>
+      <div class="timeline-item"><strong data-i18n="tl6Title">Risultato</strong><p data-i18n="tl6Text">L'input che in precedenza falliva è stato tradotto correttamente e la build aggiornata ha completato la certificazione Microsoft Store.</p></div>
     </div>
     <div class="code-block">&lt;br&gt; / &lt;br/&gt; / &lt;br /&gt; → normalizzazione input → normali interruzioni di riga → traduzione locale</div>
   </section>
 
   <section id="matrix" class="content-section">
     <div class="section-head">
-      <div class="section-label">Matrice di affidabilità</div>
-      <h2>Capacità validate.</h2>
+      <div class="section-label" data-i18n="matrixLabel">Matrice di affidabilità</div>
+      <h2 data-i18n="matrixTitle">Capacità validate.</h2>
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Categoria</th><th>Stato</th></tr></thead>
+        <thead><tr><th data-i18n="matrixCategory">Categoria</th><th data-i18n="matrixStatus">Stato</th></tr></thead>
         <tbody>
           <tr><td>Installazione MSIX</td><td class="ok">Validata</td></tr>
           <tr><td>Avvio di Windows</td><td class="ok">Validato</td></tr>
@@ -329,20 +377,185 @@
 
   <section class="content-section">
     <div class="highlight">
-      <h3>I test hanno cambiato il prodotto.</h3>
-      <p>Il risultato dei test su SlangBit non è stato semplicemente confermare che funziona. I test hanno fatto emergere un caso limite insolito, portato a un'analisi mirata della causa principale e prodotto una pipeline di elaborazione dell'input più robusta.</p>
-      <p>SlangBit è ora meglio preparato per contenuti reali negli appunti, rappresentazioni di input malformate e workflow desktop su testi lunghi.</p>
+      <h3 data-i18n="closingTitle">I test hanno cambiato il prodotto.</h3>
+      <p data-i18n="closingText1">Il risultato dei test su SlangBit non è stato semplicemente confermare che funziona. I test hanno fatto emergere un caso limite insolito, portato a un'analisi mirata della causa principale e prodotto una pipeline di elaborazione dell'input più robusta.</p>
+      <p data-i18n="closingText2">SlangBit è ora meglio preparato per contenuti reali negli appunti, rappresentazioni di input malformate e workflow desktop su testi lunghi.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Disponibile su Microsoft Store</a>
-        <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">README su GitHub</a>
+        <a class="btn-primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer" data-i18n="storeButton">Disponibile su Microsoft Store</a>
+        <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer" data-i18n="readmeButton">README su GitHub</a>
       </div>
     </div>
   </section>
 </main>
 
+<section class="share-section" aria-labelledby="shareEngineeringTitle">
+  <h3 id="shareEngineeringTitle" data-i18n="shareTitle">Condividi SlangBit Engineering</h3>
+  <p data-i18n="shareText">Se pensi che questa pagina possa essere utile anche a qualcun altro.</p>
+  <div class="share-buttons">
+    <a class="share-button"
+       href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Fengineering.html&text=SlangBit%20Engineering%20%E2%80%94%20testato%2C%20validato%2C%20offline."
+       target="_blank" rel="noopener noreferrer" aria-label="Condividi SlangBit Engineering su X">
+      <img src="images/logo_x.png" alt="" aria-hidden="true"><span>X</span>
+    </a>
+    <a class="share-button"
+       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Fengineering.html"
+       target="_blank" rel="noopener noreferrer" aria-label="Condividi SlangBit Engineering su Facebook">
+      <img src="images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span>
+    </a>
+    <a class="share-button"
+       href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Fengineering.html"
+       target="_blank" rel="noopener noreferrer" aria-label="Condividi SlangBit Engineering su LinkedIn">
+      <img src="images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span>
+    </a>
+    <button type="button" class="share-button" id="copyShareLink" aria-label="Copia link SlangBit Engineering">
+      <span data-i18n="copyLink">Copia link</span>
+    </button>
+  </div>
+</section>
+
 <footer>
   © 2026 Memmola Labs® · SlangBit Engineering · <a href="/">slangbit.com</a>
 </footer>
+
+
+<script>
+const I18N = {
+  it: {
+    pageTitle:'SlangBit Engineering — Testato, validato, offline',
+    metaDescription:"Report di engineering di SlangBit: validazione su workflow reali, architettura AI offline, indagine sulla certificazione Microsoft Store e hardening dell'input.",
+    navValidation:'Validazione', navCertification:'Certificazione', navMatrix:'Matrice', backToSlangBit:'Torna a SlangBit',
+    heroTitle:"Costruito per il lavoro reale.<span>Testato oltre l'uso normale.</span>",
+    heroText1:'SlangBit non è soltanto uno strumento di traduzione offline. È una utility di produttività per Windows progettata per portare la traduzione AI locale direttamente nelle applicazioni che le persone usano già.',
+    heroText2:"Questa pagina riassume la validazione tecnica alla base di SlangBit: workflow reali, architettura offline, stress test, indagine sulla certificazione Microsoft Store e hardening dell'input.",
+    exploreValidation:'Esplora la validazione', githubDocs:'Documentazione GitHub',
+    workflowTitle:'Tradurre senza uscire dal proprio lavoro.', workflowText:'SlangBit è stato progettato per ridurre il numero di interruzioni normalmente richieste dai workflow di traduzione.',
+    workflowStep1:'SELEZIONA E COPIA', workflowStep3:'CONTINUA A LAVORARE',
+    workflowExampleTitle:'Esempio di workflow reale',
+    workflowExample1:'Un testo può essere scritto in OpenOffice, copiato negli appunti e tradotto direttamente nel campo descrizione di un browser semplicemente posizionando il cursore nel campo di destinazione e premendo ALT + Z.',
+    workflowExample2:"SlangBit legge gli appunti, traduce localmente, aggiorna gli appunti e inserisce il testo tradotto nell'applicazione attiva.",
+    archTitle:'Offline-first per progettazione.', archText:'SlangBit esegue la traduzione localmente usando modelli linguistici AI installati e un server di traduzione locale integrato.',
+    archCard1Title:'Applicazione Windows', archCard1Text:'Applicazione desktop Flutter con hotkey globale, integrazione nella tray, workflow tramite appunti e Package Manager.',
+    archCard2Title:'Server locale', archCard2Text:"Server locale integrato basato su Python che gestisce rilevamento dei modelli linguistici, richieste di traduzione e normalizzazione dell'input.",
+    archCard3Title:'Modelli AI locali', archCard3Text:"I modelli CTranslate2 e i tokenizer Marian vengono eseguiti direttamente sul computer dell'utente dopo l'installazione dei pacchetti lingua.",
+    archFlow:'Appunti → SlangBit Desktop → Server locale → CTranslate2 → Modello AI locale → Appunti → Applicazione attiva',
+    validationLabel:'Validazione', validationTitle:'Testato su workflow Windows reali.', validationText:'SlangBit è stato validato su scenari desktop pratici, non soltanto su brevi campioni di testo isolati.',
+    tableApp:'Applicazione / Scenario', tableValidated:'Validato', tableNotes:'Note', yes:'Sì',
+    stressTitle:'Oltre le frasi brevi.', stressText:'La campagna di validazione ha incluso documenti lunghi, codice, markup, testo formattato e contenuti insoliti negli appunti.',
+    stress1Title:'25.000+ caratteri', stress1Text:'Sono stati testati testi lunghi per validare la stabilità oltre la semplice traduzione di singole frasi.',
+    stress2Title:'Codice sorgente', stress2Text:'File Dart, comandi PowerShell e testo tecnico sono stati utilizzati come input di stress test.',
+    stress3Text:'Sono stati testati HTML semplice e complesso, HTML renderizzato, sorgente grezzo e Markdown.',
+    stress4Title:'Automazione appunti', stress4Text:'I workflow PowerShell con Set-Clipboard sono stati utilizzati per simulare input automatizzati negli appunti.',
+    certLabel:'Indagine sulla certificazione', certTitle:'Un problema difficile di certificazione è diventato hardening del prodotto.',
+    certText:"Durante la certificazione Microsoft Store è stato investigato sistematicamente un errore di traduzione collegato all'input.",
+    tl1Title:'Segnalazione iniziale', tl1Text:'Un report di certificazione mostrava un errore di traduzione su una descrizione lunga contenente tag HTML letterali di interruzione di riga.',
+    tl2Title:'Test delle ipotesi', tl2Text:'Sono stati testati ambiente Windows, tempi di avvio, warmup del server, testo della descrizione Store, README, HTML, Markdown, formati degli appunti e macchine virtuali.',
+    tl3Title:'Riproduzione', tl3Text:'Il problema è stato riprodotto soltanto quando testi lunghi contenevano elementi letterali <br> ripetuti invece di normali interruzioni di riga.',
+    tl4Title:'Causa principale', tl4Text:'La pipeline di traduzione riceveva le interruzioni di riga come testo HTML letterale, creando una rappresentazione di input insolita e non prodotta dai normali workflow di copia.',
+    tl5Title:'Correzione', tl5Text:'Il server locale è stato aggiornato per normalizzare le interruzioni di riga HTML letterali in normali interruzioni di riga prima della traduzione.',
+    tl6Title:'Risultato', tl6Text:"L'input che in precedenza falliva è stato tradotto correttamente e la build aggiornata ha completato la certificazione Microsoft Store.",
+    matrixLabel:'Matrice di affidabilità', matrixTitle:'Capacità validate.', matrixCategory:'Categoria', matrixStatus:'Stato',
+    closingTitle:'I test hanno cambiato il prodotto.',
+    closingText1:"Il risultato dei test su SlangBit non è stato semplicemente confermare che funziona. I test hanno fatto emergere un caso limite insolito, portato a un'analisi mirata della causa principale e prodotto una pipeline di elaborazione dell'input più robusta.",
+    closingText2:'SlangBit è ora meglio preparato per contenuti reali negli appunti, rappresentazioni di input malformate e workflow desktop su testi lunghi.',
+    storeButton:'Disponibile su Microsoft Store', readmeButton:'README su GitHub',
+    shareTitle:'Condividi SlangBit Engineering', shareText:'Se pensi che questa pagina possa essere utile anche a qualcun altro.', copyLink:'Copia link', copied:'Link copiato'
+  },
+  en: {
+    pageTitle:'SlangBit Engineering — Tested, validated, offline',
+    metaDescription:'SlangBit engineering report: validation across real workflows, offline AI architecture, Microsoft Store certification investigation and input hardening.',
+    navValidation:'Validation', navCertification:'Certification', navMatrix:'Matrix', backToSlangBit:'Back to SlangBit',
+    heroTitle:'Built for real work.<span>Tested beyond normal use.</span>',
+    heroText1:'SlangBit is more than an offline translation tool. It is a Windows productivity utility designed to bring local AI translation directly into the applications people already use.',
+    heroText2:'This page summarizes the technical validation behind SlangBit: real workflows, offline architecture, stress testing, the Microsoft Store certification investigation and input hardening.',
+    exploreValidation:'Explore validation', githubDocs:'GitHub documentation',
+    workflowTitle:'Translate without leaving your work.', workflowText:'SlangBit was designed to reduce the number of interruptions normally required by translation workflows.',
+    workflowStep1:'SELECT AND COPY', workflowStep3:'KEEP WORKING',
+    workflowExampleTitle:'Real workflow example',
+    workflowExample1:'Text can be written in OpenOffice, copied to the clipboard and translated directly into a browser description field simply by placing the cursor in the destination field and pressing ALT + Z.',
+    workflowExample2:'SlangBit reads the clipboard, translates locally, updates the clipboard and inserts the translated text into the active application.',
+    archTitle:'Offline-first by design.', archText:'SlangBit performs translation locally using installed AI language models and an integrated local translation server.',
+    archCard1Title:'Windows application', archCard1Text:'Flutter desktop application with global hotkey, system tray integration, clipboard workflow and Package Manager.',
+    archCard2Title:'Local server', archCard2Text:'Integrated Python-based local server that handles language-model detection, translation requests and input normalization.',
+    archCard3Title:'Local AI models', archCard3Text:"CTranslate2 models and Marian tokenizers run directly on the user's computer after language packages are installed.",
+    archFlow:'Clipboard → SlangBit Desktop → Local server → CTranslate2 → Local AI model → Clipboard → Active application',
+    validationLabel:'Validation', validationTitle:'Tested on real Windows workflows.', validationText:'SlangBit was validated on practical desktop scenarios, not only on short isolated text samples.',
+    tableApp:'Application / Scenario', tableValidated:'Validated', tableNotes:'Notes', yes:'Yes',
+    stressTitle:'Beyond short sentences.', stressText:'The validation campaign included long documents, code, markup, formatted text and unusual clipboard content.',
+    stress1Title:'25,000+ characters', stress1Text:'Long texts were tested to validate stability beyond simple single-sentence translation.',
+    stress2Title:'Source code', stress2Text:'Dart files, PowerShell commands and technical text were used as stress-test input.',
+    stress3Text:'Simple and complex HTML, rendered HTML, raw source and Markdown were tested.',
+    stress4Title:'Clipboard automation', stress4Text:'PowerShell workflows using Set-Clipboard were used to simulate automated clipboard input.',
+    certLabel:'Certification investigation', certTitle:'A difficult certification issue became product hardening.',
+    certText:'During Microsoft Store certification, an input-related translation error was systematically investigated.',
+    tl1Title:'Initial report', tl1Text:'A certification report showed a translation error on a long description containing literal HTML line-break tags.',
+    tl2Title:'Hypothesis testing', tl2Text:'Windows environment, startup timing, server warmup, Store description text, README, HTML, Markdown, clipboard formats and virtual machines were tested.',
+    tl3Title:'Reproduction', tl3Text:'The issue was reproduced only when long texts contained repeated literal <br> elements instead of normal line breaks.',
+    tl4Title:'Root cause', tl4Text:'The translation pipeline received line breaks as literal HTML text, creating an unusual input representation not produced by normal copy workflows.',
+    tl5Title:'Fix', tl5Text:'The local server was updated to normalize literal HTML line breaks into normal line breaks before translation.',
+    tl6Title:'Result', tl6Text:'The input that previously failed translated correctly and the updated build completed Microsoft Store certification.',
+    matrixLabel:'Reliability matrix', matrixTitle:'Validated capabilities.', matrixCategory:'Category', matrixStatus:'Status',
+    closingTitle:'Testing changed the product.',
+    closingText1:'The outcome of SlangBit testing was not simply confirmation that it works. Testing surfaced an unusual edge case, led to targeted root-cause analysis and produced a more robust input-processing pipeline.',
+    closingText2:'SlangBit is now better prepared for real clipboard content, malformed input representations and long-text desktop workflows.',
+    storeButton:'Available on Microsoft Store', readmeButton:'README on GitHub',
+    shareTitle:'Share SlangBit Engineering', shareText:'If you think this page could be useful to someone else.', copyLink:'Copy link', copied:'Link copied'
+  }
+};
+
+let currentLang = 'it';
+
+function applyLanguage(lang, persist = true){
+  if(!I18N[lang]) lang = 'it';
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if(I18N[lang][key] !== undefined) el.textContent = I18N[lang][key];
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if(I18N[lang][key] !== undefined) el.innerHTML = I18N[lang][key];
+  });
+
+  document.title = I18N[lang].pageTitle;
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if(metaDescription) metaDescription.setAttribute('content', I18N[lang].metaDescription);
+
+  document.getElementById('langIt')?.classList.toggle('active', lang === 'it');
+  document.getElementById('langEn')?.classList.toggle('active', lang === 'en');
+
+  if(persist) localStorage.setItem('slangbit-language', lang);
+}
+
+document.getElementById('langIt')?.addEventListener('click', () => applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click', () => applyLanguage('en'));
+
+const savedLanguage = localStorage.getItem('slangbit-language');
+const browserLanguage = (navigator.language || 'it').toLowerCase();
+const initialLanguage = savedLanguage || (browserLanguage.startsWith('it') ? 'it' : 'en');
+applyLanguage(initialLanguage, false);
+
+document.getElementById('copyShareLink')?.addEventListener('click', async () => {
+  const button = document.getElementById('copyShareLink');
+  try{
+    await navigator.clipboard.writeText('https://slangbit.com/engineering.html');
+    if(button){
+      const span = button.querySelector('span');
+      const original = span ? span.textContent : button.textContent;
+      if(span) span.textContent = I18N[currentLang].copied;
+      else button.textContent = I18N[currentLang].copied;
+      setTimeout(() => {
+        if(span) span.textContent = original;
+        else button.textContent = original;
+      }, 1600);
+    }
+  }catch(error){
+    window.prompt(currentLang === 'en' ? 'Copy this link:' : 'Copia questo link:', 'https://slangbit.com/engineering.html');
+  }
+});
+</script>
 
 </body>
 </html>
