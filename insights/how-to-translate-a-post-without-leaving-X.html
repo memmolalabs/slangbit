@@ -8,16 +8,27 @@
 <meta name="description" content="Come tradurre un post o una risposta su X senza aprire un traduttore separato, usando un flusso di lavoro Windows rapido con scorciatoia globale.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html">
+<link rel="alternate" hreflang="it" href="https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html">
+<link rel="alternate" hreflang="en" href="https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html">
+<link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SlangBit">
 <meta property="og:title" content="Come tradurre un post senza uscire da X">
 <meta property="og:description" content="Un flusso di lavoro pratico su Windows per tradurre un post o una risposta restando dentro X.">
 <meta property="og:url" content="https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html">
+<meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Come tradurre un post senza uscire da X">
 <meta name="twitter:description" content="Traduci una bozza o una risposta su X senza aprire un sito di traduzione separato.">
+<meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 
 <script type="application/ld+json">
 {
@@ -78,6 +89,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}
 .nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}
 .nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}
+.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.share-section{padding:46px 4vw 34px;text-align:center;border-top:1px solid var(--line);background:#fbfdff}
+.share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+.share-section p{color:var(--muted);margin-bottom:20px}
+.share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share-button{min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 .hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
 .breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}
 .badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
@@ -218,145 +241,162 @@ aside{
 <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
 </a>
 <div class="nav-links">
-<a href="#problem">Il problema</a>
+<a href="#problem" data-i18n="navProblem">Il problema</a>
 <a href="#workflow">Workflow</a>
-<a href="#tone">Tono</a>
+<a href="#tone" data-i18n="navTone">Tono</a>
 <a href="#privacy">Privacy</a>
 <a href="#faq">FAQ</a>
 </div>
-<a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+<div class="nav-actions">
+<div class="lang-switch" aria-label="Language">
+<button type="button" id="langIt">IT</button>
+<button type="button" id="langEn">EN</button>
+</div>
+<a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+</div>
 </nav>
 
 <main>
 <header class="hero">
-<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Tradurre su X</span></div>
-<div class="badge"><span class="dot"></span>Workflow per i social</div>
-<h1>Come tradurre un post <span>senza uscire da X</span></h1>
-<p class="intro">Su X si scrive spesso in modo rapido. Lasciare una bozza per aprire un traduttore può spezzare il ritmo del messaggio, alterarne il tono e trasformare una semplice frase in una deviazione più lunga.</p>
-<div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 7 minuti</span></div>
+<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span data-i18n="crumb">Tradurre su X</span></div>
+<div class="badge"><span class="dot"></span><span data-i18n="badge">Workflow per i social</span></div>
+<h1 data-i18n-html="heroTitle">Come tradurre un post <span>senza uscire da X</span></h1>
+<p class="intro" data-i18n="intro">Su X si scrive spesso in modo rapido. Lasciare una bozza per aprire un traduttore può spezzare il ritmo del messaggio, alterarne il tono e trasformare una semplice frase in una deviazione più lunga.</p>
+<div class="meta"><span>Memmola Labs</span><span data-i18n="date">29 luglio 2026</span><span data-i18n="readingTime">Circa 7 minuti</span></div>
 </header>
 
 <div class="layout">
 <article>
 <section id="problem">
-<h2>La traduzione può interrompere il post prima ancora di migliorarlo</h2>
-<p>Stai scrivendo un post o una risposta e ti serve una frase in un’altra lingua. Il flusso abituale è fermarsi, aprire una nuova scheda, incollare la bozza, copiare la traduzione e tornare su X.</p>
-<p>Sembra una sequenza banale, ma la scrittura sui social dipende molto dal ritmo. Quando torni al post, il pensiero originale può sembrare meno immediato o il tono può essere cambiato.</p>
-<div class="callout"><strong>Il problema concreto</strong><p>La traduzione è soltanto un passaggio all’interno della scrittura. Non dovrebbe diventare un’attività separata che interrompe l’intero flusso di lavoro.</p></div>
+<h2 data-i18n="s1Title">La traduzione può interrompere il post prima ancora di migliorarlo</h2>
+<p data-i18n="s1p1">Stai scrivendo un post o una risposta e ti serve una frase in un’altra lingua. Il flusso abituale è fermarsi, aprire una nuova scheda, incollare la bozza, copiare la traduzione e tornare su X.</p>
+<p data-i18n="s1p2">Sembra una sequenza banale, ma la scrittura sui social dipende molto dal ritmo. Quando torni al post, il pensiero originale può sembrare meno immediato o il tono può essere cambiato.</p>
+<div class="callout"><strong data-i18n="calloutTitle">Il problema concreto</strong><p data-i18n="calloutText">La traduzione è soltanto un passaggio all’interno della scrittura. Non dovrebbe diventare un’attività separata che interrompe l’intero flusso di lavoro.</p></div>
 </section>
 
 <section id="workflow">
-<h2>Un flusso più breve su Windows</h2>
-<p>Un’utilità di traduzione basata sugli appunti può mantenere il processo vicino alla bozza:</p>
+<h2 data-i18n="s2Title">Un flusso più breve su Windows</h2>
+<p data-i18n="s2p1">Un’utilità di traduzione basata sugli appunti può mantenere il processo vicino alla bozza:</p>
 <div class="workflow" aria-label="X translation workflow">
-<div class="workflow-step"><b>01</b><span>Scrivi o seleziona il testo nel post o nella risposta.</span></div>
-<div class="workflow-step"><b>02</b><span>Copia il passaggio selezionato.</span></div>
-<div class="workflow-step"><b>03</b><span>Premi la scorciatoia globale di traduzione.</span></div>
-<div class="workflow-step"><b>04</b><span>Ricevi il testo tradotto attraverso il flusso degli appunti.</span></div>
-<div class="workflow-step"><b>05</b><span>Controlla il risultato e continua a scrivere su X.</span></div>
+<div class="workflow-step"><b>01</b><span data-i18n="step1">Scrivi o seleziona il testo nel post o nella risposta.</span></div>
+<div class="workflow-step"><b>02</b><span data-i18n="step2">Copia il passaggio selezionato.</span></div>
+<div class="workflow-step"><b>03</b><span data-i18n="step3">Premi la scorciatoia globale di traduzione.</span></div>
+<div class="workflow-step"><b>04</b><span data-i18n="step4">Ricevi il testo tradotto attraverso il flusso degli appunti.</span></div>
+<div class="workflow-step"><b>05</b><span data-i18n="step5">Controlla il risultato e continua a scrivere su X.</span></div>
 </div>
-<p>L’obiettivo non è eliminare il controllo finale, ma evitare di aprire un servizio di traduzione separato per ogni breve passaggio.</p>
+<p data-i18n="s2p2">L’obiettivo non è eliminare il controllo finale, ma evitare di aprire un servizio di traduzione separato per ogni breve passaggio.</p>
 </section>
 
 <section>
-<h2>Cosa significa davvero “senza uscire da X”</h2>
-<p>SlangBit non si collega all’account X dell’utente e non pubblica al suo posto. Lavora attraverso gli appunti di Windows.</p>
-<p>La bozza rimane dentro X. L’utente copia volontariamente soltanto il passaggio da tradurre, lo elabora localmente e continua poi a modificarlo nella stessa finestra del browser.</p>
-<p>In questo modo accesso all’account, pubblicazione e controllo finale restano direttamente nelle mani dell’utente.</p>
+<h2 data-i18n="s3Title">Cosa significa davvero “senza uscire da X”</h2>
+<p data-i18n="s3p1">SlangBit non si collega all’account X dell’utente e non pubblica al suo posto. Lavora attraverso gli appunti di Windows.</p>
+<p data-i18n="s3p2">La bozza rimane dentro X. L’utente copia volontariamente soltanto il passaggio da tradurre, lo elabora localmente e continua poi a modificarlo nella stessa finestra del browser.</p>
+<p data-i18n="s3p3">In questo modo accesso all’account, pubblicazione e controllo finale restano direttamente nelle mani dell’utente.</p>
 </section>
 
 <section id="tone">
-<h2>Un post social richiede più della semplice correttezza letterale</h2>
-<p>Post e risposte sono brevi, ma trasmettono un tono. Una traduzione può essere grammaticalmente corretta e risultare comunque troppo formale, aggressiva, vaga o distante dallo stile di chi ha scritto l’originale.</p>
-<p>Prima di pubblicare, verifica che il testo tradotto suoni ancora naturale per il pubblico e per la situazione.</p>
+<h2 data-i18n="s4Title">Un post social richiede più della semplice correttezza letterale</h2>
+<p data-i18n="s4p1">Post e risposte sono brevi, ma trasmettono un tono. Una traduzione può essere grammaticalmente corretta e risultare comunque troppo formale, aggressiva, vaga o distante dallo stile di chi ha scritto l’originale.</p>
+<p data-i18n="s4p2">Prima di pubblicare, verifica che il testo tradotto suoni ancora naturale per il pubblico e per la situazione.</p>
 <div class="cards">
-<div class="card"><h3>Tono</h3><p>Decidi se il post deve suonare colloquiale, professionale, leggero o diretto.</p></div>
-<div class="card"><h3>Lunghezza</h3><p>La traduzione può allungare una frase: controlla che il post finale mantenga una lunghezza adeguata.</p></div>
-<div class="card"><h3>Nomi e handle</h3><p>Controlla username, hashtag, nomi di prodotto, URL e termini tecnici prima di pubblicare.</p></div>
-<div class="card"><h3>Contesto</h3><p>Una risposta può dipendere dal testo della conversazione originale, non soltanto dalla frase selezionata.</p></div>
+<div class="card"><h3 data-i18n="card1Title">Tono</h3><p data-i18n="card1Text">Decidi se il post deve suonare colloquiale, professionale, leggero o diretto.</p></div>
+<div class="card"><h3 data-i18n="card2Title">Lunghezza</h3><p data-i18n="card2Text">La traduzione può allungare una frase: controlla che il post finale mantenga una lunghezza adeguata.</p></div>
+<div class="card"><h3 data-i18n="card3Title">Nomi e handle</h3><p data-i18n="card3Text">Controlla username, hashtag, nomi di prodotto, URL e termini tecnici prima di pubblicare.</p></div>
+<div class="card"><h3 data-i18n="card4Title">Contesto</h3><p data-i18n="card4Text">Una risposta può dipendere dal testo della conversazione originale, non soltanto dalla frase selezionata.</p></div>
 </div>
 </section>
 
 <section>
-<h2>Traduci abbastanza contesto da preservare il significato</h2>
-<p>I frammenti brevi possono essere ambigui. Una singola parola o una frase molto compressa può avere diverse interpretazioni.</p>
-<p>Quando possibile, traduci un pensiero completo invece di un frammento isolato. In una risposta, considera la conversazione circostante prima di decidere se il risultato comunica davvero il significato desiderato.</p>
-<p>Dopo la traduzione, semplifica il testo se necessario. Sui social funzionano spesso meglio formulazioni più brevi e chiare rispetto a una ricostruzione parola per parola.</p>
+<h2 data-i18n="s5Title">Traduci abbastanza contesto da preservare il significato</h2>
+<p data-i18n="s5p1">I frammenti brevi possono essere ambigui. Una singola parola o una frase molto compressa può avere diverse interpretazioni.</p>
+<p data-i18n="s5p2">Quando possibile, traduci un pensiero completo invece di un frammento isolato. In una risposta, considera la conversazione circostante prima di decidere se il risultato comunica davvero il significato desiderato.</p>
+<p data-i18n="s5p3">Dopo la traduzione, semplifica il testo se necessario. Sui social funzionano spesso meglio formulazioni più brevi e chiare rispetto a una ricostruzione parola per parola.</p>
 </section>
 
 <section>
-<h2>Hashtag, menzioni e link richiedono particolare attenzione</h2>
-<p>Un post può contenere elementi che non dovrebbero essere tradotti, come username, hashtag, indirizzi web, email, codici prodotto o testo citato.</p>
-<p>La traduzione selettiva è generalmente più sicura che tradurre alla cieca l’intera bozza. Copia soltanto la frase o il paragrafo da convertire e reinseriscilo poi nella struttura originale.</p>
+<h2 data-i18n="s6Title">Hashtag, menzioni e link richiedono particolare attenzione</h2>
+<p data-i18n="s6p1">Un post può contenere elementi che non dovrebbero essere tradotti, come username, hashtag, indirizzi web, email, codici prodotto o testo citato.</p>
+<p data-i18n="s6p2">La traduzione selettiva è generalmente più sicura che tradurre alla cieca l’intera bozza. Copia soltanto la frase o il paragrafo da convertire e reinseriscilo poi nella struttura originale.</p>
 <div class="comparison">
-<div class="comparison-box"><h3>Tradurre l’intera bozza</h3><ul><li>Più contesto per il modello</li><li>Maggiore rischio di modificare handle, link o hashtag</li><li>Richiede più controllo</li></ul></div>
-<div class="comparison-box"><h3>Tradurre il testo selezionato</h3><ul><li>Maggiore controllo su ciò che cambia</li><li>La formattazione originale resta visibile</li><li>Più semplice verificare il risultato finale</li></ul></div>
+<div class="comparison-box"><h3 data-i18n="fullDraftTitle">Tradurre l’intera bozza</h3><ul><li data-i18n="full1">Più contesto per il modello</li><li data-i18n="full2">Maggiore rischio di modificare handle, link o hashtag</li><li data-i18n="full3">Richiede più controllo</li></ul></div>
+<div class="comparison-box"><h3 data-i18n="selectedTitle">Tradurre il testo selezionato</h3><ul><li data-i18n="sel1">Maggiore controllo su ciò che cambia</li><li data-i18n="sel2">La formattazione originale resta visibile</li><li data-i18n="sel3">Più semplice verificare il risultato finale</li></ul></div>
 </div>
 </section>
 
 <section id="privacy">
-<h2>Le bozze possono contenere informazioni che non hai ancora pubblicato</h2>
-<p>Un post può contenere un annuncio non ancora pubblico, una risposta privata, un dato di un cliente, un link interno o testo ancora in fase di modifica.</p>
-<p>Usare un traduttore cloud significa inviare la parte selezionata della bozza a un servizio esterno. Il trattamento effettivo dipende dal prodotto, dal tipo di account, dalla configurazione e dalle policy correnti del servizio.</p>
-<p>Con la traduzione locale, il testo può essere elaborato sul computer Windows senza inviare la bozza a un endpoint di traduzione remoto.</p>
+<h2 data-i18n="s7Title">Le bozze possono contenere informazioni che non hai ancora pubblicato</h2>
+<p data-i18n="s7p1">Un post può contenere un annuncio non ancora pubblico, una risposta privata, un dato di un cliente, un link interno o testo ancora in fase di modifica.</p>
+<p data-i18n="s7p2">Usare un traduttore cloud significa inviare la parte selezionata della bozza a un servizio esterno. Il trattamento effettivo dipende dal prodotto, dal tipo di account, dalla configurazione e dalle policy correnti del servizio.</p>
+<p data-i18n="s7p3">Con la traduzione locale, il testo può essere elaborato sul computer Windows senza inviare la bozza a un endpoint di traduzione remoto.</p>
 <div class="principles">
-<div class="principle"><b>SELETTIVO</b><span>Traduci soltanto il passaggio che deve essere convertito.</span></div>
-<div class="principle"><b>LOCALE</b><span>Mantieni sul dispositivo il testo non ancora pubblicato quando è importante.</span></div>
-<div class="principle"><b>CONTROLLATO</b><span>Controlla tono, lunghezza e contesto prima di pubblicare.</span></div>
+<div class="principle"><b data-i18n="p1Title">SELETTIVO</b><span data-i18n="p1Text">Traduci soltanto il passaggio che deve essere convertito.</span></div>
+<div class="principle"><b data-i18n="p2Title">LOCALE</b><span data-i18n="p2Text">Mantieni sul dispositivo il testo non ancora pubblicato quando è importante.</span></div>
+<div class="principle"><b data-i18n="p3Title">CONTROLLATO</b><span data-i18n="p3Text">Controlla tono, lunghezza e contesto prima di pubblicare.</span></div>
 </div>
 </section>
 
 <section>
-<h2>Quando un’interfaccia di traduzione dedicata è ancora utile</h2>
-<p>Un flusso basato su scorciatoia è ideale per post brevi, risposte e piccole modifiche. È meno adatto a thread lunghi, localizzazioni di campagne o contenuti che richiedono gestione terminologica e revisione formale.</p>
-<p>Per queste attività, uno spazio di scrittura o traduzione dedicato può offrire strumenti migliori di confronto e controllo.</p>
-<p>Lo strumento giusto dipende dal fatto che la traduzione sia l’attività principale oppure soltanto un piccolo passaggio mentre si scrive su X.</p>
+<h2 data-i18n="s8Title">Quando un’interfaccia di traduzione dedicata è ancora utile</h2>
+<p data-i18n="s8p1">Un flusso basato su scorciatoia è ideale per post brevi, risposte e piccole modifiche. È meno adatto a thread lunghi, localizzazioni di campagne o contenuti che richiedono gestione terminologica e revisione formale.</p>
+<p data-i18n="s8p2">Per queste attività, uno spazio di scrittura o traduzione dedicato può offrire strumenti migliori di confronto e controllo.</p>
+<p data-i18n="s8p3">Lo strumento giusto dipende dal fatto che la traduzione sia l’attività principale oppure soltanto un piccolo passaggio mentre si scrive su X.</p>
 </section>
 
 <section>
-<h2>Come SlangBit gestisce post e risposte</h2>
-<p>SlangBit funziona come utility nella tray di Windows. Dopo aver installato il pacchetto linguistico locale necessario, l’utente copia il testo dalla bozza e preme <strong>ALT + Z</strong>.</p>
-<p>Il testo viene elaborato dal motore di traduzione locale e restituito attraverso gli appunti, così la modifica può continuare direttamente nel browser.</p>
-<p>SlangBit non richiede accesso all’account X, alle credenziali di login, ai messaggi privati o alla cronologia dei post.</p>
+<h2 data-i18n="s9Title">Come SlangBit gestisce post e risposte</h2>
+<p data-i18n-html="s9p1">SlangBit funziona come utility nella tray di Windows. Dopo aver installato il pacchetto linguistico locale necessario, l’utente copia il testo dalla bozza e preme <strong>ALT + Z</strong>.</p>
+<p data-i18n="s9p2">Il testo viene elaborato dal motore di traduzione locale e restituito attraverso gli appunti, così la modifica può continuare direttamente nel browser.</p>
+<p data-i18n="s9p3">SlangBit non richiede accesso all’account X, alle credenziali di login, ai messaggi privati o alla cronologia dei post.</p>
 </section>
 
 <section id="faq">
-<h2>Domande frequenti</h2>
-<details><summary>Posso tradurre un post restando su X?</summary><p>Sì. Un’utilità Windows basata sugli appunti può tradurre il testo selezionato della bozza senza richiedere l’apertura di un sito di traduzione separato.</p></details>
-<details><summary>SlangBit si collega al mio account X?</summary><p>No. SlangBit lavora attraverso gli appunti di Windows e non richiede accesso alle credenziali dell’account, ai messaggi privati o alla cronologia dei post.</p></details>
-<details><summary>La bozza può essere tradotta offline?</summary><p>Sì. Una volta installato il pacchetto linguistico necessario, la traduzione può essere generata localmente sul computer Windows.</p></details>
-<details><summary>Hashtag e username vanno tradotti?</summary><p>In genere no. Controlla attentamente handle, hashtag, URL, nomi di prodotto e testo citato, traducendo soltanto il passaggio che richiede la conversione linguistica.</p></details>
-<details><summary>Dovrei pubblicare un post tradotto automaticamente senza controllarlo?</summary><p>No. Controlla sempre tono, significato, lunghezza, contesto ed eventuali elementi da preservare prima di pubblicare.</p></details>
+<h2 data-i18n="faqTitle">Domande frequenti</h2>
+<details><summary data-i18n="faq1q">Posso tradurre un post restando su X?</summary><p data-i18n="faq1a">Sì. Un’utilità Windows basata sugli appunti può tradurre il testo selezionato della bozza senza richiedere l’apertura di un sito di traduzione separato.</p></details>
+<details><summary data-i18n="faq2q">SlangBit si collega al mio account X?</summary><p data-i18n="faq2a">No. SlangBit lavora attraverso gli appunti di Windows e non richiede accesso alle credenziali dell’account, ai messaggi privati o alla cronologia dei post.</p></details>
+<details><summary data-i18n="faq3q">La bozza può essere tradotta offline?</summary><p data-i18n="faq3a">Sì. Una volta installato il pacchetto linguistico necessario, la traduzione può essere generata localmente sul computer Windows.</p></details>
+<details><summary data-i18n="faq4q">Hashtag e username vanno tradotti?</summary><p data-i18n="faq4a">In genere no. Controlla attentamente handle, hashtag, URL, nomi di prodotto e testo citato, traducendo soltanto il passaggio che richiede la conversione linguistica.</p></details>
+<details><summary data-i18n="faq5q">Dovrei pubblicare un post tradotto automaticamente senza controllarlo?</summary><p data-i18n="faq5a">No. Controlla sempre tono, significato, lunghezza, contesto ed eventuali elementi da preservare prima di pubblicare.</p></details>
 </section>
 
 <div class="cta">
-<h2>Traduci un post senza trasformare la traduzione in un’attività separata</h2>
-<p>SlangBit usa modelli linguistici locali e una scorciatoia globale di Windows per mantenere le traduzioni brevi dentro il flusso di lavoro che stai già usando.</p>
+<h2 data-i18n="ctaTitle">Traduci un post senza trasformare la traduzione in un’attività separata</h2>
+<p data-i18n="ctaText">SlangBit usa modelli linguistici locali e una scorciatoia globale di Windows per mantenere le traduzioni brevi dentro il flusso di lavoro che stai già usando.</p>
 <div class="actions">
-<a class="btn primary" href="/">Scopri SlangBit</a>
-<a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a>
+<a class="btn primary" href="/" data-i18n="discover">Scopri SlangBit</a>
+<a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer" data-i18n="store">Vai al Microsoft Store</a>
 </div>
 </div>
 </article>
 
 <aside aria-label="Article navigation">
 <div class="side-card">
-<h2>In questa pagina</h2>
-<a href="#problem">L’interruzione abituale</a>
-<a href="#workflow">Un flusso più breve</a>
-<a href="#tone">Tono and context</a>
-<a href="#privacy">Privacy della bozza</a>
+<h2 data-i18n="sideTitle">In questa pagina</h2>
+<a href="#problem" data-i18n="side1">L’interruzione abituale</a>
+<a href="#workflow" data-i18n="side2">Un flusso più breve</a>
+<a href="#tone" data-i18n="side3">Tono e contesto</a>
+<a href="#privacy" data-i18n="side4">Privacy della bozza</a>
 <a href="#faq">FAQ</a>
 </div>
 <div class="side-card">
-<h2>Insights correlati</h2>
-<a href="/insights/the-hidden-cost-of-the-change-of-application.html">Il costo nascosto del cambio di applicazione</a>
-<a href="/insights/how-alt-z-works.html">Come funziona ALT+Z</a>
-<a href="/insights/what-happens-to-pasted-text-in-cloud-services.html">Cosa succede al testo incollato nei servizi cloud</a>
+<h2 data-i18n="relatedTitle">Insights correlati</h2>
+<a href="/insights/the-hidden-cost-of-the-change-of-application.html" data-i18n="related1">Il costo nascosto del cambio di applicazione</a>
+<a href="/insights/how-ALT+Z-works.html" data-i18n="related2">Come funziona ALT+Z</a>
+<a href="/insights/what-happens-to-pasted-text-in-cloud-services.html" data-i18n="related3">Cosa succede al testo incollato nei servizi cloud</a>
 </div>
 </aside>
 </div>
 </main>
+
+<section class="share-section" aria-labelledby="shareArticleTitle">
+<h3 id="shareArticleTitle" data-i18n="shareTitle">Condividi questo Insight</h3>
+<p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
+<div class="share-buttons">
+<a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-to-translate-a-post-without-leaving-X.html&text=SlangBit%20Insights%20%E2%80%94%20come%20tradurre%20un%20post%20senza%20uscire%20da%20X." target="_blank" rel="noopener noreferrer"><img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span></a>
+<a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-to-translate-a-post-without-leaving-X.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span></a>
+<a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-to-translate-a-post-without-leaving-X.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span></a>
+<button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+</div>
+</section>
 
 <footer>
 <div class="footer">
@@ -365,5 +405,74 @@ aside{
 </div>
 </footer>
 </div>
+
+<script>
+const I18N={
+it:{
+pageTitle:'Come tradurre un post senza uscire da X | SlangBit',
+metaDescription:'Come tradurre un post o una risposta su X senza aprire un traduttore separato, usando un flusso di lavoro Windows rapido con scorciatoia globale.',
+navProblem:'Il problema',navTone:'Tono',crumb:'Tradurre su X',badge:'Workflow per i social',
+heroTitle:'Come tradurre un post <span>senza uscire da X</span>',intro:'Su X si scrive spesso in modo rapido. Lasciare una bozza per aprire un traduttore può spezzare il ritmo del messaggio, alterarne il tono e trasformare una semplice frase in una deviazione più lunga.',date:'29 luglio 2026',readingTime:'Circa 7 minuti',
+s1Title:'La traduzione può interrompere il post prima ancora di migliorarlo',s1p1:'Stai scrivendo un post o una risposta e ti serve una frase in un’altra lingua. Il flusso abituale è fermarsi, aprire una nuova scheda, incollare la bozza, copiare la traduzione e tornare su X.',s1p2:'Sembra una sequenza banale, ma la scrittura sui social dipende molto dal ritmo. Quando torni al post, il pensiero originale può sembrare meno immediato o il tono può essere cambiato.',calloutTitle:'Il problema concreto',calloutText:'La traduzione è soltanto un passaggio all’interno della scrittura. Non dovrebbe diventare un’attività separata che interrompe l’intero flusso di lavoro.',
+s2Title:'Un flusso più breve su Windows',s2p1:'Un’utilità di traduzione basata sugli appunti può mantenere il processo vicino alla bozza:',step1:'Scrivi o seleziona il testo nel post o nella risposta.',step2:'Copia il passaggio selezionato.',step3:'Premi la scorciatoia globale di traduzione.',step4:'Ricevi il testo tradotto attraverso il flusso degli appunti.',step5:'Controlla il risultato e continua a scrivere su X.',s2p2:'L’obiettivo non è eliminare il controllo finale, ma evitare di aprire un servizio di traduzione separato per ogni breve passaggio.',
+s3Title:'Cosa significa davvero “senza uscire da X”',s3p1:'SlangBit non si collega all’account X dell’utente e non pubblica al suo posto. Lavora attraverso gli appunti di Windows.',s3p2:'La bozza rimane dentro X. L’utente copia volontariamente soltanto il passaggio da tradurre, lo elabora localmente e continua poi a modificarlo nella stessa finestra del browser.',s3p3:'In questo modo accesso all’account, pubblicazione e controllo finale restano direttamente nelle mani dell’utente.',
+s4Title:'Un post social richiede più della semplice correttezza letterale',s4p1:'Post e risposte sono brevi, ma trasmettono un tono. Una traduzione può essere grammaticalmente corretta e risultare comunque troppo formale, aggressiva, vaga o distante dallo stile di chi ha scritto l’originale.',s4p2:'Prima di pubblicare, verifica che il testo tradotto suoni ancora naturale per il pubblico e per la situazione.',card1Title:'Tono',card1Text:'Decidi se il post deve suonare colloquiale, professionale, leggero o diretto.',card2Title:'Lunghezza',card2Text:'La traduzione può allungare una frase: controlla che il post finale mantenga una lunghezza adeguata.',card3Title:'Nomi e handle',card3Text:'Controlla username, hashtag, nomi di prodotto, URL e termini tecnici prima di pubblicare.',card4Title:'Contesto',card4Text:'Una risposta può dipendere dal testo della conversazione originale, non soltanto dalla frase selezionata.',
+s5Title:'Traduci abbastanza contesto da preservare il significato',s5p1:'I frammenti brevi possono essere ambigui. Una singola parola o una frase molto compressa può avere diverse interpretazioni.',s5p2:'Quando possibile, traduci un pensiero completo invece di un frammento isolato. In una risposta, considera la conversazione circostante prima di decidere se il risultato comunica davvero il significato desiderato.',s5p3:'Dopo la traduzione, semplifica il testo se necessario. Sui social funzionano spesso meglio formulazioni più brevi e chiare rispetto a una ricostruzione parola per parola.',
+s6Title:'Hashtag, menzioni e link richiedono particolare attenzione',s6p1:'Un post può contenere elementi che non dovrebbero essere tradotti, come username, hashtag, indirizzi web, email, codici prodotto o testo citato.',s6p2:'La traduzione selettiva è generalmente più sicura che tradurre alla cieca l’intera bozza. Copia soltanto la frase o il paragrafo da convertire e reinseriscilo poi nella struttura originale.',fullDraftTitle:'Tradurre l’intera bozza',selectedTitle:'Tradurre il testo selezionato',full1:'Più contesto per il modello',full2:'Maggiore rischio di modificare handle, link o hashtag',full3:'Richiede più controllo',sel1:'Maggiore controllo su ciò che cambia',sel2:'La formattazione originale resta visibile',sel3:'Più semplice verificare il risultato finale',
+s7Title:'Le bozze possono contenere informazioni che non hai ancora pubblicato',s7p1:'Un post può contenere un annuncio non ancora pubblico, una risposta privata, un dato di un cliente, un link interno o testo ancora in fase di modifica.',s7p2:'Usare un traduttore cloud significa inviare la parte selezionata della bozza a un servizio esterno. Il trattamento effettivo dipende dal prodotto, dal tipo di account, dalla configurazione e dalle policy correnti del servizio.',s7p3:'Con la traduzione locale, il testo può essere elaborato sul computer Windows senza inviare la bozza a un endpoint di traduzione remoto.',p1Title:'SELETTIVO',p1Text:'Traduci soltanto il passaggio che deve essere convertito.',p2Title:'LOCALE',p2Text:'Mantieni sul dispositivo il testo non ancora pubblicato quando è importante.',p3Title:'CONTROLLATO',p3Text:'Controlla tono, lunghezza e contesto prima di pubblicare.',
+s8Title:'Quando un’interfaccia di traduzione dedicata è ancora utile',s8p1:'Un flusso basato su scorciatoia è ideale per post brevi, risposte e piccole modifiche. È meno adatto a thread lunghi, localizzazioni di campagne o contenuti che richiedono gestione terminologica e revisione formale.',s8p2:'Per queste attività, uno spazio di scrittura o traduzione dedicato può offrire strumenti migliori di confronto e controllo.',s8p3:'Lo strumento giusto dipende dal fatto che la traduzione sia l’attività principale oppure soltanto un piccolo passaggio mentre si scrive su X.',
+s9Title:'Come SlangBit gestisce post e risposte',s9p1:'SlangBit funziona come utility nella tray di Windows. Dopo aver installato il pacchetto linguistico locale necessario, l’utente copia il testo dalla bozza e preme <strong>ALT + Z</strong>.',s9p2:'Il testo viene elaborato dal motore di traduzione locale e restituito attraverso gli appunti, così la modifica può continuare direttamente nel browser.',s9p3:'SlangBit non richiede accesso all’account X, alle credenziali di login, ai messaggi privati o alla cronologia dei post.',
+faqTitle:'Domande frequenti',faq1q:'Posso tradurre un post restando su X?',faq1a:'Sì. Un’utilità Windows basata sugli appunti può tradurre il testo selezionato della bozza senza richiedere l’apertura di un sito di traduzione separato.',faq2q:'SlangBit si collega al mio account X?',faq2a:'No. SlangBit lavora attraverso gli appunti di Windows e non richiede accesso alle credenziali dell’account, ai messaggi privati o alla cronologia dei post.',faq3q:'La bozza può essere tradotta offline?',faq3a:'Sì. Una volta installato il pacchetto linguistico necessario, la traduzione può essere generata localmente sul computer Windows.',faq4q:'Hashtag e username vanno tradotti?',faq4a:'In genere no. Controlla attentamente handle, hashtag, URL, nomi di prodotto e testo citato, traducendo soltanto il passaggio che richiede la conversione linguistica.',faq5q:'Dovrei pubblicare un post tradotto automaticamente senza controllarlo?',faq5a:'No. Controlla sempre tono, significato, lunghezza, contesto ed eventuali elementi da preservare prima di pubblicare.',
+ctaTitle:'Traduci un post senza trasformare la traduzione in un’attività separata',ctaText:'SlangBit usa modelli linguistici locali e una scorciatoia globale di Windows per mantenere le traduzioni brevi dentro il flusso di lavoro che stai già usando.',discover:'Scopri SlangBit',store:'Vai al Microsoft Store',
+sideTitle:'In questa pagina',side1:'L’interruzione abituale',side2:'Un flusso più breve',side3:'Tono e contesto',side4:'Privacy della bozza',relatedTitle:'Insights correlati',related1:'Il costo nascosto del cambio di applicazione',related2:'Come funziona ALT+Z',related3:'Cosa succede al testo incollato nei servizi cloud',
+shareTitle:'Condividi questo Insight',shareText:'Se pensi possa essere utile anche a qualcun altro.',copyLink:'Copia link',copied:'Link copiato'
+},
+en:{
+pageTitle:'How to translate a post without leaving X | SlangBit',
+metaDescription:'How to translate a post or reply on X without opening a separate translator, using a fast Windows workflow with a global shortcut.',
+navProblem:'The problem',navTone:'Tone',crumb:'Translating on X',badge:'Social workflow',
+heroTitle:'How to translate a post <span>without leaving X</span>',intro:'Writing on X is often fast-paced. Leaving a draft to open a translator can break the rhythm of the message, alter its tone and turn a simple sentence into a longer detour.',date:'July 29, 2026',readingTime:'About 7 minutes',
+s1Title:'Translation can interrupt a post before it improves it',s1p1:'You are writing a post or reply and need a sentence in another language. The usual flow is to stop, open a new tab, paste the draft, copy the translation and return to X.',s1p2:'It sounds trivial, but social writing depends heavily on rhythm. When you return to the post, the original thought may feel less immediate or the tone may have shifted.',calloutTitle:'The concrete problem',calloutText:'Translation is only one step inside the writing process. It should not become a separate activity that interrupts the entire workflow.',
+s2Title:'A shorter workflow on Windows',s2p1:'A clipboard-based translation utility can keep the process close to the draft:',step1:'Write or select the text in the post or reply.',step2:'Copy the selected passage.',step3:'Press the global translation shortcut.',step4:'Receive the translated text through the clipboard workflow.',step5:'Review the result and keep writing on X.',s2p2:'The goal is not to remove final review, but to avoid opening a separate translation service for every short passage.',
+s3Title:'What “without leaving X” really means',s3p1:'SlangBit does not connect to the user’s X account and does not publish on their behalf. It works through the Windows clipboard.',s3p2:'The draft stays inside X. The user intentionally copies only the passage to translate, processes it locally and continues editing it in the same browser window.',s3p3:'Account access, publishing and final control therefore remain directly in the user’s hands.',
+s4Title:'A social post needs more than literal correctness',s4p1:'Posts and replies are short, but they carry tone. A translation can be grammatically correct and still sound too formal, aggressive, vague or distant from the style of the original writer.',s4p2:'Before publishing, make sure the translated text still sounds natural for the audience and situation.',card1Title:'Tone',card1Text:'Decide whether the post should sound conversational, professional, light or direct.',card2Title:'Length',card2Text:'Translation can make a sentence longer, so check that the final post still fits the intended length.',card3Title:'Names and handles',card3Text:'Check usernames, hashtags, product names, URLs and technical terms before publishing.',card4Title:'Context',card4Text:'A reply may depend on the surrounding conversation, not only on the selected sentence.',
+s5Title:'Translate enough context to preserve meaning',s5p1:'Short fragments can be ambiguous. A single word or highly compressed sentence can have multiple interpretations.',s5p2:'When possible, translate a complete thought instead of an isolated fragment. In a reply, consider the surrounding conversation before deciding whether the result communicates the intended meaning.',s5p3:'After translation, simplify the text if needed. On social platforms, shorter and clearer phrasing often works better than a word-for-word reconstruction.',
+s6Title:'Hashtags, mentions and links need special attention',s6p1:'A post can contain elements that should not be translated, such as usernames, hashtags, web addresses, emails, product codes or quoted text.',s6p2:'Selective translation is generally safer than blindly translating the entire draft. Copy only the sentence or paragraph that needs conversion and then place it back into the original structure.',fullDraftTitle:'Translate the entire draft',selectedTitle:'Translate selected text',full1:'More context for the model',full2:'Higher risk of changing handles, links or hashtags',full3:'Requires more checking',sel1:'More control over what changes',sel2:'Original formatting stays visible',sel3:'Easier to verify the final result',
+s7Title:'Drafts can contain information you have not published yet',s7p1:'A post can contain an announcement that is not yet public, a private reply, customer data, an internal link or text still being edited.',s7p2:'Using a cloud translator means sending the selected part of the draft to an external service. The actual handling depends on the product, account type, configuration and current service policies.',s7p3:'With local translation, the text can be processed on the Windows computer without sending the draft to a remote translation endpoint.',p1Title:'SELECTIVE',p1Text:'Translate only the passage that needs conversion.',p2Title:'LOCAL',p2Text:'Keep unpublished text on the device when that matters.',p3Title:'CONTROLLED',p3Text:'Review tone, length and context before publishing.',
+s8Title:'When a dedicated translation interface is still useful',s8p1:'A shortcut-based workflow is ideal for short posts, replies and small edits. It is less suitable for long threads, campaign localization or content that requires terminology management and formal review.',s8p2:'For those tasks, a dedicated writing or translation workspace may offer better comparison and review tools.',s8p3:'The right tool depends on whether translation is the main task or only a small step while writing on X.',
+s9Title:'How SlangBit handles posts and replies',s9p1:'SlangBit runs as a Windows tray utility. After installing the required local language package, the user copies text from the draft and presses <strong>ALT + Z</strong>.',s9p2:'The text is processed by the local translation engine and returned through the clipboard so editing can continue directly in the browser.',s9p3:'SlangBit does not require access to the X account, login credentials, private messages or post history.',
+faqTitle:'Frequently asked questions',faq1q:'Can I translate a post while staying on X?',faq1a:'Yes. A clipboard-based Windows utility can translate selected draft text without requiring a separate translation website.',faq2q:'Does SlangBit connect to my X account?',faq2a:'No. SlangBit works through the Windows clipboard and does not require access to account credentials, private messages or post history.',faq3q:'Can the draft be translated offline?',faq3a:'Yes. Once the required language package is installed, translation can be generated locally on the Windows computer.',faq4q:'Should hashtags and usernames be translated?',faq4a:'Generally no. Carefully check handles, hashtags, URLs, product names and quoted text, translating only the passage that actually needs language conversion.',faq5q:'Should I publish an automatically translated post without reviewing it?',faq5a:'No. Always review tone, meaning, length, context and any elements that should be preserved before publishing.',
+ctaTitle:'Translate a post without turning translation into a separate task',ctaText:'SlangBit uses local language models and a global Windows shortcut to keep short translations inside the workflow you are already using.',discover:'Discover SlangBit',store:'Go to Microsoft Store',
+sideTitle:'On this page',side1:'The usual interruption',side2:'A shorter workflow',side3:'Tone and context',side4:'Draft privacy',relatedTitle:'Related Insights',related1:'The hidden cost of switching applications',related2:'How ALT+Z works',related3:'What happens to text pasted into cloud services',
+shareTitle:'Share this Insight',shareText:'If you think it could be useful to someone else.',copyLink:'Copy link',copied:'Link copied'
+}
+};
+let currentLang='it';
+function applyLanguage(lang,persist=true){
+if(!I18N[lang])lang='it';currentLang=lang;document.documentElement.lang=lang;
+document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(I18N[lang][k]!==undefined)el.textContent=I18N[lang][k]});
+document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(I18N[lang][k]!==undefined)el.innerHTML=I18N[lang][k]});
+document.title=I18N[lang].pageTitle;
+const m=document.querySelector('meta[name="description"]');if(m)m.setAttribute('content',I18N[lang].metaDescription);
+document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+if(persist)localStorage.setItem('slangbit-language',lang);
+}
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage||(browserLanguage.startsWith('it')?'it':'en'),false);
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+const button=document.getElementById('copyShareLink');
+try{
+await navigator.clipboard.writeText('https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html');
+const span=button?.querySelector('span');const original=span?.textContent||'';
+if(span)span.textContent=I18N[currentLang].copied;
+setTimeout(()=>{if(span)span.textContent=original},1600);
+}catch(error){window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/how-to-translate-a-post-without-leaving-X.html');}
+});
+</script>
+
 </body>
 </html>
