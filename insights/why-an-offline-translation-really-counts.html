@@ -8,16 +8,27 @@
   <meta name="description" content="Perché la traduzione offline conta per privacy, disponibilità, workflow prevedibili e per chi lavora con testi sensibili su Windows.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://slangbit.com/insights/why-an-offline-translation-really-counts.html">
+  <link rel="alternate" hreflang="it" href="https://slangbit.com/insights/why-an-offline-translation-really-counts.html">
+  <link rel="alternate" hreflang="en" href="https://slangbit.com/insights/why-an-offline-translation-really-counts.html">
+  <link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/why-an-offline-translation-really-counts.html">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="SlangBit">
   <meta property="og:title" content="Perché la traduzione offline conta davvero">
   <meta property="og:description" content="La traduzione offline non significa soltanto lavorare senza Wi-Fi. Cambia dove viene elaborato il testo, chi controlla il workflow e cosa accade quando la connessione non è disponibile.">
   <meta property="og:url" content="https://slangbit.com/insights/why-an-offline-translation-really-counts.html">
+  <meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Perché la traduzione offline conta davvero">
   <meta name="twitter:description" content="Privacy, disponibilità e controllo sono i veri motivi per cui la traduzione offline conta.">
+  <meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 
   <script type="application/ld+json">
   {
@@ -67,6 +78,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo-mark{width:38px;height:38px;background:linear-gradient(135deg,#07152b,#1769ff);border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 8px 25px rgba(23,105,255,.18)}
 .logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}
 .nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}.nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}
+.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.share-section{padding:46px 4vw 34px;text-align:center;border-top:1px solid var(--line);background:#fbfdff}
+.share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+.share-section p{color:var(--muted);margin-bottom:20px}
+.share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share-button{min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 .hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}.breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}
 .badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
 h1{max-width:1200px;font-size:clamp(3.3rem,7.2vw,7.5rem);line-height:.91;letter-spacing:-.065em;font-weight:900}h1 span{background:linear-gradient(90deg,#246cff,#25bce7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.intro{margin-top:32px;max-width:900px;color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.28rem);line-height:1.7}.meta{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:28px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}
@@ -190,143 +213,160 @@ aside{
       <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
     </a>
     <div class="nav-links">
-      <a href="#meaning">Cosa significa offline</a>
+      <a href="#meaning" data-i18n="side1">Cosa significa offline</a>
       <a href="#privacy">Privacy</a>
-      <a href="#availability">Disponibilità</a>
-      <a href="#limits">Limiti</a>
+      <a href="#availability" data-i18n="navAvailability">Disponibilità</a>
+      <a href="#limits" data-i18n="navLimits">Limiti</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    <div class="nav-actions">
+      <div class="lang-switch" aria-label="Language">
+        <button type="button" id="langIt">IT</button>
+        <button type="button" id="langEn">EN</button>
+      </div>
+      <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
   </nav>
 
   <main>
     <header class="hero">
-      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Traduzione offline</span></div>
-      <div class="badge"><span class="dot"></span>Privacy e workflow</div>
-      <h1>Perché la traduzione offline <span>conta davvero</span></h1>
-      <p class="intro">Traduzione offline is often described as a way to keep working without Wi-Fi. That is useful, but it is only part of the story. The more important difference is where the text goes, who controls the processing and whether the workflow depends on an external service.</p>
-      <div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 8 minuti</span></div>
+      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span data-i18n="crumb">Traduzione offline</span></div>
+      <div class="badge"><span class="dot"></span><span data-i18n="badge">Privacy e workflow</span></div>
+      <h1 data-i18n-html="heroTitle">Perché la traduzione offline <span>conta davvero</span></h1>
+      <p class="intro" data-i18n="intro">La traduzione offline viene spesso descritta come un modo per continuare a lavorare senza Wi-Fi. È utile, ma è solo una parte della storia. La differenza più importante riguarda dove va il testo, chi controlla l’elaborazione e se il workflow dipende da un servizio esterno.</p>
+      <div class="meta"><span>Memmola Labs</span><span data-i18n="date">29 luglio 2026</span><span data-i18n="readingTime">Circa 8 minuti</span></div>
     </header>
 
     <div class="layout">
       <article>
         <section id="meaning">
-          <h2>Cosa significa davvero traduzione offline</h2>
-          <p>Traduzione offline means that the model required to generate the translation is installed on the user’s device. The text is processed locally instead of being submitted to a remote translation endpoint for every request.</p>
-          <p>Questo non significa che il software non utilizzi mai Internet. L’applicazione, i pacchetti linguistici e gli aggiornamenti devono comunque essere scaricati. La distinzione riguarda la traduzione vera e propria.</p>
-          <div class="callout"><strong>Offline in termini pratici</strong><p>Una volta installato il pacchetto linguistico necessario, il testo può essere tradotto sul computer senza inviarlo a un servizio di traduzione cloud.</p></div>
+          <h2 data-i18n="s1Title">Cosa significa davvero traduzione offline</h2>
+          <p data-i18n="s1p1">La traduzione offline significa che il modello necessario a generare la traduzione è installato sul dispositivo dell’utente. Il testo viene elaborato localmente invece di essere inviato a un endpoint remoto per ogni richiesta.</p>
+          <p data-i18n="s1p2">Questo non significa che il software non utilizzi mai Internet. L’applicazione, i pacchetti linguistici e gli aggiornamenti devono comunque essere scaricati. La distinzione riguarda la traduzione vera e propria.</p>
+          <div class="callout"><strong data-i18n="calloutTitle">Offline in termini pratici</strong><p data-i18n="calloutText">Una volta installato il pacchetto linguistico necessario, il testo può essere tradotto sul computer senza inviarlo a un servizio di traduzione cloud.</p></div>
         </section>
 
         <section>
-          <h2>Non riguarda soltanto la perdita della connessione</h2>
-          <p>Il vantaggio più evidente emerge quando l’accesso a Internet è instabile o assente. Un traduttore installato localmente può continuare a funzionare in treno, durante un’interruzione, su una rete limitata o ovunque un servizio cloud non sia raggiungibile.</p>
-          <p>Ma la connettività è soltanto il vantaggio più visibile. L’elaborazione locale cambia anche il modello di privacy, l’affidabilità del workflow e la dipendenza dell’utente da account esterni, limiti e disponibilità del servizio.</p>
+          <h2 data-i18n="s2Title">Non riguarda soltanto la perdita della connessione</h2>
+          <p data-i18n="s2p1">Il vantaggio più evidente emerge quando l’accesso a Internet è instabile o assente. Un traduttore installato localmente può continuare a funzionare in treno, durante un’interruzione, su una rete limitata o ovunque un servizio cloud non sia raggiungibile.</p>
+          <p data-i18n="s2p2">Ma la connettività è soltanto il vantaggio più visibile. L’elaborazione locale cambia anche il modello di privacy, l’affidabilità del workflow e la dipendenza dell’utente da account esterni, limiti e disponibilità del servizio.</p>
         </section>
 
         <section id="privacy">
-          <h2>Il testo può essere più sensibile di quanto sembri</h2>
-          <p>Le persone non usano gli strumenti di traduzione soltanto per frasi pubbliche. Incollano email dei clienti, note interne, bozze di contratti, ticket di assistenza, documenti non pubblicati e conversazioni personali.</p>
-          <p>Una frase breve può contenere un nome, un numero d’ordine, un dettaglio finanziario o un frammento di informazione riservata. L’utente può pensare soltanto al significato delle parole, mentre lo strumento di traduzione deve elaborare il testo completo.</p>
+          <h2 data-i18n="s3Title">Il testo può essere più sensibile di quanto sembri</h2>
+          <p data-i18n="s3p1">Le persone non usano gli strumenti di traduzione soltanto per frasi pubbliche. Incollano email dei clienti, note interne, bozze di contratti, ticket di assistenza, documenti non pubblicati e conversazioni personali.</p>
+          <p data-i18n="s3p2">Una frase breve può contenere un nome, un numero d’ordine, un dettaglio finanziario o un frammento di informazione riservata. L’utente può pensare soltanto al significato delle parole, mentre lo strumento di traduzione deve elaborare il testo completo.</p>
           <div class="flow" aria-label="Percorsi della traduzione cloud e locale">
             <div class="flow-box">
-              <h3>Traduzione cloud</h3>
-              <p>Il testo lascia l’applicazione corrente, raggiunge un servizio esterno, viene elaborato da remoto e torna come risultato.</p>
+              <h3 data-i18n="cloudTitle">Traduzione cloud</h3>
+              <p data-i18n="cloudText">Il testo lascia l’applicazione corrente, raggiunge un servizio esterno, viene elaborato da remoto e torna come risultato.</p>
             </div>
             <div class="flow-arrow">↔</div>
             <div class="flow-box">
-              <h3>Traduzione locale</h3>
-              <p>Il testo viene passato a un modello già installato sul dispositivo e il risultato viene generato sullo stesso computer.</p>
+              <h3 data-i18n="localTitle">Traduzione locale</h3>
+              <p data-i18n="localText">Il testo viene passato a un modello già installato sul dispositivo e il risultato viene generato sullo stesso computer.</p>
             </div>
           </div>
-          <p>Traduzione locale does not make the entire computer automatically secure. Clipboard history, malware, backups, screen capture tools and device access still matter. It does remove the external translation request from the process.</p>
+          <p data-i18n="s3p3">La traduzione locale non rende automaticamente sicuro l’intero computer. Cronologia degli appunti, malware, backup, strumenti di cattura dello schermo e accesso al dispositivo continuano a contare. Elimina però dal processo la richiesta di traduzione esterna.</p>
         </section>
 
         <section id="availability">
-          <h2>Un workflow locale è più prevedibile</h2>
-          <p>I servizi cloud possono cambiare. Gli account possono richiedere nuove verifiche, i limiti gratuiti possono essere ridotti, le API possono diventare indisponibili e interruzioni temporanee possono fermare il lavoro.</p>
-          <p>Un modello locale evita alcune di queste dipendenze. Una volta presenti il software e il pacchetto linguistico, il workflow di traduzione di base non deve ottenere il permesso di un servizio remoto ogni volta che viene utilizzato.</p>
-          <p>Per una traduzione occasionale, questa distinzione può sembrare minima. Per chi traduce durante la giornata risposte ai clienti, descrizioni di prodotti o messaggi interni, un accesso prevedibile può essere parte del valore dello strumento.</p>
+          <h2 data-i18n="s4Title">Un workflow locale è più prevedibile</h2>
+          <p data-i18n="s4p1">I servizi cloud possono cambiare. Gli account possono richiedere nuove verifiche, i limiti gratuiti possono essere ridotti, le API possono diventare indisponibili e interruzioni temporanee possono fermare il lavoro.</p>
+          <p data-i18n="s4p2">Un modello locale evita alcune di queste dipendenze. Una volta presenti il software e il pacchetto linguistico, il workflow di traduzione di base non deve ottenere il permesso di un servizio remoto ogni volta che viene utilizzato.</p>
+          <p data-i18n="s4p3">Per una traduzione occasionale, questa distinzione può sembrare minima. Per chi traduce durante la giornata risposte ai clienti, descrizioni di prodotti o messaggi interni, un accesso prevedibile può essere parte del valore dello strumento.</p>
         </section>
 
         <section>
-          <h2>Traduzione offline can reduce context switching</h2>
-          <p>Molti traduttori online richiedono una scheda del browser o un’applicazione separata. L’utente copia il testo, cambia contesto, lo incolla, attende, copia il risultato e torna all’attività originale.</p>
-          <p>Traduzione offline does not automatically solve that workflow problem. A local translator can still have a large and distracting interface. But local processing makes it possible to build translation into a smaller desktop utility that stays near the current task.</p>
-          <p>È l’approccio utilizzato da SlangBit: copia il testo, premi <strong>ALT + Z</strong> e continua all’interno dell’applicazione Windows corrente.</p>
+          <h2 data-i18n="s5Title">La traduzione offline può ridurre il cambio di contesto</h2>
+          <p data-i18n="s5p1">Molti traduttori online richiedono una scheda del browser o un’applicazione separata. L’utente copia il testo, cambia contesto, lo incolla, attende, copia il risultato e torna all’attività originale.</p>
+          <p data-i18n="s5p2">La traduzione offline non risolve automaticamente questo problema di workflow. Anche un traduttore locale può avere un’interfaccia grande e distraente. Ma l’elaborazione locale permette di integrare la traduzione in una piccola utility desktop che resta vicina all’attività corrente.</p>
+          <p data-i18n-html="s5p3">È l’approccio utilizzato da SlangBit: copia il testo, premi <strong>ALT + Z</strong> e continua all’interno dell’applicazione Windows corrente.</p>
         </section>
 
         <section>
-          <h2>Perché questo conta per utenti diversi</h2>
+          <h2 data-i18n="s6Title">Perché questo conta per utenti diversi</h2>
           <div class="cards">
-            <div class="card"><h3>Assistenza clienti</h3><p>I messaggi possono contenere nomi, riferimenti agli account, dettagli degli ordini e informazioni che non dovrebbero essere incollate con leggerezza in servizi estranei.</p></div>
-            <div class="card"><h3>Freelance</h3><p>Bozze e materiali dei clienti possono essere tradotti senza aggiungere un altro servizio web al processo di lavoro.</p></div>
-            <div class="card"><h3>Piccole imprese</h3><p>Uno strumento locale può offrire un workflow di traduzione prevedibile senza una dipendenza cloud ricorrente per ogni richiesta.</p></div>
-            <div class="card"><h3>Viaggi e lavoro da remoto</h3><p>La traduzione rimane disponibile quando la connessione è lenta, limitata o temporaneamente assente.</p></div>
+            <div class="card"><h3 data-i18n="card1Title">Assistenza clienti</h3><p data-i18n="card1Text">I messaggi possono contenere nomi, riferimenti agli account, dettagli degli ordini e informazioni che non dovrebbero essere incollate con leggerezza in servizi estranei.</p></div>
+            <div class="card"><h3 data-i18n="card2Title">Freelance</h3><p data-i18n="card2Text">Bozze e materiali dei clienti possono essere tradotti senza aggiungere un altro servizio web al processo di lavoro.</p></div>
+            <div class="card"><h3 data-i18n="card3Title">Piccole imprese</h3><p data-i18n="card3Text">Uno strumento locale può offrire un workflow di traduzione prevedibile senza una dipendenza cloud ricorrente per ogni richiesta.</p></div>
+            <div class="card"><h3 data-i18n="card4Title">Viaggi e lavoro da remoto</h3><p data-i18n="card4Text">La traduzione rimane disponibile quando la connessione è lenta, limitata o temporaneamente assente.</p></div>
           </div>
         </section>
 
         <section id="limits">
-          <h2>L’offline è un compromesso, non un vincitore universale</h2>
-          <p>I grandi sistemi online possono avere accesso a modelli più grandi, maggiori risorse di calcolo, un contesto più ampio e frequenti miglioramenti lato server. Un modello locale deve lavorare entro i limiti di archiviazione, memoria ed elaborazione del computer dell’utente.</p>
-          <p>That can mean larger downloads, startup time and differences in fluency or accuracy for difficult text. Traduzione offline should not be presented as automatically better in every situation.</p>
+          <h2 data-i18n="s7Title">L’offline è un compromesso, non un vincitore universale</h2>
+          <p data-i18n="s7p1">I grandi sistemi online possono avere accesso a modelli più grandi, maggiori risorse di calcolo, un contesto più ampio e frequenti miglioramenti lato server. Un modello locale deve lavorare entro i limiti di archiviazione, memoria ed elaborazione del computer dell’utente.</p>
+          <p data-i18n="s7p2">Questo può significare download più grandi, tempi di avvio e differenze di fluidità o accuratezza sui testi più difficili. La traduzione offline non dovrebbe essere presentata come automaticamente migliore in ogni situazione.</p>
           <div class="principles">
-            <div class="principle"><b>PRIVACY</b><span>La traduzione può essere generata senza inviare il testo a un endpoint di traduzione remoto.</span></div>
-            <div class="principle"><b>DISPONIBILITÀ</b><span>Il modello installato può continuare a funzionare senza una connessione permanente.</span></div>
-            <div class="principle"><b>CONTROLLO</b><span>L’utente decide quali pacchetti linguistici installare e dove avviene l’elaborazione.</span></div>
+            <div class="principle"><b>PRIVACY</b><span data-i18n="p1Text">La traduzione può essere generata senza inviare il testo a un endpoint di traduzione remoto.</span></div>
+            <div class="principle"><b data-i18n="p2Title">DISPONIBILITÀ</b><span data-i18n="p2Text">Il modello installato può continuare a funzionare senza una connessione permanente.</span></div>
+            <div class="principle"><b data-i18n="p3Title">CONTROLLO</b><span data-i18n="p3Text">L’utente decide quali pacchetti linguistici installare e dove avviene l’elaborazione.</span></div>
           </div>
         </section>
 
         <section>
-          <h2>Quando la traduzione cloud può essere ancora appropriata</h2>
-          <p>Traduzione cloud may be the practical choice for very large documents, unusual language pairs, specialized terminology or situations where the largest available models are needed.</p>
-          <p>La scelta non deve essere ideologica. Un utente può scegliere l’elaborazione locale per lavori privati o ripetitivi e utilizzare un servizio online quando un’altra capacità è più importante.</p>
-          <p>Il punto non è che ogni traduzione debba essere offline. Il punto è che gli utenti dovrebbero avere una scelta reale.</p>
+          <h2 data-i18n="s8Title">Quando la traduzione cloud può essere ancora appropriata</h2>
+          <p data-i18n="s8p1">La traduzione cloud può essere la scelta pratica per documenti molto grandi, coppie linguistiche insolite, terminologia specializzata o situazioni in cui sono necessari i modelli più grandi disponibili.</p>
+          <p data-i18n="s8p2">La scelta non deve essere ideologica. Un utente può scegliere l’elaborazione locale per lavori privati o ripetitivi e utilizzare un servizio online quando un’altra capacità è più importante.</p>
+          <p data-i18n="s8p3">Il punto non è che ogni traduzione debba essere offline. Il punto è che gli utenti dovrebbero avere una scelta reale.</p>
         </section>
 
         <section>
-          <h2>Come SlangBit affronta la traduzione offline</h2>
-          <p>SlangBit utilizza pacchetti linguistici scaricabili separatamente e un motore di inferenza locale. Gli utenti installano soltanto le coppie linguistiche di cui hanno bisogno e la traduzione viene generata sul computer Windows.</p>
-          <p>L’applicazione è progettata come utility nella tray, non come destinazione separata. L’interfaccia gestisce pacchetti linguistici e impostazioni, mentre il workflow principale di traduzione avviene tramite gli appunti e una scorciatoia globale da tastiera.</p>
-          <p>Questo design unisce tre idee: elaborazione locale, interruzioni minime e controllo diretto sui modelli installati.</p>
+          <h2 data-i18n="s9Title">Come SlangBit affronta la traduzione offline</h2>
+          <p data-i18n="s9p1">SlangBit utilizza pacchetti linguistici scaricabili separatamente e un motore di inferenza locale. Gli utenti installano soltanto le coppie linguistiche di cui hanno bisogno e la traduzione viene generata sul computer Windows.</p>
+          <p data-i18n="s9p2">L’applicazione è progettata come utility nella tray, non come destinazione separata. L’interfaccia gestisce pacchetti linguistici e impostazioni, mentre il workflow principale di traduzione avviene tramite gli appunti e una scorciatoia globale da tastiera.</p>
+          <p data-i18n="s9p3">Questo design unisce tre idee: elaborazione locale, interruzioni minime e controllo diretto sui modelli installati.</p>
         </section>
 
         <section id="faq">
-          <h2>Domande frequenti</h2>
-          <details><summary>Cosa significa traduzione offline?</summary><p>Significa che la traduzione viene generata usando file di modello installati sul dispositivo invece di inviare il testo a un servizio di traduzione remoto.</p></details>
-          <details><summary>La traduzione offline è più privata?</summary><p>Elimina la necessità di inviare ogni testo a un endpoint di traduzione esterno. La privacy complessiva dipende comunque dalla sicurezza del computer e dal workflow circostante.</p></details>
-          <details><summary>La traduzione offline può funzionare senza Wi-Fi?</summary><p>Sì, dopo che l’applicazione e i pacchetti linguistici necessari sono stati installati.</p></details>
-          <details><summary>La traduzione offline produce risultati migliori?</summary><p>Non automaticamente. La qualità dipende dal modello, dalla coppia linguistica, dal testo e dall’hardware disponibile. Sistemi locali e cloud adottano compromessi diversi.</p></details>
-          <details><summary>Perché i pacchetti linguistici richiedono un download separato?</summary><p>I parametri del modello, il tokenizer e il vocabolario necessari alla traduzione devono essere archiviati localmente prima che il computer possa generare traduzioni senza contattare un modello remoto.</p></details>
+          <h2 data-i18n="faqTitle">Domande frequenti</h2>
+          <details><summary data-i18n="faq1q">Cosa significa traduzione offline?</summary><p data-i18n="faq1a">Significa che la traduzione viene generata usando file di modello installati sul dispositivo invece di inviare il testo a un servizio di traduzione remoto.</p></details>
+          <details><summary data-i18n="faq2q">La traduzione offline è più privata?</summary><p data-i18n="faq2a">Elimina la necessità di inviare ogni testo a un endpoint di traduzione esterno. La privacy complessiva dipende comunque dalla sicurezza del computer e dal workflow circostante.</p></details>
+          <details><summary data-i18n="faq3q">La traduzione offline può funzionare senza Wi-Fi?</summary><p data-i18n="faq3a">Sì, dopo che l’applicazione e i pacchetti linguistici necessari sono stati installati.</p></details>
+          <details><summary data-i18n="faq4q">La traduzione offline produce risultati migliori?</summary><p data-i18n="faq4a">Non automaticamente. La qualità dipende dal modello, dalla coppia linguistica, dal testo e dall’hardware disponibile. Sistemi locali e cloud adottano compromessi diversi.</p></details>
+          <details><summary data-i18n="faq5q">Perché i pacchetti linguistici richiedono un download separato?</summary><p data-i18n="faq5a">I parametri del modello, il tokenizer e il vocabolario necessari alla traduzione devono essere archiviati localmente prima che il computer possa generare traduzioni senza contattare un modello remoto.</p></details>
         </section>
 
         <div class="cta">
-          <h2>Traduzione offline built into a Windows workflow</h2>
-          <p>SlangBit utilizza modelli linguistici locali e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.</p>
+          <h2 data-i18n="ctaTitle">Traduzione offline integrata nel workflow Windows</h2>
+          <p data-i18n="ctaText">SlangBit utilizza modelli linguistici locali e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.</p>
           <div class="actions">
-            <a class="btn primary" href="/">Scopri SlangBit</a>
-            <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a>
+            <a class="btn primary" href="/" data-i18n="discover">Scopri SlangBit</a>
+            <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer" data-i18n="store">Vai al Microsoft Store</a>
           </div>
         </div>
       </article>
 
       <aside aria-label="Navigazione dell’articolo">
         <div class="side-card">
-          <h2>In questa pagina</h2>
+          <h2 data-i18n="sideTitle">In questa pagina</h2>
           <a href="#meaning">Cosa significa offline</a>
-          <a href="#privacy">Testo privato</a>
-          <a href="#availability">Accesso prevedibile</a>
-          <a href="#limits">Compromessi</a>
+          <a href="#privacy" data-i18n="side2">Testo privato</a>
+          <a href="#availability" data-i18n="side3">Accesso prevedibile</a>
+          <a href="#limits" data-i18n="side4">Compromessi</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="side-card">
-          <h2>Insights correlati</h2>
-          <a href="/insights/behind-the-scenes-of-local-models.html">Dietro le quinte dei modelli locali</a>
-          <a href="/insights/what-happens-to-text-pasted-into-cloud-services.html">Cosa succede al testo incollato nei servizi cloud</a>
-          <a href="/insights/why-we-chose-a-one-time-purchase.html">Perché abbiamo scelto l’acquisto una tantum</a>
+          <h2 data-i18n="relatedTitle">Insights correlati</h2>
+          <a href="/insights/behind-the-scenes-of-local-models.html" data-i18n="related1">Dietro le quinte dei modelli locali</a>
+          <a href="/insights/what-happens-to-pasted-text-in-cloud-services.html" data-i18n="related2">Cosa succede al testo incollato nei servizi cloud</a>
+          <a href="/insights/why-we-chose-a-one-time-purchase.html" data-i18n="related3">Perché abbiamo scelto l’acquisto una tantum</a>
         </div>
       </aside>
     </div>
   </main>
+
+  <section class="share-section" aria-labelledby="shareArticleTitle">
+    <h3 id="shareArticleTitle" data-i18n="shareTitle">Condividi questo Insight</h3>
+    <p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
+    <div class="share-buttons">
+      <a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhy-an-offline-translation-really-counts.html&text=SlangBit%20Insights%20%E2%80%94%20perch%C3%A9%20la%20traduzione%20offline%20conta%20davvero." target="_blank" rel="noopener noreferrer"><img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span></a>
+      <a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhy-an-offline-translation-really-counts.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span></a>
+      <a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhy-an-offline-translation-really-counts.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span></a>
+      <button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+    </div>
+  </section>
 
   <footer>
     <div class="footer">
@@ -335,5 +375,89 @@ aside{
     </div>
   </footer>
 </div>
+
+<script>
+const I18N={
+it:{
+pageTitle:'Perché la traduzione offline conta davvero | SlangBit',
+metaDescription:'Perché la traduzione offline conta per privacy, disponibilità, workflow prevedibili e per chi lavora con testi sensibili su Windows.',
+navMeaning:'Cosa significa offline',navAvailability:'Disponibilità',navLimits:'Limiti',crumb:'Traduzione offline',badge:'Privacy e workflow',
+heroTitle:'Perché la traduzione offline <span>conta davvero</span>',intro:'La traduzione offline viene spesso descritta come un modo per continuare a lavorare senza Wi-Fi. È utile, ma è solo una parte della storia. La differenza più importante riguarda dove va il testo, chi controlla l’elaborazione e se il workflow dipende da un servizio esterno.',date:'29 luglio 2026',readingTime:'Circa 8 minuti',
+s1Title:'Cosa significa davvero traduzione offline',s1p1:'La traduzione offline significa che il modello necessario a generare la traduzione è installato sul dispositivo dell’utente. Il testo viene elaborato localmente invece di essere inviato a un endpoint remoto per ogni richiesta.',s1p2:'Questo non significa che il software non utilizzi mai Internet. L’applicazione, i pacchetti linguistici e gli aggiornamenti devono comunque essere scaricati. La distinzione riguarda la traduzione vera e propria.',calloutTitle:'Offline in termini pratici',calloutText:'Una volta installato il pacchetto linguistico necessario, il testo può essere tradotto sul computer senza inviarlo a un servizio di traduzione cloud.',
+s2Title:'Non riguarda soltanto la perdita della connessione',s2p1:'Il vantaggio più evidente emerge quando l’accesso a Internet è instabile o assente. Un traduttore installato localmente può continuare a funzionare in treno, durante un’interruzione, su una rete limitata o ovunque un servizio cloud non sia raggiungibile.',s2p2:'Ma la connettività è soltanto il vantaggio più visibile. L’elaborazione locale cambia anche il modello di privacy, l’affidabilità del workflow e la dipendenza dell’utente da account esterni, limiti e disponibilità del servizio.',
+s3Title:'Il testo può essere più sensibile di quanto sembri',s3p1:'Le persone non usano gli strumenti di traduzione soltanto per frasi pubbliche. Incollano email dei clienti, note interne, bozze di contratti, ticket di assistenza, documenti non pubblicati e conversazioni personali.',s3p2:'Una frase breve può contenere un nome, un numero d’ordine, un dettaglio finanziario o un frammento di informazione riservata. L’utente può pensare soltanto al significato delle parole, mentre lo strumento di traduzione deve elaborare il testo completo.',cloudTitle:'Traduzione cloud',cloudText:'Il testo lascia l’applicazione corrente, raggiunge un servizio esterno, viene elaborato da remoto e torna come risultato.',localTitle:'Traduzione locale',localText:'Il testo viene passato a un modello già installato sul dispositivo e il risultato viene generato sullo stesso computer.',s3p3:'La traduzione locale non rende automaticamente sicuro l’intero computer. Cronologia degli appunti, malware, backup, strumenti di cattura dello schermo e accesso al dispositivo continuano a contare. Elimina però dal processo la richiesta di traduzione esterna.',
+s4Title:'Un workflow locale è più prevedibile',s4p1:'I servizi cloud possono cambiare. Gli account possono richiedere nuove verifiche, i limiti gratuiti possono essere ridotti, le API possono diventare indisponibili e interruzioni temporanee possono fermare il lavoro.',s4p2:'Un modello locale evita alcune di queste dipendenze. Una volta presenti il software e il pacchetto linguistico, il workflow di traduzione di base non deve ottenere il permesso di un servizio remoto ogni volta che viene utilizzato.',s4p3:'Per una traduzione occasionale, questa distinzione può sembrare minima. Per chi traduce durante la giornata risposte ai clienti, descrizioni di prodotti o messaggi interni, un accesso prevedibile può essere parte del valore dello strumento.',
+s5Title:'La traduzione offline può ridurre il cambio di contesto',s5p1:'Molti traduttori online richiedono una scheda del browser o un’applicazione separata. L’utente copia il testo, cambia contesto, lo incolla, attende, copia il risultato e torna all’attività originale.',s5p2:'La traduzione offline non risolve automaticamente questo problema di workflow. Anche un traduttore locale può avere un’interfaccia grande e distraente. Ma l’elaborazione locale permette di integrare la traduzione in una piccola utility desktop che resta vicina all’attività corrente.',s5p3:'È l’approccio utilizzato da SlangBit: copia il testo, premi <strong>ALT + Z</strong> e continua all’interno dell’applicazione Windows corrente.',
+s6Title:'Perché questo conta per utenti diversi',card1Title:'Assistenza clienti',card1Text:'I messaggi possono contenere nomi, riferimenti agli account, dettagli degli ordini e informazioni che non dovrebbero essere incollate con leggerezza in servizi estranei.',card2Title:'Freelance',card2Text:'Bozze e materiali dei clienti possono essere tradotti senza aggiungere un altro servizio web al processo di lavoro.',card3Title:'Piccole imprese',card3Text:'Uno strumento locale può offrire un workflow di traduzione prevedibile senza una dipendenza cloud ricorrente per ogni richiesta.',card4Title:'Viaggi e lavoro da remoto',card4Text:'La traduzione rimane disponibile quando la connessione è lenta, limitata o temporaneamente assente.',
+s7Title:'L’offline è un compromesso, non un vincitore universale',s7p1:'I grandi sistemi online possono avere accesso a modelli più grandi, maggiori risorse di calcolo, un contesto più ampio e frequenti miglioramenti lato server. Un modello locale deve lavorare entro i limiti di archiviazione, memoria ed elaborazione del computer dell’utente.',s7p2:'Questo può significare download più grandi, tempi di avvio e differenze di fluidità o accuratezza sui testi più difficili. La traduzione offline non dovrebbe essere presentata come automaticamente migliore in ogni situazione.',p1Text:'La traduzione può essere generata senza inviare il testo a un endpoint di traduzione remoto.',p2Title:'DISPONIBILITÀ',p2Text:'Il modello installato può continuare a funzionare senza una connessione permanente.',p3Title:'CONTROLLO',p3Text:'L’utente decide quali pacchetti linguistici installare e dove avviene l’elaborazione.',
+s8Title:'Quando la traduzione cloud può essere ancora appropriata',s8p1:'La traduzione cloud può essere la scelta pratica per documenti molto grandi, coppie linguistiche insolite, terminologia specializzata o situazioni in cui sono necessari i modelli più grandi disponibili.',s8p2:'La scelta non deve essere ideologica. Un utente può scegliere l’elaborazione locale per lavori privati o ripetitivi e utilizzare un servizio online quando un’altra capacità è più importante.',s8p3:'Il punto non è che ogni traduzione debba essere offline. Il punto è che gli utenti dovrebbero avere una scelta reale.',
+s9Title:'Come SlangBit affronta la traduzione offline',s9p1:'SlangBit utilizza pacchetti linguistici scaricabili separatamente e un motore di inferenza locale. Gli utenti installano soltanto le coppie linguistiche di cui hanno bisogno e la traduzione viene generata sul computer Windows.',s9p2:'L’applicazione è progettata come utility nella tray, non come destinazione separata. L’interfaccia gestisce pacchetti linguistici e impostazioni, mentre il workflow principale di traduzione avviene tramite gli appunti e una scorciatoia globale da tastiera.',s9p3:'Questo design unisce tre idee: elaborazione locale, interruzioni minime e controllo diretto sui modelli installati.',
+faqTitle:'Domande frequenti',faq1q:'Cosa significa traduzione offline?',faq1a:'Significa che la traduzione viene generata usando file di modello installati sul dispositivo invece di inviare il testo a un servizio di traduzione remoto.',faq2q:'La traduzione offline è più privata?',faq2a:'Elimina la necessità di inviare ogni testo a un endpoint di traduzione esterno. La privacy complessiva dipende comunque dalla sicurezza del computer e dal workflow circostante.',faq3q:'La traduzione offline può funzionare senza Wi-Fi?',faq3a:'Sì, dopo che l’applicazione e i pacchetti linguistici necessari sono stati installati.',faq4q:'La traduzione offline produce risultati migliori?',faq4a:'Non automaticamente. La qualità dipende dal modello, dalla coppia linguistica, dal testo e dall’hardware disponibile. Sistemi locali e cloud adottano compromessi diversi.',faq5q:'Perché i pacchetti linguistici richiedono un download separato?',faq5a:'I parametri del modello, il tokenizer e il vocabolario necessari alla traduzione devono essere archiviati localmente prima che il computer possa generare traduzioni senza contattare un modello remoto.',
+ctaTitle:'Traduzione offline integrata nel workflow Windows',ctaText:'SlangBit utilizza modelli linguistici locali e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.',discover:'Scopri SlangBit',store:'Vai al Microsoft Store',
+sideTitle:'In questa pagina',side1:'Cosa significa offline',side2:'Testo privato',side3:'Accesso prevedibile',side4:'Compromessi',relatedTitle:'Insights correlati',related1:'Dietro le quinte dei modelli locali',related2:'Cosa succede al testo incollato nei servizi cloud',related3:'Perché abbiamo scelto l’acquisto una tantum',
+shareTitle:'Condividi questo Insight',shareText:'Se pensi possa essere utile anche a qualcun altro.',copyLink:'Copia link',copied:'Link copiato'
+},
+en:{
+pageTitle:'Why offline translation really matters | SlangBit',
+metaDescription:'Why offline translation matters for privacy, availability, predictable workflows and people working with sensitive text on Windows.',
+navMeaning:'What offline means',navAvailability:'Availability',navLimits:'Limits',crumb:'Offline translation',badge:'Privacy and workflow',
+heroTitle:'Why offline translation <span>really matters</span>',intro:'Offline translation is often described as a way to keep working without Wi-Fi. That is useful, but it is only part of the story. The more important difference is where the text goes, who controls the processing and whether the workflow depends on an external service.',date:'July 29, 2026',readingTime:'About 8 minutes',
+s1Title:'What offline translation really means',s1p1:'Offline translation means that the model required to generate the translation is installed on the user’s device. The text is processed locally instead of being submitted to a remote translation endpoint for every request.',s1p2:'This does not mean the software never uses the internet. The application, language packages and updates still have to be downloaded. The distinction concerns the translation itself.',calloutTitle:'Offline in practical terms',calloutText:'Once the required language package is installed, text can be translated on the computer without sending it to a cloud translation service.',
+s2Title:'It is not only about losing the connection',s2p1:'The most obvious benefit appears when internet access is unstable or unavailable. A locally installed translator can keep working on a train, during an outage, on a restricted network or anywhere a cloud service cannot be reached.',s2p2:'But connectivity is only the most visible benefit. Local processing also changes the privacy model, workflow reliability and the user’s dependence on external accounts, limits and service availability.',
+s3Title:'Text can be more sensitive than it looks',s3p1:'People do not use translation tools only for public sentences. They paste customer emails, internal notes, contract drafts, support tickets, unpublished documents and personal conversations.',s3p2:'A short sentence can contain a name, order number, financial detail or fragment of confidential information. The user may think only about the meaning of the words, while the translation tool has to process the full text.',cloudTitle:'Cloud translation',cloudText:'The text leaves the current application, reaches an external service, is processed remotely and returns as a result.',localTitle:'Local translation',localText:'The text is passed to a model already installed on the device and the result is generated on the same computer.',s3p3:'Local translation does not make the entire computer automatically secure. Clipboard history, malware, backups, screen-capture tools and device access still matter. It does remove the external translation request from the process.',
+s4Title:'A local workflow is more predictable',s4p1:'Cloud services can change. Accounts may require new verification, free limits may be reduced, APIs can become unavailable and temporary outages can stop work.',s4p2:'A local model avoids some of these dependencies. Once the software and language package are present, the basic translation workflow does not need permission from a remote service every time it is used.',s4p3:'For occasional translation this distinction may seem small. For people translating customer replies, product descriptions or internal messages throughout the day, predictable access can be part of the value of the tool.',
+s5Title:'Offline translation can reduce context switching',s5p1:'Many online translators require a browser tab or separate application. The user copies text, switches context, pastes it, waits, copies the result and returns to the original task.',s5p2:'Offline translation does not automatically solve that workflow problem. A local translator can still have a large and distracting interface. But local processing makes it possible to build translation into a smaller desktop utility that stays close to the current task.',s5p3:'That is the approach used by SlangBit: copy the text, press <strong>ALT + Z</strong> and keep working inside the current Windows application.',
+s6Title:'Why this matters for different users',card1Title:'Customer support',card1Text:'Messages may contain names, account references, order details and information that should not be pasted casually into unrelated services.',card2Title:'Freelancers',card2Text:'Drafts and customer materials can be translated without adding another web service to the workflow.',card3Title:'Small businesses',card3Text:'A local tool can provide a predictable translation workflow without recurring cloud dependence for every request.',card4Title:'Travel and remote work',card4Text:'Translation remains available when the connection is slow, restricted or temporarily unavailable.',
+s7Title:'Offline is a trade-off, not a universal winner',s7p1:'Large online systems may have access to bigger models, more compute resources, broader context and frequent server-side improvements. A local model has to work within the storage, memory and processing limits of the user’s computer.',s7p2:'That can mean larger downloads, startup time and differences in fluency or accuracy for difficult text. Offline translation should not be presented as automatically better in every situation.',p1Text:'Translation can be generated without sending the text to a remote translation endpoint.',p2Title:'AVAILABILITY',p2Text:'The installed model can keep working without a permanent connection.',p3Title:'CONTROL',p3Text:'The user decides which language packages to install and where processing happens.',
+s8Title:'When cloud translation can still be appropriate',s8p1:'Cloud translation may be the practical choice for very large documents, unusual language pairs, specialized terminology or situations where the largest available models are needed.',s8p2:'The choice does not have to be ideological. A user can choose local processing for private or repetitive work and use an online service when another capability matters more.',s8p3:'The point is not that every translation must be offline. The point is that users should have a real choice.',
+s9Title:'How SlangBit approaches offline translation',s9p1:'SlangBit uses separately downloadable language packages and a local inference engine. Users install only the language pairs they need and translation is generated on the Windows computer.',s9p2:'The application is designed as a tray utility, not a separate destination. The interface manages language packages and settings, while the main translation workflow runs through the clipboard and a global keyboard shortcut.',s9p3:'This design combines three ideas: local processing, minimal interruption and direct control over installed models.',
+faqTitle:'Frequently asked questions',faq1q:'What does offline translation mean?',faq1a:'It means translation is generated using model files installed on the device instead of sending the text to a remote translation service.',faq2q:'Is offline translation more private?',faq2a:'It removes the need to send every text to an external translation endpoint. Overall privacy still depends on computer security and the surrounding workflow.',faq3q:'Can offline translation work without Wi-Fi?',faq3a:'Yes, after the application and required language packages have been installed.',faq4q:'Does offline translation produce better results?',faq4a:'Not automatically. Quality depends on the model, language pair, text and available hardware. Local and cloud systems make different trade-offs.',faq5q:'Why do language packages require a separate download?',faq5a:'The model parameters, tokenizer and vocabulary required for translation have to be stored locally before the computer can generate translations without contacting a remote model.',
+ctaTitle:'Offline translation built into a Windows workflow',ctaText:'SlangBit uses local language models and a global shortcut to translate copied text without opening a separate translation website.',discover:'Discover SlangBit',store:'Go to Microsoft Store',
+sideTitle:'On this page',side1:'What offline means',side2:'Private text',side3:'Predictable access',side4:'Trade-offs',relatedTitle:'Related Insights',related1:'Behind the scenes of local models',related2:'What happens to text pasted into cloud services',related3:'Why we chose a one-time purchase',
+shareTitle:'Share this Insight',shareText:'If you think it could be useful to someone else.',copyLink:'Copy link',copied:'Link copied'
+}
+};
+
+let currentLang='it';
+function applyLanguage(lang,persist=true){
+  if(!I18N[lang]) lang='it';
+  currentLang=lang;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n;
+    if(I18N[lang][k]!==undefined) el.textContent=I18N[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k=el.dataset.i18nHtml;
+    if(I18N[lang][k]!==undefined) el.innerHTML=I18N[lang][k];
+  });
+  document.title=I18N[lang].pageTitle;
+  const m=document.querySelector('meta[name="description"]');
+  if(m) m.setAttribute('content',I18N[lang].metaDescription);
+  document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+  document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+  if(persist) localStorage.setItem('slangbit-language',lang);
+}
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage||(browserLanguage.startsWith('it')?'it':'en'),false);
+
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+  const button=document.getElementById('copyShareLink');
+  try{
+    await navigator.clipboard.writeText('https://slangbit.com/insights/why-an-offline-translation-really-counts.html');
+    const span=button?.querySelector('span');
+    const original=span?.textContent||'';
+    if(span) span.textContent=I18N[currentLang].copied;
+    setTimeout(()=>{if(span) span.textContent=original},1600);
+  }catch(error){
+    window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/why-an-offline-translation-really-counts.html');
+  }
+});
+</script>
+
 </body>
 </html>
