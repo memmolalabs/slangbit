@@ -8,16 +8,27 @@
   <meta name="description" content="Cosa succede quando un testo viene incollato in un servizio di traduzione o AI online, quali sistemi possono elaborarlo e perché la traduzione locale può ridurre l’esposizione esterna dei dati.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://slangbit.com/insights/what-happens-to-pasted-text-in-cloud-services.html">
+  <link rel="alternate" hreflang="it" href="https://slangbit.com/insights/what-happens-to-pasted-text-in-cloud-services.html">
+  <link rel="alternate" hreflang="en" href="https://slangbit.com/insights/what-happens-to-pasted-text-in-cloud-services.html">
+  <link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/what-happens-to-pasted-text-in-cloud-services.html">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="SlangBit">
   <meta property="og:title" content="Cosa succede al testo incollato nei servizi cloud?">
   <meta property="og:description" content="Uno sguardo pratico al percorso che un testo può seguire quando viene incollato in un servizio di traduzione o AI online.">
   <meta property="og:url" content="https://slangbit.com/insights/what-happens-to-pasted-text-in-cloud-services.html">
+  <meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cosa succede al testo incollato nei servizi cloud?">
   <meta name="twitter:description" content="Dove può viaggiare il testo incollato, quali sistemi possono elaborarlo e perché la traduzione locale cambia questo percorso.">
+  <meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 
   <script type="application/ld+json">
   {
@@ -70,6 +81,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}
 .nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}
 .nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}
+.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.share-section{padding:46px 4vw 34px;text-align:center;border-top:1px solid var(--line);background:#fbfdff}
+.share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+.share-section p{color:var(--muted);margin-bottom:20px}
+.share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share-button{min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 .hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
 .breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}
 .badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
@@ -211,170 +234,187 @@ aside{
       <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
     </a>
     <div class="nav-links">
-      <a href="#path">Percorso dei dati</a>
-      <a href="#retention">Conservazione</a>
-      <a href="#sensitive">Testo sensibile</a>
-      <a href="#local">Alternativa locale</a>
+      <a href="#path" data-i18n="navPath">Percorso dei dati</a>
+      <a href="#retention" data-i18n="navRetention">Conservazione</a>
+      <a href="#sensitive" data-i18n="side3">Testo sensibile</a>
+      <a href="#local" data-i18n="navLocal">Alternativa locale</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    <div class="nav-actions">
+      <div class="lang-switch" aria-label="Language">
+        <button type="button" id="langIt">IT</button>
+        <button type="button" id="langEn">EN</button>
+      </div>
+      <a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
   </nav>
 
   <main>
     <header class="hero">
-      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Servizi cloud</span></div>
-      <div class="badge"><span class="dot"></span>Dati e privacy</div>
-      <h1>Cosa succede al testo incollato nei <span>servizi cloud?</span></h1>
-      <p class="intro">Incollare una frase in un traduttore online o in uno strumento AI sembra un’azione istantanea. Dietro quel semplice gesto, il testo può attraversare diversi sistemi prima che il risultato torni sullo schermo.</p>
-      <div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 8 minuti</span></div>
+      <div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span data-i18n="crumb">Servizi cloud</span></div>
+      <div class="badge"><span class="dot"></span><span data-i18n="badge">Dati e privacy</span></div>
+      <h1 data-i18n-html="heroTitle">Cosa succede al testo incollato nei <span>servizi cloud?</span></h1>
+      <p class="intro" data-i18n="intro">Incollare una frase in un traduttore online o in uno strumento AI sembra un’azione istantanea. Dietro quel semplice gesto, il testo può attraversare diversi sistemi prima che il risultato torni sullo schermo.</p>
+      <div class="meta"><span>Memmola Labs</span><span data-i18n="date">29 luglio 2026</span><span data-i18n="readingTime">Circa 8 minuti</span></div>
     </header>
 
     <div class="layout">
       <article>
         <section id="path">
-          <h2>Di solito il testo lascia il tuo computer</h2>
-          <p>Quando un servizio funziona nel cloud, il browser o l’applicazione deve inviare il testo a un’infrastruttura remota. Questa trasmissione è necessaria perché il modello o il sistema di elaborazione si trova altrove.</p>
-          <p>Il risultato può apparire quasi immediatamente, ma il percorso di base resta esterno: il testo viene preparato localmente, trasmesso attraverso la rete, elaborato su sistemi remoti e restituito all’utente.</p>
+          <h2 data-i18n="s1Title">Di solito il testo lascia il tuo computer</h2>
+          <p data-i18n="s1p1">Quando un servizio funziona nel cloud, il browser o l’applicazione deve inviare il testo a un’infrastruttura remota. Questa trasmissione è necessaria perché il modello o il sistema di elaborazione si trova altrove.</p>
+          <p data-i18n="s1p2">Il risultato può apparire quasi immediatamente, ma il percorso di base resta esterno: il testo viene preparato localmente, trasmesso attraverso la rete, elaborato su sistemi remoti e restituito all’utente.</p>
           <div class="flow" aria-label="Tipico percorso di elaborazione cloud">
-            <div class="flow-step"><b>01</b><span>Il testo viene copiato o digitato in un sito web o in un’applicazione connessa.</span></div>
-            <div class="flow-step"><b>02</b><span>Il browser o l’app invia una richiesta attraverso la rete.</span></div>
-            <div class="flow-step"><b>03</b><span>L’infrastruttura remota riceve ed elabora la richiesta.</span></div>
-            <div class="flow-step"><b>04</b><span>I sistemi operativi possono registrare metadati tecnici o log.</span></div>
-            <div class="flow-step"><b>05</b><span>Il risultato generato viene restituito al dispositivo.</span></div>
+            <div class="flow-step"><b>01</b><span data-i18n="step1">Il testo viene copiato o digitato in un sito web o in un’applicazione connessa.</span></div>
+            <div class="flow-step"><b>02</b><span data-i18n="step2">Il browser o l’app invia una richiesta attraverso la rete.</span></div>
+            <div class="flow-step"><b>03</b><span data-i18n="step3">L’infrastruttura remota riceve ed elabora la richiesta.</span></div>
+            <div class="flow-step"><b>04</b><span data-i18n="step4">I sistemi operativi possono registrare metadati tecnici o log.</span></div>
+            <div class="flow-step"><b>05</b><span data-i18n="step5">Il risultato generato viene restituito al dispositivo.</span></div>
           </div>
-          <div class="callout"><strong>Il punto chiave</strong><p>Usare un servizio cloud significa affidarsi a un percorso di elaborazione esterno, anche quando l’interazione sembra una semplice casella di testo.</p></div>
+          <div class="callout"><strong data-i18n="callout1Title">Il punto chiave</strong><p data-i18n="callout1Text">Usare un servizio cloud significa affidarsi a un percorso di elaborazione esterno, anche quando l’interazione sembra una semplice casella di testo.</p></div>
         </section>
 
         <section>
-          <h2>Possono essere coinvolti diversi sistemi</h2>
-          <p>Una richiesta cloud raramente viene gestita da una singola macchina isolata. A seconda del provider e del prodotto, può attraversare infrastrutture di rete, bilanciatori di carico, server applicativi, sistemi che servono i modelli, filtri di sicurezza, strumenti anti-abuso, piattaforme di monitoraggio e sistemi di logging.</p>
-          <p>Questo non significa che ogni servizio conservi ogni frase o la utilizzi per lo stesso scopo. Significa che l’ambiente di elaborazione può coinvolgere più componenti di quanto suggerisca l’interfaccia visibile.</p>
+          <h2 data-i18n="s2Title">Possono essere coinvolti diversi sistemi</h2>
+          <p data-i18n="s2p1">Una richiesta cloud raramente viene gestita da una singola macchina isolata. A seconda del provider e del prodotto, può attraversare infrastrutture di rete, bilanciatori di carico, server applicativi, sistemi che servono i modelli, filtri di sicurezza, strumenti anti-abuso, piattaforme di monitoraggio e sistemi di logging.</p>
+          <p data-i18n="s2p2">Questo non significa che ogni servizio conservi ogni frase o la utilizzi per lo stesso scopo. Significa che l’ambiente di elaborazione può coinvolgere più componenti di quanto suggerisca l’interfaccia visibile.</p>
         </section>
 
         <section id="retention">
-          <h2>Elaborazione e conservazione sono questioni diverse</h2>
-          <p>Un servizio deve elaborare il testo per restituire un risultato. Se poi lo conservi o meno è una questione separata.</p>
-          <p>Conservazione can vary according to the provider, account type, product tier, regional settings, administrative controls and current privacy policy. A consumer product, enterprise product and developer API from the same company may follow different rules.</p>
-          <p>È quindi opportuno evitare due supposizioni:</p>
+          <h2 data-i18n="s3Title">Elaborazione e conservazione sono questioni diverse</h2>
+          <p data-i18n="s3p1">Un servizio deve elaborare il testo per restituire un risultato. Se poi lo conservi o meno è una questione separata.</p>
+          <p data-i18n="s3p2">La conservazione può variare in base al provider, al tipo di account, al piano del prodotto, alle impostazioni regionali, ai controlli amministrativi e alla privacy policy corrente. Un prodotto consumer, un prodotto enterprise e un’API per sviluppatori della stessa azienda possono seguire regole diverse.</p>
+          <p data-i18n="s3p3">È quindi opportuno evitare due supposizioni:</p>
           <ul>
-            <li>che ogni servizio cloud conservi permanentemente tutto;</li>
-            <li>che nulla venga mai conservato solo perché il risultato è apparso istantaneamente.</li>
+            <li data-i18n="ret1">che ogni servizio cloud conservi permanentemente tutto;</li>
+            <li data-i18n="ret2">che nulla venga mai conservato solo perché il risultato è apparso istantaneamente.</li>
           </ul>
-          <div class="callout"><strong>Regola pratica</strong><p>Controlla la documentazione corrente del prodotto specifico che stai utilizzando. Le supposizioni basate soltanto sul brand non sono sufficienti.</p></div>
+          <div class="callout"><strong data-i18n="callout2Title">Regola pratica</strong><p data-i18n="callout2Text">Controlla la documentazione corrente del prodotto specifico che stai utilizzando. Le supposizioni basate soltanto sul brand non sono sufficienti.</p></div>
         </section>
 
         <section>
-          <h2>I metadati possono contare anche quando il testo non viene conservato</h2>
-          <p>I sistemi operativi hanno spesso bisogno di informazioni tecniche per funzionare in modo affidabile. Possono includere orario della richiesta, informazioni di rete, dettagli del dispositivo o del browser, dati sugli errori, conteggi di utilizzo e identificativi dell’account.</p>
-          <p>I metadati non sono la stessa cosa del contenuto del testo, ma possono comunque descrivere come, quando e da dove è stato utilizzato un servizio.</p>
-          <p>Per molte attività ordinarie questo può essere accettabile. Nei workflow regolamentati, riservati o interni, la distinzione merita attenzione.</p>
+          <h2 data-i18n="s4Title">I metadati possono contare anche quando il testo non viene conservato</h2>
+          <p data-i18n="s4p1">I sistemi operativi hanno spesso bisogno di informazioni tecniche per funzionare in modo affidabile. Possono includere orario della richiesta, informazioni di rete, dettagli del dispositivo o del browser, dati sugli errori, conteggi di utilizzo e identificativi dell’account.</p>
+          <p data-i18n="s4p2">I metadati non sono la stessa cosa del contenuto del testo, ma possono comunque descrivere come, quando e da dove è stato utilizzato un servizio.</p>
+          <p data-i18n="s4p3">Per molte attività ordinarie questo può essere accettabile. Nei workflow regolamentati, riservati o interni, la distinzione merita attenzione.</p>
         </section>
 
         <section id="sensitive">
-          <h2>Anche un testo breve può contenere informazioni sensibili</h2>
-          <p>Spesso si pensa a una richiesta di traduzione come a “una sola frase”. Ma una singola frase può contenere il nome di un cliente, un numero d’ordine, un dettaglio medico, una clausola contrattuale, un riferimento a un progetto interno o una conversazione privata.</p>
-          <p>Il rischio non dipende soltanto dalla lunghezza del documento. Dipende da ciò che il testo rivela.</p>
+          <h2 data-i18n="s5Title">Anche un testo breve può contenere informazioni sensibili</h2>
+          <p data-i18n="s5p1">Spesso si pensa a una richiesta di traduzione come a “una sola frase”. Ma una singola frase può contenere il nome di un cliente, un numero d’ordine, un dettaglio medico, una clausola contrattuale, un riferimento a un progetto interno o una conversazione privata.</p>
+          <p data-i18n="s5p2">Il rischio non dipende soltanto dalla lunghezza del documento. Dipende da ciò che il testo rivela.</p>
           <div class="cards">
-            <div class="card"><h3>Assistenza clienti</h3><p>I messaggi possono contenere nomi, indirizzi, dettagli dell’account o riferimenti agli ordini.</p></div>
-            <div class="card"><h3>Comunicazioni aziendali</h3><p>Le bozze delle email possono rivelare prezzi, trattative, scadenze o decisioni interne.</p></div>
-            <div class="card"><h3>Lavoro legale e amministrativo</h3><p>Anche un piccolo estratto può contenere dati personali o informazioni contrattuali.</p></div>
-            <div class="card"><h3>Comunicazioni personali</h3><p>Le conversazioni private possono rivelare relazioni, informazioni sulla salute o dettagli sulla posizione.</p></div>
+            <div class="card"><h3 data-i18n="card1Title">Assistenza clienti</h3><p data-i18n="card1Text">I messaggi possono contenere nomi, indirizzi, dettagli dell’account o riferimenti agli ordini.</p></div>
+            <div class="card"><h3 data-i18n="card2Title">Comunicazioni aziendali</h3><p data-i18n="card2Text">Le bozze delle email possono rivelare prezzi, trattative, scadenze o decisioni interne.</p></div>
+            <div class="card"><h3 data-i18n="card3Title">Lavoro legale e amministrativo</h3><p data-i18n="card3Text">Anche un piccolo estratto può contenere dati personali o informazioni contrattuali.</p></div>
+            <div class="card"><h3 data-i18n="card4Title">Comunicazioni personali</h3><p data-i18n="card4Text">Le conversazioni private possono rivelare relazioni, informazioni sulla salute o dettagli sulla posizione.</p></div>
           </div>
         </section>
 
         <section>
-          <h2>La crittografia protegge la trasmissione, non ogni decisione successiva</h2>
-          <p>I moderni servizi online utilizzano normalmente connessioni crittografate. La crittografia aiuta a proteggere i dati mentre viaggiano tra il dispositivo e il servizio remoto.</p>
-          <p>That is important, but it does not answer every privacy question. Once the request reaches the provider, the service must decrypt and process it. Conservazione, access controls, logging and product policy then become separate considerations.</p>
-          <p>Una connessione sicura protegge il percorso. Da sola non definisce ciò che accade dopo l’arrivo.</p>
+          <h2 data-i18n="s6Title">La crittografia protegge la trasmissione, non ogni decisione successiva</h2>
+          <p data-i18n="s6p1">I moderni servizi online utilizzano normalmente connessioni crittografate. La crittografia aiuta a proteggere i dati mentre viaggiano tra il dispositivo e il servizio remoto.</p>
+          <p data-i18n="s6p2">Questo è importante, ma non risponde a ogni domanda sulla privacy. Una volta che la richiesta raggiunge il provider, il servizio deve decifrarla ed elaborarla. Conservazione, controlli di accesso, logging e policy del prodotto diventano quindi considerazioni separate.</p>
+          <p data-i18n="s6p3">Una connessione sicura protegge il percorso. Da sola non definisce ciò che accade dopo l’arrivo.</p>
         </section>
 
         <section>
-          <h2>Account aziendali e consumer possono comportarsi diversamente</h2>
-          <p>Alcuni provider offrono controlli enterprise, impegni contrattuali, impostazioni amministrative o opzioni di conservazione ridotta. Gli account consumer possono avere impostazioni predefinite differenti.</p>
-          <p>Per questo affermazioni generiche come “tutta l’AI cloud conserva i tuoi dati” o “questo provider non conserva mai nulla” sono normalmente troppo semplicistiche.</p>
-          <p>La domanda corretta è più precisa: cosa dichiara di fare questo specifico servizio, con questo specifico account e configurazione, con il testo inviato?</p>
+          <h2 data-i18n="s7Title">Account aziendali e consumer possono comportarsi diversamente</h2>
+          <p data-i18n="s7p1">Alcuni provider offrono controlli enterprise, impegni contrattuali, impostazioni amministrative o opzioni di conservazione ridotta. Gli account consumer possono avere impostazioni predefinite differenti.</p>
+          <p data-i18n="s7p2">Per questo affermazioni generiche come “tutta l’AI cloud conserva i tuoi dati” o “questo provider non conserva mai nulla” sono normalmente troppo semplicistiche.</p>
+          <p data-i18n="s7p3">La domanda corretta è più precisa: cosa dichiara di fare questo specifico servizio, con questo specifico account e configurazione, con il testo inviato?</p>
         </section>
 
         <section id="local">
-          <h2>Cosa cambia con la traduzione locale</h2>
-          <p>Con la traduzione locale, il modello e il motore di inferenza sono installati sul computer dell’utente. Il testo può essere elaborato lì invece di essere inviato a un endpoint di traduzione esterno.</p>
+          <h2 data-i18n="s8Title">Cosa cambia con la traduzione locale</h2>
+          <p data-i18n="s8p1">Con la traduzione locale, il modello e il motore di inferenza sono installati sul computer dell’utente. Il testo può essere elaborato lì invece di essere inviato a un endpoint di traduzione esterno.</p>
           <div class="comparison" aria-label="Confronto tra traduzione cloud e locale">
             <div class="comparison-box">
-              <h3>Percorso cloud</h3>
-              <p>Il testo viene trasmesso a un’infrastruttura remota, elaborato lì e restituito attraverso la rete.</p>
+              <h3 data-i18n="cloudPathTitle">Percorso cloud</h3>
+              <p data-i18n="cloudPathText">Il testo viene trasmesso a un’infrastruttura remota, elaborato lì e restituito attraverso la rete.</p>
             </div>
             <div class="comparison-arrow">→</div>
             <div class="comparison-box">
-              <h3>Percorso locale</h3>
-              <p>Il testo viene passato a un modello installato ed elaborato sullo stesso computer Windows.</p>
+              <h3 data-i18n="localPathTitle">Percorso locale</h3>
+              <p data-i18n="localPathText">Il testo viene passato a un modello installato ed elaborato sullo stesso computer Windows.</p>
             </div>
           </div>
-          <p>Questo elimina una categoria di esposizione: la richiesta di traduzione esterna. Non rende automaticamente privato o sicuro l’intero dispositivo.</p>
+          <p data-i18n="s8p2">Questo elimina una categoria di esposizione: la richiesta di traduzione esterna. Non rende automaticamente privato o sicuro l’intero dispositivo.</p>
         </section>
 
         <section>
-          <h2>Anche l’elaborazione locale ha le sue considerazioni di sicurezza</h2>
-          <p>Un’applicazione locale esiste comunque all’interno di un sistema più ampio. Cronologia degli appunti, malware, backup, crash report, strumenti di cattura dello schermo, account Windows condivisi e accesso fisico possono tutti influire sulla privacy.</p>
-          <p>Il vantaggio della traduzione locale non è che ogni altro rischio scompaia. È che la traduzione stessa non ha bisogno di lasciare il dispositivo.</p>
+          <h2 data-i18n="s9Title">Anche l’elaborazione locale ha le sue considerazioni di sicurezza</h2>
+          <p data-i18n="s9p1">Un’applicazione locale esiste comunque all’interno di un sistema più ampio. Cronologia degli appunti, malware, backup, crash report, strumenti di cattura dello schermo, account Windows condivisi e accesso fisico possono tutti influire sulla privacy.</p>
+          <p data-i18n="s9p2">Il vantaggio della traduzione locale non è che ogni altro rischio scompaia. È che la traduzione stessa non ha bisogno di lasciare il dispositivo.</p>
           <div class="principles">
-            <div class="principle"><b>TRASMISSIONE</b><span>L’elaborazione cloud richiede di inviare il testo altrove; quella locale no.</span></div>
-            <div class="principle"><b>CONSERVAZIONE</b><span>La conservazione nel cloud dipende dalle policy del prodotto; la traduzione locale evita la conservazione della richiesta di traduzione lato provider.</span></div>
-            <div class="principle"><b>SICUREZZA DEL DISPOSITIVO</b><span>L’elaborazione locale dipende comunque dalla sicurezza del computer Windows e del workflow circostante.</span></div>
+            <div class="principle"><b data-i18n="p1Title">TRASMISSIONE</b><span data-i18n="p1Text">L’elaborazione cloud richiede di inviare il testo altrove; quella locale no.</span></div>
+            <div class="principle"><b data-i18n="p2Title">CONSERVAZIONE</b><span data-i18n="p2Text">La conservazione nel cloud dipende dalle policy del prodotto; la traduzione locale evita la conservazione della richiesta di traduzione lato provider.</span></div>
+            <div class="principle"><b data-i18n="p3Title">SICUREZZA DEL DISPOSITIVO</b><span data-i18n="p3Text">L’elaborazione locale dipende comunque dalla sicurezza del computer Windows e del workflow circostante.</span></div>
           </div>
         </section>
 
         <section>
-          <h2>Una scelta pratica, non basata sulla paura</h2>
-          <p>La traduzione cloud può essere comoda, potente e del tutto appropriata per testi pubblici o poco sensibili. L’obiettivo non è descrivere ogni servizio online come non sicuro.</p>
-          <p>L’obiettivo è comprendere il compromesso. Quando il testo viene incollato in un servizio cloud entra in un ambiente di elaborazione esterno. Quando viene tradotto localmente, quello specifico trasferimento può essere evitato.</p>
-          <p>L’utente può quindi scegliere lo strumento più adatto al testo che sta gestendo.</p>
+          <h2 data-i18n="s10Title">Una scelta pratica, non basata sulla paura</h2>
+          <p data-i18n="s10p1">La traduzione cloud può essere comoda, potente e del tutto appropriata per testi pubblici o poco sensibili. L’obiettivo non è descrivere ogni servizio online come non sicuro.</p>
+          <p data-i18n="s10p2">L’obiettivo è comprendere il compromesso. Quando il testo viene incollato in un servizio cloud entra in un ambiente di elaborazione esterno. Quando viene tradotto localmente, quello specifico trasferimento può essere evitato.</p>
+          <p data-i18n="s10p3">L’utente può quindi scegliere lo strumento più adatto al testo che sta gestendo.</p>
         </section>
 
         <section>
-          <h2>Come SlangBit affronta il problema</h2>
-          <p>SlangBit utilizza pacchetti linguistici installati localmente e un motore di inferenza locale. Dopo l’installazione, il testo copiato può essere tradotto sul computer Windows senza essere inviato a Memmola Labs o a un’API di traduzione cloud di terze parti.</p>
-          <p>L’applicazione è progettata attorno a un semplice workflow dalla tray: copia il testo, premi <strong>ALT + Z</strong> e continua a lavorare nell’applicazione corrente.</p>
-          <p>Questo combina due obiettivi: ridurre il cambio di contesto e ridurre la necessità di esporre il testo a un servizio di traduzione esterno.</p>
+          <h2 data-i18n="s11Title">Come SlangBit affronta il problema</h2>
+          <p data-i18n="s11p1">SlangBit utilizza pacchetti linguistici installati localmente e un motore di inferenza locale. Dopo l’installazione, il testo copiato può essere tradotto sul computer Windows senza essere inviato a Memmola Labs o a un’API di traduzione cloud di terze parti.</p>
+          <p data-i18n-html="s11p2">L’applicazione è progettata attorno a un semplice workflow dalla tray: copia il testo, premi <strong>ALT + Z</strong> e continua a lavorare nell’applicazione corrente.</p>
+          <p data-i18n="s11p3">Questo combina due obiettivi: ridurre il cambio di contesto e ridurre la necessità di esporre il testo a un servizio di traduzione esterno.</p>
         </section>
 
         <section id="faq">
-          <h2>Domande frequenti</h2>
-          <details><summary>Il testo incollato in un servizio cloud lascia il mio computer?</summary><p>Di solito sì. Il testo deve essere trasmesso a un’infrastruttura remota affinché il servizio possa elaborarlo e restituire un risultato.</p></details>
-          <details><summary>Il testo incollato viene sempre conservato permanentemente?</summary><p>No. Conservazione depends on the specific provider, product, account type and configuration. The current product documentation should be checked directly.</p></details>
-          <details><summary>La trasmissione crittografata risolve ogni problema di privacy?</summary><p>No. La crittografia protegge i dati durante il transito. Da sola non definisce conservazione, controlli di accesso, logging o elaborazioni successive dopo che la richiesta raggiunge il provider.</p></details>
-          <details><summary>La traduzione locale evita di inviare il testo a un servizio remoto?</summary><p>Sì. Se il modello e il motore di inferenza sono installati localmente, la traduzione può essere generata sul dispositivo.</p></details>
-          <details><summary>La traduzione locale è completamente priva di rischi?</summary><p>No. La sicurezza del dispositivo, la cronologia degli appunti, i backup e gli altri software continuano a contare. La traduzione locale elimina la richiesta di traduzione esterna, non ogni possibile rischio di sicurezza.</p></details>
+          <h2 data-i18n="faqTitle">Domande frequenti</h2>
+          <details><summary data-i18n="faq1q">Il testo incollato in un servizio cloud lascia il mio computer?</summary><p data-i18n="faq1a">Di solito sì. Il testo deve essere trasmesso a un’infrastruttura remota affinché il servizio possa elaborarlo e restituire un risultato.</p></details>
+          <details><summary data-i18n="faq2q">Il testo incollato viene sempre conservato permanentemente?</summary><p data-i18n="faq2a">No. La conservazione dipende dal provider specifico, dal prodotto, dal tipo di account e dalla configurazione. È opportuno controllare direttamente la documentazione corrente del prodotto.</p></details>
+          <details><summary data-i18n="faq3q">La trasmissione crittografata risolve ogni problema di privacy?</summary><p data-i18n="faq3a">No. La crittografia protegge i dati durante il transito. Da sola non definisce conservazione, controlli di accesso, logging o elaborazioni successive dopo che la richiesta raggiunge il provider.</p></details>
+          <details><summary data-i18n="faq4q">La traduzione locale evita di inviare il testo a un servizio remoto?</summary><p data-i18n="faq4a">Sì. Se il modello e il motore di inferenza sono installati localmente, la traduzione può essere generata sul dispositivo.</p></details>
+          <details><summary data-i18n="faq5q">La traduzione locale è completamente priva di rischi?</summary><p data-i18n="faq5a">No. La sicurezza del dispositivo, la cronologia degli appunti, i backup e gli altri software continuano a contare. La traduzione locale elimina la richiesta di traduzione esterna, non ogni possibile rischio di sicurezza.</p></details>
         </section>
 
         <div class="cta">
-          <h2>Traduci senza inviare il testo a un endpoint cloud</h2>
-          <p>SlangBit utilizza modelli linguistici locali e una scorciatoia globale di Windows per tradurre il testo copiato direttamente sul dispositivo.</p>
+          <h2 data-i18n="ctaTitle">Traduci senza inviare il testo a un endpoint cloud</h2>
+          <p data-i18n="ctaText">SlangBit utilizza modelli linguistici locali e una scorciatoia globale di Windows per tradurre il testo copiato direttamente sul dispositivo.</p>
           <div class="actions">
-            <a class="btn primary" href="/">Scopri SlangBit</a>
-            <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a>
+            <a class="btn primary" href="/" data-i18n="discover">Scopri SlangBit</a>
+            <a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer" data-i18n="store">Vai al Microsoft Store</a>
           </div>
         </div>
       </article>
 
       <aside aria-label="Navigazione dell’articolo">
         <div class="side-card">
-          <h2>In questa pagina</h2>
-          <a href="#path">Il percorso dei dati nel cloud</a>
-          <a href="#retention">Elaborazione e conservazione</a>
+          <h2 data-i18n="sideTitle">In questa pagina</h2>
+          <a href="#path" data-i18n="side1">Il percorso dei dati nel cloud</a>
+          <a href="#retention" data-i18n="side2">Elaborazione e conservazione</a>
           <a href="#sensitive">Testo sensibile</a>
-          <a href="#local">Traduzione locale</a>
+          <a href="#local" data-i18n="side4">Traduzione locale</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="side-card">
-          <h2>Insights correlati</h2>
-          <a href="/insights/why-an-offline-translation-really-counts.html">Perché la traduzione offline conta davvero</a>
-          <a href="/insights/behind-the-scenes-of-local-models.html">Dietro le quinte dei modelli locali</a>
-          <a href="/insights/how-alt-z-works.html">Come funziona ALT+Z</a>
+          <h2 data-i18n="relatedTitle">Insights correlati</h2>
+          <a href="/insights/why-an-offline-translation-really-counts.html" data-i18n="related1">Perché la traduzione offline conta davvero</a>
+          <a href="/insights/behind-the-scenes-of-local-models.html" data-i18n="related2">Dietro le quinte dei modelli locali</a>
+          <a href="/insights/how-ALT+Z-works.html" data-i18n="related3">Come funziona ALT+Z</a>
         </div>
       </aside>
     </div>
   </main>
+
+  <section class="share-section" aria-labelledby="shareArticleTitle">
+    <h3 id="shareArticleTitle" data-i18n="shareTitle">Condividi questo Insight</h3>
+    <p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
+    <div class="share-buttons">
+      <a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhat-happens-to-pasted-text-in-cloud-services.html&text=SlangBit%20Insights%20%E2%80%94%20cosa%20succede%20al%20testo%20incollato%20nei%20servizi%20cloud%3F" target="_blank" rel="noopener noreferrer"><img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span></a>
+      <a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhat-happens-to-pasted-text-in-cloud-services.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span></a>
+      <a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fwhat-happens-to-pasted-text-in-cloud-services.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span></a>
+      <button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+    </div>
+  </section>
 
   <footer>
     <div class="footer">
@@ -383,5 +423,95 @@ aside{
     </div>
   </footer>
 </div>
+
+<script>
+const I18N={
+it:{
+pageTitle:'Cosa succede al testo incollato nei servizi cloud? | SlangBit',
+metaDescription:'Cosa succede quando un testo viene incollato in un servizio di traduzione o AI online, quali sistemi possono elaborarlo e perché la traduzione locale può ridurre l’esposizione esterna dei dati.',
+navPath:'Percorso dei dati',navRetention:'Conservazione',navSensitive:'Testo sensibile',navLocal:'Alternativa locale',
+crumb:'Servizi cloud',badge:'Dati e privacy',
+heroTitle:'Cosa succede al testo incollato nei <span>servizi cloud?</span>',intro:'Incollare una frase in un traduttore online o in uno strumento AI sembra un’azione istantanea. Dietro quel semplice gesto, il testo può attraversare diversi sistemi prima che il risultato torni sullo schermo.',date:'29 luglio 2026',readingTime:'Circa 8 minuti',
+s1Title:'Di solito il testo lascia il tuo computer',s1p1:'Quando un servizio funziona nel cloud, il browser o l’applicazione deve inviare il testo a un’infrastruttura remota. Questa trasmissione è necessaria perché il modello o il sistema di elaborazione si trova altrove.',s1p2:'Il risultato può apparire quasi immediatamente, ma il percorso di base resta esterno: il testo viene preparato localmente, trasmesso attraverso la rete, elaborato su sistemi remoti e restituito all’utente.',step1:'Il testo viene copiato o digitato in un sito web o in un’applicazione connessa.',step2:'Il browser o l’app invia una richiesta attraverso la rete.',step3:'L’infrastruttura remota riceve ed elabora la richiesta.',step4:'I sistemi operativi possono registrare metadati tecnici o log.',step5:'Il risultato generato viene restituito al dispositivo.',callout1Title:'Il punto chiave',callout1Text:'Usare un servizio cloud significa affidarsi a un percorso di elaborazione esterno, anche quando l’interazione sembra una semplice casella di testo.',
+s2Title:'Possono essere coinvolti diversi sistemi',s2p1:'Una richiesta cloud raramente viene gestita da una singola macchina isolata. A seconda del provider e del prodotto, può attraversare infrastrutture di rete, bilanciatori di carico, server applicativi, sistemi che servono i modelli, filtri di sicurezza, strumenti anti-abuso, piattaforme di monitoraggio e sistemi di logging.',s2p2:'Questo non significa che ogni servizio conservi ogni frase o la utilizzi per lo stesso scopo. Significa che l’ambiente di elaborazione può coinvolgere più componenti di quanto suggerisca l’interfaccia visibile.',
+s3Title:'Elaborazione e conservazione sono questioni diverse',s3p1:'Un servizio deve elaborare il testo per restituire un risultato. Se poi lo conservi o meno è una questione separata.',s3p2:'La conservazione può variare in base al provider, al tipo di account, al piano del prodotto, alle impostazioni regionali, ai controlli amministrativi e alla privacy policy corrente. Un prodotto consumer, un prodotto enterprise e un’API per sviluppatori della stessa azienda possono seguire regole diverse.',s3p3:'È quindi opportuno evitare due supposizioni:',ret1:'che ogni servizio cloud conservi permanentemente tutto;',ret2:'che nulla venga mai conservato solo perché il risultato è apparso istantaneamente.',callout2Title:'Regola pratica',callout2Text:'Controlla la documentazione corrente del prodotto specifico che stai utilizzando. Le supposizioni basate soltanto sul brand non sono sufficienti.',
+s4Title:'I metadati possono contare anche quando il testo non viene conservato',s4p1:'I sistemi operativi hanno spesso bisogno di informazioni tecniche per funzionare in modo affidabile. Possono includere orario della richiesta, informazioni di rete, dettagli del dispositivo o del browser, dati sugli errori, conteggi di utilizzo e identificativi dell’account.',s4p2:'I metadati non sono la stessa cosa del contenuto del testo, ma possono comunque descrivere come, quando e da dove è stato utilizzato un servizio.',s4p3:'Per molte attività ordinarie questo può essere accettabile. Nei workflow regolamentati, riservati o interni, la distinzione merita attenzione.',
+s5Title:'Anche un testo breve può contenere informazioni sensibili',s5p1:'Spesso si pensa a una richiesta di traduzione come a “una sola frase”. Ma una singola frase può contenere il nome di un cliente, un numero d’ordine, un dettaglio medico, una clausola contrattuale, un riferimento a un progetto interno o una conversazione privata.',s5p2:'Il rischio non dipende soltanto dalla lunghezza del documento. Dipende da ciò che il testo rivela.',card1Title:'Assistenza clienti',card1Text:'I messaggi possono contenere nomi, indirizzi, dettagli dell’account o riferimenti agli ordini.',card2Title:'Comunicazioni aziendali',card2Text:'Le bozze delle email possono rivelare prezzi, trattative, scadenze o decisioni interne.',card3Title:'Lavoro legale e amministrativo',card3Text:'Anche un piccolo estratto può contenere dati personali o informazioni contrattuali.',card4Title:'Comunicazioni personali',card4Text:'Le conversazioni private possono rivelare relazioni, informazioni sulla salute o dettagli sulla posizione.',
+s6Title:'La crittografia protegge la trasmissione, non ogni decisione successiva',s6p1:'I moderni servizi online utilizzano normalmente connessioni crittografate. La crittografia aiuta a proteggere i dati mentre viaggiano tra il dispositivo e il servizio remoto.',s6p2:'Questo è importante, ma non risponde a ogni domanda sulla privacy. Una volta che la richiesta raggiunge il provider, il servizio deve decifrarla ed elaborarla. Conservazione, controlli di accesso, logging e policy del prodotto diventano quindi considerazioni separate.',s6p3:'Una connessione sicura protegge il percorso. Da sola non definisce ciò che accade dopo l’arrivo.',
+s7Title:'Account aziendali e consumer possono comportarsi diversamente',s7p1:'Alcuni provider offrono controlli enterprise, impegni contrattuali, impostazioni amministrative o opzioni di conservazione ridotta. Gli account consumer possono avere impostazioni predefinite differenti.',s7p2:'Per questo affermazioni generiche come “tutta l’AI cloud conserva i tuoi dati” o “questo provider non conserva mai nulla” sono normalmente troppo semplicistiche.',s7p3:'La domanda corretta è più precisa: cosa dichiara di fare questo specifico servizio, con questo specifico account e configurazione, con il testo inviato?',
+s8Title:'Cosa cambia con la traduzione locale',s8p1:'Con la traduzione locale, il modello e il motore di inferenza sono installati sul computer dell’utente. Il testo può essere elaborato lì invece di essere inviato a un endpoint di traduzione esterno.',cloudPathTitle:'Percorso cloud',cloudPathText:'Il testo viene trasmesso a un’infrastruttura remota, elaborato lì e restituito attraverso la rete.',localPathTitle:'Percorso locale',localPathText:'Il testo viene passato a un modello installato ed elaborato sullo stesso computer Windows.',s8p2:'Questo elimina una categoria di esposizione: la richiesta di traduzione esterna. Non rende automaticamente privato o sicuro l’intero dispositivo.',
+s9Title:'Anche l’elaborazione locale ha le sue considerazioni di sicurezza',s9p1:'Un’applicazione locale esiste comunque all’interno di un sistema più ampio. Cronologia degli appunti, malware, backup, crash report, strumenti di cattura dello schermo, account Windows condivisi e accesso fisico possono tutti influire sulla privacy.',s9p2:'Il vantaggio della traduzione locale non è che ogni altro rischio scompaia. È che la traduzione stessa non ha bisogno di lasciare il dispositivo.',p1Title:'TRASMISSIONE',p1Text:'L’elaborazione cloud richiede di inviare il testo altrove; quella locale no.',p2Title:'CONSERVAZIONE',p2Text:'La conservazione nel cloud dipende dalle policy del prodotto; la traduzione locale evita la conservazione della richiesta di traduzione lato provider.',p3Title:'SICUREZZA DEL DISPOSITIVO',p3Text:'L’elaborazione locale dipende comunque dalla sicurezza del computer Windows e del workflow circostante.',
+s10Title:'Una scelta pratica, non basata sulla paura',s10p1:'La traduzione cloud può essere comoda, potente e del tutto appropriata per testi pubblici o poco sensibili. L’obiettivo non è descrivere ogni servizio online come non sicuro.',s10p2:'L’obiettivo è comprendere il compromesso. Quando il testo viene incollato in un servizio cloud entra in un ambiente di elaborazione esterno. Quando viene tradotto localmente, quello specifico trasferimento può essere evitato.',s10p3:'L’utente può quindi scegliere lo strumento più adatto al testo che sta gestendo.',
+s11Title:'Come SlangBit affronta il problema',s11p1:'SlangBit utilizza pacchetti linguistici installati localmente e un motore di inferenza locale. Dopo l’installazione, il testo copiato può essere tradotto sul computer Windows senza essere inviato a Memmola Labs o a un’API di traduzione cloud di terze parti.',s11p2:'L’applicazione è progettata attorno a un semplice workflow dalla tray: copia il testo, premi <strong>ALT + Z</strong> e continua a lavorare nell’applicazione corrente.',s11p3:'Questo combina due obiettivi: ridurre il cambio di contesto e ridurre la necessità di esporre il testo a un servizio di traduzione esterno.',
+faqTitle:'Domande frequenti',faq1q:'Il testo incollato in un servizio cloud lascia il mio computer?',faq1a:'Di solito sì. Il testo deve essere trasmesso a un’infrastruttura remota affinché il servizio possa elaborarlo e restituire un risultato.',faq2q:'Il testo incollato viene sempre conservato permanentemente?',faq2a:'No. La conservazione dipende dal provider specifico, dal prodotto, dal tipo di account e dalla configurazione. È opportuno controllare direttamente la documentazione corrente del prodotto.',faq3q:'La trasmissione crittografata risolve ogni problema di privacy?',faq3a:'No. La crittografia protegge i dati durante il transito. Da sola non definisce conservazione, controlli di accesso, logging o elaborazioni successive dopo che la richiesta raggiunge il provider.',faq4q:'La traduzione locale evita di inviare il testo a un servizio remoto?',faq4a:'Sì. Se il modello e il motore di inferenza sono installati localmente, la traduzione può essere generata sul dispositivo.',faq5q:'La traduzione locale è completamente priva di rischi?',faq5a:'No. La sicurezza del dispositivo, la cronologia degli appunti, i backup e gli altri software continuano a contare. La traduzione locale elimina la richiesta di traduzione esterna, non ogni possibile rischio di sicurezza.',
+ctaTitle:'Traduci senza inviare il testo a un endpoint cloud',ctaText:'SlangBit utilizza modelli linguistici locali e una scorciatoia globale di Windows per tradurre il testo copiato direttamente sul dispositivo.',discover:'Scopri SlangBit',store:'Vai al Microsoft Store',
+sideTitle:'In questa pagina',side1:'Il percorso dei dati nel cloud',side2:'Elaborazione e conservazione',side3:'Testo sensibile',side4:'Traduzione locale',relatedTitle:'Insights correlati',related1:'Perché la traduzione offline conta davvero',related2:'Dietro le quinte dei modelli locali',related3:'Come funziona ALT+Z',
+shareTitle:'Condividi questo Insight',shareText:'Se pensi possa essere utile anche a qualcun altro.',copyLink:'Copia link',copied:'Link copiato'
+},
+en:{
+pageTitle:'What happens to text pasted into cloud services? | SlangBit',
+metaDescription:'What happens when text is pasted into an online translation or AI service, which systems may process it, and why local translation can reduce external data exposure.',
+navPath:'Data path',navRetention:'Retention',navSensitive:'Sensitive text',navLocal:'Local alternative',
+crumb:'Cloud services',badge:'Data and privacy',
+heroTitle:'What happens to text pasted into <span>cloud services?</span>',intro:'Pasting a sentence into an online translator or AI tool can feel instantaneous. Behind that simple action, the text may pass through several systems before the result returns to the screen.',date:'July 29, 2026',readingTime:'About 8 minutes',
+s1Title:'Usually, the text leaves your computer',s1p1:'When a service runs in the cloud, the browser or application has to send the text to remote infrastructure. This transmission is necessary because the model or processing system is located elsewhere.',s1p2:'The result may appear almost immediately, but the basic path remains external: the text is prepared locally, transmitted across the network, processed on remote systems and returned to the user.',step1:'The text is copied or typed into a website or connected application.',step2:'The browser or app sends a request across the network.',step3:'Remote infrastructure receives and processes the request.',step4:'Operational systems may record technical metadata or logs.',step5:'The generated result is returned to the device.',callout1Title:'The key point',callout1Text:'Using a cloud service means relying on an external processing path, even when the interaction looks like a simple text box.',
+s2Title:'Several systems may be involved',s2p1:'A cloud request is rarely handled by one isolated machine. Depending on the provider and product, it may pass through network infrastructure, load balancers, application servers, model-serving systems, security filters, anti-abuse tools, monitoring platforms and logging systems.',s2p2:'This does not mean every service stores every sentence or uses it for the same purpose. It means the processing environment may involve more components than the visible interface suggests.',
+s3Title:'Processing and retention are different questions',s3p1:'A service has to process the text to return a result. Whether it then stores the text is a separate question.',s3p2:'Retention can vary according to the provider, account type, product tier, regional settings, administrative controls and current privacy policy. A consumer product, enterprise product and developer API from the same company may follow different rules.',s3p3:'It is therefore useful to avoid two assumptions:',ret1:'that every cloud service permanently stores everything;',ret2:'that nothing is ever retained simply because the result appeared instantly.',callout2Title:'Practical rule',callout2Text:'Check the current documentation for the specific product you are using. Assumptions based only on the brand are not enough.',
+s4Title:'Metadata can matter even when text is not retained',s4p1:'Operational systems often need technical information to work reliably. This may include request time, network information, device or browser details, error data, usage counts and account identifiers.',s4p2:'Metadata is not the same as the text content itself, but it can still describe how, when and from where a service was used.',s4p3:'For many ordinary activities this may be acceptable. In regulated, confidential or internal workflows, the distinction deserves attention.',
+s5Title:'Even short text can contain sensitive information',s5p1:'A translation request is often thought of as “just one sentence”. But a single sentence can contain a customer name, order number, medical detail, contract clause, internal project reference or private conversation.',s5p2:'Risk does not depend only on document length. It depends on what the text reveals.',card1Title:'Customer support',card1Text:'Messages may contain names, addresses, account details or order references.',card2Title:'Business communications',card2Text:'Email drafts may reveal prices, negotiations, deadlines or internal decisions.',card3Title:'Legal and administrative work',card3Text:'Even a small excerpt may contain personal data or contractual information.',card4Title:'Personal communications',card4Text:'Private conversations may reveal relationships, health information or location details.',
+s6Title:'Encryption protects transmission, not every decision that follows',s6p1:'Modern online services normally use encrypted connections. Encryption helps protect data while it travels between the device and the remote service.',s6p2:'That is important, but it does not answer every privacy question. Once the request reaches the provider, the service must decrypt and process it. Retention, access controls, logging and product policy then become separate considerations.',s6p3:'A secure connection protects the path. By itself, it does not define what happens after arrival.',
+s7Title:'Business and consumer accounts may behave differently',s7p1:'Some providers offer enterprise controls, contractual commitments, administrative settings or reduced-retention options. Consumer accounts may have different defaults.',s7p2:'That is why broad statements such as “all cloud AI stores your data” or “this provider never stores anything” are usually too simplistic.',s7p3:'The more precise question is: what does this specific service, with this specific account and configuration, say it does with the text that is sent?',
+s8Title:'What changes with local translation',s8p1:'With local translation, the model and inference engine are installed on the user’s computer. The text can be processed there instead of being sent to an external translation endpoint.',cloudPathTitle:'Cloud path',cloudPathText:'The text is transmitted to remote infrastructure, processed there and returned across the network.',localPathTitle:'Local path',localPathText:'The text is passed to an installed model and processed on the same Windows computer.',s8p2:'This removes one category of exposure: the external translation request. It does not automatically make the entire device private or secure.',
+s9Title:'Local processing also has its own security considerations',s9p1:'A local application still exists inside a larger system. Clipboard history, malware, backups, crash reports, screen-capture tools, shared Windows accounts and physical access can all affect privacy.',s9p2:'The advantage of local translation is not that every other risk disappears. It is that the translation itself does not need to leave the device.',p1Title:'TRANSMISSION',p1Text:'Cloud processing requires sending the text elsewhere; local processing does not.',p2Title:'RETENTION',p2Text:'Cloud retention depends on product policies; local translation avoids provider-side retention of the translation request.',p3Title:'DEVICE SECURITY',p3Text:'Local processing still depends on the security of the Windows computer and the surrounding workflow.',
+s10Title:'A practical choice, not one based on fear',s10p1:'Cloud translation can be convenient, powerful and entirely appropriate for public or low-sensitivity text. The goal is not to describe every online service as unsafe.',s10p2:'The goal is to understand the trade-off. When text is pasted into a cloud service, it enters an external processing environment. When it is translated locally, that specific transfer can be avoided.',s10p3:'The user can then choose the tool that best fits the text being handled.',
+s11Title:'How SlangBit approaches the issue',s11p1:'SlangBit uses locally installed language packages and a local inference engine. After installation, copied text can be translated on the Windows computer without being sent to Memmola Labs or a third-party cloud translation API.',s11p2:'The application is designed around a simple tray workflow: copy the text, press <strong>ALT + Z</strong> and keep working in the current application.',s11p3:'This combines two goals: reducing context switching and reducing the need to expose text to an external translation service.',
+faqTitle:'Frequently asked questions',faq1q:'Does text pasted into a cloud service leave my computer?',faq1a:'Usually yes. The text has to be transmitted to remote infrastructure so the service can process it and return a result.',faq2q:'Is pasted text always stored permanently?',faq2a:'No. Retention depends on the specific provider, product, account type and configuration. The current product documentation should be checked directly.',faq3q:'Does encrypted transmission solve every privacy concern?',faq3a:'No. Encryption protects data in transit. By itself, it does not define retention, access controls, logging or later processing after the request reaches the provider.',faq4q:'Does local translation avoid sending text to a remote service?',faq4a:'Yes. If the model and inference engine are installed locally, translation can be generated on the device.',faq5q:'Is local translation completely risk-free?',faq5a:'No. Device security, clipboard history, backups and other software still matter. Local translation removes the external translation request, not every possible security risk.',
+ctaTitle:'Translate without sending text to a cloud endpoint',ctaText:'SlangBit uses local language models and a global Windows shortcut to translate copied text directly on the device.',discover:'Discover SlangBit',store:'Go to Microsoft Store',
+sideTitle:'On this page',side1:'The cloud data path',side2:'Processing and retention',side3:'Sensitive text',side4:'Local translation',relatedTitle:'Related Insights',related1:'Why offline translation really matters',related2:'Behind the scenes of local models',related3:'How ALT+Z works',
+shareTitle:'Share this Insight',shareText:'If you think it could be useful to someone else.',copyLink:'Copy link',copied:'Link copied'
+}
+};
+
+let currentLang='it';
+function applyLanguage(lang,persist=true){
+  if(!I18N[lang]) lang='it';
+  currentLang=lang;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n;
+    if(I18N[lang][k]!==undefined) el.textContent=I18N[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k=el.dataset.i18nHtml;
+    if(I18N[lang][k]!==undefined) el.innerHTML=I18N[lang][k];
+  });
+  document.title=I18N[lang].pageTitle;
+  const m=document.querySelector('meta[name="description"]');
+  if(m) m.setAttribute('content',I18N[lang].metaDescription);
+  document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+  document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+  if(persist) localStorage.setItem('slangbit-language',lang);
+}
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage||(browserLanguage.startsWith('it')?'it':'en'),false);
+
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+  const button=document.getElementById('copyShareLink');
+  try{
+    await navigator.clipboard.writeText('https://slangbit.com/insights/what-happens-to-pasted-text-in-cloud-services.html');
+    const span=button?.querySelector('span');
+    const original=span?.textContent||'';
+    if(span) span.textContent=I18N[currentLang].copied;
+    setTimeout(()=>{if(span) span.textContent=original},1600);
+  }catch(error){
+    window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/what-happens-to-pasted-text-in-cloud-services.html');
+  }
+});
+</script>
+
 </body>
 </html>
