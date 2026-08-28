@@ -8,16 +8,27 @@
   <meta name="description" content="Esplora SlangBit Insights: articoli pratici su traduzione offline, modelli AI locali, privacy, cambio di contesto e workflow Windows multilingua.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://slangbit.com/insights/">
+  <link rel="alternate" hreflang="it" href="https://slangbit.com/insights/">
+  <link rel="alternate" hreflang="en" href="https://slangbit.com/insights/">
+  <link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SlangBit">
   <meta property="og:title" content="SlangBit Insights">
   <meta property="og:description" content="Articoli pratici su traduzione offline, privacy, AI locale e workflow Windows più efficienti.">
   <meta property="og:url" content="https://slangbit.com/insights/">
+  <meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SlangBit Insights">
   <meta name="twitter:description" content="Traduzione offline, privacy, AI locale e workflow Windows migliori.">
+  <meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+  <meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 
   <script type="application/ld+json">
   {
@@ -68,6 +79,30 @@
       text-decoration:none;border:1px solid #d5dee8;border-radius:8px;font-size:10px;font-weight:800;color:#334155;background:#fff
     }
     .nav-btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+
+    .lang-switch{
+      display:inline-flex;align-items:center;gap:4px;padding:3px;
+      border:1px solid #d5dee8;border-radius:999px;background:#fff
+    }
+    .lang-switch button{
+      min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;
+      background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer
+    }
+    .lang-switch button.active{background:var(--blue);color:#fff}
+    .share-section{
+      padding:46px 2.8vw 34px;text-align:center;border-top:1px solid #e6ebf1;background:#fbfdff
+    }
+    .share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+    .share-section p{color:var(--muted);margin-bottom:20px}
+    .share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+    .share-button{
+      min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;
+      color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px
+    }
+    .share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+    .share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 
     .hero{
       min-height:calc(100vh - 64px);padding:7vh 3vw 5vh;
@@ -216,15 +251,19 @@
     <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
   </a>
   <div class="nav-links">
-    <a href="/">Prodotto</a>
-    <a href="/#how">Come funziona</a>
+    <a href="/" data-i18n="navProduct">Prodotto</a>
+    <a href="/#how" data-i18n="navHow">Come funziona</a>
     <a href="/#privacy">Privacy</a>
     <a href="/insights/" class="active">Insights</a>
     <a href="/#faq">FAQ</a>
   </div>
   <div class="nav-actions">
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" id="langIt">IT</button>
+      <button type="button" id="langEn">EN</button>
+    </div>
     <a class="nav-btn" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a class="nav-btn primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    <a class="nav-btn primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
   </div>
 </nav>
 
@@ -232,23 +271,23 @@
   <header class="hero">
     <div class="hero-inner">
       <div class="badge"><span class="badge-dot"></span> SlangBit Insights</div>
-      <h1>Traduzione, privacy e<span>workflow Windows migliori.</span></h1>
-      <p class="hero-sub">Articoli pratici sulla traduzione offline, sui modelli AI locali, sulla privacy del testo, sul cambio di contesto e sulle scelte di prodotto dietro SlangBit.</p>
+      <h1 data-i18n-html="heroTitle">Traduzione, privacy e<span>workflow Windows migliori.</span></h1>
+      <p class="hero-sub" data-i18n="heroText">Articoli pratici sulla traduzione offline, sui modelli AI locali, sulla privacy del testo, sul cambio di contesto e sulle scelte di prodotto dietro SlangBit.</p>
       <div class="topic-nav">
-        <span class="topic-chip">AI locale</span>
+        <span class="topic-chip" data-i18n="chipAI">AI locale</span>
         <span class="topic-chip">Privacy</span>
         <span class="topic-chip">Workflow</span>
         <span class="topic-chip">Tutorial</span>
-        <span class="topic-chip">Filosofia del prodotto</span>
+        <span class="topic-chip" data-i18n="chipProduct">Filosofia del prodotto</span>
       </div>
     </div>
   </header>
 
   <section aria-labelledby="featured-title">
     <div class="section-head">
-      <div class="section-label">Da dove iniziare</div>
-      <h2 class="section-title" id="featured-title">Insights in evidenza</h2>
-      <p class="section-sub">Le idee centrali dietro la traduzione locale: come funzionano i modelli, cosa cambia quando il testo resta sul dispositivo e perché il design del workflow conta.</p>
+      <div class="section-label" data-i18n="featuredLabel">Da dove iniziare</div>
+      <h2 class="section-title" id="featured-title" data-i18n="featuredTitle">Insights in evidenza</h2>
+      <p class="section-sub" data-i18n="featuredText">Le idee centrali dietro la traduzione locale: come funzionano i modelli, cosa cambia quando il testo resta sul dispositivo e perché il design del workflow conta.</p>
     </div>
 
     <div class="featured-grid">
@@ -322,25 +361,171 @@
 
   <div class="about-band">
     <div>
-      <h2>Cos'è SlangBit</h2>
-      <p>SlangBit è una utility di traduzione offline per Windows. Usa modelli linguistici installati localmente e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.</p>
+      <h2 data-i18n="aboutTitle">Cos'è SlangBit</h2>
+      <p data-i18n="aboutText">SlangBit è una utility di traduzione offline per Windows. Usa modelli linguistici installati localmente e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.</p>
     </div>
-    <a class="btn-primary" href="/">Scopri SlangBit</a>
+    <a class="btn-primary" href="/" data-i18n="discover">Scopri SlangBit</a>
   </div>
 </main>
+
+<section class="share-section" aria-labelledby="shareInsightsTitle">
+  <h3 id="shareInsightsTitle" data-i18n="shareTitle">Condividi SlangBit Insights</h3>
+  <p data-i18n="shareText">Se pensi che questi contenuti possano essere utili anche a qualcun altro.</p>
+  <div class="share-buttons">
+    <a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2F&text=SlangBit%20Insights%20%E2%80%94%20traduzione%20offline%2C%20privacy%20e%20workflow%20Windows." target="_blank" rel="noopener noreferrer">
+      <img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span>
+    </a>
+    <a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2F" target="_blank" rel="noopener noreferrer">
+      <img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span>
+    </a>
+    <a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2F" target="_blank" rel="noopener noreferrer">
+      <img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span>
+    </a>
+    <button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+  </div>
+</section>
 
 <footer>
   <div class="footer-inner">
     <div>
       <div class="footer-brand"><div class="logo-mark">SB</div><div><strong>SlangBit</strong><span>by Memmola Labs®</span></div></div>
-      <p class="footer-copy">Traduzione AI desktop per Windows. Offline. Privata. Pratica.</p>
+      <p class="footer-copy" data-i18n="footerCopy">Traduzione AI desktop per Windows. Offline. Privata. Pratica.</p>
     </div>
-    <div class="footer-col"><h2>Prodotto</h2><a href="/#features">Funzioni</a><a href="/#how">Come funziona</a><a href="/#languages">Lingue</a><a href="/#download">Download</a></div>
+    <div class="footer-col"><h2 data-i18n="footerProduct">Prodotto</h2><a href="/#features">Funzioni</a><a href="/#how">Come funziona</a><a href="/#languages">Lingue</a><a href="/#download">Download</a></div>
     <div class="footer-col"><h2>Insights</h2><a href="behind-the-scenes-of-local-models.html">Modelli locali</a><a href="why-an-offline-translation-really-counts.html">Traduzione offline</a><a href="the-hidden-cost-of-the-change-of-application.html">Workflow Windows</a></div>
-    <div class="footer-col"><h2>Risorse</h2><a href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a><a href="/README.md">README</a><a href="/CHANGELOG.md">Changelog</a></div>
-    <div class="copyright">© 2026 Memmola Labs®<br>Tutti i diritti riservati.<div class="memmola-badge">MEMMOLA LABS</div></div>
+    <div class="footer-col"><h2 data-i18n="footerResources">Risorse</h2><a href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a><a href="/README.md">README</a><a href="/CHANGELOG.md">Changelog</a></div>
+    <div class="copyright">© 2026 Memmola Labs®<br><span data-i18n="rights">Tutti i diritti riservati.</span><div class="memmola-badge">MEMMOLA LABS</div></div>
   </div>
 </footer>
+
+
+<script>
+const I18N = {
+  it: {
+    pageTitle:'SlangBit Insights | Traduzione offline, privacy e workflow Windows',
+    metaDescription:'Esplora SlangBit Insights: articoli pratici su traduzione offline, modelli AI locali, privacy, cambio di contesto e workflow Windows multilingua.',
+    navProduct:'Prodotto', navHow:'Come funziona',
+    heroTitle:'Traduzione, privacy e<span>workflow Windows migliori.</span>',
+    heroText:'Articoli pratici sulla traduzione offline, sui modelli AI locali, sulla privacy del testo, sul cambio di contesto e sulle scelte di prodotto dietro SlangBit.',
+    chipAI:'AI locale', chipProduct:'Filosofia del prodotto',
+    featuredLabel:'Da dove iniziare', featuredTitle:'Insights in evidenza',
+    featuredText:'Le idee centrali dietro la traduzione locale: come funzionano i modelli, cosa cambia quando il testo resta sul dispositivo e perché il design del workflow conta.',
+    aboutTitle:"Cos'è SlangBit", aboutText:'SlangBit è una utility di traduzione offline per Windows. Usa modelli linguistici installati localmente e una scorciatoia globale per tradurre il testo copiato senza aprire un sito di traduzione separato.',
+    discover:'Scopri SlangBit', footerCopy:'Traduzione AI desktop per Windows. Offline. Privata. Pratica.', footerProduct:'Prodotto', footerResources:'Risorse', rights:'Tutti i diritti riservati.',
+    shareTitle:'Condividi SlangBit Insights', shareText:'Se pensi che questi contenuti possano essere utili anche a qualcun altro.', copyLink:'Copia link', copied:'Link copiato'
+  },
+  en: {
+    pageTitle:'SlangBit Insights | Offline translation, privacy and Windows workflows',
+    metaDescription:'Explore SlangBit Insights: practical articles about offline translation, local AI models, privacy, context switching and multilingual Windows workflows.',
+    navProduct:'Product', navHow:'How it works',
+    heroTitle:'Translation, privacy and<span>better Windows workflows.</span>',
+    heroText:'Practical articles about offline translation, local AI models, text privacy, context switching and the product choices behind SlangBit.',
+    chipAI:'Local AI', chipProduct:'Product philosophy',
+    featuredLabel:'Where to start', featuredTitle:'Featured Insights',
+    featuredText:'The core ideas behind local translation: how models work, what changes when text stays on-device and why workflow design matters.',
+    aboutTitle:'What is SlangBit?', aboutText:'SlangBit is an offline translation utility for Windows. It uses locally installed language models and a global shortcut to translate copied text without opening a separate translation website.',
+    discover:'Discover SlangBit', footerCopy:'Desktop AI translation for Windows. Offline. Private. Practical.', footerProduct:'Product', footerResources:'Resources', rights:'All rights reserved.',
+    shareTitle:'Share SlangBit Insights', shareText:'If you think these articles could be useful to someone else.', copyLink:'Copy link', copied:'Link copied'
+  }
+};
+
+const ARTICLE_TEXT_EN = {
+  'AI locale':'Local AI',
+  'Dietro le quinte dei modelli di traduzione locali':'Behind the scenes of local translation models',
+  'Uno sguardo pratico ai file dei modelli, alla tokenizzazione, a CTranslate2, OPUS-MT e ai passaggi necessari per generare una traduzione localmente.':'A practical look at model files, tokenization, CTranslate2, OPUS-MT and the steps required to generate a translation locally.',
+  'Approfondimento tecnico':'Technical deep dive',
+  '9 min di lettura':'9 min read',
+  "Leggi l'insight →":'Read the insight →',
+  'Cosa succede al testo incollato nei servizi cloud?':'What happens to text pasted into cloud services?',
+  'Cosa possono significare elaborazione esterna, conservazione e metadati, e come la traduzione locale cambia il percorso seguito dal testo.':'What external processing, retention and metadata can mean, and how local translation changes the path your text takes.',
+  'Dati e privacy':'Data and privacy',
+  '8 min di lettura':'8 min read',
+  'Traduzione offline':'Offline translation',
+  'Perché la traduzione offline conta davvero':'Why offline translation really matters',
+  'La traduzione offline non significa soltanto lavorare senza Wi‑Fi. Cambia privacy, disponibilità e controllo sul workflow.':'Offline translation is not only about working without Wi‑Fi. It changes privacy, availability and control over your workflow.',
+  'Il costo nascosto del cambio di applicazione':'The hidden cost of switching applications',
+  'Tradurre può richiedere pochi secondi. Lasciare il compito corrente e recuperare la concentrazione può costare molto di più.':'Translation may take only a few seconds. Leaving the current task and regaining focus can cost much more.',
+  '7 min di lettura':'7 min read',
+  'Filosofia del prodotto':'Product philosophy',
+  'Perché abbiamo scelto un acquisto una tantum':'Why we chose a one-time purchase',
+  'Perché una utility Windows offline non deve necessariamente diventare un altro abbonamento ricorrente.':'Why an offline Windows utility does not necessarily need to become another recurring subscription.',
+  'Tutorial email':'Email tutorial',
+  "Come tradurre direttamente dentro un'email":'How to translate directly inside an email',
+  'Traduci passaggi selezionati mantenendo visibili il messaggio, la sua struttura e il contesto di scrittura.':'Translate selected passages while keeping the message, its structure and writing context visible.',
+  'Leggi la guida →':'Read the guide →',
+  'Workflow social':'Social workflow',
+  'Come tradurre un post senza uscire da X':'How to translate a post without leaving X',
+  'Mantieni il ritmo di una bozza o di una risposta mentre controlli tono, lunghezza, hashtag, menzioni e contesto.':'Keep the flow of a draft or reply while checking tone, length, hashtags, mentions and context.',
+  'Come funziona ALT + Z in SlangBit':'How ALT + Z works in SlangBit',
+  'Come la scorciatoia globale collega gli appunti, il pacchetto lingua selezionato e il motore di traduzione locale.':'How the global shortcut connects the clipboard, the selected language package and the local translation engine.',
+  'Prodotto':'Product',
+  'Come funziona':'How it works',
+  'Funzioni':'Features',
+  'Lingue':'Languages',
+  'Traduzione offline':'Offline translation',
+  'Workflow Windows':'Windows workflows'
+};
+
+const ARTICLE_TEXT_IT = Object.fromEntries(Object.entries(ARTICLE_TEXT_EN).map(([it,en]) => [en,it]));
+
+let currentLang='it';
+
+function translateArticleText(lang){
+  const map = lang === 'en' ? ARTICLE_TEXT_EN : ARTICLE_TEXT_IT;
+  document.querySelectorAll('.featured-card, .article-card, footer').forEach(root => {
+    root.querySelectorAll('a, p, span, div.article-tag, h2').forEach(el => {
+      const text = el.textContent.trim();
+      if(map[text]) el.textContent = map[text];
+    });
+  });
+}
+
+function applyLanguage(lang,persist=true){
+  if(!I18N[lang]) lang='it';
+  currentLang=lang;
+  document.documentElement.lang=lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.dataset.i18n;
+    if(I18N[lang][key]!==undefined) el.textContent=I18N[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const key=el.dataset.i18nHtml;
+    if(I18N[lang][key]!==undefined) el.innerHTML=I18N[lang][key];
+  });
+
+  translateArticleText(lang);
+
+  document.title=I18N[lang].pageTitle;
+  const meta=document.querySelector('meta[name="description"]');
+  if(meta) meta.setAttribute('content',I18N[lang].metaDescription);
+
+  document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+  document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+
+  if(persist) localStorage.setItem('slangbit-language',lang);
+}
+
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage || (browserLanguage.startsWith('it')?'it':'en'), false);
+
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+  const button=document.getElementById('copyShareLink');
+  try{
+    await navigator.clipboard.writeText('https://slangbit.com/insights/');
+    const span=button?.querySelector('span');
+    const original=span?.textContent || '';
+    if(span) span.textContent=I18N[currentLang].copied;
+    setTimeout(()=>{if(span) span.textContent=original},1600);
+  }catch(error){
+    window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/');
+  }
+});
+</script>
 
 </body>
 </html>
