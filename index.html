@@ -76,6 +76,8 @@ nav{
   text-decoration:none;border:1px solid #d5dee8;border-radius:8px;font-size:10px;font-weight:800;color:#334155;background:#fff
 }
 .nav-btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}.lang-switch button.active{background:var(--blue);color:#fff}.share-button{display:inline-flex;align-items:center;justify-content:center;gap:8px}.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}@media(max-width:650px){.nav-actions{gap:6px}.lang-switch button{min-width:31px;padding:0 7px}}
+
 
 .hero{
   min-height:calc(100vh - 64px);padding:48px 3.5vw 26px;
@@ -551,12 +553,13 @@ section{
     <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
   </a>
   <div class="nav-links">
-    <a href="#features">Funzioni</a><a href="#how">Come funziona</a><a href="#languages">Lingue</a>
-    <a href="#architecture">Architettura</a><a href="insights/">Insights</a><a href="#faq">FAQ</a>
+    <a href="#features" data-i18n="navFeatures">Funzioni</a><a href="#how" data-i18n="navHow">Come funziona</a><a href="#languages" data-i18n="navLanguages">Lingue</a>
+    <a href="#architecture" data-i18n="navArchitecture">Architettura</a><a href="insights/">Insights</a><a href="#faq">FAQ</a>
   </div>
   <div class="nav-actions">
+    <div class="lang-switch" aria-label="Language"><button type="button" id="langIt">IT</button><button type="button" id="langEn">EN</button></div>
     <a class="nav-btn" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a class="nav-btn primary" href="#download">Scarica</a>
+    <a class="nav-btn primary" href="#download" data-i18n="navDownload">Scarica</a>
   </div>
 </nav>
 
@@ -568,36 +571,36 @@ section{
 </section>
 
 <section id="how">
-  <div class="section-head"><div class="section-label">Come funziona</div><h2 class="section-title">Tre passaggi. Tutto qui.</h2></div>
+  <div class="section-head"><div class="section-label" data-i18n="howLabel">Come funziona</div><h2 class="section-title" data-i18n="howTitle">Tre passaggi. Tutto qui.</h2></div>
   <div class="steps">
-    <article class="step-card"><div><div class="step-num">01</div><div class="step-icon">📄</div></div><div><h3>Copia</h3><p>Copia il testo selezionato da qualsiasi applicazione Windows.</p></div></article>
+    <article class="step-card"><div><div class="step-num">01</div><div class="step-icon">📄</div></div><div><h3 data-i18n="stepCopyTitle">Copia</h3><p data-i18n="stepCopyText">Copia il testo selezionato da qualsiasi applicazione Windows.</p></div></article>
     <div class="arrow">›</div>
-    <article class="step-card"><div><div class="step-num">02</div><div class="step-icon">⌨️</div></div><div><h3>Premi ALT + Z</h3><p>Usa la scorciatoia globale per tradurre il testo localmente.</p></div></article>
+    <article class="step-card"><div><div class="step-num">02</div><div class="step-icon">⌨️</div></div><div><h3 data-i18n="stepAltTitle">Premi ALT + Z</h3><p data-i18n="stepAltText">Usa la scorciatoia globale per tradurre il testo localmente.</p></div></article>
     <div class="arrow">›</div>
-    <article class="step-card"><div><div class="step-num">03</div><div class="step-icon">📋</div></div><div><h3>Incolla</h3><p>Il testo tradotto viene rimesso negli appunti e incollato automaticamente.</p></div></article>
+    <article class="step-card"><div><div class="step-num">03</div><div class="step-icon">📋</div></div><div><h3 data-i18n="stepPasteTitle">Incolla</h3><p data-i18n="stepPasteText">Il testo tradotto viene rimesso negli appunti e incollato automaticamente.</p></div></article>
   </div>
 </section>
 
 <section id="features">
-  <div class="section-head"><div class="section-label">Perché SlangBit</div><h2 class="section-title">Privacy, velocità e controllo.</h2><p class="section-sub">SlangBit resta fuori dal tuo lavoro finché non ti serve. Nessun portale da aprire, nessun testo da inviare al cloud.</p></div>
+  <div class="section-head"><div class="section-label" data-i18n="whyLabel">Perché SlangBit</div><h2 class="section-title" data-i18n="whyTitle">Privacy, velocità e controllo.</h2><p class="section-sub" data-i18n="whyText">SlangBit resta fuori dal tuo lavoro finché non ti serve. Nessun portale da aprire, nessun testo da inviare al cloud.</p></div>
   <div class="features">
-    <article class="feature-card"><div class="feature-icon">🔒</div><h3>100% privato</h3><p>Il testo non lascia mai il tuo computer. La traduzione avviene localmente.</p></article>
-    <article class="feature-card"><div class="feature-icon">☁️</div><h3>Nessun cloud</h3><p>Nessuna API di traduzione cloud, nessun processamento esterno, nessun account.</p></article>
-    <article class="feature-card"><div class="feature-icon">📦</div><h3>Gestione pacchetti</h3><p>Scarica e installa soltanto i pacchetti lingua che ti servono davvero.</p></article>
-    <article class="feature-card"><div class="feature-icon">⚡</div><h3>Workflow da tray</h3><p>SlangBit lavora in background e compare solo quando premi ALT + Z.</p></article>
+    <article class="feature-card"><div class="feature-icon">🔒</div><h3 data-i18n="privateTitle">100% privato</h3><p data-i18n="privateText">Il testo non lascia mai il tuo computer. La traduzione avviene localmente.</p></article>
+    <article class="feature-card"><div class="feature-icon">☁️</div><h3 data-i18n="cloudTitle">Nessun cloud</h3><p data-i18n="cloudText">Nessuna API di traduzione cloud, nessun processamento esterno, nessun account.</p></article>
+    <article class="feature-card"><div class="feature-icon">📦</div><h3 data-i18n="packagesTitle">Gestione pacchetti</h3><p data-i18n="packagesText">Scarica e installa soltanto i pacchetti lingua che ti servono davvero.</p></article>
+    <article class="feature-card"><div class="feature-icon">⚡</div><h3 data-i18n="trayTitle">Workflow da tray</h3><p data-i18n="trayText">SlangBit lavora in background e compare solo quando premi ALT + Z.</p></article>
   </div>
 </section>
 
 <div class="languages-wrap">
 <section id="languages">
-  <div class="section-head"><div class="section-label">Lingue supportate</div><h2 class="section-title">Installa solo ciò che ti serve.</h2><p class="section-sub">I pacchetti lingua vengono installati localmente e gestiti dal Package Manager integrato.</p></div>
+  <div class="section-head"><div class="section-label" data-i18n="languagesLabel">Lingue supportate</div><h2 class="section-title" data-i18n="languagesTitle">Installa solo ciò che ti serve.</h2><p class="section-sub" data-i18n="languagesText">I pacchetti lingua vengono installati localmente e gestiti dal Package Manager integrato.</p></div>
   <div class="languages-grid">
-    <article class="language-card"><div class="lang-code">IT</div><strong>Italiano</strong><span>Pacchetto locale</span></article>
-    <article class="language-card"><div class="lang-code">EN</div><strong>Inglese</strong><span>Pacchetto locale</span></article>
-    <article class="language-card"><div class="lang-code">ES</div><strong>Spagnolo</strong><span>Pacchetto locale</span></article>
-    <article class="language-card"><div class="lang-code">FR</div><strong>Francese</strong><span>Previsto</span></article>
-    <article class="language-card"><div class="lang-code">DE</div><strong>Tedesco</strong><span>Previsto</span></article>
-    <article class="language-card"><div class="lang-code">ZH</div><strong>Cinese</strong><span>Previsto</span></article>
+    <article class="language-card"><div class="lang-code">IT</div><strong data-i18n="langItalian">Italiano</strong><span data-i18n="localPackage">Pacchetto locale</span></article>
+    <article class="language-card"><div class="lang-code">EN</div><strong data-i18n="langEnglish">Inglese</strong><span data-i18n="localPackage">Pacchetto locale</span></article>
+    <article class="language-card"><div class="lang-code">ES</div><strong data-i18n="langSpanish">Spagnolo</strong><span data-i18n="localPackage">Pacchetto locale</span></article>
+    <article class="language-card"><div class="lang-code">FR</div><strong data-i18n="langFrench">Francese</strong><span data-i18n="planned">Previsto</span></article>
+    <article class="language-card"><div class="lang-code">DE</div><strong data-i18n="langGerman">Tedesco</strong><span data-i18n="planned">Previsto</span></article>
+    <article class="language-card"><div class="lang-code">ZH</div><strong data-i18n="langChinese">Cinese</strong><span data-i18n="planned">Previsto</span></article>
   </div>
 </section>
 </div>
@@ -605,29 +608,29 @@ section{
 <section id="architecture">
   <div class="split">
     <div>
-      <div class="comparison-title">SlangBit vs traduttori cloud</div>
+      <div class="comparison-title" data-i18n="compareTitle">SlangBit vs traduttori cloud</div>
       <div class="comparison"><table>
-        <thead><tr><th>Funzione</th><th>SlangBit</th><th>Traduttori cloud</th></tr></thead>
+        <thead><tr><th data-i18n="featureCol">Funzione</th><th>SlangBit</th><th data-i18n="cloudCol">Traduttori cloud</th></tr></thead>
         <tbody>
-          <tr><td>Funziona offline</td><td class="yes">✓ Sì</td><td class="no">× No</td></tr>
-          <tr><td>Nessun account richiesto</td><td class="yes">✓ Sì</td><td class="no">× No</td></tr>
-          <tr><td>Nessun abbonamento</td><td class="yes">✓ Sì</td><td class="no">× No</td></tr>
-          <tr><td>I dati restano locali</td><td class="yes">✓ Sì</td><td class="no">× No</td></tr>
-          <tr><td>Modelli AI locali</td><td class="yes">✓ Sì</td><td class="no">× No</td></tr>
-          <tr><td>Controllo dei pacchetti</td><td class="yes">✓ Sì</td><td class="no">× No</td></tr>
+          <tr><td data-i18n="rowOffline">Funziona offline</td><td class="yes" data-i18n="yes">✓ Sì</td><td class="no" data-i18n="no">× No</td></tr>
+          <tr><td data-i18n="rowAccount">Nessun account richiesto</td><td class="yes" data-i18n="yes">✓ Sì</td><td class="no" data-i18n="no">× No</td></tr>
+          <tr><td data-i18n="rowSubscription">Nessun abbonamento</td><td class="yes" data-i18n="yes">✓ Sì</td><td class="no" data-i18n="no">× No</td></tr>
+          <tr><td data-i18n="rowLocalData">I dati restano locali</td><td class="yes" data-i18n="yes">✓ Sì</td><td class="no" data-i18n="no">× No</td></tr>
+          <tr><td data-i18n="rowLocalModels">Modelli AI locali</td><td class="yes" data-i18n="yes">✓ Sì</td><td class="no" data-i18n="no">× No</td></tr>
+          <tr><td data-i18n="rowPackages">Controllo dei pacchetti</td><td class="yes" data-i18n="yes">✓ Sì</td><td class="no" data-i18n="no">× No</td></tr>
         </tbody>
       </table></div>
     </div>
     <div>
-      <div class="architecture-title">Architettura</div>
+      <div class="architecture-title" data-i18n="architectureTitle">Architettura</div>
       <div class="architecture">
-        <div class="arch-card"><div class="arch-icon">SB</div><div><strong>SlangBit</strong><span>Applicazione desktop Windows in tray</span></div></div>
+        <div class="arch-card"><div class="arch-icon">SB</div><div><strong>SlangBit</strong><span data-i18n="archSlangBit">Applicazione desktop Windows in tray</span></div></div>
         <div class="arch-arrow">↓</div>
-        <div class="arch-card"><div class="arch-icon">⚙</div><div><strong>CTranslate2</strong><span>Inferenza ad alte prestazioni</span></div></div>
+        <div class="arch-card"><div class="arch-icon">⚙</div><div><strong>CTranslate2</strong><span data-i18n="archCT2">Inferenza ad alte prestazioni</span></div></div>
         <div class="arch-arrow">↓</div>
-        <div class="arch-card"><div class="arch-icon">✦</div><div><strong>OPUS-MT</strong><span>Traduzione neurale</span></div></div>
+        <div class="arch-card"><div class="arch-icon">✦</div><div><strong>OPUS-MT</strong><span data-i18n="archOpus">Traduzione neurale</span></div></div>
         <div class="arch-arrow">↓</div>
-        <div class="arch-card"><div class="arch-icon">▣</div><div><strong>Modelli AI locali</strong><span>Salvati sul tuo computer</span></div></div>
+        <div class="arch-card"><div class="arch-icon">▣</div><div><strong data-i18n="archModelsTitle">Modelli AI locali</strong><span data-i18n="archModelsText">Salvati sul tuo computer</span></div></div>
       </div>
     </div>
   </div>
@@ -636,66 +639,66 @@ section{
 <section id="validation">
   <div class="validation-banner">
     <div class="section-label">Engineering & Validation</div>
-    <h2 class="validation-title">Progettato. Testato. <span>Validato.</span></h2>
-    <p class="validation-description">SlangBit è stato testato su workflow Windows reali: browser, software Office, client email, social, codice sorgente, documenti lunghi, contenuti HTML e ambienti offline.</p>
-    <p class="validation-description">L'indagine collegata alla certificazione ha portato a ulteriori stress test, analisi dei casi limite, hardening dell'input e al completamento con successo della certificazione Microsoft Store.</p>
+    <h2 class="validation-title" data-i18n-html="validationTitle">Progettato. Testato. <span>Validato.</span></h2>
+    <p class="validation-description" data-i18n="validationText1">SlangBit è stato testato su workflow Windows reali: browser, software Office, client email, social, codice sorgente, documenti lunghi, contenuti HTML e ambienti offline.</p>
+    <p class="validation-description" data-i18n="validationText2">L'indagine collegata alla certificazione ha portato a ulteriori stress test, analisi dei casi limite, hardening dell'input e al completamento con successo della certificazione Microsoft Store.</p>
     <div class="validation-grid">
-      <div class="validation-stat"><strong>25.000+</strong><span>Caratteri elaborati nei test di traduzione su testi lunghi.</span></div>
-      <div class="validation-stat"><strong>WORKFLOW REALI</strong><span>Validato su browser, Office, email, social, strumenti di sviluppo e applicazioni Windows.</span></div>
-      <div class="validation-stat"><strong>EDGE CASE</strong><span>Input insoliti riprodotti, analizzati e gestiti con normalizzazione aggiuntiva.</span></div>
-      <div class="validation-stat"><strong>STORE CERTIFIED</strong><span>Certificazione Microsoft Store completata per la distribuzione Windows.</span></div>
+      <div class="validation-stat"><strong>25.000+</strong><span data-i18n="statChars">Caratteri elaborati nei test di traduzione su testi lunghi.</span></div>
+      <div class="validation-stat"><strong data-i18n="statWorkflowTitle">WORKFLOW REALI</strong><span data-i18n="statWorkflowText">Validato su browser, Office, email, social, strumenti di sviluppo e applicazioni Windows.</span></div>
+      <div class="validation-stat"><strong>EDGE CASE</strong><span data-i18n="statEdgeText">Input insoliti riprodotti, analizzati e gestiti con normalizzazione aggiuntiva.</span></div>
+      <div class="validation-stat"><strong>STORE CERTIFIED</strong><span data-i18n="statStoreText">Certificazione Microsoft Store completata per la distribuzione Windows.</span></div>
     </div>
     <div class="validation-actions">
-      <a class="btn-primary" href="engineering.html">Esplora l'engineering →</a>
-      <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">Documentazione tecnica</a>
+      <a class="btn-primary" href="engineering.html" data-i18n="engineeringLink">Esplora l'engineering →</a>
+      <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer" data-i18n="techDocs">Documentazione tecnica</a>
     </div>
   </div>
 </section>
 
 <section id="privacy">
   <div class="privacy-band">
-    <div><h2>Privato per progettazione.</h2><p>SlangBit non invia il testo tradotto a Memmola Labs né a servizi di traduzione di terze parti. Una volta installato il pacchetto lingua, la traduzione avviene localmente sul tuo PC Windows.</p></div>
-    <div class="privacy-badge">NESSUNA TRADUZIONE CLOUD</div>
+    <div><h2 data-i18n="privacyTitle">Privato per progettazione.</h2><p data-i18n="privacyText">SlangBit non invia il testo tradotto a Memmola Labs né a servizi di traduzione di terze parti. Una volta installato il pacchetto lingua, la traduzione avviene localmente sul tuo PC Windows.</p></div>
+    <div class="privacy-badge" data-i18n="privacyBadge">NESSUNA TRADUZIONE CLOUD</div>
   </div>
 </section>
 
 <section id="faq">
-  <div class="section-head"><div class="section-label">FAQ</div><h2 class="section-title">Domande frequenti.</h2></div>
+  <div class="section-head"><div class="section-label">FAQ</div><h2 class="section-title" data-i18n="faqTitle">Domande frequenti.</h2></div>
   <div class="faq">
-    <article class="faq-item"><h3>SlangBit ha bisogno di internet?</h3><p>Solo per scaricare i pacchetti lingua o aprire la documentazione. La traduzione funziona localmente dopo l'installazione.</p></article>
-    <article class="faq-item"><h3>SlangBit raccoglie il testo?</h3><p>No. Il testo copiato viene elaborato localmente e non viene inviato a Memmola Labs o ad API di traduzione cloud.</p></article>
-    <article class="faq-item"><h3>Quali applicazioni Windows sono supportate?</h3><p>La maggior parte delle applicazioni in cui è possibile copiare e incollare testo: browser, editor, client email e software da ufficio.</p></article>
-    <article class="faq-item"><h3>I pacchetti lingua sono inclusi?</h3><p>I pacchetti vengono gestiti separatamente tramite il Package Manager, così puoi installare solo le lingue che ti servono.</p></article>
+    <article class="faq-item"><h3 data-i18n="faq1q">SlangBit ha bisogno di internet?</h3><p data-i18n="faq1a">Solo per scaricare i pacchetti lingua o aprire la documentazione. La traduzione funziona localmente dopo l'installazione.</p></article>
+    <article class="faq-item"><h3 data-i18n="faq2q">SlangBit raccoglie il testo?</h3><p data-i18n="faq2a">No. Il testo copiato viene elaborato localmente e non viene inviato a Memmola Labs o ad API di traduzione cloud.</p></article>
+    <article class="faq-item"><h3 data-i18n="faq3q">Quali applicazioni Windows sono supportate?</h3><p data-i18n="faq3a">La maggior parte delle applicazioni in cui è possibile copiare e incollare testo: browser, editor, client email e software da ufficio.</p></article>
+    <article class="faq-item"><h3 data-i18n="faq4q">I pacchetti lingua sono inclusi?</h3><p data-i18n="faq4a">I pacchetti vengono gestiti separatamente tramite il Package Manager, così puoi installare solo le lingue che ti servono.</p></article>
   </div>
 </section>
 
 <section id="download">
   <div class="download-panel">
     <div class="section-label">Download</div>
-    <h2>SlangBit per Windows</h2>
-    <p>Disponibile su Microsoft Store. Un solo acquisto, nessun abbonamento.</p>
+    <h2 data-i18n="downloadTitle">SlangBit per Windows</h2>
+    <p data-i18n="downloadText">Disponibile su Microsoft Store. Un solo acquisto, nessun abbonamento.</p>
     <div class="hero-actions" style="justify-content:center">
-      <a class="btn-primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT">Scarica dal Microsoft Store</a>
-      <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">Vedi su GitHub</a>
+      <a class="btn-primary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" data-i18n="storeButton">Scarica dal Microsoft Store</a>
+      <a class="btn-secondary" href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer" data-i18n="githubButton">Vedi su GitHub</a>
     </div>
   </div>
 </section>
 
 <section id="insights-preview" class="insights-preview">
-  <div class="section-head"><div class="section-label">SlangBit Insights</div><h2 class="section-title">Traduzione, privacy e workflow Windows.</h2><p class="section-sub">Approfondimenti sull'AI locale, l'elaborazione privata del testo e il costo nascosto del cambio continuo di applicazione.</p></div>
+  <div class="section-head"><div class="section-label">SlangBit Insights</div><h2 class="section-title" data-i18n="insightsTitle">Traduzione, privacy e workflow Windows.</h2><p class="section-sub" data-i18n="insightsText">Approfondimenti sull'AI locale, l'elaborazione privata del testo e il costo nascosto del cambio continuo di applicazione.</p></div>
   <div class="insights-preview-grid">
-    <article class="insights-preview-card"><div class="insights-preview-tag">Local AI</div><h3><a href="insights/behind-the-scenes-of-local-models.html">Dietro le quinte dei modelli di traduzione locali</a></h3><p>Cosa succede durante una traduzione offline, dalla tokenizzazione all'inferenza fino al testo restituito a Windows.</p><a class="insights-preview-link" href="insights/behind-the-scenes-of-local-models.html">Leggi →</a></article>
-    <article class="insights-preview-card"><div class="insights-preview-tag">Privacy</div><h3><a href="insights/what-happens-to-pasted-text-in-cloud-services.html">Cosa succede al testo incollato nei servizi cloud?</a></h3><p>Elaborazione esterna, conservazione, metadati e differenze concrete tra traduzione cloud e locale.</p><a class="insights-preview-link" href="insights/what-happens-to-pasted-text-in-cloud-services.html">Leggi →</a></article>
-    <article class="insights-preview-card"><div class="insights-preview-tag">Workflow</div><h3><a href="insights/the-hidden-cost-of-the-change-of-application.html">Il costo nascosto del cambio di applicazione</a></h3><p>Tradurre richiede secondi, ma lasciare il task corrente e recuperare concentrazione può costare molto di più.</p><a class="insights-preview-link" href="insights/the-hidden-cost-of-the-change-of-application.html">Leggi →</a></article>
-    <article class="insights-preview-card"><div class="insights-preview-tag">ALT + Z</div><h3><a href="insights/how-ALT+Z-works.html">Come funziona ALT + Z in SlangBit</a></h3><p>La scorciatoia globale collega appunti Windows, pacchetto lingua selezionato e motore di traduzione locale.</p><a class="insights-preview-link" href="insights/how-ALT+Z-works.html">Leggi →</a></article>
+    <article class="insights-preview-card"><div class="insights-preview-tag">Local AI</div><h3><a href="insights/behind-the-scenes-of-local-models.html" data-i18n="insight1Title">Dietro le quinte dei modelli di traduzione locali</a></h3><p data-i18n="insight1Text">Cosa succede durante una traduzione offline, dalla tokenizzazione all'inferenza fino al testo restituito a Windows.</p><a class="insights-preview-link" href="insights/behind-the-scenes-of-local-models.html" data-i18n="readMore">Leggi →</a></article>
+    <article class="insights-preview-card"><div class="insights-preview-tag">Privacy</div><h3><a href="insights/what-happens-to-pasted-text-in-cloud-services.html" data-i18n="insight2Title">Cosa succede al testo incollato nei servizi cloud?</a></h3><p data-i18n="insight2Text">Elaborazione esterna, conservazione, metadati e differenze concrete tra traduzione cloud e locale.</p><a class="insights-preview-link" href="insights/what-happens-to-pasted-text-in-cloud-services.html" data-i18n="readMore">Leggi →</a></article>
+    <article class="insights-preview-card"><div class="insights-preview-tag">Workflow</div><h3><a href="insights/the-hidden-cost-of-the-change-of-application.html" data-i18n="insight3Title">Il costo nascosto del cambio di applicazione</a></h3><p data-i18n="insight3Text">Tradurre richiede secondi, ma lasciare il task corrente e recuperare concentrazione può costare molto di più.</p><a class="insights-preview-link" href="insights/the-hidden-cost-of-the-change-of-application.html" data-i18n="readMore">Leggi →</a></article>
+    <article class="insights-preview-card"><div class="insights-preview-tag">ALT + Z</div><h3><a href="insights/how-ALT+Z-works.html" data-i18n="insight4Title">Come funziona ALT + Z in SlangBit</a></h3><p data-i18n="insight4Text">La scorciatoia globale collega appunti Windows, pacchetto lingua selezionato e motore di traduzione locale.</p><a class="insights-preview-link" href="insights/how-ALT+Z-works.html" data-i18n="readMore">Leggi →</a></article>
   </div>
-  <div class="insights-preview-all"><a class="insights-preview-button" href="insights/">Esplora tutti gli Insights →</a></div>
+  <div class="insights-preview-all"><a class="insights-preview-button" href="insights/" data-i18n="insightsAll">Esplora tutti gli Insights →</a></div>
 </section>
 </main>
 
 <section class="share-section" aria-labelledby="shareSlangBitTitle">
-  <h3 id="shareSlangBitTitle">Condividi SlangBit</h3>
-  <p>Se pensi possa essere utile anche a qualcun altro.</p>
+  <h3 id="shareSlangBitTitle" data-i18n="shareTitle">Condividi SlangBit</h3>
+  <p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
 
   <div class="share-buttons">
     <a
@@ -704,7 +707,7 @@ section{
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Condividi SlangBit su X"
-    >X</a>
+    ><img src="images/logo_x.png" alt="" aria-hidden="true"><span>X</span></a>
 
     <a
       class="share-button"
@@ -712,7 +715,7 @@ section{
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Condividi SlangBit su Facebook"
-    >Facebook</a>
+    ><img src="images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span></a>
 
     <a
       class="share-button"
@@ -720,30 +723,38 @@ section{
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Condividi SlangBit su LinkedIn"
-    >LinkedIn</a>
+    ><img src="images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span></a>
 
     <button
       type="button"
       class="share-button"
       id="copyShareLink"
       aria-label="Copia link SlangBit"
-    >Copia link</button>
+    ><span data-i18n="copyLink">Copia link</span></button>
   </div>
 </section>
 
 <footer>
   <div class="footer-inner">
-    <div><div class="footer-brand"><div class="logo-mark">SB</div><div><strong>SlangBit</strong><span>by Memmola Labs®</span></div></div><p>Traduzione AI desktop per Windows. Offline. Privata. Immediata.</p></div>
-    <div class="footer-col"><h4>Prodotto</h4><a href="#features">Funzioni</a><a href="#how">Come funziona</a><a href="#languages">Lingue</a><a href="#download">Download</a></div>
-    <div class="footer-col"><h4>Risorse</h4><a href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a><a href="CHANGELOG.md">Changelog</a><a href="README.md">README</a></div>
-    <div class="footer-col"><h4>Legale</h4><a href="docs/privacy.html">Privacy Policy</a><a href="docs/license.html">Licenza</a><a href="docs/attribution.md">Attribuzioni</a></div>
-    <div class="copyright">© 2026 Memmola Labs®<br>Tutti i diritti riservati.<div class="memmola-badge">MEMMOLA LABS</div></div>
+    <div><div class="footer-brand"><div class="logo-mark">SB</div><div><strong>SlangBit</strong><span>by Memmola Labs®</span></div></div><p data-i18n="footerTagline">Traduzione AI desktop per Windows. Offline. Privata. Immediata.</p></div>
+    <div class="footer-col"><h4 data-i18n="footerProduct">Prodotto</h4><a href="#features" data-i18n="navFeatures">Funzioni</a><a href="#how" data-i18n="navHow">Come funziona</a><a href="#languages" data-i18n="navLanguages">Lingue</a><a href="#download">Download</a></div>
+    <div class="footer-col"><h4 data-i18n="footerResources">Risorse</h4><a href="https://github.com/MemmolaLabs/slangbit" target="_blank" rel="noopener noreferrer">GitHub</a><a href="CHANGELOG.md">Changelog</a><a href="README.md">README</a></div>
+    <div class="footer-col"><h4 data-i18n="footerLegal">Legale</h4><a href="docs/privacy.html">Privacy Policy</a><a href="docs/license.html" data-i18n="license">Licenza</a><a href="docs/attribution.md" data-i18n="attributions">Attribuzioni</a></div>
+    <div class="copyright">© 2026 Memmola Labs®<br><span data-i18n="rights">Tutti i diritti riservati.</span><div class="memmola-badge">MEMMOLA LABS</div></div>
   </div>
 </footer>
 
 </div>
 
 <script>
+const I18N={
+it:{pageTitle:'SlangBit — Traduzione offline per Windows',navFeatures:'Funzioni',navHow:'Come funziona',navLanguages:'Lingue',navArchitecture:'Architettura',navDownload:'Scarica',howLabel:'Come funziona',howTitle:'Tre passaggi. Tutto qui.',stepCopyTitle:'Copia',stepCopyText:'Copia il testo selezionato da qualsiasi applicazione Windows.',stepAltTitle:'Premi ALT + Z',stepAltText:'Usa la scorciatoia globale per tradurre il testo localmente.',stepPasteTitle:'Incolla',stepPasteText:'Il testo tradotto viene rimesso negli appunti e incollato automaticamente.',whyLabel:'Perché SlangBit',whyTitle:'Privacy, velocità e controllo.',whyText:'SlangBit resta fuori dal tuo lavoro finché non ti serve. Nessun portale da aprire, nessun testo da inviare al cloud.',privateTitle:'100% privato',privateText:'Il testo non lascia mai il tuo computer. La traduzione avviene localmente.',cloudTitle:'Nessun cloud',cloudText:'Nessuna API di traduzione cloud, nessun processamento esterno, nessun account.',packagesTitle:'Gestione pacchetti',packagesText:'Scarica e installa soltanto i pacchetti lingua che ti servono davvero.',trayTitle:'Workflow da tray',trayText:'SlangBit lavora in background e compare solo quando premi ALT + Z.',languagesLabel:'Lingue supportate',languagesTitle:'Installa solo ciò che ti serve.',languagesText:'I pacchetti lingua vengono installati localmente e gestiti dal Package Manager integrato.',compareTitle:'SlangBit vs traduttori cloud',architectureTitle:'Architettura',validationTitle:'Progettato. Testato. <span>Validato.</span>',privacyTitle:'Privato per progettazione.',privacyText:'SlangBit non invia il testo tradotto a Memmola Labs né a servizi di traduzione di terze parti. Una volta installato il pacchetto lingua, la traduzione avviene localmente sul tuo PC Windows.',privacyBadge:'NESSUNA TRADUZIONE CLOUD',faqTitle:'Domande frequenti.',downloadTitle:'SlangBit per Windows',downloadText:'Disponibile su Microsoft Store. Un solo acquisto, nessun abbonamento.',storeButton:'Scarica dal Microsoft Store',githubButton:'Vedi su GitHub',shareTitle:'Condividi SlangBit',shareText:'Se pensi possa essere utile anche a qualcun altro.',copyLink:'Copia link',copied:'Link copiato',rights:'Tutti i diritti riservati.'},
+en:{pageTitle:'SlangBit — Offline translation for Windows',navFeatures:'Features',navHow:'How it works',navLanguages:'Languages',navArchitecture:'Architecture',navDownload:'Download',howLabel:'How it works',howTitle:'Three steps. That’s it.',stepCopyTitle:'Copy',stepCopyText:'Copy selected text from any Windows application.',stepAltTitle:'Press ALT + Z',stepAltText:'Use the global shortcut to translate the text locally.',stepPasteTitle:'Paste',stepPasteText:'The translated text is returned to the clipboard and pasted automatically.',whyLabel:'Why SlangBit',whyTitle:'Privacy, speed and control.',whyText:'SlangBit stays out of your way until you need it. No portal to open and no text sent to the cloud.',privateTitle:'100% private',privateText:'Your text never leaves your computer. Translation is processed locally.',cloudTitle:'No cloud',cloudText:'No cloud translation API, no external processing and no account required.',packagesTitle:'Package management',packagesText:'Download and install only the language packages you actually need.',trayTitle:'Tray workflow',trayText:'SlangBit runs in the background and steps in only when you press ALT + Z.',languagesLabel:'Supported languages',languagesTitle:'Install only what you need.',languagesText:'Language packages are installed locally and managed through the built-in Package Manager.',compareTitle:'SlangBit vs cloud translators',architectureTitle:'Architecture',validationTitle:'Designed. Tested. <span>Validated.</span>',privacyTitle:'Private by design.',privacyText:'SlangBit does not send translated text to Memmola Labs or third-party translation services. Once a language package is installed, translation runs locally on your Windows PC.',privacyBadge:'NO CLOUD TRANSLATION',faqTitle:'Frequently asked questions.',downloadTitle:'SlangBit for Windows',downloadText:'Available on Microsoft Store. One-time purchase, no subscription.',storeButton:'Download from Microsoft Store',githubButton:'View on GitHub',shareTitle:'Share SlangBit',shareText:'If you think it could be useful to someone else.',copyLink:'Copy link',copied:'Link copied',rights:'All rights reserved.'}}
+Object.assign(I18N.it,{validationText1:'SlangBit è stato testato su workflow Windows reali: browser, software Office, client email, social, codice sorgente, documenti lunghi, contenuti HTML e ambienti offline.',validationText2:"L'indagine collegata alla certificazione ha portato a ulteriori stress test, analisi dei casi limite, hardening dell'input e al completamento con successo della certificazione Microsoft Store.",langItalian:'Italiano',langEnglish:'Inglese',langSpanish:'Spagnolo',langFrench:'Francese',langGerman:'Tedesco',langChinese:'Cinese',localPackage:'Pacchetto locale',planned:'Previsto',featureCol:'Funzione',cloudCol:'Traduttori cloud',yes:'✓ Sì',no:'× No',rowOffline:'Funziona offline',rowAccount:'Nessun account richiesto',rowSubscription:'Nessun abbonamento',rowLocalData:'I dati restano locali',rowLocalModels:'Modelli AI locali',rowPackages:'Controllo dei pacchetti',archSlangBit:'Applicazione desktop Windows in tray',archCT2:'Inferenza ad alte prestazioni',archOpus:'Traduzione neurale',archModelsTitle:'Modelli AI locali',archModelsText:'Salvati sul tuo computer',statChars:'Caratteri elaborati nei test di traduzione su testi lunghi.',statWorkflowTitle:'WORKFLOW REALI',statWorkflowText:'Validato su browser, Office, email, social, strumenti di sviluppo e applicazioni Windows.',statEdgeText:'Input insoliti riprodotti, analizzati e gestiti con normalizzazione aggiuntiva.',statStoreText:'Certificazione Microsoft Store completata per la distribuzione Windows.',engineeringLink:"Esplora l'engineering →",techDocs:'Documentazione tecnica',faq1q:'SlangBit ha bisogno di internet?',faq1a:"Solo per scaricare i pacchetti lingua o aprire la documentazione. La traduzione funziona localmente dopo l'installazione.",faq2q:'SlangBit raccoglie il testo?',faq2a:'No. Il testo copiato viene elaborato localmente e non viene inviato a Memmola Labs o ad API di traduzione cloud.',faq3q:'Quali applicazioni Windows sono supportate?',faq3a:'La maggior parte delle applicazioni in cui è possibile copiare e incollare testo: browser, editor, client email e software da ufficio.',faq4q:'I pacchetti lingua sono inclusi?',faq4a:'I pacchetti vengono gestiti separatamente tramite il Package Manager, così puoi installare solo le lingue che ti servono.',insightsTitle:'Traduzione, privacy e workflow Windows.',insightsText:"Approfondimenti sull'AI locale, l'elaborazione privata del testo e il costo nascosto del cambio continuo di applicazione.",insight1Title:'Dietro le quinte dei modelli di traduzione locali',insight1Text:"Cosa succede durante una traduzione offline, dalla tokenizzazione all'inferenza fino al testo restituito a Windows.",insight2Title:'Cosa succede al testo incollato nei servizi cloud?',insight2Text:'Elaborazione esterna, conservazione, metadati e differenze concrete tra traduzione cloud e locale.',insight3Title:'Il costo nascosto del cambio di applicazione',insight3Text:'Tradurre richiede secondi, ma lasciare il task corrente e recuperare concentrazione può costare molto di più.',insight4Title:'Come funziona ALT + Z in SlangBit',insight4Text:'La scorciatoia globale collega appunti Windows, pacchetto lingua selezionato e motore di traduzione locale.',readMore:'Leggi →',insightsAll:'Esplora tutti gli Insights →',footerTagline:'Traduzione AI desktop per Windows. Offline. Privata. Immediata.',footerProduct:'Prodotto',footerResources:'Risorse',footerLegal:'Legale',license:'Licenza',attributions:'Attribuzioni'});
+Object.assign(I18N.en,{validationText1:'SlangBit has been tested across real Windows workflows: browsers, Office software, email clients, social platforms, source code, long documents, HTML content and offline environments.',validationText2:'The certification investigation led to additional stress testing, edge-case analysis, input hardening and the successful completion of Microsoft Store certification.',langItalian:'Italian',langEnglish:'English',langSpanish:'Spanish',langFrench:'French',langGerman:'German',langChinese:'Chinese',localPackage:'Local package',planned:'Planned',featureCol:'Feature',cloudCol:'Cloud translators',yes:'✓ Yes',no:'× No',rowOffline:'Works offline',rowAccount:'No account required',rowSubscription:'No subscription',rowLocalData:'Data stays local',rowLocalModels:'Local AI models',rowPackages:'Package control',archSlangBit:'Windows desktop application in the system tray',archCT2:'High-performance inference',archOpus:'Neural translation',archModelsTitle:'Local AI models',archModelsText:'Stored on your computer',statChars:'Characters processed in long-form translation tests.',statWorkflowTitle:'REAL WORKFLOWS',statWorkflowText:'Validated across browsers, Office, email, social platforms, development tools and Windows applications.',statEdgeText:'Unusual inputs reproduced, analyzed and handled with additional normalization.',statStoreText:'Microsoft Store certification completed for Windows distribution.',engineeringLink:'Explore engineering →',techDocs:'Technical documentation',faq1q:'Does SlangBit need an internet connection?',faq1a:'Only to download language packages or open documentation. Translation works locally after installation.',faq2q:'Does SlangBit collect my text?',faq2a:'No. Copied text is processed locally and is not sent to Memmola Labs or cloud translation APIs.',faq3q:'Which Windows applications are supported?',faq3a:'Most applications where you can copy and paste text, including browsers, editors, email clients and office software.',faq4q:'Are language packages included?',faq4a:'Packages are managed separately through the Package Manager, so you can install only the languages you need.',insightsTitle:'Translation, privacy and Windows workflows.',insightsText:'Insights into local AI, private text processing and the hidden cost of constantly switching applications.',insight1Title:'Behind the scenes of local translation models',insight1Text:'What happens during an offline translation, from tokenization and inference to the text returned to Windows.',insight2Title:'What happens to text pasted into cloud services?',insight2Text:'External processing, retention, metadata and the practical differences between cloud and local translation.',insight3Title:'The hidden cost of switching applications',insight3Text:'Translation takes seconds, but leaving the current task and regaining focus can cost much more.',insight4Title:'How ALT + Z works in SlangBit',insight4Text:'The global shortcut connects the Windows clipboard, the selected language package and the local translation engine.',readMore:'Read →',insightsAll:'Explore all Insights →',footerTagline:'Desktop AI translation for Windows. Offline. Private. Instant.',footerProduct:'Product',footerResources:'Resources',footerLegal:'Legal',license:'License',attributions:'Attributions'});
+let currentLang='it';
+function applyLanguage(lang,persist=true){if(!I18N[lang])lang='it';currentLang=lang;document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(I18N[lang][k]!==undefined)el.textContent=I18N[lang][k]});document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.dataset.i18nHtml;if(I18N[lang][k]!==undefined)el.innerHTML=I18N[lang][k]});document.title=I18N[lang].pageTitle;document.getElementById('langIt')?.classList.toggle('active',lang==='it');document.getElementById('langEn')?.classList.toggle('active',lang==='en');if(persist)localStorage.setItem('slangbit-language',lang)}
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));const savedLanguage=localStorage.getItem('slangbit-language');const browserLanguage=(navigator.language||'it').toLowerCase();applyLanguage(savedLanguage||(browserLanguage.startsWith('it')?'it':'en'),false);
 document.getElementById('copyShareLink')?.addEventListener('click', async () => {
   const button = document.getElementById('copyShareLink');
 
@@ -751,11 +762,11 @@ document.getElementById('copyShareLink')?.addEventListener('click', async () => 
     await navigator.clipboard.writeText('https://slangbit.com/');
     if (button) {
       const original = button.textContent;
-      button.textContent = 'Link copiato';
+      button.textContent = I18N[currentLang].copied;
       setTimeout(() => button.textContent = original, 1600);
     }
   } catch (error) {
-    window.prompt('Copia questo link:', 'https://slangbit.com/');
+    window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:', 'https://slangbit.com/');
   }
 });
 </script>
