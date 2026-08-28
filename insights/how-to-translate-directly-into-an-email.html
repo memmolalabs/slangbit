@@ -8,16 +8,27 @@
 <meta name="description" content="Come tradurre il testo mentre scrivi un’email senza aprire un traduttore separato e riducendo le interruzioni con un workflow Windows basato su scorciatoia.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://slangbit.com/insights/how-to-translate-directly-into-an-email.html">
+<link rel="alternate" hreflang="it" href="https://slangbit.com/insights/how-to-translate-directly-into-an-email.html">
+<link rel="alternate" hreflang="en" href="https://slangbit.com/insights/how-to-translate-directly-into-an-email.html">
+<link rel="alternate" hreflang="x-default" href="https://slangbit.com/insights/how-to-translate-directly-into-an-email.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="SlangBit">
 <meta property="og:title" content="Come tradurre direttamente in un’email">
 <meta property="og:description" content="Un workflow pratico per tradurre il testo mentre scrivi un’email senza uscire dal messaggio.">
 <meta property="og:url" content="https://slangbit.com/insights/how-to-translate-directly-into-an-email.html">
+<meta property="og:image" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta property="og:image:secure_url" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SlangBit — Traduzione offline per Windows">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Come tradurre direttamente in un’email">
 <meta name="twitter:description" content="Traduci brevi passaggi restando nel tuo workflow email.">
+<meta name="twitter:image" content="https://slangbit.com/images/slangbit_card_social.png">
+<meta name="twitter:image:alt" content="SlangBit — Traduzione offline per Windows">
 
 <script type="application/ld+json">
 {
@@ -71,6 +82,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo-text{display:flex;flex-direction:column;line-height:1.05}.logo-text strong{font-size:1.1rem}.logo-text span{color:var(--muted);font-size:.68rem}.logo-text b{color:var(--blue)}
 .nav-links{display:flex;gap:26px}.nav-links a{font-size:11px;letter-spacing:.08em;color:var(--text);font-weight:800;text-decoration:none;text-transform:uppercase}.nav-links a:hover{color:var(--blue)}
 .nav-btn{font-size:11px;letter-spacing:.05em;text-decoration:none;padding:11px 17px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.lang-switch{display:inline-flex;align-items:center;gap:4px;padding:3px;border:1px solid #d5dee8;border-radius:999px;background:#fff}
+.lang-switch button{min-width:34px;height:28px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:#667085;font-size:10px;font-weight:850;cursor:pointer}
+.lang-switch button.active{background:var(--blue);color:#fff}
+.share-section{padding:46px 4vw 34px;text-align:center;border-top:1px solid var(--line);background:#fbfdff}
+.share-section h3{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;margin-bottom:9px}
+.share-section p{color:var(--muted);margin-bottom:20px}
+.share-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.share-button{min-height:40px;padding:9px 15px;border:1px solid #d5dee8;border-radius:999px;background:#fff;color:#334155;text-decoration:none;font:800 11px/1 inherit;cursor:pointer;transition:.18s ease;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.share-button:hover{color:var(--blue);border-color:#9fc0ff;transform:translateY(-1px)}
+.share-button img{width:17px;height:17px;object-fit:contain;flex:0 0 17px}
+
 .hero{max-width:1500px;margin:auto;padding:185px 4vw 105px;min-height:72vh;display:flex;flex-direction:column;justify-content:center}
 .breadcrumb{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px;color:var(--muted2);font-size:.74rem;font-weight:700;text-transform:uppercase}.breadcrumb a{color:var(--blue);text-decoration:none}
 .badge{display:inline-flex;align-self:flex-start;align-items:center;gap:9px;border:1px solid #cfe0ff;background:#f6f9ff;color:#285d9f;border-radius:100px;padding:7px 13px;font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:28px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
@@ -204,145 +227,162 @@ aside{
 <div class="logo-text"><strong>SlangBit</strong><span>by <b>Memmola Labs®</b></span></div>
 </a>
 <div class="nav-links">
-<a href="#problem">Il problema</a>
+<a href="#problem" data-i18n="navProblem">Il problema</a>
 <a href="#workflow">Workflow</a>
-<a href="#review">Revisione</a>
+<a href="#review" data-i18n="navReview">Revisione</a>
 <a href="#privacy">Privacy</a>
 <a href="#faq">FAQ</a>
 </div>
-<a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+<div class="nav-actions">
+<div class="lang-switch" aria-label="Language">
+<button type="button" id="langIt">IT</button>
+<button type="button" id="langEn">EN</button>
+</div>
+<a class="nav-btn" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+</div>
 </nav>
 
 <main>
 <header class="hero">
-<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span>Traduzione email</span></div>
-<div class="badge"><span class="dot"></span>Produttività email</div>
-<h1>Come tradurre direttamente <span>in un’email</span></h1>
-<p class="intro">Scrivere un’email in un’altra lingua non dovrebbe richiedere di abbandonare il messaggio, aprire un traduttore separato e ricostruire il filo del discorso quando si torna all’email.</p>
-<div class="meta"><span>Memmola Labs</span><span>29 luglio 2026</span><span>Circa 7 minuti</span></div>
+<div class="breadcrumb"><a href="/">SlangBit</a><span>/</span><a href="/insights/">Insights</a><span>/</span><span data-i18n="crumb">Traduzione email</span></div>
+<div class="badge"><span class="dot"></span><span data-i18n="badge">Produttività email</span></div>
+<h1 data-i18n-html="heroTitle">Come tradurre direttamente <span>in un’email</span></h1>
+<p class="intro" data-i18n="intro">Scrivere un’email in un’altra lingua non dovrebbe richiedere di abbandonare il messaggio, aprire un traduttore separato e ricostruire il filo del discorso quando si torna all’email.</p>
+<div class="meta"><span>Memmola Labs</span><span data-i18n="date">29 luglio 2026</span><span data-i18n="readingTime">Circa 7 minuti</span></div>
 </header>
 
 <div class="layout">
 <article>
 <section id="problem">
-<h2>Il normale workflow di traduzione interrompe l’email</h2>
-<p>Stai scrivendo una risposta e arrivi a una frase che deve essere tradotta. La soluzione abituale è fermarsi, aprire una scheda del browser o un’altra applicazione, incollare il testo, copiare il risultato e tornare all’email.</p>
-<p>La traduzione in sé può essere veloce. L’interruzione no. Devi lasciare il messaggio, entrare in un’altra interfaccia e poi ritrovare il punto esatto in cui avevi smesso di scrivere.</p>
-<div class="callout"><strong>Il vero problema</strong><p>Traduzione email is often a secondary task inside a larger conversation. The translation tool should support that conversation, not become a separate destination.</p></div>
+<h2 data-i18n="s1Title">Il normale workflow di traduzione interrompe l’email</h2>
+<p data-i18n="s1p1">Stai scrivendo una risposta e arrivi a una frase che deve essere tradotta. La soluzione abituale è fermarsi, aprire una scheda del browser o un’altra applicazione, incollare il testo, copiare il risultato e tornare all’email.</p>
+<p data-i18n="s1p2">La traduzione in sé può essere veloce. L’interruzione no. Devi lasciare il messaggio, entrare in un’altra interfaccia e poi ritrovare il punto esatto in cui avevi smesso di scrivere.</p>
+<div class="callout"><strong data-i18n="calloutTitle">Il vero problema</strong><p data-i18n="calloutText">La traduzione di un’email è spesso un’attività secondaria dentro una conversazione più ampia. Lo strumento di traduzione dovrebbe supportare quella conversazione, non diventare una destinazione separata.</p></div>
 </section>
 
 <section id="workflow">
-<h2>Un workflow più breve su Windows</h2>
-<p>Con un’utilità basata sugli appunti, la traduzione può rimanere vicina all’email che stai già scrivendo:</p>
+<h2 data-i18n="s2Title">Un workflow più breve su Windows</h2>
+<p data-i18n="s2p1">Con un’utilità basata sugli appunti, la traduzione può rimanere vicina all’email che stai già scrivendo:</p>
 <div class="workflow" aria-label="Traduzione email workflow">
-<div class="workflow-step"><b>01</b><span>Scrivi o seleziona la frase all’interno dell’email.</span></div>
-<div class="workflow-step"><b>02</b><span>Copia il testo selezionato.</span></div>
-<div class="workflow-step"><b>03</b><span>Premi la scorciatoia globale di traduzione.</span></div>
-<div class="workflow-step"><b>04</b><span>Ricevi il testo tradotto attraverso il workflow degli appunti.</span></div>
-<div class="workflow-step"><b>05</b><span>Revisione the result and continue the message.</span></div>
+<div class="workflow-step"><b>01</b><span data-i18n="step1">Scrivi o seleziona la frase all’interno dell’email.</span></div>
+<div class="workflow-step"><b>02</b><span data-i18n="step2">Copia il testo selezionato.</span></div>
+<div class="workflow-step"><b>03</b><span data-i18n="step3">Premi la scorciatoia globale di traduzione.</span></div>
+<div class="workflow-step"><b>04</b><span data-i18n="step4">Ricevi il testo tradotto attraverso il workflow degli appunti.</span></div>
+<div class="workflow-step"><b>05</b><span data-i18n="step5">Controlla il risultato e continua il messaggio.</span></div>
 </div>
-<p>Questo approccio riduce il numero di finestre e impedisce che una breve traduzione si trasformi in un’attività separata.</p>
+<p data-i18n="s2p2">Questo approccio riduce il numero di finestre e impedisce che una breve traduzione si trasformi in un’attività separata.</p>
 </section>
 
 <section>
-<h2>Cosa significa davvero “direttamente in un’email”</h2>
-<p>SlangBit non modifica internamente il servizio email e non si collega alla casella di posta dell’utente. Lavora attraverso gli appunti di Windows.</p>
-<p>È una distinzione importante. Il client email rimane il luogo in cui viene scritto il messaggio. SlangBit elabora soltanto il testo che l’utente decide di copiare per tradurlo.</p>
-<p>Questo rende il workflow compatibile con molti client email desktop e basati su browser, purché il testo possa essere copiato e incollato normalmente.</p>
+<h2 data-i18n="s3Title">Cosa significa davvero “direttamente in un’email”</h2>
+<p data-i18n="s3p1">SlangBit non modifica internamente il servizio email e non si collega alla casella di posta dell’utente. Lavora attraverso gli appunti di Windows.</p>
+<p data-i18n="s3p2">È una distinzione importante. Il client email rimane il luogo in cui viene scritto il messaggio. SlangBit elabora soltanto il testo che l’utente decide di copiare per tradurlo.</p>
+<p data-i18n="s3p3">Questo rende il workflow compatibile con molti client email desktop e basati su browser, purché il testo possa essere copiato e incollato normalmente.</p>
 </section>
 
 <section id="review">
-<h2>Controlla sempre un’email tradotta prima di inviarla</h2>
-<p>Un workflow rapido non deve eliminare il giudizio umano. Un’email dipende da tono, contesto, formalità e rapporto tra mittente e destinatario.</p>
-<p>La traduzione automatica può produrre una frase grammaticalmente plausibile ma comunque troppo formale, troppo diretta o leggermente diversa dal significato desiderato.</p>
+<h2 data-i18n="s4Title">Controlla sempre un’email tradotta prima di inviarla</h2>
+<p data-i18n="s4p1">Un workflow rapido non deve eliminare il giudizio umano. Un’email dipende da tono, contesto, formalità e rapporto tra mittente e destinatario.</p>
+<p data-i18n="s4p2">La traduzione automatica può produrre una frase grammaticalmente plausibile ma comunque troppo formale, troppo diretta o leggermente diversa dal significato desiderato.</p>
 <div class="cards">
-<div class="card"><h3>Nomi e riferimenti</h3><p>Controlla nomi, numeri d’ordine, date, codici prodotto e riferimenti interni.</p></div>
-<div class="card"><h3>Tono</h3><p>Verifica che il messaggio abbia un tono appropriato per un cliente, collega o contatto professionale.</p></div>
-<div class="card"><h3>Terminologia</h3><p>Revisione technical words, brand names and company-specific expressions.</p></div>
-<div class="card"><h3>Direzione</h3><p>Assicurati che le lingue di origine e destinazione selezionate siano corrette prima dell’invio.</p></div>
+<div class="card"><h3 data-i18n="card1Title">Nomi e riferimenti</h3><p data-i18n="card1Text">Controlla nomi, numeri d’ordine, date, codici prodotto e riferimenti interni.</p></div>
+<div class="card"><h3 data-i18n="card2Title">Tono</h3><p data-i18n="card2Text">Verifica che il messaggio abbia un tono appropriato per un cliente, collega o contatto professionale.</p></div>
+<div class="card"><h3 data-i18n="card3Title">Terminologia</h3><p data-i18n="card3Text">Controlla termini tecnici, nomi di brand ed espressioni specifiche dell’azienda.</p></div>
+<div class="card"><h3 data-i18n="card4Title">Direzione</h3><p data-i18n="card4Text">Assicurati che le lingue di origine e destinazione selezionate siano corrette prima dell’invio.</p></div>
 </div>
 </section>
 
 <section>
-<h2>Traduci pensieri completi, non frammenti casuali</h2>
-<p>Frammenti molto brevi possono essere ambigui. Una parola può assumere significati diversi a seconda della frase che la circonda.</p>
-<p>Quando possibile, copia una frase completa o abbastanza contesto perché il modello possa comprendere il significato desiderato.</p>
-<p>Per email lunghe, traduci una sezione logica alla volta e controlla come le parti tradotte si collegano tra loro.</p>
+<h2 data-i18n="s5Title">Traduci pensieri completi, non frammenti casuali</h2>
+<p data-i18n="s5p1">Frammenti molto brevi possono essere ambigui. Una parola può assumere significati diversi a seconda della frase che la circonda.</p>
+<p data-i18n="s5p2">Quando possibile, copia una frase completa o abbastanza contesto perché il modello possa comprendere il significato desiderato.</p>
+<p data-i18n="s5p3">Per email lunghe, traduci una sezione logica alla volta e controlla come le parti tradotte si collegano tra loro.</p>
 </section>
 
 <section>
-<h2>Preservare la struttura del messaggio</h2>
-<p>Le email includono spesso saluti, risposte citate, firme, link, elenchi puntati e formattazione. Tradurre l’intero messaggio in una volta può modificare contenuti che dovrebbero rimanere invariati.</p>
-<p>Un workflow selettivo offre maggiore controllo. Traduci soltanto la frase o il paragrafo necessario e reinseriscilo poi nella struttura originale.</p>
+<h2 data-i18n="s6Title">Preservare la struttura del messaggio</h2>
+<p data-i18n="s6p1">Le email includono spesso saluti, risposte citate, firme, link, elenchi puntati e formattazione. Tradurre l’intero messaggio in una volta può modificare contenuti che dovrebbero rimanere invariati.</p>
+<p data-i18n="s6p2">Un workflow selettivo offre maggiore controllo. Traduci soltanto la frase o il paragrafo necessario e reinseriscilo poi nella struttura originale.</p>
 <div class="comparison">
-<div class="comparison-box"><h3>Tradurre l’intera email</h3><ul><li>Più contesto per il modello</li><li>Maggiore rischio di modificare nomi, link o testo citato</li><li>Richiede più controllo</li></ul></div>
-<div class="comparison-box"><h3>Tradurre passaggi selezionati</h3><ul><li>Maggiore controllo su ciò che viene elaborato</li><li>La struttura originale rimane visibile</li><li>Più semplice controllare una sezione alla volta</li></ul></div>
+<div class="comparison-box"><h3 data-i18n="fullTitle">Tradurre l’intera email</h3><ul><li data-i18n="full1">Più contesto per il modello</li><li data-i18n="full2">Maggiore rischio di modificare nomi, link o testo citato</li><li data-i18n="full3">Richiede più controllo</li></ul></div>
+<div class="comparison-box"><h3 data-i18n="selectedTitle">Tradurre passaggi selezionati</h3><ul><li data-i18n="sel1">Maggiore controllo su ciò che viene elaborato</li><li data-i18n="sel2">La struttura originale rimane visibile</li><li data-i18n="sel3">Più semplice controllare una sezione alla volta</li></ul></div>
 </div>
 </section>
 
 <section id="privacy">
-<h2>Il contenuto delle email può essere sensibile</h2>
-<p>Un’email può contenere dati personali, informazioni sui clienti, decisioni interne, prezzi, dati dell’account o materiale non pubblicato.</p>
-<p>Usare un traduttore online significa inviare il testo selezionato a un servizio esterno. Il trattamento effettivo dipende dal prodotto, dal tipo di account, dalla configurazione e dalle policy correnti del servizio.</p>
-<p>Con un modello di traduzione locale, la traduzione può essere generata sul computer Windows senza inviare il testo copiato dall’email a un endpoint remoto.</p>
+<h2 data-i18n="s7Title">Il contenuto delle email può essere sensibile</h2>
+<p data-i18n="s7p1">Un’email può contenere dati personali, informazioni sui clienti, decisioni interne, prezzi, dati dell’account o materiale non pubblicato.</p>
+<p data-i18n="s7p2">Usare un traduttore online significa inviare il testo selezionato a un servizio esterno. Il trattamento effettivo dipende dal prodotto, dal tipo di account, dalla configurazione e dalle policy correnti del servizio.</p>
+<p data-i18n="s7p3">Con un modello di traduzione locale, la traduzione può essere generata sul computer Windows senza inviare il testo copiato dall’email a un endpoint remoto.</p>
 <div class="principles">
-<div class="principle"><b>SELETTIVO</b><span>Copia e traduci soltanto il passaggio che ne ha realmente bisogno.</span></div>
-<div class="principle"><b>LOCALE</b><span>Usa un modello linguistico installato quando il testo deve rimanere sul dispositivo.</span></div>
-<div class="principle"><b>CONTROLLATO</b><span>Controlla significato, tono e dettagli sensibili prima dell’invio.</span></div>
+<div class="principle"><b data-i18n="p1Title">SELETTIVO</b><span data-i18n="p1Text">Copia e traduci soltanto il passaggio che ne ha realmente bisogno.</span></div>
+<div class="principle"><b data-i18n="p2Title">LOCALE</b><span data-i18n="p2Text">Usa un modello linguistico installato quando il testo deve rimanere sul dispositivo.</span></div>
+<div class="principle"><b data-i18n="p3Title">CONTROLLATO</b><span data-i18n="p3Text">Controlla significato, tono e dettagli sensibili prima dell’invio.</span></div>
 </div>
 </section>
 
 <section>
-<h2>Quando è preferibile uno spazio di traduzione dedicato</h2>
-<p>Un workflow basato su scorciatoia è utile per brevi passaggi e risposte email ripetitive. Non è la scelta migliore per ogni attività.</p>
-<p>Un lungo documento legale, un contratto complesso o una campagna localizzata con attenzione possono richiedere gestione terminologica, confronto affiancato e strumenti professionali di traduzione.</p>
-<p>Il workflow giusto dipende dal lavoro. SlangBit è pensato per quei momenti in cui la traduzione è soltanto un piccolo passaggio all’interno dell’attività email.</p>
+<h2 data-i18n="s8Title">Quando è preferibile uno spazio di traduzione dedicato</h2>
+<p data-i18n="s8p1">Un workflow basato su scorciatoia è utile per brevi passaggi e risposte email ripetitive. Non è la scelta migliore per ogni attività.</p>
+<p data-i18n="s8p2">Un lungo documento legale, un contratto complesso o una campagna localizzata con attenzione possono richiedere gestione terminologica, confronto affiancato e strumenti professionali di traduzione.</p>
+<p data-i18n="s8p3">Il workflow giusto dipende dal lavoro. SlangBit è pensato per quei momenti in cui la traduzione è soltanto un piccolo passaggio all’interno dell’attività email.</p>
 </section>
 
 <section>
-<h2>Come SlangBit gestisce la traduzione delle email</h2>
-<p>SlangBit funziona come utility nella tray di Windows. Dopo aver installato il pacchetto linguistico locale necessario, l’utente copia il testo dall’email e preme <strong>ALT + Z</strong>.</p>
-<p>Il testo viene elaborato dal motore di traduzione locale e il risultato viene restituito attraverso gli appunti, così l’utente può continuare a lavorare nel client email corrente.</p>
-<p>SlangBit non ha bisogno di accedere alla casella di posta, alla password dell’account o alla cronologia dei messaggi. Lavora soltanto con il testo che l’utente sceglie di copiare.</p>
+<h2 data-i18n="s9Title">Come SlangBit gestisce la traduzione delle email</h2>
+<p data-i18n-html="s9p1">SlangBit funziona come utility nella tray di Windows. Dopo aver installato il pacchetto linguistico locale necessario, l’utente copia il testo dall’email e preme <strong>ALT + Z</strong>.</p>
+<p data-i18n="s9p2">Il testo viene elaborato dal motore di traduzione locale e il risultato viene restituito attraverso gli appunti, così l’utente può continuare a lavorare nel client email corrente.</p>
+<p data-i18n="s9p3">SlangBit non ha bisogno di accedere alla casella di posta, alla password dell’account o alla cronologia dei messaggi. Lavora soltanto con il testo che l’utente sceglie di copiare.</p>
 </section>
 
 <section id="faq">
-<h2>Domande frequenti</h2>
-<details><summary>Posso tradurre il testo direttamente mentre scrivo un’email?</summary><p>Sì. Un’utilità Windows basata sugli appunti può tradurre il testo selezionato senza richiedere l’apertura di un sito di traduzione separato.</p></details>
-<details><summary>SlangBit si collega al mio account email?</summary><p>No. SlangBit lavora attraverso gli appunti di Windows e non richiede accesso alle credenziali della casella di posta o alla cronologia dei messaggi.</p></details>
-<details><summary>Quali applicazioni email sono supportate?</summary><p>SlangBit è progettato per applicazioni Windows in cui il testo può essere copiato e incollato, inclusi molti client email desktop e basati su browser.</p></details>
-<details><summary>Il testo delle email può essere tradotto offline?</summary><p>Sì. Una volta installato il pacchetto linguistico necessario, la traduzione può essere generata localmente sul computer.</p></details>
-<details><summary>Dovrei inviare un’email tradotta automaticamente senza controllarla?</summary><p>No. Controlla sempre significato, tono, nomi, date, numeri e terminologia specialistica prima dell’invio.</p></details>
+<h2 data-i18n="faqTitle">Domande frequenti</h2>
+<details><summary data-i18n="faq1q">Posso tradurre il testo direttamente mentre scrivo un’email?</summary><p data-i18n="faq1a">Sì. Un’utilità Windows basata sugli appunti può tradurre il testo selezionato senza richiedere l’apertura di un sito di traduzione separato.</p></details>
+<details><summary data-i18n="faq2q">SlangBit si collega al mio account email?</summary><p data-i18n="faq2a">No. SlangBit lavora attraverso gli appunti di Windows e non richiede accesso alle credenziali della casella di posta o alla cronologia dei messaggi.</p></details>
+<details><summary data-i18n="faq3q">Quali applicazioni email sono supportate?</summary><p data-i18n="faq3a">SlangBit è progettato per applicazioni Windows in cui il testo può essere copiato e incollato, inclusi molti client email desktop e basati su browser.</p></details>
+<details><summary data-i18n="faq4q">Il testo delle email può essere tradotto offline?</summary><p data-i18n="faq4a">Sì. Una volta installato il pacchetto linguistico necessario, la traduzione può essere generata localmente sul computer.</p></details>
+<details><summary data-i18n="faq5q">Dovrei inviare un’email tradotta automaticamente senza controllarla?</summary><p data-i18n="faq5a">No. Controlla sempre significato, tono, nomi, date, numeri e terminologia specialistica prima dell’invio.</p></details>
 </section>
 
 <div class="cta">
-<h2>Traduci brevi passaggi senza uscire dall’email</h2>
-<p>SlangBit usa modelli linguistici locali e una scorciatoia globale di Windows per mantenere la traduzione dentro il workflow dell’email.</p>
+<h2 data-i18n="ctaTitle">Traduci brevi passaggi senza uscire dall’email</h2>
+<p data-i18n="ctaText">SlangBit usa modelli linguistici locali e una scorciatoia globale di Windows per mantenere la traduzione dentro il workflow dell’email.</p>
 <div class="actions">
-<a class="btn primary" href="/">Scopri SlangBit</a>
-<a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27?hl=it-IT&gl=IT" target="_blank" rel="noopener noreferrer">Vai al Microsoft Store</a>
+<a class="btn primary" href="/" data-i18n="discover">Scopri SlangBit</a>
+<a class="btn secondary" href="https://apps.microsoft.com/detail/9mvktr6xwl27" target="_blank" rel="noopener noreferrer" data-i18n="store">Vai al Microsoft Store</a>
 </div>
 </div>
 </article>
 
 <aside aria-label="Navigazione dell’articolo">
 <div class="side-card">
-<h2>In questa pagina</h2>
-<a href="#problem">Il problema abituale</a>
-<a href="#workflow">A shorter workflow</a>
-<a href="#review">Revisione before sending</a>
-<a href="#privacy">Privacy delle email</a>
+<h2 data-i18n="sideTitle">In questa pagina</h2>
+<a href="#problem" data-i18n="side1">Il problema abituale</a>
+<a href="#workflow" data-i18n="side2">Un workflow più breve</a>
+<a href="#review" data-i18n="side3">Revisione prima dell’invio</a>
+<a href="#privacy" data-i18n="side4">Privacy delle email</a>
 <a href="#faq">FAQ</a>
 </div>
 <div class="side-card">
-<h2>Insights correlati</h2>
-<a href="/insights/the-hidden-cost-of-the-change-of-application.html">Il costo nascosto del cambio di applicazione</a>
-<a href="/insights/how-alt-z-works.html">Come funziona ALT+Z</a>
-<a href="/insights/what-happens-to-pasted-text-in-cloud-services.html">Cosa succede al testo incollato nei servizi cloud</a>
+<h2 data-i18n="relatedTitle">Insights correlati</h2>
+<a href="/insights/the-hidden-cost-of-the-change-of-application.html" data-i18n="related1">Il costo nascosto del cambio di applicazione</a>
+<a href="/insights/how-ALT+Z-works.html" data-i18n="related2">Come funziona ALT+Z</a>
+<a href="/insights/what-happens-to-pasted-text-in-cloud-services.html" data-i18n="related3">Cosa succede al testo incollato nei servizi cloud</a>
 </div>
 </aside>
 </div>
 </main>
+
+<section class="share-section" aria-labelledby="shareArticleTitle">
+<h3 id="shareArticleTitle" data-i18n="shareTitle">Condividi questo Insight</h3>
+<p data-i18n="shareText">Se pensi possa essere utile anche a qualcun altro.</p>
+<div class="share-buttons">
+<a class="share-button" href="https://x.com/intent/post?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-to-translate-directly-into-an-email.html&text=SlangBit%20Insights%20%E2%80%94%20come%20tradurre%20direttamente%20in%20un%27email." target="_blank" rel="noopener noreferrer"><img src="/images/logo_x.png" alt="" aria-hidden="true"><span>X</span></a>
+<a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-to-translate-directly-into-an-email.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_facebook.png" alt="" aria-hidden="true"><span>Facebook</span></a>
+<a class="share-button" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fslangbit.com%2Finsights%2Fhow-to-translate-directly-into-an-email.html" target="_blank" rel="noopener noreferrer"><img src="/images/logo_linkedin.png" alt="" aria-hidden="true"><span>LinkedIn</span></a>
+<button type="button" class="share-button" id="copyShareLink"><span data-i18n="copyLink">Copia link</span></button>
+</div>
+</section>
 
 <footer>
 <div class="footer">
@@ -351,5 +391,88 @@ aside{
 </div>
 </footer>
 </div>
+
+<script>
+const I18N={
+it:{
+pageTitle:'Come tradurre direttamente in un’email | SlangBit',
+metaDescription:'Come tradurre il testo mentre scrivi un’email senza aprire un traduttore separato e riducendo le interruzioni con un workflow Windows basato su scorciatoia.',
+navProblem:'Il problema',navReview:'Revisione',crumb:'Traduzione email',badge:'Produttività email',
+heroTitle:'Come tradurre direttamente <span>in un’email</span>',intro:'Scrivere un’email in un’altra lingua non dovrebbe richiedere di abbandonare il messaggio, aprire un traduttore separato e ricostruire il filo del discorso quando si torna all’email.',date:'29 luglio 2026',readingTime:'Circa 7 minuti',
+s1Title:'Il normale workflow di traduzione interrompe l’email',s1p1:'Stai scrivendo una risposta e arrivi a una frase che deve essere tradotta. La soluzione abituale è fermarsi, aprire una scheda del browser o un’altra applicazione, incollare il testo, copiare il risultato e tornare all’email.',s1p2:'La traduzione in sé può essere veloce. L’interruzione no. Devi lasciare il messaggio, entrare in un’altra interfaccia e poi ritrovare il punto esatto in cui avevi smesso di scrivere.',calloutTitle:'Il vero problema',calloutText:'La traduzione di un’email è spesso un’attività secondaria dentro una conversazione più ampia. Lo strumento di traduzione dovrebbe supportare quella conversazione, non diventare una destinazione separata.',
+s2Title:'Un workflow più breve su Windows',s2p1:'Con un’utilità basata sugli appunti, la traduzione può rimanere vicina all’email che stai già scrivendo:',step1:'Scrivi o seleziona la frase all’interno dell’email.',step2:'Copia il testo selezionato.',step3:'Premi la scorciatoia globale di traduzione.',step4:'Ricevi il testo tradotto attraverso il workflow degli appunti.',step5:'Controlla il risultato e continua il messaggio.',s2p2:'Questo approccio riduce il numero di finestre e impedisce che una breve traduzione si trasformi in un’attività separata.',
+s3Title:'Cosa significa davvero “direttamente in un’email”',s3p1:'SlangBit non modifica internamente il servizio email e non si collega alla casella di posta dell’utente. Lavora attraverso gli appunti di Windows.',s3p2:'È una distinzione importante. Il client email rimane il luogo in cui viene scritto il messaggio. SlangBit elabora soltanto il testo che l’utente decide di copiare per tradurlo.',s3p3:'Questo rende il workflow compatibile con molti client email desktop e basati su browser, purché il testo possa essere copiato e incollato normalmente.',
+s4Title:'Controlla sempre un’email tradotta prima di inviarla',s4p1:'Un workflow rapido non deve eliminare il giudizio umano. Un’email dipende da tono, contesto, formalità e rapporto tra mittente e destinatario.',s4p2:'La traduzione automatica può produrre una frase grammaticalmente plausibile ma comunque troppo formale, troppo diretta o leggermente diversa dal significato desiderato.',card1Title:'Nomi e riferimenti',card1Text:'Controlla nomi, numeri d’ordine, date, codici prodotto e riferimenti interni.',card2Title:'Tono',card2Text:'Verifica che il messaggio abbia un tono appropriato per un cliente, collega o contatto professionale.',card3Title:'Terminologia',card3Text:'Controlla termini tecnici, nomi di brand ed espressioni specifiche dell’azienda.',card4Title:'Direzione',card4Text:'Assicurati che le lingue di origine e destinazione selezionate siano corrette prima dell’invio.',
+s5Title:'Traduci pensieri completi, non frammenti casuali',s5p1:'Frammenti molto brevi possono essere ambigui. Una parola può assumere significati diversi a seconda della frase che la circonda.',s5p2:'Quando possibile, copia una frase completa o abbastanza contesto perché il modello possa comprendere il significato desiderato.',s5p3:'Per email lunghe, traduci una sezione logica alla volta e controlla come le parti tradotte si collegano tra loro.',
+s6Title:'Preservare la struttura del messaggio',s6p1:'Le email includono spesso saluti, risposte citate, firme, link, elenchi puntati e formattazione. Tradurre l’intero messaggio in una volta può modificare contenuti che dovrebbero rimanere invariati.',s6p2:'Un workflow selettivo offre maggiore controllo. Traduci soltanto la frase o il paragrafo necessario e reinseriscilo poi nella struttura originale.',fullTitle:'Tradurre l’intera email',selectedTitle:'Tradurre passaggi selezionati',full1:'Più contesto per il modello',full2:'Maggiore rischio di modificare nomi, link o testo citato',full3:'Richiede più controllo',sel1:'Maggiore controllo su ciò che viene elaborato',sel2:'La struttura originale rimane visibile',sel3:'Più semplice controllare una sezione alla volta',
+s7Title:'Il contenuto delle email può essere sensibile',s7p1:'Un’email può contenere dati personali, informazioni sui clienti, decisioni interne, prezzi, dati dell’account o materiale non pubblicato.',s7p2:'Usare un traduttore online significa inviare il testo selezionato a un servizio esterno. Il trattamento effettivo dipende dal prodotto, dal tipo di account, dalla configurazione e dalle policy correnti del servizio.',s7p3:'Con un modello di traduzione locale, la traduzione può essere generata sul computer Windows senza inviare il testo copiato dall’email a un endpoint remoto.',p1Title:'SELETTIVO',p1Text:'Copia e traduci soltanto il passaggio che ne ha realmente bisogno.',p2Title:'LOCALE',p2Text:'Usa un modello linguistico installato quando il testo deve rimanere sul dispositivo.',p3Title:'CONTROLLATO',p3Text:'Controlla significato, tono e dettagli sensibili prima dell’invio.',
+s8Title:'Quando è preferibile uno spazio di traduzione dedicato',s8p1:'Un workflow basato su scorciatoia è utile per brevi passaggi e risposte email ripetitive. Non è la scelta migliore per ogni attività.',s8p2:'Un lungo documento legale, un contratto complesso o una campagna localizzata con attenzione possono richiedere gestione terminologica, confronto affiancato e strumenti professionali di traduzione.',s8p3:'Il workflow giusto dipende dal lavoro. SlangBit è pensato per quei momenti in cui la traduzione è soltanto un piccolo passaggio all’interno dell’attività email.',
+s9Title:'Come SlangBit gestisce la traduzione delle email',s9p1:'SlangBit funziona come utility nella tray di Windows. Dopo aver installato il pacchetto linguistico locale necessario, l’utente copia il testo dall’email e preme <strong>ALT + Z</strong>.',s9p2:'Il testo viene elaborato dal motore di traduzione locale e il risultato viene restituito attraverso gli appunti, così l’utente può continuare a lavorare nel client email corrente.',s9p3:'SlangBit non ha bisogno di accedere alla casella di posta, alla password dell’account o alla cronologia dei messaggi. Lavora soltanto con il testo che l’utente sceglie di copiare.',
+faqTitle:'Domande frequenti',faq1q:'Posso tradurre il testo direttamente mentre scrivo un’email?',faq1a:'Sì. Un’utilità Windows basata sugli appunti può tradurre il testo selezionato senza richiedere l’apertura di un sito di traduzione separato.',faq2q:'SlangBit si collega al mio account email?',faq2a:'No. SlangBit lavora attraverso gli appunti di Windows e non richiede accesso alle credenziali della casella di posta o alla cronologia dei messaggi.',faq3q:'Quali applicazioni email sono supportate?',faq3a:'SlangBit è progettato per applicazioni Windows in cui il testo può essere copiato e incollato, inclusi molti client email desktop e basati su browser.',faq4q:'Il testo delle email può essere tradotto offline?',faq4a:'Sì. Una volta installato il pacchetto linguistico necessario, la traduzione può essere generata localmente sul computer.',faq5q:'Dovrei inviare un’email tradotta automaticamente senza controllarla?',faq5a:'No. Controlla sempre significato, tono, nomi, date, numeri e terminologia specialistica prima dell’invio.',
+ctaTitle:'Traduci brevi passaggi senza uscire dall’email',ctaText:'SlangBit usa modelli linguistici locali e una scorciatoia globale di Windows per mantenere la traduzione dentro il workflow dell’email.',discover:'Scopri SlangBit',store:'Vai al Microsoft Store',
+sideTitle:'In questa pagina',side1:'Il problema abituale',side2:'Un workflow più breve',side3:'Revisione prima dell’invio',side4:'Privacy delle email',relatedTitle:'Insights correlati',related1:'Il costo nascosto del cambio di applicazione',related2:'Come funziona ALT+Z',related3:'Cosa succede al testo incollato nei servizi cloud',
+shareTitle:'Condividi questo Insight',shareText:'Se pensi possa essere utile anche a qualcun altro.',copyLink:'Copia link',copied:'Link copiato'
+},
+en:{
+pageTitle:'How to translate directly inside an email | SlangBit',
+metaDescription:'How to translate text while writing an email without opening a separate translator, reducing interruptions with a shortcut-based Windows workflow.',
+navProblem:'The problem',navReview:'Review',crumb:'Email translation',badge:'Email productivity',
+heroTitle:'How to translate directly <span>inside an email</span>',intro:'Writing an email in another language should not require leaving the message, opening a separate translator and reconstructing your train of thought when you return.',date:'July 29, 2026',readingTime:'About 7 minutes',
+s1Title:'The normal translation workflow interrupts the email',s1p1:'You are writing a reply and reach a sentence that needs to be translated. The usual solution is to stop, open a browser tab or another application, paste the text, copy the result and return to the email.',s1p2:'The translation itself may be fast. The interruption is not. You have to leave the message, enter another interface and then find the exact point where you stopped writing.',calloutTitle:'The real problem',calloutText:'Email translation is often a secondary task inside a larger conversation. The translation tool should support that conversation, not become a separate destination.',
+s2Title:'A shorter workflow on Windows',s2p1:'With a clipboard-based utility, translation can stay close to the email you are already writing:',step1:'Write or select the sentence inside the email.',step2:'Copy the selected text.',step3:'Press the global translation shortcut.',step4:'Receive the translated text through the clipboard workflow.',step5:'Review the result and continue the message.',s2p2:'This approach reduces the number of windows and prevents a short translation from becoming a separate task.',
+s3Title:'What “directly inside an email” really means',s3p1:'SlangBit does not modify the email service internally and does not connect to the user’s mailbox. It works through the Windows clipboard.',s3p2:'That distinction matters. The email client remains the place where the message is written. SlangBit processes only the text the user chooses to copy for translation.',s3p3:'This makes the workflow compatible with many desktop and browser-based email clients, as long as text can be copied and pasted normally.',
+s4Title:'Always review a translated email before sending',s4p1:'A fast workflow should not remove human judgment. An email depends on tone, context, formality and the relationship between sender and recipient.',s4p2:'Machine translation can produce a grammatically plausible sentence that is still too formal, too direct or slightly different from the intended meaning.',card1Title:'Names and references',card1Text:'Check names, order numbers, dates, product codes and internal references.',card2Title:'Tone',card2Text:'Make sure the message has an appropriate tone for a customer, colleague or professional contact.',card3Title:'Terminology',card3Text:'Review technical terms, brand names and company-specific expressions.',card4Title:'Direction',card4Text:'Make sure the selected source and target languages are correct before sending.',
+s5Title:'Translate complete thoughts, not random fragments',s5p1:'Very short fragments can be ambiguous. A word can take on different meanings depending on the surrounding sentence.',s5p2:'When possible, copy a complete sentence or enough context for the model to understand the intended meaning.',s5p3:'For long emails, translate one logical section at a time and check how the translated parts connect with each other.',
+s6Title:'Preserving the message structure',s6p1:'Emails often include greetings, quoted replies, signatures, links, bullet lists and formatting. Translating the entire message at once can alter content that should remain unchanged.',s6p2:'A selective workflow gives you more control. Translate only the sentence or paragraph you need and place it back into the original structure.',fullTitle:'Translate the entire email',selectedTitle:'Translate selected passages',full1:'More context for the model',full2:'Higher risk of changing names, links or quoted text',full3:'Requires more checking',sel1:'More control over what gets processed',sel2:'The original structure remains visible',sel3:'Easier to review one section at a time',
+s7Title:'Email content can be sensitive',s7p1:'An email can contain personal data, customer information, internal decisions, prices, account data or unpublished material.',s7p2:'Using an online translator means sending the selected text to an external service. Actual handling depends on the product, account type, configuration and current service policies.',s7p3:'With a local translation model, the translation can be generated on the Windows computer without sending copied email text to a remote endpoint.',p1Title:'SELECTIVE',p1Text:'Copy and translate only the passage that actually needs it.',p2Title:'LOCAL',p2Text:'Use an installed language model when the text should remain on the device.',p3Title:'CONTROLLED',p3Text:'Review meaning, tone and sensitive details before sending.',
+s8Title:'When a dedicated translation workspace is preferable',s8p1:'A shortcut-based workflow is useful for short passages and repetitive email replies. It is not the best choice for every task.',s8p2:'A long legal document, a complex contract or a carefully localized campaign may require terminology management, side-by-side comparison and professional translation tools.',s8p3:'The right workflow depends on the job. SlangBit is designed for moments when translation is only a small step inside the email task.',
+s9Title:'How SlangBit handles email translation',s9p1:'SlangBit runs as a Windows tray utility. After installing the required local language package, the user copies text from the email and presses <strong>ALT + Z</strong>.',s9p2:'The text is processed by the local translation engine and the result is returned through the clipboard so the user can keep working in the current email client.',s9p3:'SlangBit does not need access to the mailbox, account password or message history. It works only with text the user chooses to copy.',
+faqTitle:'Frequently asked questions',faq1q:'Can I translate text directly while writing an email?',faq1a:'Yes. A clipboard-based Windows utility can translate selected text without requiring a separate translation website.',faq2q:'Does SlangBit connect to my email account?',faq2a:'No. SlangBit works through the Windows clipboard and does not require access to mailbox credentials or message history.',faq3q:'Which email applications are supported?',faq3a:'SlangBit is designed for Windows applications where text can be copied and pasted, including many desktop and browser-based email clients.',faq4q:'Can email text be translated offline?',faq4a:'Yes. Once the required language package is installed, translation can be generated locally on the computer.',faq5q:'Should I send an automatically translated email without reviewing it?',faq5a:'No. Always review meaning, tone, names, dates, numbers and specialist terminology before sending.',
+ctaTitle:'Translate short passages without leaving the email',ctaText:'SlangBit uses local language models and a global Windows shortcut to keep translation inside the email workflow.',discover:'Discover SlangBit',store:'Go to Microsoft Store',
+sideTitle:'On this page',side1:'The usual problem',side2:'A shorter workflow',side3:'Review before sending',side4:'Email privacy',relatedTitle:'Related Insights',related1:'The hidden cost of switching applications',related2:'How ALT+Z works',related3:'What happens to text pasted into cloud services',
+shareTitle:'Share this Insight',shareText:'If you think it could be useful to someone else.',copyLink:'Copy link',copied:'Link copied'
+}
+};
+
+let currentLang='it';
+function applyLanguage(lang,persist=true){
+  if(!I18N[lang]) lang='it';
+  currentLang=lang;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n;
+    if(I18N[lang][k]!==undefined) el.textContent=I18N[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k=el.dataset.i18nHtml;
+    if(I18N[lang][k]!==undefined) el.innerHTML=I18N[lang][k];
+  });
+  document.title=I18N[lang].pageTitle;
+  const m=document.querySelector('meta[name="description"]');
+  if(m) m.setAttribute('content',I18N[lang].metaDescription);
+  document.getElementById('langIt')?.classList.toggle('active',lang==='it');
+  document.getElementById('langEn')?.classList.toggle('active',lang==='en');
+  if(persist) localStorage.setItem('slangbit-language',lang);
+}
+document.getElementById('langIt')?.addEventListener('click',()=>applyLanguage('it'));
+document.getElementById('langEn')?.addEventListener('click',()=>applyLanguage('en'));
+const savedLanguage=localStorage.getItem('slangbit-language');
+const browserLanguage=(navigator.language||'it').toLowerCase();
+applyLanguage(savedLanguage||(browserLanguage.startsWith('it')?'it':'en'),false);
+
+document.getElementById('copyShareLink')?.addEventListener('click',async()=>{
+  const button=document.getElementById('copyShareLink');
+  try{
+    await navigator.clipboard.writeText('https://slangbit.com/insights/how-to-translate-directly-into-an-email.html');
+    const span=button?.querySelector('span');
+    const original=span?.textContent||'';
+    if(span) span.textContent=I18N[currentLang].copied;
+    setTimeout(()=>{if(span) span.textContent=original},1600);
+  }catch(error){
+    window.prompt(currentLang==='en'?'Copy this link:':'Copia questo link:','https://slangbit.com/insights/how-to-translate-directly-into-an-email.html');
+  }
+});
+</script>
+
 </body>
 </html>
